@@ -173,47 +173,15 @@ export default function Home() {
         {/* SCROLLING CARD CAROUSEL — infinite right to left */}
         <div className="card-carousel">
           <div className="card-carousel-track">
-            {[
-              '/cards/card-chrome.png',
-              '/cards/card-sponsor.png',
-              '/cards/card-cardstock.png',
-              '/cards/card-dual-chrome.png',
-              '/cards/card-chrome.png',
-              '/cards/card-dual-cardstock.png',
-              '/cards/card-cardstock.png',
-              '/cards/card-sponsor.png',
-              '/cards/card-dual-chrome.png',
-              '/cards/card-chrome.png',
-              '/cards/card-dual-cardstock.png',
-              '/cards/card-sponsor.png',
-              // Duplicate for seamless loop
-              '/cards/card-chrome.png',
-              '/cards/card-sponsor.png',
-              '/cards/card-cardstock.png',
-              '/cards/card-dual-chrome.png',
-              '/cards/card-chrome.png',
-              '/cards/card-dual-cardstock.png',
-              '/cards/card-cardstock.png',
-              '/cards/card-sponsor.png',
-              '/cards/card-dual-chrome.png',
-              '/cards/card-chrome.png',
-              '/cards/card-dual-cardstock.png',
-              '/cards/card-sponsor.png',
-            ].map((src, i) => (
-              <div key={i} className="slab-wrap">
-                <div className="slab-outer">
-                  <div className="slab-inner">
-                    <img src={src} alt="" className="slab-card-img" draggable={false} />
-                  </div>
-                  {/* GEM MINT badge */}
-                  <div className="slab-badge">
-                    <span className="slab-badge-label">GEM MINT</span>
-                    <span className="slab-badge-num">10</span>
-                  </div>
-                  {/* Bottom serial */}
-                  <div className="slab-serial">001/100</div>
-                </div>
-              </div>
+            {Array.from({length: 24}).map((_, i) => (
+              <img
+                key={i}
+                src="/cards/rytis-center-clean.png"
+                alt=""
+                className="carousel-card"
+                style={{ height: '55vh', opacity: 0.75 }}
+                draggable={false}
+              />
             ))}
           </div>
         </div>
