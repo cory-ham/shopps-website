@@ -166,18 +166,16 @@ export default function Home() {
 
         {/* Crosshairs */}
         <span className="crosshair" style={{ left: '8%',  top: '70%' }}>+</span>
-        <span className="crosshair" style={{ left: '47%', top: '22%' }}>+</span>
+        <span className="crosshair" style={{ left: '23%', top: '25%' }}>+</span>
         <span className="crosshair" style={{ right: '14%', top: '30%' }}>+</span>
         <span className="crosshair" style={{ right: '8%',  top: '65%' }}>+</span>
 
-        {/* LEFT CSS CARD SLABS */}
-        <div className="hero-left-cards">
-          <div className="css-card card-a"><div className="css-card-inner" /></div>
-          <div className="css-card card-b"><div className="css-card-inner" /></div>
-          <div className="css-card card-c"><div className="css-card-inner" /></div>
-        </div>
+        {/* FAR LEFT — ~80% off screen */}
+        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-far-left" draggable={false} />
+        {/* MID LEFT */}
+        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-mid-left" draggable={false} />
 
-        {/* TEXT ZONE */}
+        {/* TEXT BLOCK */}
         <div className="hero-text">
           <h1 className="hero-headline">The Top 100<br />In Ecommerce</h1>
           <p className="hero-collect-label">Collect Them All</p>
@@ -202,17 +200,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CENTER CARD — clean isolated PNG */}
-        <div className="hero-center-card">
-          <img src="/cards/rytis-center-clean.png" alt="Rytis Lauris" draggable={false} />
-        </div>
+        {/* CENTER CARD — face-on, full size */}
+        <img src="/cards/rytis-center-clean.png" alt="Rytis Lauris" className="hcard hcard-center" draggable={false} />
 
-        {/* RIGHT CSS CARD SLABS */}
-        <div className="hero-right-cards">
-          <div className="css-card card-d"><div className="css-card-inner" /></div>
-          <div className="css-card card-e"><div className="css-card-inner" /></div>
-          <div className="css-card card-f"><div className="css-card-inner" /></div>
-        </div>
+        {/* MID RIGHT */}
+        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-mid-right" draggable={false} />
+        {/* FAR RIGHT — ~80% off screen */}
+        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-far-right" draggable={false} />
 
       </section>
 

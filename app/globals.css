@@ -36,11 +36,6 @@ a { color: inherit; text-decoration: none; }
 .nav-live:hover { background: var(--teal); color: #000; }
 
 /* ─── HERO ────────────────────────────────────────────── */
-/*
-  Hero is a CSS Grid with 5 columns:
-  [left-bleed] [left-cards] [text-zone] [center-card] [right-cards]
-  This guarantees text and cards NEVER overlap.
-*/
 .hero {
   position: relative;
   width: 100%;
@@ -48,197 +43,87 @@ a { color: inherit; text-decoration: none; }
   min-height: 700px;
   overflow: hidden;
   background: var(--bg);
-  display: grid;
-  grid-template-columns: 0px 18% 28% 24% 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  padding-top: 64px; /* nav height */
 }
 
 .hero-glow {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 62% 50%, rgba(15,50,200,0.26) 0%, rgba(15,50,200,0.08) 45%, transparent 68%);
+  width: 80%;
+  height: 100%;
+  left: 30%;
+  top: 0;
+  background: radial-gradient(ellipse at 55% 50%, rgba(15,50,200,0.28) 0%, rgba(15,50,200,0.08) 45%, transparent 68%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Left card column — stack 3 cards side by side with perspective */
-.hero-left-cards {
-  grid-column: 2;
-  position: relative;
-  height: 100%;
-  overflow: visible;
-  z-index: 5;
+/* All hero cards: absolute, vertically centered */
+.hcard {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
 }
 
-/* Text zone — no cards can enter this column */
+/* FAR LEFT — 75% off left edge, heavily rotated, very dim */
+.hcard-far-left {
+  height: 60vh;
+  left: -14%;
+  transform: perspective(800px) rotateY(52deg) translateY(-50%);
+  filter: brightness(0.38);
+  z-index: 2;
+}
+
+/* MID LEFT — partially visible, rotated */
+.hcard-mid-left {
+  height: 70vh;
+  left: 3%;
+  transform: perspective(900px) rotateY(32deg) translateY(-50%);
+  filter: brightness(0.55);
+  z-index: 3;
+}
+
+/* CENTER CARD — face-on, largest, right of text */
+.hcard-center {
+  height: 82vh;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  filter: drop-shadow(0 0 60px rgba(15,50,200,0.55)) drop-shadow(0 20px 80px rgba(0,0,0,0.95));
+  z-index: 15;
+  pointer-events: auto;
+}
+
+/* MID RIGHT */
+.hcard-mid-right {
+  height: 70vh;
+  right: 3%;
+  transform: perspective(900px) rotateY(-32deg) translateY(-50%);
+  filter: brightness(0.55);
+  z-index: 3;
+}
+
+/* FAR RIGHT — 75% off right edge */
+.hcard-far-right {
+  height: 60vh;
+  right: -14%;
+  transform: perspective(800px) rotateY(-52deg) translateY(-50%);
+  filter: brightness(0.38);
+  z-index: 2;
+}
+
+/* Hero text block — absolutely positioned in clear zone left of center card */
 .hero-text {
-  grid-column: 3;
-  position: relative;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26vw;
   z-index: 20;
-  padding: 0 2vw;
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-
-/* Center card column */
-.hero-center-card {
-  grid-column: 4;
-  position: relative;
-  height: 100%;
-  z-index: 15;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-/* Right card column */
-.hero-right-cards {
-  grid-column: 5;
-  position: relative;
-  height: 100%;
-  overflow: visible;
-  z-index: 5;
-}
-
-/* Card images in left column — absolutely positioned within their column */
-.hero-left-cards .card-a {
-  position: absolute;
-  top: 50%; height: 55vh; width: auto;
-  left: -40%;
-  transform: perspective(1000px) rotateY(48deg) translateY(-50%);
-  filter: brightness(0.5);
-  z-index: 1;
-}
-.hero-left-cards .card-b {
-  position: absolute;
-  top: 50%; height: 65vh; width: auto;
-  left: 0%;
-  transform: perspective(1000px) rotateY(28deg) translateY(-50%);
-  filter: brightness(0.68);
-  z-index: 2;
-}
-.hero-left-cards .card-c {
-  position: absolute;
-  top: 50%; height: 75vh; width: auto;
-  right: -10%;
-  transform: perspective(1200px) rotateY(12deg) translateY(-50%);
-  filter: brightness(0.82);
-  z-index: 3;
-}
-
-/* Center card */
-.hero-center-card img {
-  height: 82vh;
-  width: auto;
-  filter: drop-shadow(0 0 50px rgba(15,50,200,0.5)) drop-shadow(0 20px 80px rgba(0,0,0,0.9));
-}
-
-/* Right card images */
-.hero-right-cards .card-d {
-  position: absolute;
-  top: 50%; height: 75vh; width: auto;
-  left: -10%;
-  transform: perspective(1200px) rotateY(-12deg) translateY(-50%);
-  filter: brightness(0.82);
-  z-index: 3;
-}
-.hero-right-cards .card-e {
-  position: absolute;
-  top: 50%; height: 65vh; width: auto;
-  left: 30%;
-  transform: perspective(1000px) rotateY(-28deg) translateY(-50%);
-  filter: brightness(0.68);
-  z-index: 2;
-}
-.hero-right-cards .card-f {
-  position: absolute;
-  top: 50%; height: 55vh; width: auto;
-  left: 55%;
-  transform: perspective(1000px) rotateY(-48deg) translateY(-50%);
-  filter: brightness(0.5);
-  z-index: 1;
-}
-
-/* Crosshairs */
-.crosshair {
-  position: absolute;
-  color: var(--teal);
-  font-size: 18px;
-  font-weight: 300;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 10;
-  line-height: 1;
-}
-
-/* Hero text elements */
-.hero-headline {
-  font-family: var(--font-anton);
-  font-size: 4.8vw;
-  font-weight: 400;
-  line-height: 0.94;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 0.8vw;
-}
-.hero-collect-label {
-  font-size: 1.05vw;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 1vw;
-}
-.hero-body {
-  font-size: 0.85vw;
-  line-height: 1.6;
-  color: rgba(245,248,248,0.6);
-  margin-bottom: 1.4vw;
-  max-width: 20vw;
-}
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0.7vw;
-  margin-bottom: 1.6vw;
-  flex-wrap: wrap;
-}
-.btn-teal {
-  font-size: 0.68vw;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #000;
-  background: var(--teal);
-  border: none;
-  padding: 0.7vw 1.2vw;
-  border-radius: 2px;
-}
-.btn-outline {
-  font-size: 0.68vw;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(245,248,248,0.85);
-  background: transparent;
-  border: 1.5px solid rgba(245,248,248,0.35);
-  padding: 0.7vw 1.2vw;
-  border-radius: 2px;
-}
-.btn-teal:hover { opacity: 0.9; }
-.btn-outline:hover { border-color: var(--white); color: var(--white); }
-
-/* Pack counter */
-.pack-counter { display: flex; flex-direction: column; gap: 0; }
-.pack-label { display: flex; align-items: center; gap: 0.5vw; font-size: 0.68vw; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5vw; }
-.pack-label-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-.pack-digits { display: flex; gap: 0.3vw; margin-bottom: 0.3vw; }
-.pack-digit { width: 3.2vw; height: 4vw; background: #050608; border: 1px solid #181c28; display: flex; align-items: center; justify-content: center; font-family: var(--font-anton); font-size: 2.8vw; color: var(--white); }
-.pack-of { font-size: 0.68vw; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,248,248,0.3); }
 
 /* ─── TICKER ──────────────────────────────────────────── */
 .ticker-wrap { width: 100%; overflow: hidden; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 12px 0; }
