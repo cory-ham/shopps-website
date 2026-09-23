@@ -174,28 +174,28 @@ export default function Home() {
         <div className="card-carousel">
           <div className="card-carousel-track">
             {/* 12 cards for seamless loop — alternating heights for rhythm */}
-            {[-4, 2, -2, 5, -3, 1, -5, 3, -1, 4, -3, 2].map((rot, i) => (
+                        {[0.9, 0.5, 0.7, 0.95, 0.45, 0.75, 0.85, 0.55, 0.65, 1.0, 0.5, 0.8].map((op, i) => (
               <img
                 key={i}
                 src="/cards/rytis-center-clean.png"
                 alt=""
                 className="carousel-card"
-                style={{ height: '55vh', opacity: 0.65, transform: `rotate(${rot}deg)` }}
+                style={{ height: '55vh', opacity: op }}
                 draggable={false}
               />
-            ))}
-            {/* Duplicate for seamless loop */}
-            {[-4, 2, -2, 5, -3, 1, -5, 3, -1, 4, -3, 2].map((rot, i) => (
+            )}
+                        {/* Duplicate for seamless loop */}
+            {[0.9, 0.5, 0.7, 0.95, 0.45, 0.75, 0.85, 0.55, 0.65, 1.0, 0.5, 0.8].map((op, i) => (
               <img
                 key={`b-${i}`}
                 src="/cards/rytis-center-clean.png"
                 alt=""
                 className="carousel-card"
-                style={{ height: '55vh', opacity: 0.65, transform: `rotate(${rot}deg)` }}
+                style={{ height: '55vh', opacity: op }}
                 draggable={false}
               />
             ))}
-          </div>
+                    </div>
         </div>
 
         {/* Left fade mask */}
