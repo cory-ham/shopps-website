@@ -97,7 +97,7 @@ body {
   position: absolute;
   width: 70%;
   height: 90%;
-  left: 30%;
+  left: 19%;
   top: 5%;
   background: radial-gradient(ellipse at 45% 50%, rgba(15,50,200,0.28) 0%, rgba(15,50,200,0.08) 40%, transparent 70%);
   pointer-events: none;
@@ -131,7 +131,7 @@ body {
 }
 .card-inner-left {
   height: 65vh;
-  left: 30%;
+  left: 19%;
   transform: perspective(1400px) rotateY(14deg) translateY(-50%);
   z-index: 4;
 }
@@ -170,7 +170,7 @@ body {
 /* ─── Hero Text Block ────────────────────────────────────── */
 .hero-text {
   position: absolute;
-  left: 26.5%;
+  left: 27%;
   top: 50%;
   transform: translateY(-50%);
   width: 22vw;
