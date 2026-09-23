@@ -108,15 +108,105 @@ a { color: inherit; text-decoration: none; }
 .hero-text {
   position: relative;
   z-index: 20;
-  width: 26vw;
-  min-width: 320px;
+  width: 30vw;
+  min-width: 340px;
   margin-left: 6vw;
   display: flex;
   flex-direction: column;
   gap: 0;
-  /* Subtle dark backdrop so text is readable over scrolling cards */
-  background: radial-gradient(ellipse at 0% 50%, rgba(7,9,15,0.92) 0%, rgba(7,9,15,0.7) 60%, transparent 100%);
-  padding: 2vw 3vw 2vw 0;
+  background: radial-gradient(ellipse at 0% 50%, rgba(7,9,15,0.95) 0%, rgba(7,9,15,0.75) 65%, transparent 100%);
+  padding: 2vw 4vw 2vw 0;
+}
+
+.hero-headline {
+  font-family: var(--font-inter);
+  font-size: 5.2vw;
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--white);
+  margin: 0 0 0.6vw;
+  letter-spacing: -0.02em;
+}
+.hero-collect-label {
+  font-family: var(--font-inter);
+  font-size: 0.85vw;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 1.2vw;
+}
+.hero-body {
+  font-family: var(--font-inter);
+  font-size: 0.9vw;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(245,248,248,0.6);
+  margin: 0 0 1.6vw;
+  max-width: 24vw;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  margin: 0 0 1.8vw;
+  flex-wrap: wrap;
+}
+.btn-teal {
+  font-family: var(--font-inter);
+  font-size: 0.7vw;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--teal);
+  border: none;
+  padding: 0.8vw 1.4vw;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-teal:hover { opacity: 0.88; }
+.btn-outline {
+  font-family: var(--font-inter);
+  font-size: 0.7vw;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,248,248,0.85);
+  background: transparent;
+  border: 1.5px solid rgba(245,248,248,0.35);
+  padding: 0.8vw 1.4vw;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+/* Pack counter */
+.pack-counter { display: flex; flex-direction: column; gap: 0; }
+.pack-label {
+  display: flex; align-items: center; gap: 0.5vw;
+  font-family: var(--font-inter);
+  font-size: 0.65vw; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.6vw;
+}
+.pack-label-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.pack-digits { display: flex; gap: 0.35vw; margin-bottom: 0.4vw; }
+.pack-digit {
+  width: 3.4vw; height: 4.2vw;
+  background: #050608;
+  border: 1px solid #1a1e28;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-anton);
+  font-size: 3vw; color: var(--white); line-height: 1;
+}
+.pack-of {
+  font-family: var(--font-inter);
+  font-size: 0.65vw; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(245,248,248,0.28); margin: 0;
 }
 
 /* ─── TICKER ──────────────────────────────────────────── */
