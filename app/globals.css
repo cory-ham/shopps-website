@@ -49,7 +49,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: var(--bg);
   display: grid;
-  grid-template-columns: 0px 22% 26% 22% 1fr;
+  grid-template-columns: 0px 18% 28% 24% 1fr;
   grid-template-rows: 1fr;
   align-items: center;
   padding-top: 64px; /* nav height */
@@ -346,21 +346,21 @@ a { color: inherit; text-decoration: none; }
 
 /* Left fan positions */
 .card-a {
-  width: 42px; height: 55vh;
+  width: calc(55vh * 0.65); height: 55vh;
   left: -15px;
   transform: perspective(900px) rotateY(52deg) translateY(-50%);
   filter: brightness(0.45);
   z-index: 1;
 }
 .card-b {
-  width: 52px; height: 65vh;
+  width: calc(65vh * 0.65); height: 65vh;
   left: 25%;
   transform: perspective(900px) rotateY(32deg) translateY(-50%);
   filter: brightness(0.60);
   z-index: 2;
 }
 .card-c {
-  width: 62px; height: 72vh;
+  width: calc(72vh * 0.65); height: 72vh;
   left: 55%;
   transform: perspective(1000px) rotateY(15deg) translateY(-50%);
   filter: brightness(0.75);
@@ -369,21 +369,21 @@ a { color: inherit; text-decoration: none; }
 
 /* Right fan positions */
 .card-d {
-  width: 62px; height: 72vh;
+  width: calc(72vh * 0.65); height: 72vh;
   right: 55%;
   transform: perspective(1000px) rotateY(-15deg) translateY(-50%);
   filter: brightness(0.75);
   z-index: 3;
 }
 .card-e {
-  width: 52px; height: 65vh;
+  width: calc(65vh * 0.65); height: 65vh;
   right: 25%;
   transform: perspective(900px) rotateY(-32deg) translateY(-50%);
   filter: brightness(0.60);
   z-index: 2;
 }
 .card-f {
-  width: 42px; height: 55vh;
+  width: calc(55vh * 0.65); height: 55vh;
   right: -15px;
   transform: perspective(900px) rotateY(-52deg) translateY(-50%);
   filter: brightness(0.45);
