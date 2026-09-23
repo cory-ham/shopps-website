@@ -174,7 +174,7 @@ export default function Home() {
         <div className="card-carousel">
           <div className="card-carousel-track">
             {/* 12 cards for seamless loop — alternating heights for rhythm */}
-                        {[0.9, 0.5, 0.7, 0.95, 0.45, 0.75, 0.85, 0.55, 0.65, 1.0, 0.5, 0.8].map((op, i) => (
+                        {[0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75].map((op, i) => (
               <img
                 key={i}
                 src="/cards/rytis-center-clean.png"
@@ -185,7 +185,7 @@ export default function Home() {
               />
             )}
                         {/* Duplicate for seamless loop */}
-            {[0.9, 0.5, 0.7, 0.95, 0.45, 0.75, 0.85, 0.55, 0.65, 1.0, 0.5, 0.8].map((op, i) => (
+            {[0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75].map((op, i) => (
               <img
                 key={`b-${i}`}
                 src="/cards/rytis-center-clean.png"
