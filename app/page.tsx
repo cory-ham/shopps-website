@@ -161,113 +161,33 @@ export default function Home() {
       </nav>
 
       {/* ──────────────────── HERO ─────────────────── */}
-      {/*
-        Canvas 2544×887 hero — ALL children position:absolute
-        Card measurements from PSD (verified):
-          Layer 15 (center/Rytis): left=53.4%, w=15.1vw  → left: 53.4%
-          Layer 2 copy (strip): 5.5%–94.5%
-          Text block: left=26.5%, top=188/887=21%
-      */}
       <section className="hero">
-
-        {/* Blue radial glow — behind cards */}
         <div className="hero-glow" />
 
-        {/* ── CARD FAN (all position:absolute via .card classes) ── */}
+        {/* Crosshairs */}
+        <span className="crosshair" style={{ left: '8%',  top: '70%' }}>+</span>
+        <span className="crosshair" style={{ left: '47%', top: '22%' }}>+</span>
+        <span className="crosshair" style={{ right: '14%', top: '30%' }}>+</span>
+        <span className="crosshair" style={{ right: '8%',  top: '65%' }}>+</span>
 
-        {/* Outer-left: Rytis dark, 47° rotateY, 44vh, left:-2% */}
-        <img
-          src="/cards/rytis.png"
-          alt="Card"
-          className="card card-outer-left"
-          draggable={false}
-        />
+        {/* LEFT CARDS COLUMN */}
+        <div className="hero-left-cards">
+          <img src="/cards/rytis.png"  alt="" className="card-a" draggable={false} />
+          <img src="/cards/marcus.png" alt="" className="card-b" draggable={false} />
+          <img src="/cards/olivia.png" alt="" className="card-c" draggable={false} />
+        </div>
 
-        {/* Mid-left: Marcus, 29° rotateY, 55vh, left:11% */}
-        <img
-          src="/cards/marcus.png"
-          alt="Card"
-          className="card card-mid-left"
-          draggable={false}
-        />
-
-        {/* Inner-left: Olivia, 14° rotateY, 65vh, left:30% */}
-        <img
-          src="/cards/olivia.png"
-          alt="Card"
-          className="card card-inner-left"
-          draggable={false}
-        />
-
-        {/* Center featured: Rytis Lauris, no rotation, 75vh, left:53.4% */}
-        <img
-          src="/cards/rytis-center.png"
-          alt="Rytis Lauris — Co-Founder & CEO, Omnisend"
-          className="card card-center"
-          draggable={false}
-        />
-
-        {/* Inner-right: Samantha, −14° rotateY, 65vh, left:68.5% */}
-        <img
-          src="/cards/samantha.png"
-          alt="Card"
-          className="card card-inner-right"
-          draggable={false}
-        />
-
-        {/* Mid-right: Jordan, −29° rotateY, 55vh, left:79% */}
-        <img
-          src="/cards/jordan.png"
-          alt="Card"
-          className="card card-mid-right"
-          draggable={false}
-        />
-
-        {/* Outer-right: Michael, −47° rotateY, 44vh, left:89% */}
-        <img
-          src="/cards/michael.png"
-          alt="Card"
-          className="card card-outer-right"
-          draggable={false}
-        />
-
-        {/* ── CROSSHAIR MARKERS ── */}
-        {/* PSD: small teal + marks scattered at fixed positions */}
-        <span className="crosshair" style={{ left: '22%', top: '68%' }}>+</span>
-        <span className="crosshair" style={{ left: '46%', top: '26%' }}>+</span>
-        <span className="crosshair" style={{ left: '76%', top: '32%' }}>+</span>
-        <span className="crosshair" style={{ left: '90%', top: '65%' }}>+</span>
-        <span className="crosshair" style={{ left: '8%',  top: '72%' }}>+</span>
-
-        {/* ── TEXT BLOCK ──
-          PSD: left=673px (26.5%), top=188px (~21% of hero)
-          Instruction: left:26.5%, top:50%, transform:translateY(-50%), width:22vw, zIndex:20
-        */}
-        <div className="hero-text" style={{ zIndex: 20 }}>
-          {/* "THE TOP 100 IN ECOMMERCE" — Anton, uppercase, ~4.5vw */}
-          <h1 className="hero-headline">
-            The Top 100<br />In Ecommerce
-          </h1>
-
-          {/* "COLLECT THEM ALL" — teal, 1.2vw, weight 800, uppercase */}
+        {/* TEXT ZONE — grid column 3, no cards here */}
+        <div className="hero-text">
+          <h1 className="hero-headline">The Top 100<br />In Ecommerce</h1>
           <p className="hero-collect-label">Collect Them All</p>
-
-          {/* Body — PSD: "Top 100 operators, founders..." y=485-553 */}
-          <p className="hero-body" style={{ marginTop: '1vw' }}>
-            Top 100 operators, founders, and legends of the
-            industry — immortalized in a collector card series.
-            Packs are 100% free but you can&apos;t buy them. You have
-            to find them.
+          <p className="hero-body">
+            Top 100 operators, founders, and legends of the industry — immortalized in a collector card series. Packs are 100% free but you can&apos;t buy them. You have to find them.
           </p>
-
-          {/* Buttons — PSD: y=592-645 (See the set layer: 674,592,1118,645) */}
           <div className="hero-buttons">
             <button className="btn-teal">How to Get a Pack</button>
             <button className="btn-outline">See the Set</button>
           </div>
-
-          {/* Pack Counter — PSD "Rectangle 1 copy": (674,674,872,814)
-              Instruction: Anton digits, dark box bg:#050608 */}
           <div className="pack-counter">
             <div className="pack-label">
               <span className="pack-label-dot" />
@@ -280,6 +200,18 @@ export default function Home() {
             </div>
             <p className="pack-of">of 1000 left</p>
           </div>
+        </div>
+
+        {/* CENTER CARD COLUMN */}
+        <div className="hero-center-card">
+          <img src="/cards/rytis-center.png" alt="Rytis Lauris" draggable={false} />
+        </div>
+
+        {/* RIGHT CARDS COLUMN */}
+        <div className="hero-right-cards">
+          <img src="/cards/samantha.png" alt="" className="card-d" draggable={false} />
+          <img src="/cards/jordan.png"   alt="" className="card-e" draggable={false} />
+          <img src="/cards/michael.png"  alt="" className="card-f" draggable={false} />
         </div>
 
       </section>
