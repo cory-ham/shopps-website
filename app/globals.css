@@ -43,86 +43,80 @@ a { color: inherit; text-decoration: none; }
   min-height: 700px;
   overflow: hidden;
   background: var(--bg);
+  display: flex;
+  align-items: center;
 }
 
 .hero-glow {
   position: absolute;
-  width: 80%;
-  height: 100%;
-  left: 30%;
-  top: 0;
-  background: radial-gradient(ellipse at 55% 50%, rgba(15,50,200,0.28) 0%, rgba(15,50,200,0.08) 45%, transparent 68%);
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 50%, rgba(15,50,200,0.22) 0%, rgba(15,50,200,0.06) 50%, transparent 72%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* All hero cards: absolute, vertically centered */
-.hcard {
+/* ── Scrolling card carousel ── */
+.card-carousel {
   position: absolute;
-  top: 50%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  animation: carousel-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.carousel-card {
   width: auto;
-  user-select: none;
+  flex-shrink: 0;
+  border-radius: 10px;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.8));
+  transition: filter 0.3s;
+}
+
+/* Left and right fade masks so cards appear/disappear smoothly */
+.carousel-fade-left {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 28%;
+  background: linear-gradient(to right, var(--bg) 20%, rgba(7,9,15,0.85) 60%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+.carousel-fade-right {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 18%;
+  background: linear-gradient(to left, var(--bg) 0%, rgba(7,9,15,0.8) 50%, transparent 100%);
+  z-index: 3;
   pointer-events: none;
 }
 
-/* FAR LEFT — 75% off left edge, heavily rotated, very dim */
-.hcard-far-left {
-  height: 60vh;
-  left: -14%;
-  transform: perspective(800px) rotateY(52deg) translateY(-50%);
-  filter: brightness(0.38);
-  z-index: 2;
-}
-
-/* MID LEFT — partially visible, rotated */
-.hcard-mid-left {
-  height: 70vh;
-  left: 3%;
-  transform: perspective(900px) rotateY(32deg) translateY(-50%);
-  filter: brightness(0.55);
-  z-index: 3;
-}
-
-/* CENTER CARD — face-on, largest, right of text */
-.hcard-center {
-  height: 82vh;
-  left: 54%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  filter: drop-shadow(0 0 60px rgba(15,50,200,0.55)) drop-shadow(0 20px 80px rgba(0,0,0,0.95));
-  z-index: 15;
-  pointer-events: auto;
-}
-
-/* MID RIGHT */
-.hcard-mid-right {
-  height: 70vh;
-  right: 3%;
-  transform: perspective(900px) rotateY(-32deg) translateY(-50%);
-  filter: brightness(0.55);
-  z-index: 3;
-}
-
-/* FAR RIGHT — 75% off right edge */
-.hcard-far-right {
-  height: 60vh;
-  right: -14%;
-  transform: perspective(800px) rotateY(-52deg) translateY(-50%);
-  filter: brightness(0.38);
-  z-index: 2;
-}
-
-/* Hero text block — absolutely positioned in clear zone left of center card */
+/* Hero text block — sits over carousel on the left */
 .hero-text {
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 26vw;
+  position: relative;
   z-index: 20;
+  width: 26vw;
+  min-width: 320px;
+  margin-left: 6vw;
   display: flex;
   flex-direction: column;
   gap: 0;
+  /* Subtle dark backdrop so text is readable over scrolling cards */
+  background: radial-gradient(ellipse at 0% 50%, rgba(7,9,15,0.92) 0%, rgba(7,9,15,0.7) 60%, transparent 100%);
+  padding: 2vw 3vw 2vw 0;
 }
 
 /* ─── TICKER ──────────────────────────────────────────── */

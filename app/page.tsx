@@ -170,12 +170,40 @@ export default function Home() {
         <span className="crosshair" style={{ right: '14%', top: '30%' }}>+</span>
         <span className="crosshair" style={{ right: '8%',  top: '65%' }}>+</span>
 
-        {/* FAR LEFT — ~80% off screen */}
-        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-far-left" draggable={false} />
-        {/* MID LEFT */}
-        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-mid-left" draggable={false} />
+        {/* SCROLLING CARD CAROUSEL — infinite right to left */}
+        <div className="card-carousel">
+          <div className="card-carousel-track">
+            {/* 12 cards for seamless loop — alternating heights for rhythm */}
+            {[75,65,78,60,82,68,75,65,78,60,82,68].map((h, i) => (
+              <img
+                key={i}
+                src="/cards/rytis-center-clean.png"
+                alt=""
+                className="carousel-card"
+                style={{ height: `${h}vh`, opacity: i % 3 === 1 ? 0.5 : i % 3 === 2 ? 0.75 : 0.65 }}
+                draggable={false}
+              />
+            ))}
+            {/* Duplicate for seamless loop */}
+            {[75,65,78,60,82,68,75,65,78,60,82,68].map((h, i) => (
+              <img
+                key={`b-${i}`}
+                src="/cards/rytis-center-clean.png"
+                alt=""
+                className="carousel-card"
+                style={{ height: `${h}vh`, opacity: i % 3 === 1 ? 0.5 : i % 3 === 2 ? 0.75 : 0.65 }}
+                draggable={false}
+              />
+            ))}
+          </div>
+        </div>
 
-        {/* TEXT BLOCK */}
+        {/* Left fade mask */}
+        <div className="carousel-fade-left" />
+        {/* Right fade mask */}
+        <div className="carousel-fade-right" />
+
+        {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
           <h1 className="hero-headline">The Top 100<br />In Ecommerce</h1>
           <p className="hero-collect-label">Collect Them All</p>
@@ -199,14 +227,6 @@ export default function Home() {
             <p className="pack-of">of 1000 left</p>
           </div>
         </div>
-
-        {/* CENTER CARD — face-on, full size */}
-        <img src="/cards/rytis-center-clean.png" alt="Rytis Lauris" className="hcard hcard-center" draggable={false} />
-
-        {/* MID RIGHT */}
-        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-mid-right" draggable={false} />
-        {/* FAR RIGHT — ~80% off screen */}
-        <img src="/cards/rytis-center-clean.png" alt="" className="hcard hcard-far-right" draggable={false} />
 
       </section>
 
