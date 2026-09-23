@@ -327,3 +327,65 @@ a { color: inherit; text-decoration: none; }
 .site-footer { background: #050608; border-top: 1px solid #14182a; padding: 2.5vw 6vw; display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { height: 24px; width: auto; }
 .footer-copy { font-size: 0.7vw; color: rgba(245,248,248,0.25); }
+
+/* ─── CSS CARD SLABS (side cards, no background image) ─── */
+.css-card {
+  position: absolute;
+  top: 50%;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #dce8ff 0%, #8898c0 12%, #ccd8f4 28%, #6878a8 48%, #bccce8 65%, #9aabcc 80%, #d4e2ff 100%);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.9);
+}
+.css-card-inner {
+  position: absolute;
+  inset: 7px;
+  border-radius: 7px;
+  background: #07091a;
+  border: 1px solid #1a2040;
+}
+
+/* Left fan positions */
+.card-a {
+  width: 42px; height: 55vh;
+  left: -15px;
+  transform: perspective(900px) rotateY(52deg) translateY(-50%);
+  filter: brightness(0.45);
+  z-index: 1;
+}
+.card-b {
+  width: 52px; height: 65vh;
+  left: 25%;
+  transform: perspective(900px) rotateY(32deg) translateY(-50%);
+  filter: brightness(0.60);
+  z-index: 2;
+}
+.card-c {
+  width: 62px; height: 72vh;
+  left: 55%;
+  transform: perspective(1000px) rotateY(15deg) translateY(-50%);
+  filter: brightness(0.75);
+  z-index: 3;
+}
+
+/* Right fan positions */
+.card-d {
+  width: 62px; height: 72vh;
+  right: 55%;
+  transform: perspective(1000px) rotateY(-15deg) translateY(-50%);
+  filter: brightness(0.75);
+  z-index: 3;
+}
+.card-e {
+  width: 52px; height: 65vh;
+  right: 25%;
+  transform: perspective(900px) rotateY(-32deg) translateY(-50%);
+  filter: brightness(0.60);
+  z-index: 2;
+}
+.card-f {
+  width: 42px; height: 55vh;
+  right: -15px;
+  transform: perspective(900px) rotateY(-52deg) translateY(-50%);
+  filter: brightness(0.45);
+  z-index: 1;
+}

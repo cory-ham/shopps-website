@@ -170,14 +170,14 @@ export default function Home() {
         <span className="crosshair" style={{ right: '14%', top: '30%' }}>+</span>
         <span className="crosshair" style={{ right: '8%',  top: '65%' }}>+</span>
 
-        {/* LEFT CARDS COLUMN */}
+        {/* LEFT CSS CARD SLABS */}
         <div className="hero-left-cards">
-          <img src="/cards/rytis.png"  alt="" className="card-a" draggable={false} />
-          <img src="/cards/marcus.png" alt="" className="card-b" draggable={false} />
-          <img src="/cards/olivia.png" alt="" className="card-c" draggable={false} />
+          <div className="css-card card-a"><div className="css-card-inner" /></div>
+          <div className="css-card card-b"><div className="css-card-inner" /></div>
+          <div className="css-card card-c"><div className="css-card-inner" /></div>
         </div>
 
-        {/* TEXT ZONE — grid column 3, no cards here */}
+        {/* TEXT ZONE */}
         <div className="hero-text">
           <h1 className="hero-headline">The Top 100<br />In Ecommerce</h1>
           <p className="hero-collect-label">Collect Them All</p>
@@ -202,16 +202,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CENTER CARD COLUMN */}
+        {/* CENTER CARD — clean isolated PNG */}
         <div className="hero-center-card">
-          <img src="/cards/rytis-center.png" alt="Rytis Lauris" draggable={false} />
+          <img src="/cards/rytis-center-clean.png" alt="Rytis Lauris" draggable={false} />
         </div>
 
-        {/* RIGHT CARDS COLUMN */}
+        {/* RIGHT CSS CARD SLABS */}
         <div className="hero-right-cards">
-          <img src="/cards/samantha.png" alt="" className="card-d" draggable={false} />
-          <img src="/cards/jordan.png"   alt="" className="card-e" draggable={false} />
-          <img src="/cards/michael.png"  alt="" className="card-f" draggable={false} />
+          <div className="css-card card-d"><div className="css-card-inner" /></div>
+          <div className="css-card card-e"><div className="css-card-inner" /></div>
+          <div className="css-card card-f"><div className="css-card-inner" /></div>
         </div>
 
       </section>
