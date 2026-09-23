@@ -173,32 +173,46 @@ export default function Home() {
         {/* SCROLLING CARD CAROUSEL — infinite right to left */}
         <div className="card-carousel">
           <div className="card-carousel-track">
-            {/* 12 cards for seamless loop — alternating heights for rhythm */}
-                        {[0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75].map((op, i) => (
+            {[
+              '/cards/card-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-cardstock.png',
+              '/cards/card-dual-chrome.png',
+              '/cards/card-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-dual-cardstock.png',
+              '/cards/card-cardstock.png',
+              '/cards/card-chrome.png',
+              '/cards/card-dual-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-dual-cardstock.png',
+              // Duplicate for seamless loop
+              '/cards/card-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-cardstock.png',
+              '/cards/card-dual-chrome.png',
+              '/cards/card-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-dual-cardstock.png',
+              '/cards/card-cardstock.png',
+              '/cards/card-chrome.png',
+              '/cards/card-dual-chrome.png',
+              '/cards/card-sponsor.png',
+              '/cards/card-dual-cardstock.png',
+            ].map((src, i) => (
               <img
                 key={i}
-                src="/cards/rytis-center-clean.png"
+                src={src}
                 alt=""
                 className="carousel-card"
-                style={{ height: '55vh', opacity: op }}
-                draggable={false}
-              />
-            )}
-                        {/* Duplicate for seamless loop */}
-            {[0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75].map((op, i) => (
-              <img
-                key={`b-${i}`}
-                src="/cards/rytis-center-clean.png"
-                alt=""
-                className="carousel-card"
-                style={{ height: '55vh', opacity: op }}
+                style={{ height: '55vh', opacity: 0.75 }}
                 draggable={false}
               />
             ))}
-                    </div>
+          </div>
         </div>
 
-        {/* Left fade mask */}
+                {/* Left fade mask */}
         <div className="carousel-fade-left" />
         {/* Right fade mask */}
         <div className="carousel-fade-right" />
