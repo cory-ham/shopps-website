@@ -154,9 +154,9 @@ export default function Home() {
         </div>
 
         <div className="nav-right">
-          <a href="#" className="nav-link">How It Works</a>
+          <a href="#" className="nav-link">How it works</a>
           <a href="#" className="nav-link">Nominate</a>
-          <a href="#" className="nav-live">Live</a>
+          <a href="#" className="nav-live">LIVE</a>
         </div>
       </nav>
 
@@ -206,13 +206,13 @@ export default function Home() {
         {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
           <h1 className="hero-headline">The Top 100<br />In Ecommerce</h1>
-          <p className="hero-collect-label">Collect Them All</p>
+          <p className="hero-collect-label">Collect them all</p>
           <p className="hero-body">
-            Top 100 operators, founders, and legends of the industry — immortalized in a collector card series. Packs are 100% free but you can&apos;t buy them. You have to find them.
+            Top 100 operators, founders, and legends of the industry – immortalized in a collector card series. Packs are 100% free but you can&apos;t buy them. You have to find them.
           </p>
           <div className="hero-buttons">
             <button className="btn-teal">How to Get a Pack</button>
-            <button className="btn-outline">See the Set</button>
+            <button className="btn-outline">See the set</button>
           </div>
           <div className="pack-counter">
             <div className="pack-label">
