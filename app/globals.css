@@ -69,7 +69,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 2vw;
-  animation: carousel-scroll 35s linear infinite;
+  animation: carousel-scroll 22s linear infinite;
   will-change: transform;
 }
 
