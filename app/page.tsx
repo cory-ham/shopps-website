@@ -174,14 +174,21 @@ export default function Home() {
         <div className="card-carousel">
           <div className="card-carousel-track">
             {Array.from({length: 24}).map((_, i) => (
-              <img
-                key={i}
-                src="/cards/rytis-center-clean.png"
-                alt=""
-                className="carousel-card"
-                style={{ height: '55vh', opacity: 0.75 }}
-                draggable={false}
-              />
+              <div key={i} className="card-sleeve">
+                {/* Top slot — SHOPPS logo */}
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                </div>
+                {/* Bottom slot — card photo */}
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/rytis-center-clean.png" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+                {/* Corner details */}
+                <span className="sleeve-corner sleeve-tl" />
+                <span className="sleeve-corner sleeve-tr" />
+                <span className="sleeve-corner sleeve-bl" />
+                <span className="sleeve-corner sleeve-br" />
+              </div>
             ))}
           </div>
         </div>
