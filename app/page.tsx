@@ -173,7 +173,33 @@ export default function Home() {
         {/* SCROLLING CARD CAROUSEL — infinite right to left */}
         <div className="card-carousel">
           <div className="card-carousel-track">
-            {Array.from({length: 24}).map((_, i) => (
+            {[
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              // Duplicate for seamless loop
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+              '/cards/bart-card.jpg',
+              '/cards/bear-card.jpg',
+            ].map((src, i) => (
               <div key={i} className="card-sleeve">
                 {/* Top slot — SHOPPS logo */}
                 <div className="card-sleeve-top">
@@ -181,7 +207,7 @@ export default function Home() {
                 </div>
                 {/* Bottom slot — card photo */}
                 <div className="card-sleeve-bottom">
-                  <img src="/cards/rytis-center-clean.png" alt="" className="card-sleeve-img" draggable={false} />
+                  <img src={src} alt="" className="card-sleeve-img" draggable={false} />
                 </div>
                 {/* Corner details */}
                 <span className="sleeve-corner sleeve-tl" />
