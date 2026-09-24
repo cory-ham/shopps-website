@@ -173,49 +173,439 @@ export default function Home() {
         {/* SCROLLING CARD CAROUSEL — infinite right to left */}
         <div className="card-carousel">
           <div className="card-carousel-track">
-            {[
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              // Duplicate for seamless loop
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-              '/cards/bart-card.jpg',
-              '/cards/bear-card.jpg',
-            ].map((src, i) => (
-              <div key={i} className="card-sleeve">
-                {/* Top slot — SHOPPS logo */}
+              <div key="0" className="card-sleeve">
                 <div className="card-sleeve-top">
                   <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
                 </div>
-                {/* Bottom slot — card photo */}
                 <div className="card-sleeve-bottom">
-                  <img src={src} alt="" className="card-sleeve-img" draggable={false} />
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
                 </div>
-                {/* Corner details */}
-                <span className="sleeve-corner sleeve-tl" />
-                <span className="sleeve-corner sleeve-tr" />
-                <span className="sleeve-corner sleeve-bl" />
-                <span className="sleeve-corner sleeve-br" />
               </div>
-            ))}
+              <div key="1" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="2" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="3" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="4" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="5" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="6" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="7" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="8" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="9" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="10" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="11" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div key="d0" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d1" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d2" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d3" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d4" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d5" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d6" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d7" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d8" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d9" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d10" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BART SZANIEWSKI</span>
+                    <span className="card-sleeve-title">FOUNDER & CEO · DAD GANG CO.</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
+              <div key="d11" className="card-sleeve">
+                <div className="card-sleeve-top">
+                  <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
+                  <div className="card-sleeve-name">
+                    <span className="card-sleeve-meta">2026 COMMON THREAD COLLECTIVE</span>
+                    <span className="card-sleeve-person">BEAR HANDLON</span>
+                    <span className="card-sleeve-title">CEO · BORN PRIMITIVE</span>
+                  </div>
+                  <div className="card-sleeve-badge">
+                    <span className="card-sleeve-badge-label">GEM MINT</span>
+                    <span className="card-sleeve-badge-num">10</span>
+                    <span className="card-sleeve-badge-serial">001/0100</span>
+                  </div>
+                </div>
+                <div className="card-sleeve-bottom">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                </div>
+              </div>
           </div>
         </div>
 

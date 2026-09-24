@@ -438,71 +438,158 @@ a { color: inherit; text-decoration: none; }
   padding: 4px 0 2px;
 }
 
-/* ─── Card Sleeve (generic unbranded hard case) ─────── */
+/* ─── Premium Chrome Slab Case ───────────────────────── */
 .card-sleeve {
   flex-shrink: 0;
   height: 55vh;
-  width: calc(55vh * 0.68);
+  width: calc(55vh * 0.72);
   position: relative;
-  opacity: 0.85;
-  border-radius: 10px;
-  background: linear-gradient(160deg, #1a1e2c 0%, #0e1018 60%, #141820 100%);
-  border: 1.5px solid rgba(200,215,240,0.35);
-  padding: 6px;
+  opacity: 0.9;
+  border-radius: 12px;
+  /* Thick chrome ribbed border — multiple ridge layers */
+  background: linear-gradient(145deg,
+    #f0f4ff 0%,
+    #b0bccc 4%,
+    #e8eeff 8%,
+    #8898b0 12%,
+    #d8e4f4 18%,
+    #6878a0 24%,
+    #c8d8ec 30%,
+    #9098b8 38%,
+    #dce8ff 46%,
+    #7888a8 54%,
+    #ccd8f0 62%,
+    #8898b8 70%,
+    #e0ecff 78%,
+    #9098b0 86%,
+    #d0dcf4 92%,
+    #a8b4cc 100%);
+  padding: 10px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.6),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.15),
+    0 20px 60px rgba(0,0,0,0.9),
+    0 4px 12px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.06),
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 20px 60px rgba(0,0,0,0.85);
+  gap: 4px;
 }
 
-/* Top label slot — SHOPPS logo */
+/* Inner chrome inset — creates the depth between outer and inner */
+.card-sleeve::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 8px;
+  background: linear-gradient(145deg,
+    #c8d4e8 0%, #8898b0 20%,
+    #d8e4f8 40%, #6878a0 60%,
+    #b8c8e0 80%, #9098b8 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header bar — black, inside the chrome border */
 .card-sleeve-top {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
-  height: 14%;
+  background: #0a0a0a;
   border-radius: 4px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(200,215,240,0.2);
+  padding: 5px 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-}
-.card-sleeve-logo {
-  height: 60%;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: brightness(1.1);
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 15%;
 }
 
-/* Card photo slot */
+/* S logo in header */
+.card-sleeve-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(1.2);
+}
+
+/* Center name block in header */
+.card-sleeve-name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.card-sleeve-meta {
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-inter);
+  font-size: 5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.card-sleeve-person {
+  color: #fff;
+  font-family: var(--font-inter);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.card-sleeve-title {
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-inter);
+  font-size: 5.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* GEM MINT badge in header */
+.card-sleeve-badge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  padding: 3px 5px;
+  background: rgba(255,255,255,0.04);
+}
+.card-sleeve-badge-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 4.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-inter);
+  white-space: nowrap;
+}
+.card-sleeve-badge-num {
+  color: #fff;
+  font-family: var(--font-anton);
+  font-size: 16px;
+  line-height: 1;
+}
+.card-sleeve-badge-serial {
+  color: rgba(255,255,255,0.35);
+  font-size: 4px;
+  font-family: var(--font-inter);
+  letter-spacing: 0.1em;
+}
+
+/* Card photo window */
 .card-sleeve-bottom {
+  position: relative;
+  z-index: 1;
   flex: 1;
   border-radius: 4px;
   background: #07090f;
-  border: 1px solid rgba(200,215,240,0.15);
   overflow: hidden;
-  position: relative;
 }
 .card-sleeve-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  
   display: block;
 }
-
-/* Corner circuit details */
-.sleeve-corner {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  pointer-events: none;
-}
-.sleeve-tl { top: 3px; left: 3px; border-top: 1.5px solid rgba(200,215,240,0.5); border-left: 1.5px solid rgba(200,215,240,0.5); border-radius: 2px 0 0 0; }
-.sleeve-tr { top: 3px; right: 3px; border-top: 1.5px solid rgba(200,215,240,0.5); border-right: 1.5px solid rgba(200,215,240,0.5); border-radius: 0 2px 0 0; }
-.sleeve-bl { bottom: 3px; left: 3px; border-bottom: 1.5px solid rgba(200,215,240,0.5); border-left: 1.5px solid rgba(200,215,240,0.5); border-radius: 0 0 0 2px; }
-.sleeve-br { bottom: 3px; right: 3px; border-bottom: 1.5px solid rgba(200,215,240,0.5); border-right: 1.5px solid rgba(200,215,240,0.5); border-radius: 0 0 2px 0; }
