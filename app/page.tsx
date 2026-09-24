@@ -187,8 +187,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="1" className="card-sleeve">
@@ -205,8 +206,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="2" className="card-sleeve">
@@ -223,8 +225,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="3" className="card-sleeve">
@@ -241,8 +244,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="4" className="card-sleeve">
@@ -259,8 +263,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="5" className="card-sleeve">
@@ -277,8 +282,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="6" className="card-sleeve">
@@ -295,8 +301,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="7" className="card-sleeve">
@@ -313,8 +320,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="8" className="card-sleeve">
@@ -331,8 +339,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="9" className="card-sleeve">
@@ -349,8 +358,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="10" className="card-sleeve">
@@ -367,8 +377,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="11" className="card-sleeve">
@@ -385,11 +396,11 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
-              {/* Duplicate for seamless loop */}
               <div key="d0" className="card-sleeve">
                 <div className="card-sleeve-top">
                   <img src="/shopps-logo.png" alt="SHOPPS" className="card-sleeve-logo" />
@@ -404,8 +415,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d1" className="card-sleeve">
@@ -422,8 +434,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d2" className="card-sleeve">
@@ -440,8 +453,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d3" className="card-sleeve">
@@ -458,8 +472,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d4" className="card-sleeve">
@@ -476,8 +491,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d5" className="card-sleeve">
@@ -494,8 +510,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d6" className="card-sleeve">
@@ -512,8 +529,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d7" className="card-sleeve">
@@ -530,8 +548,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d8" className="card-sleeve">
@@ -548,8 +567,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d9" className="card-sleeve">
@@ -566,8 +586,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d10" className="card-sleeve">
@@ -584,8 +605,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bart-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bart-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
               <div key="d11" className="card-sleeve">
@@ -602,8 +624,9 @@ export default function Home() {
                     <span className="card-sleeve-badge-serial">001/0100</span>
                   </div>
                 </div>
-                <div className="card-sleeve-bottom">
-                  <img src="/cards/bear-card.jpg" alt="" className="card-sleeve-img" draggable={false} />
+                <div className="card-sleeve-window">
+                  <img src="/cards/bear-card.jpg" alt="" className="card-behind" draggable={false} />
+                  <img src="/slab-frame.png" alt="" className="slab-overlay" draggable={false} />
                 </div>
               </div>
           </div>

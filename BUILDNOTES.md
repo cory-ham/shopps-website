@@ -1,54 +1,93 @@
-# Shopps Critical Build State — Sep 23 17:27
+# Shopps Critical Build State — Sep 23 17:40
 
 ## URLs
 - Live: https://shopps-website.vercel.app/
-- GitHub: https://github.com/cory-ham/shopps-website
+- GitHub: https://github.com/cory-ham/shopps-website (main branch)
 - Domain: shoppscards.com (DNS not yet pointed)
 - Project: ~/Downloads/shopps-website/
+- PSD: ~/Downloads/shopps-design.psd (35MB, 2544x7286)
 
-## SLAB CASE (from Cory screenshot - exact design wanted)
-- OUTER: thick chrome/silver ribbed border, multiple ridges, very 3D, rounded corners
-- TOP HEADER BAR (black):
-  - Left: large bold italic S logo (shopps-logo.png)
-  - Center: "2026 COMMON THREAD COLLECTIVE" (tiny), person NAME (large bold white), title below
-  - Right: "GEM MINT" label, large "10" with laurel wreath circle, "001/0100" serial
-- BOTTOM: full card image visible in window
-- Reference image saved: /Users/coryhamilton/.openclaw/workspace/media/inbound/openclaw-staged-012820fa-944a-4218-9bc5-fa42cdccc50e/input-56a11b1c-4b48-4a74-85cc-b8e9b3f73c7f.jpg
+## WHAT CORY WANTS
+- Clear plastic card case over each card — like a transparent top-loader
+- Black top header bar (LIKED): SHOPPS logo + person name + GEM MINT 10 badge
+- Slab frame PNG with transparent window ready: public/slab-frame.png (848x1264 RGBA)
+- Card layered BEHIND the slab frame overlay
 
-## CURRENT PAGE.TSX STATE (after last edit - not yet built/pushed)
-- Carousel: 12 cards (Bart + Bear alternating) + 12 duplicate for loop
-- Each card wrapped in .card-sleeve with full slab HTML structure:
-  - .card-sleeve-top: logo + name block + badge
-  - .card-sleeve-bottom: card image
-- CSS updated in app/globals.css with chrome slab styling
-- NEEDS: npm run build && git push
+## CURRENT PAGE.TSX CAROUSEL STATE (updated, NOT YET PUSHED)
+- 24 cards: 12 Bart+Bear alternating + 12 duplicate for seamless loop
+- Structure per card:
+    <div className="card-sleeve">
+      <div className="card-sleeve-top">  ← CSS black header (KEEP)
+        shopps-logo + name block + GEM MINT badge
+      </div>
+      <div className="card-sleeve-window">  ← NEW div (not yet in CSS)
+        <img src="/cards/bart-card.jpg" className="card-behind" />  ← z-index:1
+        <img src="/slab-frame.png" className="slab-overlay" />  ← z-index:2
+      </div>
+    </div>
+- bart-card.jpg: Bart Szaniewski, Dad Gang Co, green border (125KB)
+- bear-card.jpg: Bear Handlon, Born Primitive, teal border (140KB)
 
-## CARD ASSETS
-- bart-card.jpg: Bart Szaniewski, Dad Gang Co, green border
-- bear-card.jpg: Bear Handlon, Born Primitive, teal border
-- Both at: ~/Downloads/shopps-website/public/cards/
-- HQ sources: /Users/coryhamilton/.openclaw/workspace/card-*-hq.png
-- All card PDFs: ~/Downloads/shopps-cards-extracted/Randall_These are absolutely done/
+## CSS NEEDED (add to globals.css — NOT YET DONE)
+.card-sleeve-window {
+  position: relative;
+  flex: 1;
+  overflow: visible;
+  background: #07090f;
+}
+.card-behind {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  display: block;
+}
+.slab-overlay {
+  position: absolute;
+  inset: -8% -10%;
+  width: 120%;
+  height: 116%;
+  pointer-events: none;
+  z-index: 2;
+  object-fit: fill;
+}
 
-## HERO TEXT COPY (from PSD)
-- Headline: "the Top 100 In Ecommerce"
-- Subhead: "Collect them all" (teal)
-- Body: "Top 100 operators, founders, and legends of the industry – immortalized in a collector card series. Packs are 100% free but you can't buy them. You have to find them."
-- Btn1: "How to Get a Pack" (teal fill), Btn2: "See the set" (outline)
-- Pack: "LIVE PACK COUNT" / "of 1000 left"
+## .card-sleeve CSS (replace current chrome gradient with clear plastic)
+.card-sleeve {
+  flex-shrink: 0;
+  height: 55vh;
+  width: calc(55vh * 0.72);
+  position: relative;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  background: transparent;  /* no chrome gradient */
+  border: none;
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.85);
+}
+
+## HERO TEXT (working, from PSD)
+- "The Top 100 In Ecommerce" (Anton, 5vw, uppercase)
+- "Collect them all" (teal, 1.4vw)
+- "How to Get a Pack" (teal fill) + "See the set" (outline)
+- LIVE PACK COUNT / 7 3 4 / of 1000 left
 
 ## KEY CSS VARS
 - --bg: #07090f, --teal: #039F9D, --white: #F5F8F8
-- Anton (headlines), Inter (body)
-- Carousel: 28s, 55vh cards, 2vw gap
+- Anton + Inter fonts
+- Carousel: animation: carousel-scroll 28s linear infinite
 
-## PSD FILE
-- ~/Downloads/shopps-design.psd (35MB)
-- Canvas: 2544x7286
-- All page sections built but need copy review vs PSD
+## OTHER SECTIONS (built, below hero)
+- Ticker, What is SHOPPS, Value props (3col), Top 100 grid (4x2)
+- Prize board (6 prizes), How to get a pack (4 steps), Live schedule (3 events)
+- CTA: "734 Packs Left. Zero for Sale." + Footer
 
-## WHAT STILL NEEDS BUILDING
-1. Build + push current slab CSS changes
-2. Review all sections below hero vs PSD
-3. Domain DNS: point shoppscards.com to Vercel
-4. When 100 cards ready: add all to carousel array
+## ALL CARD PDF SOURCES
+- ~/Downloads/shopps-cards-extracted/Randall_These are absolutely done/
+- CTC_Chrome_master.pdf (Bart green), CTC_Cardstock_master.pdf (Bart cardstock)
+- CTC_Cardstock_Sponsor.pdf (Moiz Ali blue), ctc_dual_auto_chrome.pdf, ctc_dual_auto_cardstock.pdf
+- HQ PNGs: /Users/coryhamilton/.openclaw/workspace/card-*-hq.png (2400px)
+- When 100 cards ready: add all to the cards array in page.tsx carousel
