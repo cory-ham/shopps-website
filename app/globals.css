@@ -739,3 +739,18 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
+
+/* ─── Pre-rendered slab images ───────────────────────── */
+.card-sleeve-img-wrap {
+  flex-shrink: 0;
+  height: 55vh;
+  width: auto;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.85));
+  transition: filter 0.3s;
+}
+.card-slab-img {
+  height: 100%;
+  width: auto;
+  display: block;
+  user-select: none;
+}
