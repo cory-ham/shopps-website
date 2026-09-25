@@ -704,25 +704,16 @@ a { color: inherit; text-decoration: none; }
 ──────────────────────────────────────────────────────── */
 .card-sleeve-window {
   position: relative;
-  flex: 1;
-  overflow: visible;
-  background: transparent;
-}
-
-/* The chrome frame PNG fills the window area */
-.slab-overlay {
-  position: absolute;
-  inset: 0;
+  /* Frame is 1004x1486 — lock aspect ratio so % positions are reliable */
+  aspect-ratio: 1004 / 1486;
   width: 100%;
-  height: 100%;
-  object-fit: fill;
-  pointer-events: none;
-  z-index: 2;
-  display: block;
+  overflow: hidden;
+  background: #07090f;
+  flex-shrink: 0;
 }
 
-/* Card photo sits in the frame's window slot
-   PSD slot: left=18%, top=13.2%, w=64.6%, h=72.5% of frame */
+/* Card photo behind the frame — slots into the PSD window
+   Slot: left=18%, top=13.2%, w=64.6%, h=72.5% of frame */
 .card-behind {
   position: absolute;
   left: 18%;
@@ -734,5 +725,17 @@ a { color: inherit; text-decoration: none; }
   display: block;
   z-index: 1;
   border-radius: 2px;
+}
+
+/* Chrome slab frame PNG on top */
+.slab-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 2;
+  display: block;
 }
 
