@@ -110,27 +110,49 @@ const STEPS = [
 ]
 
 const CAROUSEL_CARDS = [
-  { slab: '/slabs/slab-bart.jpg',    name: 'Bart Szaniewski'   },
-  { slab: '/slabs/slab-bear.jpg',    name: 'Bear Handlon'      },
-  { slab: '/slabs/slab-ben.jpg',     name: 'Ben Cogan'         },
-  { slab: '/slabs/slab-chase.jpg',   name: 'Chase Dimond'      },
-  { slab: '/slabs/slab-matthew.jpg', name: 'Matthew Bertulli'  },
-  { slab: '/slabs/slab-mike.jpg',    name: 'Mike Beckham'      },
-  { slab: '/slabs/slab-ezra.jpg',    name: 'Ezra Firestone'    },
-  { slab: '/slabs/slab-jimmy.jpg',   name: 'Jimmy Kim'         },
-  { slab: '/slabs/slab-ronak.jpg',   name: 'Ronak Shah'        },
-  { slab: '/slabs/slab-isaac.jpg',   name: 'Isaac Medeiros'    },
-  // duplicated for infinite scroll
-  { slab: '/slabs/slab-bart.jpg',    name: 'Bart Szaniewski'   },
-  { slab: '/slabs/slab-bear.jpg',    name: 'Bear Handlon'      },
-  { slab: '/slabs/slab-ben.jpg',     name: 'Ben Cogan'         },
-  { slab: '/slabs/slab-chase.jpg',   name: 'Chase Dimond'      },
-  { slab: '/slabs/slab-matthew.jpg', name: 'Matthew Bertulli'  },
-  { slab: '/slabs/slab-mike.jpg',    name: 'Mike Beckham'      },
-  { slab: '/slabs/slab-ezra.jpg',    name: 'Ezra Firestone'    },
-  { slab: '/slabs/slab-jimmy.jpg',   name: 'Jimmy Kim'         },
-  { slab: '/slabs/slab-ronak.jpg',   name: 'Ronak Shah'        },
-  { slab: '/slabs/slab-isaac.jpg',   name: 'Isaac Medeiros'    },
+  // Row 1 — 10 cards
+  { slab: '/slabs/slab-bart.jpg',        name: 'Bart Szaniewski'   },  // green
+  { slab: '/slabs/slab-bear-teal.jpg',   name: 'Bear Handlon'      },  // teal
+  { slab: '/slabs/slab-ben.jpg',         name: 'Ben Cogan'         },  // teal
+  { slab: '/slabs/slab-chase.jpg',       name: 'Chase Dimond'      },  // green
+  { slab: '/slabs/slab-bart-back.jpg',   name: 'Bart Szaniewski'   },  // BACK
+  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },  // green
+  { slab: '/slabs/slab-mike-teal.jpg',   name: 'Mike Beckham'      },  // teal
+  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },  // gold
+  { slab: '/slabs/slab-bear-back.jpg',   name: 'Bear Handlon'      },  // BACK
+  { slab: '/slabs/slab-jimmy.jpg',       name: 'Jimmy Kim'         },  // gold
+  // Row 2 — 10 more (different color variants for variety)
+  { slab: '/slabs/slab-ronak.jpg',       name: 'Ronak Shah'        },  // green
+  { slab: '/slabs/slab-bart-teal.jpg',   name: 'Bart Szaniewski'   },  // teal
+  { slab: '/slabs/slab-ben-back.jpg',    name: 'Ben Cogan'         },  // BACK
+  { slab: '/slabs/slab-bear-gold.jpg',   name: 'Bear Handlon'      },  // gold
+  { slab: '/slabs/slab-isaac.jpg',       name: 'Isaac Medeiros'    },  // green
+  { slab: '/slabs/slab-chase-back.jpg',  name: 'Chase Dimond'      },  // BACK
+  { slab: '/slabs/slab-bart-gold.jpg',   name: 'Bart Szaniewski'   },  // gold
+  { slab: '/slabs/slab-mike.jpg',        name: 'Mike Beckham'      },  // original
+  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },  // reuse
+  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },  // reuse gold
+  // Duplicated for infinite scroll
+  { slab: '/slabs/slab-bart.jpg',        name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-bear-teal.jpg',   name: 'Bear Handlon'      },
+  { slab: '/slabs/slab-ben.jpg',         name: 'Ben Cogan'         },
+  { slab: '/slabs/slab-chase.jpg',       name: 'Chase Dimond'      },
+  { slab: '/slabs/slab-bart-back.jpg',   name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },
+  { slab: '/slabs/slab-mike-teal.jpg',   name: 'Mike Beckham'      },
+  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },
+  { slab: '/slabs/slab-bear-back.jpg',   name: 'Bear Handlon'      },
+  { slab: '/slabs/slab-jimmy.jpg',       name: 'Jimmy Kim'         },
+  { slab: '/slabs/slab-ronak.jpg',       name: 'Ronak Shah'        },
+  { slab: '/slabs/slab-bart-teal.jpg',   name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-ben-back.jpg',    name: 'Ben Cogan'         },
+  { slab: '/slabs/slab-bear-gold.jpg',   name: 'Bear Handlon'      },
+  { slab: '/slabs/slab-isaac.jpg',       name: 'Isaac Medeiros'    },
+  { slab: '/slabs/slab-chase-back.jpg',  name: 'Chase Dimond'      },
+  { slab: '/slabs/slab-bart-gold.jpg',   name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-mike.jpg',        name: 'Mike Beckham'      },
+  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },
+  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },
 ]
 
 const EVENTS = [
