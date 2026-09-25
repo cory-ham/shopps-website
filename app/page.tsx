@@ -109,6 +109,30 @@ const STEPS = [
   },
 ]
 
+const CAROUSEL_CARDS = [
+  { slab: '/slabs/slab-bart.jpg',    name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-bear.jpg',    name: 'Bear Handlon'      },
+  { slab: '/slabs/slab-ben.jpg',     name: 'Ben Cogan'         },
+  { slab: '/slabs/slab-chase.jpg',   name: 'Chase Dimond'      },
+  { slab: '/slabs/slab-matthew.jpg', name: 'Matthew Bertulli'  },
+  { slab: '/slabs/slab-mike.jpg',    name: 'Mike Beckham'      },
+  { slab: '/slabs/slab-ezra.jpg',    name: 'Ezra Firestone'    },
+  { slab: '/slabs/slab-jimmy.jpg',   name: 'Jimmy Kim'         },
+  { slab: '/slabs/slab-ronak.jpg',   name: 'Ronak Shah'        },
+  { slab: '/slabs/slab-isaac.jpg',   name: 'Isaac Medeiros'    },
+  // duplicated for infinite scroll
+  { slab: '/slabs/slab-bart.jpg',    name: 'Bart Szaniewski'   },
+  { slab: '/slabs/slab-bear.jpg',    name: 'Bear Handlon'      },
+  { slab: '/slabs/slab-ben.jpg',     name: 'Ben Cogan'         },
+  { slab: '/slabs/slab-chase.jpg',   name: 'Chase Dimond'      },
+  { slab: '/slabs/slab-matthew.jpg', name: 'Matthew Bertulli'  },
+  { slab: '/slabs/slab-mike.jpg',    name: 'Mike Beckham'      },
+  { slab: '/slabs/slab-ezra.jpg',    name: 'Ezra Firestone'    },
+  { slab: '/slabs/slab-jimmy.jpg',   name: 'Jimmy Kim'         },
+  { slab: '/slabs/slab-ronak.jpg',   name: 'Ronak Shah'        },
+  { slab: '/slabs/slab-isaac.jpg',   name: 'Isaac Medeiros'    },
+]
+
 const EVENTS = [
   {
     month: 'SEP',
@@ -173,25 +197,7 @@ export default function Home() {
         {/* SCROLLING CARD CAROUSEL — pre-rendered slab images */}
         <div className="card-carousel">
           <div className="card-carousel-track">
-            {[
-              { slab: '/slabs/slab-card-01.jpg', name: 'Bart Szaniewski'  },
-              { slab: '/slabs/slab-card-02.jpg', name: 'Bear Handlon'     },
-              { slab: '/slabs/slab-card-03.jpg', name: 'Rytis Lauris'     },
-              { slab: '/slabs/slab-card-04.jpg', name: 'Marcus Lemonis'   },
-              { slab: '/slabs/slab-card-05.jpg', name: 'Taylor Holiday'   },
-              { slab: '/slabs/slab-card-06.jpg', name: 'Jordan McKay'     },
-              { slab: '/slabs/slab-card-07.jpg', name: 'Ezra Firestone'   },
-              { slab: '/slabs/slab-card-08.jpg', name: 'Drew Sanocki'     },
-              // duplicate for infinite loop
-              { slab: '/slabs/slab-card-01.jpg', name: 'Bart Szaniewski'  },
-              { slab: '/slabs/slab-card-02.jpg', name: 'Bear Handlon'     },
-              { slab: '/slabs/slab-card-03.jpg', name: 'Rytis Lauris'     },
-              { slab: '/slabs/slab-card-04.jpg', name: 'Marcus Lemonis'   },
-              { slab: '/slabs/slab-card-05.jpg', name: 'Taylor Holiday'   },
-              { slab: '/slabs/slab-card-06.jpg', name: 'Jordan McKay'     },
-              { slab: '/slabs/slab-card-07.jpg', name: 'Ezra Firestone'   },
-              { slab: '/slabs/slab-card-08.jpg', name: 'Drew Sanocki'     },
-            ].map((card, i) => (
+            {CAROUSEL_CARDS.map((card, i) => (
               <div key={i} className="card-sleeve-img-wrap">
                 <img src={card.slab} alt={card.name} className="card-slab-img" draggable={false} />
               </div>
