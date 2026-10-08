@@ -1099,3 +1099,12 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .pulled-overlay { gap: 12px; }
   .pulled-by, .pulled-date { font-size: 13px !important; }
 }
+
+/* ─── SPONSOR BAR MOBILE ─────────────────────────── */
+@media (max-width: 768px) {
+  .ticker-wrap { overflow: hidden; padding: 0; height: 44px; }
+  .ticker-track { padding: 0 12px; justify-content: space-evenly; }
+  /* Hide every other logo — show only 4 */
+  .ticker-track > img:nth-child(odd) { display: none; }
+  .ticker-track > img { height: 16px; }
+}
