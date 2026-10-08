@@ -244,7 +244,7 @@ export default function Home() {
       <div className="ticker-wrap">
         <div className="ticker-track">
           {TICKER_ITEMS.map((item, i) => (
-            <div key={i} style={{ width: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img
                 src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
                 alt={item.label}
