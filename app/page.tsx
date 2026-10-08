@@ -477,26 +477,19 @@ export default function Home() {
       </section>
 
       {/* ──────────────────── CTA ──────────────────── */}
-      {/* PSD: (1113,6656,1430,6764) "734 Packs Left. Zero for sale." */}
       <section className="cta-section">
         <div className="cta-glow" />
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <Image
-            src="/shopps-logo.png"
-            alt="SHOPPS"
-            width={120}
-            height={40}
-            className="cta-logo"
-          />
+        <div className="cta-inner">
+          <img src="/shopps-s-icon.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">
             734 Packs Left.<br />Zero for Sale.
           </h2>
           <p className="cta-body">
-            Six chase cards are still out there — including courtside seats,
-            a $5,000 ad budget, and a seat at a private dinner with the Top 10.
-            You have to find them.
+            Six chase cards are still out there &ndash; including{' '}
+            <span style={{color: 'var(--olive)'}}>courtside seats</span>.
+            Know where to look.
           </p>
-          <button className="btn-teal-lg">How to Get a Pack</button>
+          <button className="btn-cta-outline">How to Get a Pack</button>
         </div>
       </section>
 
