@@ -242,23 +242,20 @@ export default function Home() {
 
       {/* ── SPONSOR STRIP — static ── */}
       <div className="ticker-wrap">
-        <div className="ticker-track">
-          {TICKER_ITEMS.map((item, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img
-                src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-                alt={item.label}
-                style={{
-                  height: '20px',
-                  width: 'auto',
-                  display: 'block',
-                  opacity: 0.55,
-                  filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-                }}
-              />
-            </div>
-          ))}
-        </div>
+        {TICKER_ITEMS.map((item, i) => (
+          <img
+            key={i}
+            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
+            alt={item.label}
+            style={{
+              height: '20px',
+              width: 'auto',
+              display: 'block',
+              opacity: 0.55,
+              filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+            }}
+          />
+        ))}
       </div>
 
       {/* ──────────────────── WHAT IS SHOPPS? ──────────────────── */}
