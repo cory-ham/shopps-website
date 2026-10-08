@@ -22,9 +22,10 @@ PUB         = os.path.normpath(os.path.join(SCRIPT_DIR, '..', 'public'))
 FRAME_PATH  = os.path.join(PUB, 'ChatGPT Image Sep 25, 2026, 02_04_36 PM (1).png')
 S_ICON_PATH = os.path.join(PUB, 'shopps-s-icon-v2.png')
 BADGE_PATH  = os.path.join(PUB, 'gem-mint-badge.png')
-FONT_PATH   = '/System/Library/Fonts/HelveticaNeue.ttc'
-FONT_BOLD   = 1   # index in .ttc for Bold
-FONT_REG    = 0   # index for Regular
+FONTS_DIR      = os.path.join(PUB, 'fonts')
+FONT_ANTONIO   = os.path.join(FONTS_DIR, 'Antonio-Bold.ttf')
+FONT_IBM_BOLD  = os.path.join(FONTS_DIR, 'IBMPlexSans-Bold.ttf')
+FONT_IBM_REG   = os.path.join(FONTS_DIR, 'IBMPlexSans-Regular.ttf')
 
 # ─── layout constants ─────────────────────────────────────────────────────────
 W, H = 1024, 1536
@@ -105,11 +106,14 @@ def _lighten_paste(canvas_arr: np.ndarray, overlay: Image.Image, ox: int, oy: in
     canvas_arr[y1:y2, x1:x2, :3] = result.clip(0, 255).astype(np.uint8)
 
 
-def _get_font(size_pt: int, index: int = FONT_BOLD) -> ImageFont.FreeTypeFont:
-    try:
-        return ImageFont.truetype(FONT_PATH, size_pt, index=index)
-    except Exception:
-        return ImageFont.load_default()
+def _antonio(size_pt: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(FONT_ANTONIO, size_pt)
+
+def _ibm_bold(size_pt: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(FONT_IBM_BOLD, size_pt)
+
+def _ibm_reg(size_pt: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(FONT_IBM_REG, size_pt)
 
 
 # ─── main compositor ──────────────────────────────────────────────────────────
@@ -146,57 +150,38 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
     txt_img = Image.new('RGBA', (tz_w4, tz_h4), (0, 0, 0, 0))
     tdraw   = ImageDraw.Draw(txt_img)
 
-    # ── label: "2026 COMMON THREAD COLLECTIVE" (small, regular, light gray)
-    label_pt   = 10 * SCALE        # 40 px at 4×  →  10 px final
-    label_font = _get_font(label_pt, FONT_REG)
-    tdraw.text((0, LABEL_Y_REL * SCALE), '2026 COMMON THREAD COLLECTIVE',
-               font=label_font, fill=(165, 165, 175, 255))
+    # ── label: "2026 COMMON THREAD COLLECTIVE" — IBM Plex Sans Regular, muted
+    label_font = _ibm_reg(9 * SCALE)
+    tdraw.text((0, 32 * SCALE), '2026 COMMON THREAD COLLECTIVE',
+               font=label_font, fill=(130, 135, 145, 255))
 
-    # ── name: bold white, auto-shrink 40 → 20 pt (final scale)
-    # Falls back to Condensed Bold (index 4) for very long names.
-    name_y4    = NAME_Y_REL * SCALE
-    name_bot4  = name_y4 + 1  # fallback
-    name_placed = False
-    for pt in range(40 * SCALE, 20 * SCALE - 1, -4):
-        fnt = _get_font(pt)
+    # ── name: Antonio Bold, white — auto-shrink 36→18pt to fit zone width
+    name_y4   = 52 * SCALE
+    name_bot4 = name_y4
+    for pt in range(36 * SCALE, 18 * SCALE - 1, -2):
+        fnt = _antonio(pt)
         bb  = tdraw.textbbox((0, 0), name, font=fnt)
-        tw  = bb[2] - bb[0]
-        if tw <= tz_w4:
+        if bb[2] - bb[0] <= tz_w4:
             tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
             name_bot4 = name_y4 + (bb[3] - bb[1])
-            name_placed = True
             break
-    if not name_placed:
-        # Condensed Bold fallback for very long names
-        for pt in range(40 * SCALE, 18 * SCALE - 1, -4):
-            fnt = _get_font(pt, index=4)  # Condensed Bold
-            bb  = tdraw.textbbox((0, 0), name, font=fnt)
-            tw  = bb[2] - bb[0]
-            if tw <= tz_w4:
-                tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
-                name_bot4 = name_y4 + (bb[3] - bb[1])
-                name_placed = True
-                break
-    if not name_placed:
-        # Last resort: render at smallest condensed size
-        fnt = _get_font(18 * SCALE, index=4)
+    else:
+        fnt = _antonio(18 * SCALE)
         bb  = tdraw.textbbox((0, 0), name, font=fnt)
         tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
         name_bot4 = name_y4 + (bb[3] - bb[1])
 
-    # ── company: medium, white
-    co_pt   = 18 * SCALE
-    co_font = _get_font(co_pt)
-    co_y4   = name_bot4 + 4 * SCALE
-    tdraw.text((0, co_y4), company, font=co_font, fill=(220, 220, 220, 255))
+    # ── company: IBM Plex Sans Bold, teal — clear visual break from name
+    co_font = _ibm_bold(13 * SCALE)
+    co_y4   = name_bot4 + 10 * SCALE
+    tdraw.text((0, co_y4), company.upper(), font=co_font, fill=(3, 159, 157, 255))
     co_bb   = tdraw.textbbox((0, 0), company, font=co_font)
     co_bot4 = co_y4 + (co_bb[3] - co_bb[1])
 
-    # ── title: regular, smaller gray
-    ti_pt   = 13 * SCALE
-    ti_font = _get_font(ti_pt, FONT_REG)
-    ti_y4   = co_bot4 + 10 * SCALE
-    tdraw.text((0, ti_y4), title, font=ti_font, fill=(155, 155, 165, 255))
+    # ── title: IBM Plex Sans Regular, muted white — below company
+    ti_font = _ibm_reg(11 * SCALE)
+    ti_y4   = co_bot4 + 6 * SCALE
+    tdraw.text((0, ti_y4), title.upper(), font=ti_font, fill=(185, 190, 200, 255))
 
     # Scale text back to 1× and paste into canvas
     txt_final = txt_img.resize((TXT_ZONE_W, HDR_H), Image.LANCZOS)
