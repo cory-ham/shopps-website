@@ -495,13 +495,7 @@ export default function Home() {
 
       {/* ──────────────────── FOOTER ──────────────────── */}
       <footer className="site-footer">
-        <Image
-          src="/shopps-logo.png"
-          alt="SHOPPS"
-          width={90}
-          height={30}
-          className="footer-logo"
-        />
+        <img src="/shopps-logo-v2.png" alt="SHOPPS" className="footer-logo" />
         <p className="footer-copy">© 2026 SHOPPS. All rights reserved.</p>
       </footer>
     </>

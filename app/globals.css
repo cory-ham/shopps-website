@@ -326,7 +326,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── FOOTER ─────────────────────────────────────────── */
 .site-footer { background: #050608; border-top: 1px solid #14182a; padding: 2.5vw 6vw; display: flex; align-items: center; justify-content: space-between; }
-.footer-logo { height: 24px; width: auto; }
+.footer-logo { height: 28px; width: auto; mix-blend-mode: screen; }
 .footer-copy { font-size: 0.7vw; color: rgba(245,248,248,0.25); }
 
 /* ─── CSS CARD SLABS (side cards, no background image) ─── */
