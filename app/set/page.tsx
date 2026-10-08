@@ -150,7 +150,18 @@ export default function SetPage() {
     let s = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()
     const rand = () => { s = (s * 9301 + 49297) % 233280; return s / 233280 }
     const v: Record<number, Variant> = {}
-    for (let p = 0; p < 99; p++) v[p] = Math.floor(rand() * 3) as Variant
+    const cols = 4 // desktop grid columns
+    const grid: number[] = []
+    for (let i = 0; i < 99; i++) {
+      // Exclude same color as left neighbor and top neighbor
+      const forbidden = new Set<number>()
+      if (i % cols !== 0) forbidden.add(grid[i - 1])       // left
+      if (i >= cols)       forbidden.add(grid[i - cols])    // above
+      const available = ([0, 1, 2] as Variant[]).filter(x => !forbidden.has(x))
+      const pick = available[Math.floor(rand() * available.length)]
+      grid[i] = pick
+      v[i] = pick
+    }
     return v
   })
 
