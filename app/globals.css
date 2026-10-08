@@ -751,3 +751,6 @@ a { color: inherit; text-decoration: none; }
   display: block;
   user-select: none;
 }
+
+/* Sponsor strip override — both logos 138px wide at height:20px */
+.ticker-wrap img { height: 20px; width: auto; }
