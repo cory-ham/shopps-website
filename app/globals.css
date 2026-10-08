@@ -250,9 +250,10 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
 .top100-section { padding: 6vw 0; background: var(--bg); }
-.top100-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5vw; }
-.top100-card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5vw; margin-bottom: 2vw; }
-.top100-card-item img { width: 100%; height: auto; border-radius: 6px; }
+.top100-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3vw; }
+.top100-card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2vw; margin-bottom: 3vw; }
+.top100-card-item { border-radius: 8px; overflow: hidden; }
+.top100-card-item img { width: 100%; height: auto; display: block; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.6)); }
 .top100-footer-row { display: flex; justify-content: center; }
 .btn-outline-sm { font-size: 0.7vw; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: transparent; border: 1.5px solid rgba(245,248,248,0.3); padding: 0.7vw 2vw; border-radius: 2px; }
 .btn-outline-sm:hover { border-color: var(--white); }

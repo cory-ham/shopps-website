@@ -330,7 +330,6 @@ export default function Home() {
       </div>
 
       {/* ──────────────────── THE TOP 100 ──────────────────── */}
-      {/* PSD: text (673,2475,906,2525), card grid Layer 5 (643,2622,1899,3460) */}
       <section className="top100-section">
         <div className="section-inner">
           <div className="top100-header">
@@ -344,19 +343,26 @@ export default function Home() {
             <button className="btn-outline-sm">View All 100</button>
           </div>
 
-          {/* 4-column, 2-row card grid */}
+          {/* 4×2 grid of front cards — no slab, no case */}
           <div className="top100-card-grid">
-            {TOP100_CARDS.map((card, i) => (
+            {[
+              '/cards/card-001.jpg',
+              '/cards/card-004.jpg',
+              '/cards/card-007.jpg',
+              '/cards/card-010.jpg',
+              '/cards/card-003.jpg',
+              '/cards/card-006.jpg',
+              '/cards/card-009.jpg',
+              '/cards/card-012.jpg',
+            ].map((src, i) => (
               <div key={i} className="top100-card-item">
-                <img src={card.src} alt={card.name} />
+                <img src={src} alt={`Card ${i + 1}`} draggable={false} />
               </div>
             ))}
           </div>
 
           <div className="top100-footer-row">
-            <button className="btn-outline-sm" style={{ padding: '0.8vw 3vw' }}>
-              Browse the Set
-            </button>
+            <button className="btn-teal">Browse the Set</button>
           </div>
         </div>
       </section>
