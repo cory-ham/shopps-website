@@ -254,31 +254,20 @@ export default function Home() {
       {/* ──────────────────── WHAT IS SHOPPS? ──────────────────── */}
       {/* PSD: Layer 13 video area (929,1057,1618,1444), text (1101,1513,1446,1563) */}
       <section className="shopps-section">
-        {/* Video thumbnail */}
         <div className="shopps-video-wrap">
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              background: 'linear-gradient(135deg, #0d1020 0%, #060810 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          />
           <div className="shopps-play-btn">
-            <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="white">
-              <polygon points="8,5 19,12 8,19" />
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="25" stroke="white" strokeWidth="1.5" strokeOpacity="0.7"/>
+              <polygon points="21,17 37,26 21,35" fill="white" fillOpacity="0.9"/>
             </svg>
           </div>
         </div>
 
-        <p className="shopps-eyebrow">About</p>
         <h2 className="shopps-heading">What is SHOPPS?</h2>
         <p className="shopps-body">
-          Top 100 operators, founders, and legends of the industry — immortalized
+          Top 100 operators, founders, and legends of the industry &mdash; immortalized
           in a collector card series. Packs are 100% free but you can&apos;t buy them.
-          You have to find them. Show up, earn them, collect them all.
+          You have to find them.
         </p>
       </section>
 
