@@ -1,10 +1,10 @@
-<svg width="80" height="24" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- F mark -->
-  <svg x="0" y="0" width="36" height="48" viewBox="3 6 55 68" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path opacity="0.5" d="M5.44018 63.7523H5.38306V71.6441H13.8344C18.4585 71.6441 22.2311 68.1193 22.2311 63.8041V55.9641H13.8344C9.23093 55.9615 5.46874 59.4578 5.44018 63.7523Z"/>
-    <path opacity="0.8" d="M5.38306 41.257C5.38306 46.1452 9.62817 50.0664 14.8184 50.0664H22.1766V55.9677H29.6308C34.7717 55.9677 38.97 52.0491 38.97 47.2465V32.4479H14.8184C9.62817 32.4479 5.38306 36.3691 5.38306 41.257Z"/>
-    <path d="M14.8184 8.92725C9.62817 8.92725 5.38306 12.8926 5.38306 17.7806C5.38306 22.6685 9.58143 26.5898 14.8184 26.5898H38.9726V32.4471H46.427C51.5679 32.4471 55.7688 28.5284 55.7688 23.726V8.92725H14.8184Z"/>
-  </svg>
-  <!-- Fulfil text -->
-  <text x="44" y="34" fill="white" fontSize="26" fontFamily="Arial, sans-serif" fontWeight="600" letterSpacing="0.5">Fulfil</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 26" width="130" height="26">
+  <!-- F mark, proportioned to 26px canvas height -->
+  <g transform="translate(0,1) scale(0.355)">
+    <path opacity="0.5" d="M5.44 63.75H5.38V71.64H13.83C18.46 71.64 22.23 68.12 22.23 63.80V55.96H13.83C9.23 55.96 5.47 59.46 5.44 63.75Z" fill="white"/>
+    <path opacity="0.8" d="M5.38 41.26C5.38 46.15 9.63 50.07 14.82 50.07H22.18V55.97H29.63C34.77 55.97 38.97 52.05 38.97 47.25V32.45H14.82C9.63 32.45 5.38 36.37 5.38 41.26Z" fill="white"/>
+    <path d="M14.82 8.93C9.63 8.93 5.38 12.89 5.38 17.78C5.38 22.67 9.58 26.59 14.82 26.59H38.97V32.45H46.43C51.57 32.45 55.77 28.53 55.77 23.73V8.93H14.82Z" fill="white"/>
+  </g>
+  <!-- Fulfil wordmark -->
+  <text x="26" y="18" fill="white" font-size="15.5" font-family="Arial, Helvetica, sans-serif" font-weight="600" letter-spacing="0.2">Fulfil</text>
 </svg>

@@ -213,10 +213,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── TICKER ──────────────────────────────────────────── */
-.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 14px 0; }
-.ticker-track { display: flex; align-items: center; justify-content: space-evenly; width: 100%; }
-.ticker-item { display: flex; align-items: center; gap: 8px; font-size: 0.82vw; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,248,248,0.45); white-space: nowrap; }
-.ticker-logo-icon { opacity: 0.6; display: flex; align-items: center; }
+.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 16px 3vw; }
+.ticker-track { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.ticker-item { display: flex; align-items: center; }
+.sponsor-logo { display: block; }
 
 /* ─── SHARED SECTION STYLES ─────────────────────────── */
 .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 6vw; }
