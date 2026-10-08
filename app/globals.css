@@ -281,14 +281,14 @@ a { color: inherit; text-decoration: none; }
 .pulled-date { font-size: 0.62vw; color: rgba(245,248,248,0.3); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ─── HOW TO GET A PACK ──────────────────────────────── */
-.howto-section { padding: 6vw 0; background: #080a10; }
-.howto-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1vw; margin-top: 2.5vw; }
-.howto-step { background: #0d1020; border: 1px solid #1a1e30; border-radius: 6px; padding: 1.5vw; }
-.howto-num { font-family: var(--font-antonio); font-size: 3.5vw; color: #0d1020; -webkit-text-stroke: 1px #1e2438; margin-bottom: 0.8vw; line-height: 1; }
-.howto-title { font-weight: 700; font-size: 0.9vw; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white); margin-bottom: 0.5vw; }
-.howto-body { font-size: 0.78vw; line-height: 1.65; color: rgba(245,248,248,0.5); }
-.howto-disclaimer { margin-top: 2vw; font-size: 0.78vw; color: rgba(245,248,248,0.4); border-top: 1px solid #14182a; padding-top: 1.2vw; }
-.howto-disclaimer strong { color: var(--teal); }
+.howto-section { padding: 6vw 0; background: #07090e; }
+.howto-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1vw; margin-bottom: 2vw; }
+.howto-step { background: #0d1016; border: 1px solid #182030; border-radius: 10px; padding: 1.6vw 1.4vw 1.4vw; display: flex; flex-direction: column; }
+.howto-num { font-family: var(--font-antonio); font-size: 4vw; color: var(--teal); opacity: 0.28; line-height: 1; margin-bottom: 1vw; letter-spacing: -0.02em; }
+.howto-title { font-family: var(--font-antonio); font-size: 1.1vw; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.7vw; line-height: 1.1; }
+.howto-body { font-size: 0.72vw; line-height: 1.7; color: rgba(245,248,248,0.45); }
+.howto-disclaimer { display: flex; align-items: baseline; gap: 0.6vw; padding: 1vw 1.4vw; border: 1px solid #182030; border-left: 3px solid var(--teal); border-radius: 6px; font-size: 0.72vw; color: rgba(245,248,248,0.5); background: #0d1016; }
+.howto-free-label { font-family: var(--font-antonio); font-size: 0.9vw; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
 
 /* ─── LIVE SCHEDULE ──────────────────────────────────── */
 .live-section { padding: 6vw 0; background: var(--bg); }

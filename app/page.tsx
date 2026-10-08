@@ -92,22 +92,22 @@ const STEPS = [
   {
     num: '01',
     title: 'Follow the Drop',
-    body: 'Packs release through specific channels — player socials, live shows, and community posts. Follow to catch drops as they happen.',
+    body: 'Packs release through specific channels – player socials, live breaks, and partner drops. Know where to look.',
   },
   {
     num: '02',
     title: 'Show Up Live',
-    body: 'Live card breaks and shows are where most packs move. Show up, play along, and watch your stack grow.',
+    body: 'Live card breaks and shows are where most packs move. Tune in, play along, win packs on stream.',
   },
   {
     num: '03',
     title: 'Rip Your Pack',
-    body: 'Every pack holds cards from the Top 100 — base, foil, and the rare chase cards with real prizes attached.',
+    body: 'Every pack holds cards from the Top 100 – base, foils, and if you’re lucky, one of the ten 1-of-1 chase cards.',
   },
   {
     num: '04',
     title: 'Pull & Win',
-    body: 'Chase cards come with real prizes attached — courtside seats, ad budgets, dinners with operators. Pull it, claim it.',
+    body: 'Chase cards come with real prizes attached – courtside seats, gift cards, once-ever experiences. Post the pull.',
   },
 ]
 
@@ -421,10 +421,9 @@ export default function Home() {
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
       <section className="howto-section">
         <div className="section-inner">
-          <p className="section-eyebrow">How it Works</p>
           <h2 className="section-heading">How to Get a Pack</h2>
-          <p className="section-body">
-            The packs are not for sale. You must follow the players, shows, and community to find them.
+          <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
+            The packs are not for sale. You must follow the players, shows, and community.
           </p>
 
           <div className="howto-steps">
@@ -437,10 +436,9 @@ export default function Home() {
             ))}
           </div>
 
-          {/* "Always Free" disclaimer — PSD: (709,5500,1363,5524) */}
           <div className="howto-disclaimer">
-            <strong>Always Free</strong> — Packs are never sold. No purchase, ever.
-            If someone is selling a pack, it&apos;s not official. Report it to us immediately.
+            <span className="howto-free-label">ALWAYS FREE</span>
+            {' '}Packs are never sold - no purchase, ever. If someone&apos;s charging you for one, it&apos;s not us.
           </div>
         </div>
       </section>
