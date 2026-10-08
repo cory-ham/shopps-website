@@ -348,7 +348,7 @@ export default function Home() {
             {[
               '/cards/card-033.jpg',  // Sean Frank (Ridge) — GREEN — MAN
               '/cards/card-211.jpg',  // Cassandra Thurswell (Kitsch) — TEAL — WOMAN
-              '/cards/card-167.jpg',  // Robert Felder (Bearbottom) — GOLD — MAN
+              '/cards/card-165.jpg',  // Robert Felder (Bearbottom) — GOLD (clean) — MAN
               '/cards/card-169.jpg',  // Jessica Berman (BodyBio) — GREEN — WOMAN
               '/cards/card-043.jpg',  // Chad Janis (Grüns) — TEAL — MAN
               '/cards/card-205.jpg',  // Katrina Lake (Stitch Fix) — GOLD — WOMAN
