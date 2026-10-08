@@ -48,7 +48,7 @@ ICON_Y  = HDR_T + (HDR_H - ICON_H) // 2           # vertically centred
 
 BADGE_H = int(HDR_H * 0.80)                        # ≈157 px
 BADGE_W = int(BADGE_H * (1350 / 1165))             # ≈182 px
-BADGE_X = HDR_R - BADGE_W + 15                     # ≈697 (measured from reference slabs)
+BADGE_X = HDR_R - BADGE_W - 20                     # pulled left so badge stays inside frame
 BADGE_Y = HDR_T + (HDR_H - BADGE_H) // 2          # vertically centred
 
 # Text zone: after S icon, before badge
@@ -150,15 +150,22 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
     txt_img = Image.new('RGBA', (tz_w4, tz_h4), (0, 0, 0, 0))
     tdraw   = ImageDraw.Draw(txt_img)
 
-    # ── label: "2026 COMMON THREAD COLLECTIVE" — IBM Plex Sans Regular, muted
+    # ─────────────────────────────────────────────────────────────────────────
+    # Proportional layout: elements spread across the full header height.
+    # All Y positions are fractions of tz_h4 so they fill the zone regardless
+    # of individual text heights.
+    # ─────────────────────────────────────────────────────────────────────────
+
+    # ── label: small, near top
     label_font = _ibm_reg(9 * SCALE)
-    tdraw.text((0, 32 * SCALE), '2026 COMMON THREAD COLLECTIVE',
+    label_y4   = int(0.07 * tz_h4)
+    tdraw.text((0, label_y4), '2026 COMMON THREAD COLLECTIVE',
                font=label_font, fill=(130, 135, 145, 255))
 
-    # ── name: Antonio Bold, white — auto-shrink 36→18pt to fit zone width
-    name_y4   = 52 * SCALE
+    # ── name: Antonio Bold, white — starts at ~18% of zone height
+    name_y4   = int(0.18 * tz_h4)
     name_bot4 = name_y4
-    for pt in range(36 * SCALE, 18 * SCALE - 1, -2):
+    for pt in range(50 * SCALE, 22 * SCALE - 1, -2):
         fnt = _antonio(pt)
         bb  = tdraw.textbbox((0, 0), name, font=fnt)
         if bb[2] - bb[0] <= tz_w4:
@@ -166,21 +173,21 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
             name_bot4 = name_y4 + (bb[3] - bb[1])
             break
     else:
-        fnt = _antonio(18 * SCALE)
+        fnt = _antonio(22 * SCALE)
         bb  = tdraw.textbbox((0, 0), name, font=fnt)
         tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
         name_bot4 = name_y4 + (bb[3] - bb[1])
 
-    # ── company: IBM Plex Sans Bold, teal — clear visual break from name
-    co_font = _ibm_bold(13 * SCALE)
-    co_y4   = name_bot4 + 10 * SCALE
+    # ── company: teal, anchored at 58% of zone height
+    co_font = _ibm_bold(19 * SCALE)
+    co_y4   = max(name_bot4 + int(0.05 * tz_h4), int(0.57 * tz_h4))
     tdraw.text((0, co_y4), company.upper(), font=co_font, fill=(3, 159, 157, 255))
     co_bb   = tdraw.textbbox((0, 0), company, font=co_font)
     co_bot4 = co_y4 + (co_bb[3] - co_bb[1])
 
-    # ── title: IBM Plex Sans Regular, muted white — below company
-    ti_font = _ibm_reg(11 * SCALE)
-    ti_y4   = co_bot4 + 6 * SCALE
+    # ── title: muted white, anchored at 77% of zone height
+    ti_font = _ibm_reg(15 * SCALE)
+    ti_y4   = max(co_bot4 + int(0.03 * tz_h4), int(0.76 * tz_h4))
     tdraw.text((0, ti_y4), title.upper(), font=ti_font, fill=(185, 190, 200, 255))
 
     # Scale text back to 1× and paste into canvas
