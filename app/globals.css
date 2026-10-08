@@ -226,7 +226,7 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 5vw 0 6vw; background: #08090f; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='148'%3E%3Crect x='5' y='5' width='100' height='138' rx='6' fill='rgba(255,255,255,0.0)' stroke='rgba(255,255,255,0.055)' stroke-width='1'/%3E%3C/svg%3E"); background-size: 110px 148px; text-align: center; position: relative; }
+.shopps-section { padding: 5vw 0 6vw; background: #08090f; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='174'%3E%3Crect x='6' y='6' width='118' height='162' rx='8' fill='%230e1018' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E"); background-size: 130px 174px; background-position: center center; text-align: center; position: relative; }
 .shopps-video-wrap { position: relative; width: 46%; margin: 0 auto 3vw; aspect-ratio: 16/9; background: #1a1c26; border-radius: 8px; overflow: hidden; border: 1px solid #252836; }
 .shopps-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .shopps-play-btn svg { width: 52px; height: 52px; }
