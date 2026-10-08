@@ -228,7 +228,7 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 5vw 0 6vw; background: #08090f; text-align: center; position: relative; overflow: hidden; }
+.shopps-section { padding: 5vw 0 6vw; background: #0c0e12; text-align: center; position: relative; overflow: hidden; }
 .shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 8px; padding: 8px; z-index: 0; pointer-events: none; align-content: start; }
 .shopps-bg-card { background: #0e1018; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; aspect-ratio: 5/7; }
 .shopps-section > *:not(.shopps-card-grid) { position: relative; z-index: 1; }
@@ -239,7 +239,7 @@ a { color: inherit; text-decoration: none; }
 .shopps-body { font-size: clamp(14px, 1vw, 16px); line-height: 1.75; color: rgba(245,248,248,0.5); max-width: 320px; margin: 0 auto; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
-.value-section { background: #080a10; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 4vw 0; }
+.value-section { background: #0d1220; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 4vw 0; }
 .value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
 .value-item { padding: 0 3vw; border-right: 1px solid #14182a; }
 .value-item:last-child { border-right: none; }
@@ -249,7 +249,7 @@ a { color: inherit; text-decoration: none; }
 .value-body { font-size: 0.82vw; line-height: 1.65; color: rgba(245,248,248,0.5); }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
-.top100-section { padding: 6vw 0; background: var(--bg); }
+.top100-section { padding: 6vw 0; background: #07090e; }
 .top100-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3vw; }
 .top100-card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2vw; margin-bottom: 3vw; }
 .top100-card-item { border-radius: 8px; overflow: hidden; }
@@ -259,7 +259,7 @@ a { color: inherit; text-decoration: none; }
 .btn-outline-sm:hover { border-color: var(--white); }
 
 /* ─── PRIZE BOARD ────────────────────────────────────── */
-.prize-section { padding: 6vw 0; background: #07090e; }
+.prize-section { padding: 6vw 0; background: #060810; }
 .prize-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1vw; margin-top: 3vw; }
 .prize-card { background: #0d1016; border: 1px solid #181d28; border-radius: 10px; padding: clamp(18px, 1.8vw, 28px) clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: clamp(8px, 0.8vw, 12px); position: relative; overflow: hidden; }
 .prize-card.claimed { opacity: 1; }
@@ -281,7 +281,7 @@ a { color: inherit; text-decoration: none; }
 .pulled-date { font-size: clamp(11px, 0.7vw, 13px); color: rgba(245,248,248,0.3); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ─── HOW TO GET A PACK ──────────────────────────────── */
-.howto-section { padding: 6vw 0; background: #07090e; }
+.howto-section { padding: 6vw 0; background: #070e0d; }
 .howto-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1vw; margin-bottom: 2vw; }
 .howto-step { background: #0d1016; border: 1px solid #182030; border-radius: 10px; padding: clamp(18px, 1.8vw, 28px) clamp(16px, 1.6vw, 22px); display: flex; flex-direction: column; }
 .howto-num { font-family: var(--font-antonio); font-size: clamp(44px, 4.5vw, 72px); color: var(--teal); opacity: 0.28; line-height: 1; margin-bottom: 1vw; letter-spacing: -0.02em; }
@@ -291,7 +291,7 @@ a { color: inherit; text-decoration: none; }
 .howto-free-label { font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
 
 /* ─── LIVE SCHEDULE ──────────────────────────────────── */
-.live-section { padding: 6vw 0; background: var(--bg); }
+.live-section { padding: 6vw 0; background: #0a0c14; }
 /* Events box — single dark container with dividers */
 .live-events-box { background: #0d1016; border: 1px solid #182030; border-radius: 10px; overflow: hidden; margin-bottom: 1.2vw; }
 .live-event { display: flex; align-items: center; gap: 2vw; padding: 1.4vw 2vw; }
