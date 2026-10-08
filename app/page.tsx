@@ -347,13 +347,13 @@ export default function Home() {
           <div className="top100-card-grid">
             {[
               '/cards/card-001.jpg',
-              '/cards/card-004.jpg',
-              '/cards/card-007.jpg',
-              '/cards/card-010.jpg',
-              '/cards/card-003.jpg',
-              '/cards/card-006.jpg',
               '/cards/card-009.jpg',
-              '/cards/card-012.jpg',
+              '/cards/card-016.jpg',
+              '/cards/card-022.jpg',
+              '/cards/card-049.jpg',
+              '/cards/card-067.jpg',
+              '/cards/card-085.jpg',
+              '/cards/card-103.jpg',
             ].map((src, i) => (
               <div key={i} className="top100-card-item">
                 <img src={src} alt={`Card ${i + 1}`} draggable={false} />
