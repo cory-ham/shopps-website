@@ -245,21 +245,11 @@ export default function Home() {
         <div className="ticker-track">
           {TICKER_ITEMS.map((item, i) => (
             <div key={i} className="ticker-item">
-              <span className="ticker-logo-icon" aria-hidden="true">
-                {item.label === 'Fulfil' ? (
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.12)" />
-                    <text x="10" y="14" textAnchor="middle" fill="white" fontSize="11" fontFamily="Georgia, serif" fontWeight="bold">F</text>
-                  </svg>
-                ) : (
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.12)" />
-                    <rect x="5" y="7" width="10" height="7" rx="1" stroke="white" strokeWidth="1.2" fill="none" />
-                    <path d="M8 7V5.5a2 2 0 0 1 4 0V7" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                  </svg>
-                )}
-              </span>
-              {item.label}
+              {item.label === 'Fulfil' ? (
+                <img src="/fulfil-logo.svg" alt="Fulfil" className="sponsor-logo" style={{ height: '20px', width: 'auto', opacity: 0.55 }} />
+              ) : (
+                <img src="/omnisend-logo.svg" alt="omnisend" className="sponsor-logo" style={{ height: '18px', width: 'auto', opacity: 0.55, filter: 'invert(1)' }} />
+              )}
             </div>
           ))}
         </div>
