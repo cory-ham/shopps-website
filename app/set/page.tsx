@@ -144,7 +144,15 @@ const FILTERS = ['ALL', 'FOUNDERS', 'OPERATORS', 'BUILDERS', 'CREATORS', '1 OF 1
 export default function SetPage() {
   const [activeFilter, setActiveFilter] = useState<string>('ALL')
   const [search, setSearch] = useState('')
-  const [variants, setVariants] = useState<Record<number, Variant>>({})
+  const [variants, setVariants] = useState<Record<number, Variant>>(() => {
+    // Seed by date so mix is stable on load but rotates daily
+    const today = new Date()
+    let s = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()
+    const rand = () => { s = (s * 9301 + 49297) % 233280; return s / 233280 }
+    const v: Record<number, Variant> = {}
+    for (let p = 0; p < 99; p++) v[p] = Math.floor(rand() * 3) as Variant
+    return v
+  })
 
   function getVariant(p: number): Variant {
     return (variants[p] ?? 0) as Variant

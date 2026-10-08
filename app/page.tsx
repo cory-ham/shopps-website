@@ -10,6 +10,112 @@ import Link from 'next/link'
    Card images: actual extracted PNGs, no CSS card designs
 ──────────────────────────────────────────────────────────── */
 
+// ── Daily-rotating card carousel ─────────────────────────────────────────────
+// Uses a date-based seed so server + client render identically (no hydration
+// mismatch). Cards rotate each day; carousel rule: every 3rd slot = female.
+
+function dateSeededRandom(seed: number) {
+  let s = seed
+  return () => { s = (s * 9301 + 49297) % 233280; return s / 233280 }
+}
+function seededShuffle<T>(arr: T[], r: () => number): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(r() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+// Person indices by sex
+const FEMALE_P = [21,25,26,28,30,31,32,33,34,35,36,38,39,40,41,42,44,46,47,49,53,59,60,66,70,74,80,89,96]
+const MALE_P   = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24,27,29,37,43,45,48,50,51,52,54,55,56,57,58,61,62,63,64,65,67,68,69,71,72,73,75,76,77,78,79,81,82,83,84,85,86,87,88,90,91,92,93,94,95,97,98]
+
+// Person display names (P index → name)
+const PERSON_NAME: Record<number, string> = {
+  0:'Bart Szaniewski',        1:'Bear Handlon',           2:'Ben Cogan',
+  3:'Chase Dimond',           4:'Sean Frank',             5:'Chad Janis',
+  6:'Matthew Bertulli',       7:'Chris Hall',             8:'Mike Beckham',
+  9:'Nick Shackelford',      10:'Ezra Firestone',        11:'John Roman',
+ 12:'Jimmy Kim',             13:'Zach Stuck',            14:'Andrew Youderian',
+ 15:'Ronak Shah',            16:'Josh Haskins',          17:'Isaac Medeiros',
+ 18:'Michael McVerry',       19:'Paul Jauregui',         20:'Robert Felder',
+ 21:'Jessica Berman',        22:'Jason Panzer',          23:'Brad Blankinship',
+ 24:'Scott Kramer',          25:'Katrina Lake',          26:'Cassandra Thurswell',
+ 27:'Drew Arciuolo',         28:'Bethany Catron Evans',  29:'Sean Riley',
+ 30:'Lindsay Shumlas',       31:'Andrea Faulkner Williams', 32:'Kimberley Ho',
+ 33:'Siffat Haider',         34:'Tiffani Carter',        35:'Erica Good',
+ 36:'Ariana Ferwerda',       37:'Rashad Hossain',        38:'Sophia Edelstein',
+ 39:'Jill Layfield',         40:'Gorjana Reidel',        41:'Anisha Raghavan',
+ 42:'Sarah Rahal',           43:'Andrew Benin',          44:'Katerina Schneider',
+ 45:'Jordan Nathan',         46:'Maradith Frenkel',      47:'Michelle Miller',
+ 48:'Jordan Menard',         49:'Vicky Williams Grahan', 50:'Andrew Faris',
+ 51:'Cody Plofker',          52:'Steven Borrelli',       53:'Kayti O\'Connell Carr',
+ 54:'Chris Lang',            55:'Bill D\'Alessandro',    56:'Brian Waddick',
+ 57:'The Normal Brand Team', 58:'Alejandro Chahin',      59:'Ariel Kaye',
+ 60:'Mari Llewellyn',        61:'Hudson Leogrande',      62:'Matteo Franceschetti',
+ 63:'Peter Rahal',           64:'Will Ahmed',            65:'Gurmer Chopra',
+ 66:'Nell Diamond',          67:'Justin Mares',          68:'Danny Yeung',
+ 69:'Tero Isokauppila',      70:'Sarah Paiji Yoo',       71:'Camron Collard',
+ 72:'Christian Guzman',      73:'Paul Hedrick',          74:'Cherene Aubert',
+ 75:'Mark Mastrandrea',      76:'Edward Wimmer IV',      77:'Ryan Babenzien',
+ 78:'Beav Brodie',           79:'Brian Garofalow',       80:'Katy Mimari',
+ 81:'Dean Brennan',          82:'Tyler McCann',          83:'Roman Khan',
+ 84:'Josh Shapiro',          85:'Bill Rom',              86:'Curtis Matsko',
+ 87:'Eric Girouard',         88:'Jordan Palmer',         89:'Ari Murray',
+ 90:'Bryan Cano',            91:'Kevin Lavelle',         92:'Victor Tam',
+ 93:'Eric Panofsky',         94:'Mehtab Bhogal',         95:'Freddy Ward',
+ 96:'Sienna McCormick',      97:'Taylor Holiday',        98:'Mystery Card',
+}
+
+const VARIANTS = ['green', 'teal', 'gold'] as const
+type CardVariant = typeof VARIANTS[number]
+
+function slabPath(p: number, v: CardVariant) {
+  return `/slabs/slab-p${String(p).padStart(2,'0')}-${v}.jpg`
+}
+function cardFrontPath(p: number, r: () => number) {
+  const offsets = [1, 3, 5]  // green, teal, gold fronts
+  const offset  = offsets[Math.floor(r() * 3)]
+  return `/cards/card-${String(8 * p + offset).padStart(3,'0')}.jpg`
+}
+
+// Seed from today's date — stable across server + client on the same day
+const _today    = new Date()
+const _dateSeed = _today.getFullYear() * 10000 + (_today.getMonth() + 1) * 100 + _today.getDate()
+const _rand     = dateSeededRandom(_dateSeed)
+
+// Shuffle both pools
+const _shuffledMale   = seededShuffle([...MALE_P],   _rand)
+const _shuffledFemale = seededShuffle([...FEMALE_P], _rand)
+
+// ── Carousel: 14 unique cards, every 3rd position (2,5,8,11) = female ────────
+const _carouselBase = (() => {
+  let mi = 0, fi = 0
+  return Array.from({ length: 14 }, (_, pos) => {
+    const isFemale = pos % 3 === 2
+    const pool     = isFemale ? _shuffledFemale : _shuffledMale
+    const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
+    const v        = VARIANTS[Math.floor(_rand() * 3)]
+    return { slab: slabPath(p, v), name: PERSON_NAME[p] ?? '' }
+  })
+})()
+
+// Doubled for seamless infinite-scroll animation
+const CAROUSEL_CARDS = [..._carouselBase, ..._carouselBase]
+
+// ── Top 100 grid: 8 raw card fronts, alternating M / F ───────────────────────
+// Continue pulling from the shuffled pools after carousel (10 males, 4 females used)
+const TOP100_CARDS = (() => {
+  let mi = 10, fi = 4
+  return Array.from({ length: 8 }, (_, i) => {
+    const isFemale = i % 2 === 1
+    const pool     = isFemale ? _shuffledFemale : _shuffledMale
+    const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
+    return { src: cardFrontPath(p, _rand), name: PERSON_NAME[p] ?? '' }
+  })
+})()
+
 const TICKER_ITEMS = [
   { label: 'Fulfil' },
   { label: 'omnisend' },
@@ -19,17 +125,6 @@ const TICKER_ITEMS = [
   { label: 'omnisend' },
   { label: 'Fulfil' },
   { label: 'omnisend' },
-]
-
-const TOP100_CARDS = [
-  { src: '/cards/rytis.png', name: 'Rytis Lauris' },
-  { src: '/cards/marcus.png', name: 'Marcus Ahlin' },
-  { src: '/cards/olivia.png', name: 'Olivia Hart' },
-  { src: '/cards/samantha.png', name: 'Samantha Lee' },
-  { src: '/cards/jordan.png', name: 'Jordan Mitchell' },
-  { src: '/cards/michael.png', name: 'Michael Thompson' },
-  { src: '/cards/extra.png', name: 'Card #7' },
-  { src: '/cards/rytis-center.png', name: 'Rytis Lauris Alt' },
 ]
 
 const PRIZES = [
