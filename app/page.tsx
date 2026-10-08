@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 /* ─────────────────────────────────────────────────────────
    SHOPPS — Full page rebuild from PSD
@@ -238,7 +239,7 @@ export default function Home() {
           </p>
           <div className="hero-buttons">
             <button className="btn-teal">How to Get a Pack</button>
-            <button className="btn-outline">See the set</button>
+            <Link href="/set" className="btn-outline">See the set</Link>
           </div>
           <div className="pack-counter">
             <div className="pack-label">
@@ -363,7 +364,7 @@ export default function Home() {
                 Every card in the set — operators, founders, and builders shaping eCommerce right now.
               </p>
             </div>
-            <button className="btn-outline-sm">View All 100</button>
+            <Link href="/set" className="btn-outline-sm">View All 100</Link>
           </div>
 
           {/* 4×2 grid of front cards — no slab, no case */}
