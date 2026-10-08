@@ -346,14 +346,14 @@ export default function Home() {
           {/* 4×2 grid of front cards — no slab, no case */}
           <div className="top100-card-grid">
             {[
-              '/cards/card-033.jpg',  // Sean Frank (Ridge) — GREEN
-              '/cards/card-043.jpg',  // Chad Janis (Grüns) — TEAL
-              '/cards/card-167.jpg',  // Robert Felder (Bearbottom) — GOLD
-              '/cards/card-169.jpg',  // Jessica Berman (BodyBio) — GREEN
-              '/cards/card-211.jpg',  // Cassandra Thurswell (Kitsch) — TEAL
-              '/cards/card-205.jpg',  // Katrina Lake (Stitch Fix) — GOLD
-              '/cards/card-057.jpg',  // Chris Hall (Ecomm Cowboy) — GREEN
-              '/cards/card-227.jpg',  // Bethany Catron Evans (Rhone) — TEAL
+              '/cards/card-033.jpg',  // Sean Frank (Ridge) — GREEN — MAN
+              '/cards/card-211.jpg',  // Cassandra Thurswell (Kitsch) — TEAL — WOMAN
+              '/cards/card-167.jpg',  // Robert Felder (Bearbottom) — GOLD — MAN
+              '/cards/card-169.jpg',  // Jessica Berman (BodyBio) — GREEN — WOMAN
+              '/cards/card-043.jpg',  // Chad Janis (Grüns) — TEAL — MAN
+              '/cards/card-205.jpg',  // Katrina Lake (Stitch Fix) — GOLD — WOMAN
+              '/cards/card-057.jpg',  // Chris Hall (Ecomm Cowboy) — GREEN — MAN
+              '/cards/card-227.jpg',  // Bethany Catron Evans (Rhone) — TEAL — WOMAN
             ].map((src, i) => (
               <div key={i} className="top100-card-item">
                 <img src={src} alt={`Card ${i + 1}`} draggable={false} />
