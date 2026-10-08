@@ -790,97 +790,284 @@ a { color: inherit; text-decoration: none; }
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .section-inner { padding: 0 4vw; }
-  .howto-steps { grid-template-columns: repeat(2,1fr); }
-  .prize-grid { grid-template-columns: repeat(2,1fr); }
-  .top100-card-grid { grid-template-columns: repeat(4,1fr); }
+  .howto-steps { grid-template-columns: repeat(2, 1fr); }
+  .prize-grid { grid-template-columns: repeat(2, 1fr); }
+  .top100-card-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 768px) {
-  /* NAV */
-  .site-nav { padding: 0 4vw; height: 56px; }
-  .nav-left, .nav-right { display: none; }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  .site-nav {
+    padding: 0 20px;
+    height: 56px;
+    justify-content: center;
+  }
+  .nav-left,
+  .nav-right { display: none; }
   .nav-logo-wrap { position: static; transform: none; }
-  .nav-logo { height: 28px; }
-  .site-nav { justify-content: center; }
+  .nav-logo { height: 32px; }
 
-  /* HERO */
-  .hero { height: 70vh; min-height: 500px; }
-  .hero-text { width: 90vw; min-width: unset; margin: 0 auto; text-align: center; position: absolute; bottom: 4vh; left: 50%; transform: translateX(-50%); }
-  .hero-headline { font-size: 11vw; }
-  .hero-collect-label { font-size: 3.5vw; }
-  .hero-body { font-size: 3.8vw; }
-  .hero-buttons { justify-content: center; flex-wrap: wrap; gap: 12px; }
-  .pack-counter { display: flex; flex-direction: column; align-items: center; }
-  .card-sleeve-img-wrap { height: 52vw; }
-  .card-slab-img { height: 52vw; width: auto; }
+  /* ── HERO — vertical stack: carousel above, text below ── */
+  .hero {
+    min-height: 100vh;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 56px; /* account for fixed nav */
+    padding-bottom: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  /* Pull carousel into normal flex flow */
+  .card-carousel {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 60vw;
+    flex-shrink: 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+  /* Fade masks don't make sense in stacked layout */
+  .carousel-fade-left,
+  .carousel-fade-right { display: none; }
+  /* Bigger card slabs on mobile */
+  .card-sleeve-img-wrap {
+    height: 55vw;
+    width: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 8px 28px rgba(0,0,0,0.85));
+  }
+  .card-slab-img {
+    height: 55vw;
+    width: auto;
+    display: block;
+  }
+  /* Hero text: in-flow, centered, below carousel */
+  .hero-text {
+    position: relative;
+    z-index: 5;
+    width: 90%;
+    min-width: unset;
+    margin: 28px auto 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .hero-headline {
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 0.92;
+    margin-bottom: 8px;
+  }
+  .hero-collect-label {
+    font-size: clamp(14px, 4vw, 20px);
+    margin-bottom: 14px;
+  }
+  .hero-body {
+    font-size: 16px;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .btn-teal,
+  .btn-outline {
+    font-size: 13px;
+    padding: 14px 24px;
+    min-height: 44px;
+  }
+  .pack-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pack-label { font-size: 10px; letter-spacing: 0.22em; }
+  .pack-digits { gap: 6px; margin-bottom: 6px; }
+  .pack-digit {
+    width: 13vw;
+    height: 16vw;
+    font-size: 12vw;
+  }
+  .pack-of { font-size: 10px; }
+  /* Hide decorative crosshairs */
+  .crosshair { display: none; }
 
-  /* SECTIONS */
-  .section-inner { padding: 0 5vw; }
-  .section-heading { font-size: 10vw; }
-  .section-eyebrow { font-size: 3vw; }
-  .section-body { font-size: 4vw; }
+  /* ── SPONSOR STRIP — 4 logos, bigger ─────────────────── */
+  .ticker-wrap {
+    padding: 0 16px;
+    height: 48px;
+  }
+  .ticker-wrap img {
+    height: 16px !important;
+    width: auto;
+  }
+  /* Hide logos 5–8, keep first 4 (2× Fulfil + 2× omnisend) */
+  .ticker-wrap img:nth-child(n+5) { display: none; }
 
-  /* WHAT IS SHOPPS */
+  /* ── SHARED SECTION STYLES ───────────────────────────── */
+  .section-inner { padding: 0 20px; }
+  .section-eyebrow { font-size: 11px; letter-spacing: 0.22em; }
+  .section-heading { font-size: clamp(28px, 9vw, 48px); }
+  .section-body { font-size: 16px; max-width: 100%; }
+
+  /* ── WHAT IS SHOPPS ──────────────────────────────────── */
+  .shopps-section { padding: 40px 0 48px; }
   .shopps-video-wrap { width: 90%; }
-  .shopps-heading { font-size: 8vw; }
-  .shopps-body { font-size: 4vw; max-width: 90%; }
+  .shopps-heading { font-size: clamp(28px, 9vw, 48px); }
+  .shopps-body { font-size: 16px; max-width: 90%; }
 
-  /* VALUE PROPS */
-  .value-grid { grid-template-columns: 1fr; }
-  .value-item { padding: 5vw 5vw; border-right: none; border-bottom: 1px solid #1a1e30; }
+  /* ── VALUE PROPS — 1 column, no dividers ─────────────── */
+  .value-section { padding: 32px 0; }
+  .value-grid { grid-template-columns: 1fr !important; }
+  .value-item {
+    padding: 24px 0;
+    border-right: none;
+    border-bottom: 1px solid #14182a;
+  }
   .value-item:last-child { border-bottom: none; }
+  .value-icon { width: 32px; height: 32px; }
+  .value-label { font-size: 11px; }
+  .value-title { font-size: 20px; }
+  .value-body { font-size: 15px; }
 
-  /* TOP 100 */
-  .top100-header { flex-direction: column; gap: 16px; align-items: flex-start; }
-  .top100-card-grid { grid-template-columns: repeat(2,1fr); gap: 3vw; }
+  /* ── TOP 100 — 2-column grid ─────────────────────────── */
+  .top100-section { padding: 40px 0; }
+  .top100-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .top100-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .btn-outline-sm {
+    font-size: 12px;
+    padding: 12px 20px;
+    min-height: 44px;
+  }
 
-  /* PRIZE BOARD */
-  .prize-grid { grid-template-columns: 1fr; gap: 3vw; }
-  .prize-name { font-size: 6vw; }
-  .prize-desc { font-size: 3.8vw; }
-  .prize-badge { font-size: 2.8vw; }
-  .pulled-text { font-size: 8vw; }
+  /* ── PRIZE BOARD — 2 columns ─────────────────────────── */
+  .prize-section { padding: 40px 0; }
+  .prize-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .prize-name { font-size: clamp(16px, 5vw, 22px); }
+  .prize-desc { font-size: 14px; }
+  .prize-badge { font-size: 10px; }
+  .pulled-text { font-size: clamp(24px, 7vw, 36px); }
 
-  /* HOW IT WORKS */
-  .howto-steps { grid-template-columns: 1fr; gap: 3vw; }
-  .howto-num { font-size: 14vw; }
-  .howto-title { font-size: 5vw; }
-  .howto-body { font-size: 3.8vw; }
-  .howto-disclaimer { flex-wrap: wrap; font-size: 3.5vw; }
-  .howto-free-label { font-size: 4vw; }
+  /* ── HOW TO GET A PACK — 1 column ───────────────────── */
+  .howto-section { padding: 40px 0; }
+  .howto-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .howto-num { font-size: clamp(48px, 14vw, 72px); }
+  .howto-title { font-size: 18px; }
+  .howto-body { font-size: 15px; }
+  .howto-disclaimer {
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+  .howto-free-label { font-size: 15px; }
 
-  /* LIVE SCHEDULE */
-  .live-event { padding: 4vw 4vw; gap: 4vw; }
-  .live-date-day { font-size: 8vw; }
-  .live-date-month { font-size: 3vw; }
-  .live-title { font-size: 5vw; }
-  .live-meta { font-size: 3.2vw; flex-wrap: wrap; }
+  /* ── LIVE SCHEDULE ───────────────────────────────────── */
+  .live-section { padding: 40px 0; }
+  .live-event {
+    padding: 16px;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .live-date { min-width: 44px; }
+  .live-date-day { font-size: clamp(26px, 8vw, 38px); }
+  .live-date-month { font-size: 11px; }
+  .live-title { font-size: 16px; }
+  .live-meta { font-size: 13px; flex-wrap: wrap; }
   .live-email-bar { max-width: 100%; }
-  .live-email-input { font-size: 3.8vw; }
-  .live-email-btn { font-size: 3.5vw; padding: 14px 16px; }
-  .btn-remind { font-size: 2.8vw; padding: 8px 12px; }
+  .live-email-input { font-size: 15px; padding: 14px; }
+  .live-email-btn { font-size: 14px; padding: 14px 16px; }
+  .btn-remind {
+    font-size: 11px;
+    padding: 10px 14px;
+    min-height: 44px;
+    flex-shrink: 0;
+    margin-left: 0;
+  }
 
-  /* CTA */
-  .cta-heading { font-size: 10vw; }
-  .cta-body { font-size: 4vw; }
-  .btn-cta-outline { font-size: 3.5vw; padding: 14px 28px; }
+  /* ── CTA ─────────────────────────────────────────────── */
+  .cta-section { padding: 60px 20px; }
+  .cta-heading {
+    font-size: clamp(40px, 12vw, 80px);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .cta-body {
+    font-size: 16px;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+  .btn-cta-outline {
+    width: 100%;
+    max-width: 340px;
+    font-size: 16px;
+    padding: 18px 20px;
+    min-height: 54px;
+  }
 
-  /* FOOTER */
-  .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 6vw; }
-  .footer-copy { font-size: 3vw; }
-
-  /* TICKER */
-  .ticker-wrap { padding: 0 2vw; }
-
-  /* BUTTONS */
-  .btn-teal, .btn-outline { font-size: 4vw; padding: 14px 24px; }
+  /* ── FOOTER ──────────────────────────────────────────── */
+  .site-footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .footer-copy { font-size: 12px; }
 }
 
 @media (max-width: 480px) {
-  .hero-headline { font-size: 13vw; }
-  .section-heading { font-size: 11vw; }
-  .top100-card-grid { grid-template-columns: repeat(2,1fr); gap: 2.5vw; }
+
+  /* ── HERO ── */
+  .card-carousel { height: 65vw; }
+  .card-sleeve-img-wrap { height: 62vw; }
+  .card-slab-img { height: 62vw; }
+  .hero-headline { font-size: clamp(44px, 14vw, 60px); }
+  .hero-body { font-size: 15px; }
+
+  /* ── SECTIONS ── */
+  .section-heading { font-size: clamp(28px, 10vw, 44px); }
+
+  /* ── TOP 100 — tighter gap ── */
+  .top100-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* ── PRIZE BOARD — 1 column on smallest screens ── */
+  .prize-grid { grid-template-columns: 1fr; }
+
+  /* ── LIVE SCHEDULE ── */
   .live-event { flex-wrap: wrap; }
   .live-event-body { width: 100%; }
-  .btn-remind { margin-top: 8px; }
+  .btn-remind { margin-top: 8px; width: 100%; text-align: center; }
 }
