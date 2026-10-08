@@ -39,8 +39,8 @@ a { color: inherit; text-decoration: none; }
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 700px;
+  height: 78vh;
+  min-height: 580px;
   overflow: hidden;
   background: var(--bg);
   display: flex;
@@ -315,7 +315,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Left fan positions */
 .card-a {
-  width: calc(55vh * 0.65); height: 55vh;
+  width: calc(70vh * 0.65); height: 70vh;
   left: -15px;
   transform: perspective(900px) rotateY(52deg) translateY(-50%);
   filter: brightness(0.45);
@@ -352,7 +352,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 2;
 }
 .card-f {
-  width: calc(55vh * 0.65); height: 55vh;
+  width: calc(70vh * 0.65); height: 70vh;
   right: -15px;
   transform: perspective(900px) rotateY(-52deg) translateY(-50%);
   filter: brightness(0.45);
@@ -362,7 +362,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── Card Slab Wrapper ───────────────────────────────── */
 .slab-wrap {
   flex-shrink: 0;
-  height: 55vh;
+  height: 70vh;
   position: relative;
   opacity: 0.75;
 }
@@ -438,8 +438,8 @@ a { color: inherit; text-decoration: none; }
 /* ─── Premium Chrome Slab Case ───────────────────────── */
 .card-sleeve {
   flex-shrink: 0;
-  height: 55vh;
-  width: calc(55vh * 0.72);
+  height: 70vh;
+  width: calc(70vh * 0.72);
   position: relative;
   opacity: 0.9;
   border-radius: 12px;
@@ -594,8 +594,8 @@ a { color: inherit; text-decoration: none; }
 /* ─── Card Slab with Real Frame Overlay ─────────────── */
 .card-sleeve {
   flex-shrink: 0;
-  height: 55vh;
-  width: calc(55vh * 0.72);
+  height: 70vh;
+  width: calc(70vh * 0.72);
   position: relative;
   opacity: 0.9;
   display: flex;
@@ -740,7 +740,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── Pre-rendered slab images ───────────────────────── */
 .card-sleeve-img-wrap {
   flex-shrink: 0;
-  height: 55vh;
+  height: 70vh;
   width: auto;
   filter: drop-shadow(0 10px 40px rgba(0,0,0,0.85));
   transition: filter 0.3s;
