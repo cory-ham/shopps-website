@@ -254,6 +254,13 @@ export default function Home() {
       {/* ──────────────────── WHAT IS SHOPPS? ──────────────────── */}
       {/* PSD: Layer 13 video area (929,1057,1618,1444), text (1101,1513,1446,1563) */}
       <section className="shopps-section">
+        {/* Responsive card grid background — auto-fill so no cutoffs */}
+        <div className="shopps-card-grid" aria-hidden="true">
+          {Array.from({length: 80}).map((_, i) => (
+            <div key={i} className="shopps-bg-card" />
+          ))}
+        </div>
+
         <div className="shopps-video-wrap">
           <div className="shopps-play-btn">
             <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
