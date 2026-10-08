@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 26" width="100" height="26">
-  <!-- F mark: scaled to fill y=4 to y=22 (18px tall, matching omnisend text height ratio) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 6 100 17" width="100" height="17">
+  <!-- F mark: transform places content at y=6 to y=23 -->
   <g transform="translate(1, 4) scale(0.265)">
     <path opacity="0.5" d="M5.44018 63.7523H5.38306V71.6441H13.8344C18.4585 71.6441 22.2311 68.1193 22.2311 63.8041V55.9641H13.8344C9.23093 55.9615 5.46874 59.4578 5.44018 63.7523Z" fill="white"/>
     <path opacity="0.8" d="M5.38306 41.257C5.38306 46.1452 9.62817 50.0664 14.8184 50.0664H22.1766V55.9677H29.6308C34.7717 55.9677 38.97 52.0491 38.97 47.2465V32.4479H14.8184C9.62817 32.4479 5.38306 36.3691 5.38306 41.257Z" fill="white"/>
     <path d="M14.8184 8.92725C9.62817 8.92725 5.38306 12.8926 5.38306 17.7806C5.38306 22.6685 9.58143 26.5898 14.8184 26.5898H38.9726V32.4471H46.427C51.5679 32.4471 55.7688 28.5284 55.7688 23.726V8.92725H14.8184Z" fill="white"/>
   </g>
-  <!-- Fulfil wordmark — font-size 17 in 26px canvas = 65% fill, close to omnisend ratio -->
+  <!-- Text baseline y=20, cap top ~y=8 — sits inside viewBox y=6..23 -->
   <text x="21" y="20" fill="white" font-size="17" font-family="Arial, Helvetica, sans-serif" font-weight="600" letter-spacing="0.3">Fulfil</text>
 </svg>
