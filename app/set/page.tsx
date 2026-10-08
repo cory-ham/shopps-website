@@ -201,7 +201,7 @@ export default function SetPage() {
       <SiteNav />
 
       {/* ── SPONSOR STRIP — static ── */}
-      <div className="ticker-wrap">
+      <div className="ticker-wrap" style={{ marginTop: '60px' }}>
         {TICKER_ITEMS.map((item, i) => (
           <img
             key={i}
