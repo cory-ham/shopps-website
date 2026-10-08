@@ -207,38 +207,7 @@ const STEPS = [
   },
 ]
 
-const CAROUSEL_CARDS = [
-  // 10 unique fronts — varied colors (green / teal / gold)
-  { slab: '/slabs/slab-bart.jpg',        name: 'Bart Szaniewski'   },  // green
-  { slab: '/slabs/slab-bear-teal.jpg',   name: 'Bear Handlon'      },  // teal
-  { slab: '/slabs/slab-ben.jpg',         name: 'Ben Cogan'         },  // teal
-  { slab: '/slabs/slab-chase.jpg',       name: 'Chase Dimond'      },  // green
-  { slab: '/slabs/slab-bart-gold.jpg',   name: 'Bart Szaniewski'   },  // gold
-  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },  // green
-  { slab: '/slabs/slab-mike-teal.jpg',   name: 'Mike Beckham'      },  // teal
-  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },  // gold
-  { slab: '/slabs/slab-bear-gold.jpg',   name: 'Bear Handlon'      },  // gold
-  { slab: '/slabs/slab-jimmy.jpg',       name: 'Jimmy Kim'         },  // gold
-  { slab: '/slabs/slab-ronak.jpg',       name: 'Ronak Shah'        },  // green
-  { slab: '/slabs/slab-bart-teal.jpg',   name: 'Bart Szaniewski'   },  // teal
-  { slab: '/slabs/slab-isaac.jpg',       name: 'Isaac Medeiros'    },  // green
-  { slab: '/slabs/slab-mike.jpg',        name: 'Mike Beckham'      },  // green
-  // Duplicated for infinite scroll
-  { slab: '/slabs/slab-bart.jpg',        name: 'Bart Szaniewski'   },
-  { slab: '/slabs/slab-bear-teal.jpg',   name: 'Bear Handlon'      },
-  { slab: '/slabs/slab-ben.jpg',         name: 'Ben Cogan'         },
-  { slab: '/slabs/slab-chase.jpg',       name: 'Chase Dimond'      },
-  { slab: '/slabs/slab-bart-gold.jpg',   name: 'Bart Szaniewski'   },
-  { slab: '/slabs/slab-matthew.jpg',     name: 'Matthew Bertulli'  },
-  { slab: '/slabs/slab-mike-teal.jpg',   name: 'Mike Beckham'      },
-  { slab: '/slabs/slab-ezra.jpg',        name: 'Ezra Firestone'    },
-  { slab: '/slabs/slab-bear-gold.jpg',   name: 'Bear Handlon'      },
-  { slab: '/slabs/slab-jimmy.jpg',       name: 'Jimmy Kim'         },
-  { slab: '/slabs/slab-ronak.jpg',       name: 'Ronak Shah'        },
-  { slab: '/slabs/slab-bart-teal.jpg',   name: 'Bart Szaniewski'   },
-  { slab: '/slabs/slab-isaac.jpg',       name: 'Isaac Medeiros'    },
-  { slab: '/slabs/slab-mike.jpg',        name: 'Mike Beckham'      },
-]
+// CAROUSEL_CARDS is now defined above using date-seeded random (see top of file)
 
 const EVENTS = [
   {
@@ -462,20 +431,11 @@ export default function Home() {
             <Link href="/set" className="btn-outline-sm">View All 100</Link>
           </div>
 
-          {/* 4×2 grid of front cards — no slab, no case */}
+          {/* 4×2 grid of front cards — daily-rotating, alternating M/F */}
           <div className="top100-card-grid">
-            {[
-              '/cards/card-033.jpg',  // Sean Frank (Ridge) — GREEN — MAN
-              '/cards/card-211.jpg',  // Cassandra Thurswell (Kitsch) — TEAL — WOMAN
-              '/cards/card-165.jpg',  // Robert Felder (Bearbottom) — GOLD (clean) — MAN
-              '/cards/card-169.jpg',  // Jessica Berman (BodyBio) — GREEN — WOMAN
-              '/cards/card-043.jpg',  // Chad Janis (Grüns) — TEAL — MAN
-              '/cards/card-205.jpg',  // Katrina Lake (Stitch Fix) — GOLD — WOMAN
-              '/cards/card-057.jpg',  // Chris Hall (Ecomm Cowboy) — GREEN — MAN
-              '/cards/card-227.jpg',  // Bethany Catron Evans (Rhone) — TEAL — WOMAN
-            ].map((src, i) => (
+            {TOP100_CARDS.map((card, i) => (
               <div key={i} className="top100-card-item">
-                <img src={src} alt={`Card ${i + 1}`} draggable={false} />
+                <img src={card.src} alt={card.name || `Card ${i + 1}`} draggable={false} />
               </div>
             ))}
           </div>
