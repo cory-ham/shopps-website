@@ -213,8 +213,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── TICKER ──────────────────────────────────────────── */
-.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 0 5vw; height: 52px; }
-.ticker-track { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100%; }
+.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 0 2vw; height: 52px; }
+.ticker-track { display: flex; align-items: center; justify-content: space-evenly; width: 100%; height: 100%; }
 
 /* ─── SHARED SECTION STYLES ─────────────────────────── */
 .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 6vw; }
