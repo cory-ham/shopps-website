@@ -1,4 +1,5 @@
 'use client'
+import SiteNav from './components/SiteNav'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -234,41 +235,7 @@ export default function Home() {
   return (
     <>
       {/* ──────────────────── NAV ──────────────────── */}
-      <nav className="site-nav">
-        <div className="nav-left">
-          <a href="#" className="nav-link">The Set</a>
-          <a href="#" className="nav-link">Giveaways</a>
-          <a href="#" className="nav-link">Pulls</a>
-        </div>
-
-        <div className="nav-logo-wrap">
-          <img src="/shopps-logo-v2.png" alt="SHOPPS" className="nav-logo" />
-        </div>
-
-        <div className="nav-right">
-          <a href="#" className="nav-link">How it works</a>
-          <a href="#" className="nav-link">Nominate</a>
-          <a href="#" className="nav-live">LIVE</a>
-        </div>
-
-        {/* Hamburger — mobile only */}
-        <button className="nav-hamburger" aria-label="Menu"
-          onClick={() => document.body.classList.toggle('nav-open')}>
-          <span /><span /><span />
-        </button>
-      </nav>
-
-      {/* Mobile drawer */}
-      <div className="nav-drawer" onClick={() => document.body.classList.remove('nav-open')}>
-        <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>The Set</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Giveaways</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Pulls</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>How it Works</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Nominate</a>
-          <a href="#" className="nav-drawer-live" onClick={() => document.body.classList.remove('nav-open')}>LIVE</a>
-        </div>
-      </div>
+      <SiteNav />
 
       {/* ──────────────────── HERO ─────────────────── */}
       <section className="hero">

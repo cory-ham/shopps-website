@@ -1,4 +1,5 @@
 'use client'
+import SiteNav from '../components/SiteNav'
 
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
@@ -197,43 +198,7 @@ export default function SetPage() {
   return (
     <>
       {/* ──────────────────── NAV ──────────────────── */}
-      <nav className="site-nav">
-        <div className="nav-left">
-          <Link href="/set" className="nav-link" style={{ color: 'rgba(245,248,248,0.9)' }}>THE SET</Link>
-          <a href="#" className="nav-link">GIVEAWAYS</a>
-          <a href="#" className="nav-link">PULLS</a>
-        </div>
-
-        <div className="nav-logo-wrap">
-          <img src="/shopps-logo.png" alt="SHOPPS" className="nav-logo" />
-        </div>
-
-        <div className="nav-right">
-          <a href="#" className="nav-link">HOW IT WORKS</a>
-          <a href="#" className="nav-link">NOMINATE</a>
-          <a href="#" className="nav-live">LIVE</a>
-        </div>
-
-        <button
-          className="nav-hamburger"
-          aria-label="Menu"
-          onClick={() => document.body.classList.toggle('nav-open')}
-        >
-          <span /><span /><span />
-        </button>
-      </nav>
-
-      {/* Mobile drawer */}
-      <div className="nav-drawer" onClick={() => document.body.classList.remove('nav-open')}>
-        <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
-          <Link href="/set" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>The Set</Link>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Giveaways</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Pulls</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>How it Works</a>
-          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Nominate</a>
-          <a href="#" className="nav-drawer-live" onClick={() => document.body.classList.remove('nav-open')}>LIVE</a>
-        </div>
-      </div>
+      <SiteNav />
 
       {/* ── SPONSOR STRIP — static ── */}
       <div className="ticker-wrap">
