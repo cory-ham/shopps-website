@@ -150,46 +150,52 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
     txt_img = Image.new('RGBA', (tz_w4, tz_h4), (0, 0, 0, 0))
     tdraw   = ImageDraw.Draw(txt_img)
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # Proportional layout: elements spread across the full header height.
-    # All Y positions are fractions of tz_h4 so they fill the zone regardless
-    # of individual text heights.
-    # ─────────────────────────────────────────────────────────────────────────
+    # ── Measure all elements, then vertically center the block ───────────────
+    # No label — clean slab, name gets more room.
 
-    # ── label: small, near top
-    label_font = _ibm_reg(9 * SCALE)
-    label_y4   = int(0.07 * tz_h4)
-    tdraw.text((0, label_y4), '2026 COMMON THREAD COLLECTIVE',
-               font=label_font, fill=(130, 135, 145, 255))
+    co_font = _ibm_bold(17 * SCALE)
+    ti_font = _ibm_reg(14 * SCALE)
+    co_bb   = tdraw.textbbox((0, 0), company.upper(), font=co_font)
+    ti_bb   = tdraw.textbbox((0, 0), title.upper(), font=ti_font)
 
-    # ── name: Antonio Bold, white — starts at ~18% of zone height
-    name_y4   = int(0.18 * tz_h4)
-    name_bot4 = name_y4
-    for pt in range(50 * SCALE, 22 * SCALE - 1, -2):
+    # Largest name font that fits zone width
+    name_fnt = _antonio(20 * SCALE)
+    name_bb  = tdraw.textbbox((0, 0), name, font=name_fnt)
+    for pt in range(52 * SCALE, 20 * SCALE - 1, -2):
         fnt = _antonio(pt)
         bb  = tdraw.textbbox((0, 0), name, font=fnt)
         if bb[2] - bb[0] <= tz_w4:
-            tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
-            name_bot4 = name_y4 + (bb[3] - bb[1])
+            name_fnt, name_bb = fnt, bb
             break
-    else:
-        fnt = _antonio(22 * SCALE)
-        bb  = tdraw.textbbox((0, 0), name, font=fnt)
-        tdraw.text((0, name_y4), name, font=fnt, fill=(255, 255, 255, 255))
-        name_bot4 = name_y4 + (bb[3] - bb[1])
 
-    # ── company: teal, anchored at 58% of zone height
-    co_font = _ibm_bold(19 * SCALE)
-    co_y4   = max(name_bot4 + int(0.05 * tz_h4), int(0.57 * tz_h4))
-    tdraw.text((0, co_y4), company.upper(), font=co_font, fill=(3, 159, 157, 255))
-    co_bb   = tdraw.textbbox((0, 0), company, font=co_font)
-    co_bot4 = co_y4 + (co_bb[3] - co_bb[1])
+    name_h = name_bb[3] - name_bb[1]
+    co_h   = co_bb[3]   - co_bb[1]
+    ti_h   = ti_bb[3]   - ti_bb[1]
 
-    # ── title: muted white, anchored at 77% of zone height
-    ti_font = _ibm_reg(15 * SCALE)
-    ti_y4   = max(co_bot4 + int(0.03 * tz_h4), int(0.76 * tz_h4))
-    tdraw.text((0, ti_y4), title.upper(), font=ti_font, fill=(185, 190, 200, 255))
+    GAP_NAME_CO = 10 * SCALE
+    GAP_CO_DIV  = 12 * SCALE
+    DIV_H       = SCALE
+    GAP_DIV_TI  = 10 * SCALE
 
+    total_h = name_h + GAP_NAME_CO + co_h + GAP_CO_DIV + DIV_H + GAP_DIV_TI + ti_h
+
+    # Center the block vertically
+    y = (tz_h4 - total_h) // 2
+
+    # ── Name
+    tdraw.text((0, y - name_bb[1]), name, font=name_fnt, fill=(255, 255, 255, 255))
+    y += name_h + GAP_NAME_CO
+
+    # ── Company (teal)
+    tdraw.text((0, y - co_bb[1]), company.upper(), font=co_font, fill=(3, 159, 157, 255))
+    y += co_h + GAP_CO_DIV
+
+    # ── Divider line
+    tdraw.line([(0, y), (tz_w4, y)], fill=(90, 95, 108, 220), width=SCALE)
+    y += DIV_H + GAP_DIV_TI
+
+    # ── Title
+    tdraw.text((0, y - ti_bb[1]), title.upper(), font=ti_font, fill=(185, 190, 200, 255))
     # Scale text back to 1× and paste into canvas
     txt_final = txt_img.resize((TXT_ZONE_W, HDR_H), Image.LANCZOS)
     canvas.paste(txt_final, (TXT_X0, HDR_T), txt_final)
