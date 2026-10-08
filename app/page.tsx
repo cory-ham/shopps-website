@@ -172,14 +172,7 @@ export default function Home() {
 
         {/* Center logo — absolute within nav */}
         <div className="nav-logo-wrap">
-          <Image
-            src="/shopps-logo.png"
-            alt="SHOPPS"
-            width={160}
-            height={54}
-            className="nav-logo"
-            priority
-          />
+          <img src="/shopps-logo-v2.png" alt="SHOPPS" className="nav-logo" />
         </div>
 
         <div className="nav-right">
