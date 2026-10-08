@@ -146,22 +146,22 @@ const CAROUSEL_CARDS = [
 
 const EVENTS = [
   {
-    month: 'SEP',
-    day: '04',
+    month: 'OCT',
+    day: '14',
     title: 'Live Break #7 – Founders Night',
-    meta: '8:00 PM ET • Streaming IG Live & YouTube',
+    meta: '8:00 PM ET • Streaming IG Live & YouTube • 40 Packs on the table',
   },
   {
-    month: 'SEP',
-    day: '14',
+    month: 'OCT',
+    day: '21',
     title: 'The Top 100 Show – Ep. 4',
     meta: '7:30 PM ET • Guest: A Top 10 Card, revealed live',
   },
   {
-    month: 'SEP',
-    day: '23',
+    month: 'OCT',
+    day: '28',
     title: 'Live Break #8 – Chase Card Special',
-    meta: '8:00 PM ET • A confirmed 1/1 is in the pool',
+    meta: '8:00 PM ET • A confirmed 1/1 is in tonight’s stack',
   },
 ]
 
@@ -449,24 +449,29 @@ export default function Home() {
         <div className="section-inner">
           <p className="section-eyebrow">Breaks &amp; Shows</p>
           <h2 className="section-heading">Live Schedule</h2>
-          <p className="section-body">
-            Live breaks are where the packs move. Show up, play along, and watch the chase cards hit.
+          <p className="section-body" style={{maxWidth: '440px', marginBottom: '2.5vw'}}>
+            Live breaks are where the packs move. Show up, play along, and watch chase cards come off the board in real time.
           </p>
 
-          <div className="live-events">
+          <div className="live-events-box">
             {EVENTS.map((event, i) => (
-              <div key={i} className="live-event">
+              <div key={i} className={`live-event${i < EVENTS.length - 1 ? ' live-event-divider' : ''}`}>
                 <div className="live-date">
                   <span className="live-date-month">{event.month}</span>
                   <span className="live-date-day">{event.day}</span>
                 </div>
-                <div>
+                <div className="live-event-body">
                   <p className="live-title">{event.title}</p>
-                  <p className="live-meta">{event.meta}</p>
+                  <p className="live-meta"><span className="live-dot" />{event.meta}</p>
                 </div>
                 <button className="btn-remind">Remind Me</button>
               </div>
             ))}
+          </div>
+
+          <div className="live-email-bar">
+            <input className="live-email-input" type="email" placeholder="you@email.com – never miss a break" />
+            <button className="live-email-btn">Get Reminders</button>
           </div>
         </div>
       </section>
