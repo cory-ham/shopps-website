@@ -176,7 +176,6 @@ export default function Home() {
           <a href="#" className="nav-link">Pulls</a>
         </div>
 
-        {/* Center logo — absolute within nav */}
         <div className="nav-logo-wrap">
           <img src="/shopps-logo-v2.png" alt="SHOPPS" className="nav-logo" />
         </div>
@@ -186,7 +185,25 @@ export default function Home() {
           <a href="#" className="nav-link">Nominate</a>
           <a href="#" className="nav-live">LIVE</a>
         </div>
+
+        {/* Hamburger — mobile only */}
+        <button className="nav-hamburger" aria-label="Menu"
+          onClick={() => document.body.classList.toggle('nav-open')}>
+          <span /><span /><span />
+        </button>
       </nav>
+
+      {/* Mobile drawer */}
+      <div className="nav-drawer" onClick={() => document.body.classList.remove('nav-open')}>
+        <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
+          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>The Set</a>
+          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Giveaways</a>
+          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Pulls</a>
+          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>How it Works</a>
+          <a href="#" className="nav-drawer-link" onClick={() => document.body.classList.remove('nav-open')}>Nominate</a>
+          <a href="#" className="nav-drawer-live" onClick={() => document.body.classList.remove('nav-open')}>LIVE</a>
+        </div>
+      </div>
 
       {/* ──────────────────── HERO ─────────────────── */}
       <section className="hero">
