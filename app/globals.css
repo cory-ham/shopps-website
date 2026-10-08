@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #07090f;
   --teal: #039F9D;
+  --olive: #85b037;
+  --gray-light: #d3d3d3;
   --white: #F5F8F8;
-  --font-anton: 'Anton', Impact, sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-antonio: 'Antonio', Impact, sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--white); font-family: var(--font-inter); overflow-x: hidden; }
+body { background: var(--bg); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
 img { display: block; }
-button { cursor: pointer; font-family: var(--font-inter); }
+button { cursor: pointer; font-family: var(--font-body); }
 a { color: inherit; text-decoration: none; }
 
 /* ─── NAV ─────────────────────────────────────────────── */
@@ -125,7 +127,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-headline {
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 5vw;
   font-weight: 400;
   line-height: 0.92;
@@ -135,7 +137,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 .hero-collect-label {
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 1.4vw;
   font-weight: 400;
   letter-spacing: 0.06em;
@@ -144,7 +146,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 1.4vw;
 }
 .hero-body {
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 0.95vw;
   font-weight: 400;
   line-height: 1.65;
@@ -160,7 +162,7 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
 }
 .btn-teal {
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 0.7vw;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -175,7 +177,7 @@ a { color: inherit; text-decoration: none; }
 }
 .btn-teal:hover { opacity: 0.88; }
 .btn-outline {
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 0.7vw;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -194,7 +196,7 @@ a { color: inherit; text-decoration: none; }
 .pack-counter { display: flex; flex-direction: column; gap: 0; }
 .pack-label {
   display: flex; align-items: center; gap: 0.5vw;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 0.65vw; font-weight: 700;
   letter-spacing: 0.3em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 0.6vw;
@@ -206,11 +208,11 @@ a { color: inherit; text-decoration: none; }
   background: #050608;
   border: 1px solid #2a2e3e;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 3.5vw; color: var(--white); line-height: 1;
 }
 .pack-of {
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 0.65vw; font-weight: 700;
   letter-spacing: 0.28em; text-transform: uppercase;
   color: rgba(245,248,248,0.28); margin: 0;
@@ -222,7 +224,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── SHARED SECTION STYLES ─────────────────────────── */
 .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 6vw; }
 .section-eyebrow { font-size: 0.75vw; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6vw; }
-.section-heading { font-family: var(--font-anton); font-size: 3.6vw; font-weight: 400; text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 1vw; }
+.section-heading { font-family: var(--font-antonio); font-size: 3.6vw; font-weight: 400; text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 1vw; }
 .section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
@@ -233,7 +235,7 @@ a { color: inherit; text-decoration: none; }
 .shopps-video-wrap { position: relative; width: 46%; margin: 0 auto 3vw; aspect-ratio: 16/9; background: #1a1c26; border-radius: 8px; overflow: hidden; border: 1px solid #252836; }
 .shopps-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .shopps-play-btn svg { width: 52px; height: 52px; }
-.shopps-heading { font-family: var(--font-anton); font-size: 2.8vw; text-transform: uppercase; color: var(--white); margin-bottom: 1.4vw; letter-spacing: .02em; }
+.shopps-heading { font-family: var(--font-antonio); font-size: 2.8vw; text-transform: uppercase; color: var(--white); margin-bottom: 1.4vw; letter-spacing: .02em; }
 .shopps-body { font-size: 0.82vw; line-height: 1.75; color: rgba(245,248,248,0.5); max-width: 320px; margin: 0 auto; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
@@ -243,7 +245,7 @@ a { color: inherit; text-decoration: none; }
 .value-item:last-child { border-right: none; }
 .value-icon { width: 2.5vw; height: 2.5vw; margin-bottom: 1.2vw; }
 .value-label { font-size: 0.72vw; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4vw; }
-.value-title { font-family: var(--font-anton); font-size: 1.4vw; text-transform: uppercase; color: var(--white); margin-bottom: 0.6vw; }
+.value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); margin-bottom: 0.6vw; }
 .value-body { font-size: 0.82vw; line-height: 1.65; color: rgba(245,248,248,0.5); }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
@@ -264,7 +266,7 @@ a { color: inherit; text-decoration: none; }
 .prize-badge.out-there { color: var(--teal); }
 .prize-badge.claimed-badge { color: rgba(245,248,248,0.4); }
 .prize-rank { font-size: 0.68vw; color: rgba(245,248,248,0.4); letter-spacing: 0.1em; }
-.prize-name { font-family: var(--font-anton); font-size: 1.4vw; text-transform: uppercase; color: var(--white); line-height: 1.1; }
+.prize-name { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); line-height: 1.1; }
 .prize-name.greyed { color: rgba(245,248,248,0.3); }
 .prize-desc { font-size: 0.78vw; line-height: 1.6; color: rgba(245,248,248,0.5); }
 .prize-puller { font-size: 0.72vw; color: rgba(245,248,248,0.35); }
@@ -273,7 +275,7 @@ a { color: inherit; text-decoration: none; }
 .howto-section { padding: 6vw 0; background: #080a10; }
 .howto-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1vw; margin-top: 2.5vw; }
 .howto-step { background: #0d1020; border: 1px solid #1a1e30; border-radius: 6px; padding: 1.5vw; }
-.howto-num { font-family: var(--font-anton); font-size: 3.5vw; color: #0d1020; -webkit-text-stroke: 1px #1e2438; margin-bottom: 0.8vw; line-height: 1; }
+.howto-num { font-family: var(--font-antonio); font-size: 3.5vw; color: #0d1020; -webkit-text-stroke: 1px #1e2438; margin-bottom: 0.8vw; line-height: 1; }
 .howto-title { font-weight: 700; font-size: 0.9vw; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white); margin-bottom: 0.5vw; }
 .howto-body { font-size: 0.78vw; line-height: 1.65; color: rgba(245,248,248,0.5); }
 .howto-disclaimer { margin-top: 2vw; font-size: 0.78vw; color: rgba(245,248,248,0.4); border-top: 1px solid #14182a; padding-top: 1.2vw; }
@@ -286,7 +288,7 @@ a { color: inherit; text-decoration: none; }
 .live-event:first-child { border-top: 1px solid #14182a; }
 .live-date { display: flex; flex-direction: column; align-items: center; min-width: 3.5vw; }
 .live-date-month { font-size: 0.65vw; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); }
-.live-date-day { font-family: var(--font-anton); font-size: 2vw; color: var(--white); line-height: 1; }
+.live-date-day { font-family: var(--font-antonio); font-size: 2vw; color: var(--white); line-height: 1; }
 .live-title { font-size: 1.1vw; font-weight: 600; color: var(--white); margin-bottom: 0.25vw; }
 .live-meta { font-size: 0.75vw; color: rgba(245,248,248,0.4); }
 .btn-remind { margin-left: auto; font-size: 0.65vw; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: transparent; border: 1px solid rgba(245,248,248,0.25); padding: 0.5vw 1.2vw; border-radius: 2px; flex-shrink: 0; }
@@ -295,7 +297,7 @@ a { color: inherit; text-decoration: none; }
 .cta-section { position: relative; padding: 8vw 0; background: #060810; text-align: center; overflow: hidden; }
 .cta-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(3,159,157,0.12) 0%, transparent 65%); pointer-events: none; }
 .cta-logo { margin: 0 auto 2vw; height: 36px; width: auto; }
-.cta-heading { font-family: var(--font-anton); font-size: 5vw; text-transform: uppercase; color: var(--white); line-height: 0.95; margin-bottom: 1.5vw; }
+.cta-heading { font-family: var(--font-antonio); font-size: 5vw; text-transform: uppercase; color: var(--white); line-height: 0.95; margin-bottom: 1.5vw; }
 .cta-body { font-size: 0.9vw; line-height: 1.7; color: rgba(245,248,248,0.55); max-width: 520px; margin: 0 auto 2.5vw; }
 .btn-teal-lg { font-size: 0.8vw; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #000; background: var(--teal); border: none; padding: 1vw 2.5vw; border-radius: 2px; }
 
@@ -424,18 +426,18 @@ a { color: inherit; text-decoration: none; }
   font-size: 5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   line-height: 1.3;
 }
 .slab-badge-num {
   color: #fff;
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 18px;
   line-height: 1;
 }
 .slab-serial {
   text-align: center;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 7px;
   color: rgba(255,255,255,0.3);
   letter-spacing: 0.15em;
@@ -527,7 +529,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-meta {
   color: rgba(255,255,255,0.45);
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 5px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -535,7 +537,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-person {
   color: #fff;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -544,7 +546,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-title {
   color: rgba(255,255,255,0.5);
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 5.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -566,19 +568,19 @@ a { color: inherit; text-decoration: none; }
   font-size: 4.5px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   white-space: nowrap;
 }
 .card-sleeve-badge-num {
   color: #fff;
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 16px;
   line-height: 1;
 }
 .card-sleeve-badge-serial {
   color: rgba(255,255,255,0.35);
   font-size: 4px;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   letter-spacing: 0.1em;
 }
 
@@ -642,7 +644,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-meta {
   color: rgba(255,255,255,0.4);
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -650,7 +652,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-person {
   color: #fff;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -662,7 +664,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card-sleeve-title {
   color: rgba(255,255,255,0.45);
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   font-size: 5.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -685,19 +687,19 @@ a { color: inherit; text-decoration: none; }
   font-size: 4.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   white-space: nowrap;
 }
 .card-sleeve-badge-num {
   color: #fff;
-  font-family: var(--font-anton);
+  font-family: var(--font-antonio);
   font-size: 16px;
   line-height: 1;
 }
 .card-sleeve-badge-serial {
   color: rgba(255,255,255,0.3);
   font-size: 4px;
-  font-family: var(--font-inter);
+  font-family: var(--font-body);
   letter-spacing: 0.08em;
 }
 
