@@ -1102,9 +1102,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ─── SPONSOR BAR MOBILE ─────────────────────────── */
 @media (max-width: 768px) {
-  .ticker-wrap { overflow: hidden; padding: 0; height: 44px; }
-  .ticker-track { padding: 0 12px; justify-content: space-evenly; }
-  /* Hide every other logo — show only 4 */
-  .ticker-track > img:nth-child(odd) { display: none; }
-  .ticker-track > img { height: 16px; }
+  .ticker-wrap { overflow: hidden; padding: 0 12px; height: 44px; justify-content: space-evenly; }
+  /* Hide every other logo — show only 4 of 8 */
+  .ticker-wrap > img:nth-child(odd) { display: none; }
+  .ticker-wrap > img { height: 16px !important; }
 }
