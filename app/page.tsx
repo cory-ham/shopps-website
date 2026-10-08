@@ -34,51 +34,57 @@ const TOP100_CARDS = [
 const PRIZES = [
   {
     status: 'out-there',
-    label: '1 of 1 • Still Out There',
-    rank: 'Pull the Rank #1 Chase Card',
+    badge: '1 OF 1 · STILL OUT THERE',
     name: 'Courtside Seats OKC Thunder',
-    desc: 'Two courtside seats to an Oklahoma City Thunder home game. The ultimate eCommerce night out.',
+    desc: 'Pull the Rank #1 chase card and take two courtside seats at a marquee game – flights and hotel covered.',
+    attached: '1/1 CHASE + RANK #1',
     puller: null,
+    pulledDate: null,
   },
   {
     status: 'out-there',
-    label: 'Still Out There',
-    rank: '1 of 1 Chase Card',
-    name: 'Dinner with the Top 10',
-    desc: 'A seat at a private dinner with the Top 10 ranked cards in the set. Relationships over everything.',
+    badge: 'STILL OUT THERE',
+    name: 'Dinner With The Top 10',
+    desc: 'A seat at a private dinner with ten of the biggest names in the set. One card gets you in the room.',
+    attached: '1/1 CHASE + RANK #7',
     puller: null,
+    pulledDate: null,
   },
   {
     status: 'out-there',
-    label: 'Still Out There',
-    rank: '1 of 1 Chase Card',
-    name: '$5,000 Ad Budget',
-    desc: 'A funded ad account boost — $5,000 USD to put to work on your next campaign.',
+    badge: 'STILL OUT THERE',
+    name: '$5,000.00 USD Ad Budget',
+    desc: 'A funded ad account boost for your brand, plus a working session with a Top 100 media buyer.',
+    attached: 'GOLD FOIL REDEMPTION',
     puller: null,
+    pulledDate: null,
   },
   {
     status: 'claimed',
-    label: 'Claimed',
-    rank: 'Week 2 Live Break',
-    name: '$500 USD Gift Card',
+    badge: 'CLAIMED',
+    name: '$500.00 USD Gift Card',
     desc: null,
-    puller: 'Pulled by Kerri J. on week 2 live break.',
+    attached: null,
+    puller: 'Pulled by J. Marshall',
+    pulledDate: 'SEP. 15TH',
   },
   {
     status: 'out-there',
-    label: 'Still Out There',
-    rank: 'Rank #1 Chase Card',
+    badge: 'STILL OUT THERE',
     name: 'Courtside Seats OKC Thunder',
-    desc: 'Pull the Rank #1 chase card. The seats are waiting.',
+    desc: 'Pull the Rank #1 chase card and take two courtside seats at a marquee game – flights and hotel covered.',
+    attached: '1/1 CHASE + RANK #1',
     puller: null,
+    pulledDate: null,
   },
   {
     status: 'claimed',
-    label: 'Claimed',
-    rank: 'Week 2 Live Break',
+    badge: 'CLAIMED',
     name: 'Signed Set Box',
     desc: null,
-    puller: 'Pulled by Jim H. on week 2 live break.',
+    attached: null,
+    puller: 'Pulled by K. Ross',
+    pulledDate: 'SEP. 15TH',
   },
 ]
 
@@ -371,30 +377,40 @@ export default function Home() {
       {/* PSD: heading (673,3824,1004,3874), cards at y=4014-4642 */}
       <section className="prize-section">
         <div className="section-inner">
-          <p className="section-eyebrow">$100k+ in Giveaways</p>
+          <p className="section-eyebrow">$100k+ In Giveaways</p>
           <h2 className="section-heading">The Prize Board</h2>
-          <p className="section-body">
-            Every chase card has a real prize attached. Grayed out means someone already pulled it.
-            The rest are still out there.
+          <p className="section-body" style={{maxWidth: '420px'}}>
+            Every chase card has a real prize attached. Grayed out means someone already pulled it &ndash; the rest are still in packs, waiting.
           </p>
 
           <div className="prize-grid">
             {PRIZES.map((prize, i) => (
-              <div
-                key={i}
-                className={`prize-card ${prize.status === 'claimed' ? 'claimed' : ''}`}
-              >
-                <span
-                  className={`prize-badge ${prize.status === 'claimed' ? 'claimed-badge' : 'out-there'}`}
-                >
-                  {prize.status === 'claimed' ? '● Claimed' : '○ Still Out There'}
-                </span>
-                <p className="prize-rank">{prize.rank}</p>
-                <p className={`prize-name ${prize.status === 'claimed' ? 'greyed' : ''}`}>
-                  {prize.name}
+              <div key={i} className={`prize-card${prize.status === 'claimed' ? ' claimed' : ''}`}>
+                {/* Badge */}
+                <p className={`prize-badge${prize.status === 'claimed' ? ' claimed-badge' : ''}`}>
+                  {prize.badge}
                 </p>
+                {/* Prize name */}
+                <h3 className="prize-name">{prize.name}</h3>
+                {/* Description */}
                 {prize.desc && <p className="prize-desc">{prize.desc}</p>}
-                {prize.puller && <p className="prize-puller">{prize.puller}</p>}
+                {/* Attached to */}
+                {prize.attached && (
+                  <p className="prize-attached">
+                    <span className="prize-attached-label">ATTACHED TO </span>
+                    {prize.attached}
+                  </p>
+                )}
+                {/* PULLED overlay for claimed cards */}
+                {prize.status === 'claimed' && (
+                  <div className="pulled-overlay">
+                    <div className="pulled-frame">
+                      <span className="pulled-text">PULLED</span>
+                    </div>
+                    {prize.puller && <p className="pulled-by">{prize.puller}</p>}
+                    {prize.pulledDate && <p className="pulled-date">PULLED: {prize.pulledDate}</p>}
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -260,17 +260,25 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── PRIZE BOARD ────────────────────────────────────── */
 .prize-section { padding: 6vw 0; background: #07090e; }
-.prize-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2vw; margin-top: 2.5vw; }
-.prize-card { background: #0d1020; border: 1px solid #1a1e30; border-radius: 6px; padding: 1.5vw; display: flex; flex-direction: column; gap: 0.5vw; }
-.prize-card.claimed { opacity: 0.45; }
-.prize-badge { font-size: 0.65vw; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
-.prize-badge.out-there { color: var(--teal); }
-.prize-badge.claimed-badge { color: rgba(245,248,248,0.4); }
-.prize-rank { font-size: 0.68vw; color: rgba(245,248,248,0.4); letter-spacing: 0.1em; }
-.prize-name { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); line-height: 1.1; }
-.prize-name.greyed { color: rgba(245,248,248,0.3); }
-.prize-desc { font-size: 0.78vw; line-height: 1.6; color: rgba(245,248,248,0.5); }
-.prize-puller { font-size: 0.72vw; color: rgba(245,248,248,0.35); }
+.prize-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1vw; margin-top: 3vw; }
+.prize-card { background: #111318; border: 1px solid #1e2230; border-radius: 10px; padding: 1.6vw 1.5vw; display: flex; flex-direction: column; gap: 0.7vw; position: relative; overflow: hidden; }
+.prize-card.claimed { opacity: 1; }
+.prize-badge { font-size: 0.6vw; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.3vw; }
+.prize-badge.claimed-badge { color: rgba(245,248,248,0.35); }
+.prize-name { font-family: var(--font-antonio); font-size: 1.55vw; text-transform: uppercase; color: var(--white); line-height: 1.08; }
+.prize-card.claimed .prize-name { color: rgba(245,248,248,0.4); }
+.prize-desc { font-size: 0.72vw; line-height: 1.65; color: rgba(245,248,248,0.45); margin-top: 0.2vw; }
+.prize-attached { font-size: 0.6vw; letter-spacing: 0.12em; color: rgba(245,248,248,0.45); margin-top: auto; padding-top: 0.8vw; text-transform: uppercase; }
+.prize-attached-label { color: var(--teal); font-weight: 700; }
+/* PULLED overlay */
+.pulled-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(10,12,18,0.72); gap: 0.4vw; }
+.pulled-frame { border: 2px solid var(--teal); padding: 0.5vw 1.8vw; display: flex; align-items: center; justify-content: center; position: relative; }
+.pulled-frame::before,.pulled-frame::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--teal); border-style: solid; }
+.pulled-frame::before { top: -4px; left: -4px; border-width: 2px 0 0 2px; }
+.pulled-frame::after { bottom: -4px; right: -4px; border-width: 0 2px 2px 0; }
+.pulled-text { font-family: var(--font-antonio); font-size: 2.2vw; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; }
+.pulled-by { font-size: 0.65vw; color: rgba(245,248,248,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+.pulled-date { font-size: 0.65vw; color: rgba(245,248,248,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ─── HOW TO GET A PACK ──────────────────────────────── */
 .howto-section { padding: 6vw 0; background: #080a10; }
