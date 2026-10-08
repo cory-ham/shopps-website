@@ -244,12 +244,18 @@ export default function Home() {
       <div className="ticker-wrap">
         <div className="ticker-track">
           {TICKER_ITEMS.map((item, i) => (
-            <div key={i} className="ticker-item">
-              {item.label === 'Fulfil' ? (
-                <img src="/fulfil-logo.svg" alt="Fulfil" className="sponsor-logo" style={{ height: '22px', width: 'auto', opacity: 0.5 }} />
-              ) : (
-                <img src="/omnisend-logo.svg" alt="omnisend" className="sponsor-logo" style={{ height: '22px', width: 'auto', opacity: 0.5, filter: 'invert(1) brightness(1.8)' }} />
-              )}
+            <div key={i} className="sponsor-item">
+              <img
+                src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
+                alt={item.label}
+                style={{
+                  maxHeight: '100%',
+                  maxWidth: '100%',
+                  objectFit: 'contain',
+                  opacity: 0.55,
+                  filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+                }}
+              />
             </div>
           ))}
         </div>
