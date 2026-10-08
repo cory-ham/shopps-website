@@ -786,3 +786,101 @@ a { color: inherit; text-decoration: none; }
 
 /* Sponsor strip override — both logos 138px wide at height:20px */
 .ticker-wrap img { height: 20px; width: auto; }
+
+/* ─── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .section-inner { padding: 0 4vw; }
+  .howto-steps { grid-template-columns: repeat(2,1fr); }
+  .prize-grid { grid-template-columns: repeat(2,1fr); }
+  .top100-card-grid { grid-template-columns: repeat(4,1fr); }
+}
+
+@media (max-width: 768px) {
+  /* NAV */
+  .site-nav { padding: 0 4vw; height: 56px; }
+  .nav-left, .nav-right { display: none; }
+  .nav-logo-wrap { position: static; transform: none; }
+  .nav-logo { height: 28px; }
+  .site-nav { justify-content: center; }
+
+  /* HERO */
+  .hero { height: 70vh; min-height: 500px; }
+  .hero-text { width: 90vw; min-width: unset; margin: 0 auto; text-align: center; position: absolute; bottom: 4vh; left: 50%; transform: translateX(-50%); }
+  .hero-headline { font-size: 11vw; }
+  .hero-collect-label { font-size: 3.5vw; }
+  .hero-body { font-size: 3.8vw; }
+  .hero-buttons { justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .pack-counter { display: flex; flex-direction: column; align-items: center; }
+  .card-sleeve-img-wrap { height: 52vw; }
+  .card-slab-img { height: 52vw; width: auto; }
+
+  /* SECTIONS */
+  .section-inner { padding: 0 5vw; }
+  .section-heading { font-size: 10vw; }
+  .section-eyebrow { font-size: 3vw; }
+  .section-body { font-size: 4vw; }
+
+  /* WHAT IS SHOPPS */
+  .shopps-video-wrap { width: 90%; }
+  .shopps-heading { font-size: 8vw; }
+  .shopps-body { font-size: 4vw; max-width: 90%; }
+
+  /* VALUE PROPS */
+  .value-grid { grid-template-columns: 1fr; }
+  .value-item { padding: 5vw 5vw; border-right: none; border-bottom: 1px solid #1a1e30; }
+  .value-item:last-child { border-bottom: none; }
+
+  /* TOP 100 */
+  .top100-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .top100-card-grid { grid-template-columns: repeat(2,1fr); gap: 3vw; }
+
+  /* PRIZE BOARD */
+  .prize-grid { grid-template-columns: 1fr; gap: 3vw; }
+  .prize-name { font-size: 6vw; }
+  .prize-desc { font-size: 3.8vw; }
+  .prize-badge { font-size: 2.8vw; }
+  .pulled-text { font-size: 8vw; }
+
+  /* HOW IT WORKS */
+  .howto-steps { grid-template-columns: 1fr; gap: 3vw; }
+  .howto-num { font-size: 14vw; }
+  .howto-title { font-size: 5vw; }
+  .howto-body { font-size: 3.8vw; }
+  .howto-disclaimer { flex-wrap: wrap; font-size: 3.5vw; }
+  .howto-free-label { font-size: 4vw; }
+
+  /* LIVE SCHEDULE */
+  .live-event { padding: 4vw 4vw; gap: 4vw; }
+  .live-date-day { font-size: 8vw; }
+  .live-date-month { font-size: 3vw; }
+  .live-title { font-size: 5vw; }
+  .live-meta { font-size: 3.2vw; flex-wrap: wrap; }
+  .live-email-bar { max-width: 100%; }
+  .live-email-input { font-size: 3.8vw; }
+  .live-email-btn { font-size: 3.5vw; padding: 14px 16px; }
+  .btn-remind { font-size: 2.8vw; padding: 8px 12px; }
+
+  /* CTA */
+  .cta-heading { font-size: 10vw; }
+  .cta-body { font-size: 4vw; }
+  .btn-cta-outline { font-size: 3.5vw; padding: 14px 28px; }
+
+  /* FOOTER */
+  .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 6vw; }
+  .footer-copy { font-size: 3vw; }
+
+  /* TICKER */
+  .ticker-wrap { padding: 0 2vw; }
+
+  /* BUTTONS */
+  .btn-teal, .btn-outline { font-size: 4vw; padding: 14px 24px; }
+}
+
+@media (max-width: 480px) {
+  .hero-headline { font-size: 13vw; }
+  .section-heading { font-size: 11vw; }
+  .top100-card-grid { grid-template-columns: repeat(2,1fr); gap: 2.5vw; }
+  .live-event { flex-wrap: wrap; }
+  .live-event-body { width: 100%; }
+  .btn-remind { margin-top: 8px; }
+}
