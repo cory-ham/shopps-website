@@ -1,17 +1,18 @@
 import type { Metadata } from 'next'
-import { Anton, Inter } from 'next/font/google'
+import { Antonio, IBM_Plex_Sans } from 'next/font/google'
 import './globals.css'
 
-const anton = Anton({
-  weight: '400',
+const antonio = Antonio({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-anton',
+  variable: '--font-antonio',
   display: 'swap',
 })
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -27,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${anton.variable} ${inter.variable} font-inter`}>
+      <body className={`${antonio.variable} ${ibmPlexSans.variable}`}>
         {children}
       </body>
     </html>

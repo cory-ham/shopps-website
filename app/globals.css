@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* Fonts loaded via next/font/google in layout.tsx — Antonio Bold (headlines) + IBM Plex Sans (body) */
 
 :root {
   --bg: #07090f;
