@@ -10,18 +10,14 @@ import Image from 'next/image'
 ──────────────────────────────────────────────────────────── */
 
 const TICKER_ITEMS = [
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
-  { icon: '𝓕', label: 'Fulfil' },
-  { icon: '⬛', label: 'omnisend' },
+  { label: 'Fulfil' },
+  { label: 'omnisend' },
+  { label: 'Fulfil' },
+  { label: 'omnisend' },
+  { label: 'Fulfil' },
+  { label: 'omnisend' },
+  { label: 'Fulfil' },
+  { label: 'omnisend' },
 ]
 
 const TOP100_CARDS = [
@@ -244,24 +240,22 @@ export default function Home() {
 
       </section>
 
-      {/* ──────────────────── TICKER STRIP ──────────────────── */}
-      {/* PSD Layer 4: (0,886,2544,945) — 59px tall, full width
-          Logos: Fulfil + omnisend, alternating, scrolling */}
+      {/* ── SPONSOR STRIP — static ── */}
       <div className="ticker-wrap">
         <div className="ticker-track">
-          {/* Duplicate items for seamless infinite scroll */}
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+          {TICKER_ITEMS.map((item, i) => (
             <div key={i} className="ticker-item">
               <span className="ticker-logo-icon" aria-hidden="true">
                 {item.label === 'Fulfil' ? (
-                  <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.15)" />
-                    <text x="10" y="15" textAnchor="middle" fill="white" fontSize="12" fontFamily="Georgia, serif">ƒ</text>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.12)" />
+                    <text x="10" y="14" textAnchor="middle" fill="white" fontSize="11" fontFamily="Georgia, serif" fontWeight="bold">F</text>
                   </svg>
                 ) : (
-                  <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.15)" />
-                    <text x="10" y="15" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold" fontFamily="Arial, sans-serif">a</text>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                    <rect width="20" height="20" rx="3" fill="rgba(255,255,255,0.12)" />
+                    <rect x="5" y="7" width="10" height="7" rx="1" stroke="white" strokeWidth="1.2" fill="none" />
+                    <path d="M8 7V5.5a2 2 0 0 1 4 0V7" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
                   </svg>
                 )}
               </span>
