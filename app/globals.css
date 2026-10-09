@@ -228,8 +228,8 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 0; background: #13161f; text-align: left; position: relative; overflow: hidden; }
-.shopps-content-row { display: flex; align-items: center; gap: 4vw; padding: 4vw 6vw 2.5vw; position: relative; z-index: 1; }
+.shopps-section { padding: 0; background: #13161f; text-align: left; position: relative; overflow: hidden; min-height: 540px; }
+.shopps-content-row { display: flex; align-items: center; gap: 4vw; padding: 5vw 6vw; position: relative; z-index: 1; }
 .shopps-copy { flex: 0 0 40%; }
 .shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 8px; padding: 8px; z-index: 0; pointer-events: none; align-content: start; }
 .shopps-bg-card { background: #0e1018; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; aspect-ratio: 5/7; }
