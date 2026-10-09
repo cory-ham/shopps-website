@@ -316,19 +316,22 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="shopps-video-wrap">
-          <div className="shopps-play-btn">
-            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="26" cy="26" r="25" stroke="white" strokeWidth="1.5" strokeOpacity="0.7"/>
-              <polygon points="21,17 37,26 21,35" fill="white" fillOpacity="0.9"/>
-            </svg>
+        <div className="shopps-content-row">
+          <div className="shopps-copy">
+            <h2 className="shopps-heading">What is SHOPPS?</h2>
+            <p className="shopps-body">
+              A physical trading card series celebrating 100 of the founders, operators, and leaders shaping DTC. Collect the people behind the brands and hunt down a free pack through live card breaks, player drops, and social contests.
+            </p>
+          </div>
+          <div className="shopps-video-wrap">
+            <div className="shopps-play-btn">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="26" cy="26" r="25" stroke="white" strokeWidth="1.5" strokeOpacity="0.7"/>
+                <polygon points="21,17 37,26 21,35" fill="white" fillOpacity="0.9"/>
+              </svg>
+            </div>
           </div>
         </div>
-
-        <h2 className="shopps-heading">What is SHOPPS?</h2>
-        <p className="shopps-body">
-          A physical trading card series celebrating 100 of the founders, operators, and leaders shaping DTC. Collect the people behind the brands and hunt down a free pack through live card breaks, player drops, and social contests.
-        </p>
       </section>
 
       {/* ──────────────────── VALUE PROPS ──────────────────── */}
