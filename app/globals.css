@@ -228,17 +228,15 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 0; background: #13161f; text-align: left; position: relative; overflow: hidden; min-height: 540px; }
-.shopps-content-row { display: flex; align-items: center; gap: 4vw; padding: 5vw 6vw; position: relative; z-index: 1; }
-.shopps-copy { flex: 0 0 40%; }
-.shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); grid-template-rows: repeat(3, 1fr); grid-auto-rows: 0px; gap: 8px; padding: 0; z-index: 0; pointer-events: none; overflow: hidden; background: #13161f; }
-.shopps-bg-card { background: #0e1018; border-radius: 8px; overflow: hidden; }
+.shopps-section { padding: 5vw 0 6vw; background: #13161f; text-align: center; position: relative; overflow: hidden; }
+.shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 8px; padding: 8px; z-index: 0; pointer-events: none; align-content: start; }
+.shopps-bg-card { background: #0e1018; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; aspect-ratio: 5/7; }
 .shopps-section > *:not(.shopps-card-grid) { position: relative; z-index: 1; }
-.shopps-video-wrap { position: relative; flex: 1; aspect-ratio: 16/9; background: #1a1c26; border-radius: 8px; overflow: hidden; border: 1px solid #252836; }
+.shopps-video-wrap { position: relative; width: 46%; margin: 0 auto 3vw; aspect-ratio: 16/9; background: #1a1c26; border-radius: 8px; overflow: hidden; border: 1px solid #252836; }
 .shopps-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .shopps-play-btn svg { width: 52px; height: 52px; }
 .shopps-heading { font-family: var(--font-antonio); font-size: 2.8vw; text-transform: uppercase; color: var(--white); margin-bottom: 1.4vw; letter-spacing: .02em; }
-.shopps-body { font-size: clamp(14px, 1vw, 16px); line-height: 1.75; color: rgba(245,248,248,0.5); max-width: 420px; }
+.shopps-body { font-size: clamp(14px, 1vw, 16px); line-height: 1.75; color: rgba(245,248,248,0.5); max-width: 320px; margin: 0 auto; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
 .value-section { background: #07090f; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 4vw 0; }
@@ -933,12 +931,10 @@ a { color: inherit; text-decoration: none; }
   .section-body { font-size: 16px; max-width: 100%; }
 
   /* ── WHAT IS SHOPPS ──────────────────────────────────── */
-  .shopps-section { padding: 40px 0 48px; text-align: center; }
-  .shopps-content-row { flex-direction: column; padding: 0 5vw; gap: 28px; }
-  .shopps-copy { flex: none; width: 100%; }
-  .shopps-video-wrap { flex: none; width: 100%; }
+  .shopps-section { padding: 40px 0 48px; }
+  .shopps-video-wrap { width: 90%; }
   .shopps-heading { font-size: clamp(28px, 9vw, 48px); }
-  .shopps-body { font-size: 16px; max-width: 100%; margin: 0 auto; }
+  .shopps-body { font-size: 16px; max-width: 90%; }
 
   /* ── VALUE PROPS — 1 column, no dividers ─────────────── */
   .value-section { padding: 32px 0; }
