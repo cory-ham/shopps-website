@@ -140,7 +140,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['ALL', 'FOUNDERS', 'OPERATORS', 'BUILDERS', 'CREATORS', '1 OF 1'] as const
+const FILTERS = ['ALL', 'FOUNDERS', 'OPERATORS', 'BUILDERS', 'CREATORS', 'AUTOGRAPH'] as const
 
 export default function SetPage() {
   const [activeFilter, setActiveFilter] = useState<string>('ALL')
@@ -179,8 +179,8 @@ export default function SetPage() {
 
   const filtered = useMemo(() => {
     return PEOPLE.filter(person => {
-      if (activeFilter === '1 OF 1') {
-        if (!person.oneOfOne) return false
+      if (activeFilter === 'AUTOGRAPH') {
+        // all 99 people have an autograph card — show everyone
       } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
       }
@@ -228,7 +228,7 @@ export default function SetPage() {
         <div className="set-stat-pills">
           <span className="set-stat-pill">100 PLAYERS</span>
           <span className="set-stat-pill">3 TIERS</span>
-          <span className="set-stat-pill">10 ONE-OF-ONES</span>
+          <span className="set-stat-pill">99 AUTOGRAPHS</span>
           <span className="set-stat-pill">4 CATEGORIES</span>
         </div>
       </div>
@@ -261,24 +261,29 @@ export default function SetPage() {
       {/* ──────────────────── CARD GRID ──────────────────── */}
       <div className="set-grid">
         {filtered.map(person => {
+          const isAutograph = activeFilter === 'AUTOGRAPH'
           const v = getVariant(person.p)
-          const src = cardSrc(person.p, v)
+          const src = isAutograph
+            ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
+            : cardSrc(person.p, v)
           return (
             <div
               key={person.p}
               className="set-card-cell"
-              onClick={() => cycleVariant(person.p)}
-              title={`${person.name} — click to cycle variant`}
+              onClick={() => !isAutograph && cycleVariant(person.p)}
+              title={isAutograph ? person.name : `${person.name} — click to cycle variant`}
             >
               <img src={src} alt={person.name} draggable={false} />
               <div className="set-card-overlay">
                 <p className="set-card-name">{person.name}</p>
                 <p className="set-card-company">{person.company}</p>
               </div>
-              <span
-                className="set-variant-dot"
-                style={{ background: DOT_COLORS[v] }}
-              />
+              {!isAutograph && (
+                <span
+                  className="set-variant-dot"
+                  style={{ background: DOT_COLORS[v] }}
+                />
+              )}
             </div>
           )
         })}
