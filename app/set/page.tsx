@@ -170,11 +170,14 @@ export default function SetPage() {
     return (variants[p] ?? 0) as Variant
   }
 
-  function cycleVariant(p: number) {
-    setVariants(prev => ({
-      ...prev,
-      [p]: (((prev[p] ?? 0) + 1) % 3) as Variant,
-    }))
+  const [flipped, setFlipped] = useState<Set<number>>(new Set())
+
+  function toggleFlip(p: number) {
+    setFlipped(prev => {
+      const next = new Set(prev)
+      next.has(p) ? next.delete(p) : next.add(p)
+      return next
+    })
   }
 
   // Shuffle once per page load — new order every visit
@@ -273,27 +276,36 @@ export default function SetPage() {
         {filtered.map(person => {
           const isAutograph = activeFilter === 'AUTOGRAPH'
           const v = getVariant(person.p)
-          const src = isAutograph
+          const isFlipped = flipped.has(person.p)
+          // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
+          const backOffsets: [number,number,number] = [2, 4, 6]
+          const frontSrc = isAutograph
             ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
             : cardSrc(person.p, v)
+          const backNum = isAutograph ? 8*person.p+8 : 8*person.p+backOffsets[v]
+          const backSrc = `/cards/card-${String(backNum).padStart(3,'0')}.jpg`
           return (
             <div
               key={person.p}
-              className="set-card-cell"
-              onClick={() => !isAutograph && cycleVariant(person.p)}
-              title={isAutograph ? person.name : `${person.name} — click to cycle variant`}
+              className={`set-card-cell set-card-flip-wrap${isFlipped ? ' is-flipped' : ''}`}
+              onClick={() => toggleFlip(person.p)}
+              title={`${person.name} — click to flip`}
             >
-              <img src={src} alt={person.name} draggable={false} />
-              <div className="set-card-overlay">
-                <p className="set-card-name">{person.name}</p>
-                <p className="set-card-company">{person.company}</p>
+              <div className="set-card-flipper">
+                <div className="set-card-front">
+                  <img src={frontSrc} alt={person.name} draggable={false} />
+                  <div className="set-card-overlay">
+                    <p className="set-card-name">{person.name}</p>
+                    <p className="set-card-company">{person.company}</p>
+                  </div>
+                  {!isAutograph && (
+                    <span className="set-variant-dot" style={{ background: DOT_COLORS[v] }} />
+                  )}
+                </div>
+                <div className="set-card-back">
+                  <img src={backSrc} alt={`${person.name} back`} draggable={false} />
+                </div>
               </div>
-              {!isAutograph && (
-                <span
-                  className="set-variant-dot"
-                  style={{ background: DOT_COLORS[v] }}
-                />
-              )}
             </div>
           )
         })}
