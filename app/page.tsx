@@ -327,9 +327,7 @@ export default function Home() {
 
         <h2 className="shopps-heading">What is SHOPPS?</h2>
         <p className="shopps-body">
-          Top 100 operators, founders, and legends of the industry &mdash; immortalized
-          in a collector card series. Packs are 100% free but you can&apos;t buy them.
-          You have to find them.
+          A physical trading card series celebrating 100 of the founders, operators, and leaders shaping DTC. Collect the people behind the brands and hunt down a free pack through live card breaks, player drops, and social contests.
         </p>
       </section>
 
