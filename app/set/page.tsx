@@ -177,8 +177,18 @@ export default function SetPage() {
     }))
   }
 
+  // Shuffle once per page load — new order every visit
+  const [shuffled] = useState<typeof PEOPLE>(() => {
+    const arr = [...PEOPLE]
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    return arr
+  })
+
   const filtered = useMemo(() => {
-    return PEOPLE.filter(person => {
+    return shuffled.filter(person => {
       if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
       } else if (activeFilter !== 'ALL') {
