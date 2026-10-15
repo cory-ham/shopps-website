@@ -266,7 +266,7 @@ export default function Home() {
           <h1 className="hero-headline">100 LEADERS SHAPING ECOMMERCE</h1>
           <p className="hero-collect-label">Only 1,000 packs, free to collect</p>
           <p className="hero-body">
-            Top 100 operators, founders, and legends of the industry – immortalized in a collector card series. Packs are 100% free but you can&apos;t buy them. You have to find them.
+            Collect physical trading cards featuring the founders and operators behind the brands you follow. Chase rare cards and one-of-one autographs with prizes from the players themselves, and find packs through player drops, social contests, and live card breaks.
           </p>
           <div className="hero-buttons">
             <button className="btn-teal">How to Get a Pack</button>
