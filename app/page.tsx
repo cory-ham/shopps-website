@@ -561,7 +561,7 @@ export default function Home() {
         </div>
         <div className="tweet-track-wrap">
           <div className="tweet-track">
-            {TWEETS.concat(TWEETS).map((t, i) => (
+            {[...TWEETS,...TWEETS,...TWEETS,...TWEETS,...TWEETS].map((t, i) => (
               <a
                 key={i}
                 href={t.url}

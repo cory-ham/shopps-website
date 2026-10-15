@@ -1403,16 +1403,16 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .tweet-track-wrap::before {
   left: 0;
-  background: linear-gradient(to right, var(--bg), transparent);
+  background: linear-gradient(to right, var(--bg) 30%, transparent);
 }
 .tweet-track-wrap::after {
   right: 0;
-  background: linear-gradient(to left, var(--bg), transparent);
+  background: linear-gradient(to left, var(--bg) 30%, transparent);
 }
 .tweet-track {
   display: flex;
   gap: 24px;
-  padding: 16px 60px;
+  padding: 16px max(6vw, 48px);
   animation: tweet-scroll 30s linear infinite;
   width: max-content;
 }
