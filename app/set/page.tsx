@@ -140,7 +140,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['ALL', 'FOUNDERS', 'OPERATORS', 'BUILDERS', 'CREATORS', 'AUTOGRAPH'] as const
+const FILTERS = ['ALL'] as const
 
 export default function SetPage() {
   const [activeFilter, setActiveFilter] = useState<string>('ALL')
