@@ -98,8 +98,8 @@ a { color: inherit; text-decoration: none; }
 .carousel-fade-left {
   position: absolute;
   left: 0; top: 0; bottom: 0;
-  width: 28%;
-  background: linear-gradient(to right, var(--bg) 20%, rgba(7,9,15,0.85) 60%, transparent 100%);
+  width: 52%;
+  background: linear-gradient(to right, var(--bg) 30%, rgba(7,9,15,0.92) 55%, rgba(7,9,15,0.6) 75%, transparent 100%);
   z-index: 3;
   pointer-events: none;
 }
@@ -135,6 +135,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 0.4vw;
   letter-spacing: 0.01em;
   text-transform: uppercase;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.9);
 }
 .hero-collect-label {
   font-family: var(--font-antonio);
@@ -150,9 +151,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.95vw;
   font-weight: 400;
   line-height: 1.65;
-  color: rgba(245,248,248,0.65);
+  color: rgba(245,248,248,0.92);
   margin: 0 0 1.8vw;
   max-width: 22vw;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 .hero-buttons {
   display: flex;
