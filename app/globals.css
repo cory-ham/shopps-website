@@ -1550,8 +1550,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .tweet-media-single img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 .tweet-media-multi {
@@ -1561,8 +1560,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .tweet-media-multi img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 .tweet-media-multi img:first-child { border-radius: 6px 0 0 6px; }
