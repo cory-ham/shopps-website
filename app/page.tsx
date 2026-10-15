@@ -11,6 +11,42 @@ import Link from 'next/link'
    Card images: actual extracted PNGs, no CSS card designs
 ──────────────────────────────────────────────────────────── */
 
+// ── Tweet feed data ───────────────────────────────────────────────────
+const TWEET_COLORS = ['#2d7a3a', '#039F9D', '#c9a227']
+
+const TWEETS = [
+  {
+    name: 'Taylor Holiday',
+    handle: '@TaylorHoliday',
+    avatarColor: '#039F9D',
+    text: 'Marketing is gonna hate me for this leak…\n\nBut I\'m too excited.\n\n#SHOPPS Season 1 dropping so soon.',
+    likes: '',
+    retweets: '6.2K views',
+    date: 'Oct 15',
+    url: 'https://x.com/TaylorHoliday/status/2110749556275351942',
+  },
+  {
+    name: 'Mehtab | Karta Ventures',
+    handle: '@MehtabKarta',
+    avatarColor: '#c9a227',
+    text: 'Look carefully and u might see me eating crayons',
+    likes: '',
+    retweets: '',
+    date: 'Oct 15',
+    url: 'https://x.com/MehtabKarta/status/2110759297286386137',
+  },
+  {
+    name: 'Bryan MacDonald',
+    handle: '@DTCbromozi',
+    avatarColor: '#2d7a3a',
+    text: 'Some say @TaylorHoliday is just a nerd. Numbers guy. A wizard. Taylor Potter some people call him. (Not verified)\n\nHowever, let\'s not forget that the man can sell and market the shit out of anything.\n\nPut a C on his chest and some respect on his name.',
+    likes: '',
+    retweets: '',
+    date: 'Oct 15',
+    url: 'https://x.com/DTCbromozi/status/2110816970769596445',
+  },
+]
+
 // ── Daily-rotating card carousel ─────────────────────────────────────────────
 // Uses a date-based seed so server + client render identically (no hydration
 // mismatch). Cards rotate each day; carousel rule: every 3rd slot = female.
@@ -513,6 +549,55 @@ export default function Home() {
           <div className="live-email-bar">
             <input className="live-email-input" type="email" placeholder="you@email.com – never miss a break" />
             <button className="live-email-btn">Get Reminders</button>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── TWEET FEED ──────────────────── */}
+      <section className="tweet-section">
+        <div className="section-inner">
+          <p className="section-eyebrow">From the Community</p>
+          <h2 className="section-heading">In the Wild</h2>
+        </div>
+        <div className="tweet-track-wrap">
+          <div className="tweet-track">
+            {TWEETS.concat(TWEETS).map((t, i) => (
+              <a
+                key={i}
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tweet-card"
+                style={{ borderColor: TWEET_COLORS[i % TWEET_COLORS.length] }}
+              >
+                {/* Card header — Shopps style */}
+                <div className="tweet-card-header">
+                  <img src="/shopps-logo-v2.png" alt="SHOPPS" className="tweet-card-logo" />
+                  <span className="tweet-card-badge">COMMUNITY</span>
+                </div>
+                {/* Card body */}
+                <div className="tweet-card-body">
+                  <div className="tweet-profile-row">
+                    <div className="tweet-avatar" style={{ background: t.avatarColor }}>
+                      {t.handle.slice(1, 3).toUpperCase()}
+                    </div>
+                    <div>
+                      <p className="tweet-name">{t.name}</p>
+                      <p className="tweet-handle">{t.handle}</p>
+                    </div>
+                    <svg className="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </div>
+                  <p className="tweet-text" style={{whiteSpace:'pre-line'}}>{t.text}</p>
+                  <div className="tweet-meta">
+                    {t.likes && <span>♥ {t.likes}</span>}
+                    {t.retweets && <span>{t.retweets}</span>}
+                    <span className="tweet-date">{t.date}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
