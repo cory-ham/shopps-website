@@ -1538,3 +1538,29 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   object-fit: cover;
   display: block;
 }
+.tweet-avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.tweet-media-single img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.tweet-media-multi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.tweet-media-multi img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.tweet-media-multi img:first-child { border-radius: 6px 0 0 6px; }
+.tweet-media-multi img:last-child  { border-radius: 0 6px 6px 0; }

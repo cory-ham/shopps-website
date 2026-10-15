@@ -18,9 +18,12 @@ const TWEETS = [
   {
     name: 'Taylor Holiday',
     handle: '@TaylorHoliday',
-    avatarColor: '#039F9D',
+    avatar: 'https://pbs.twimg.com/profile_images/1493453071807967234/KLa4U1A8_normal.jpg',
     text: 'Marketing is gonna hate me for this leak…\n\nBut I\'m too excited.\n\n#SHOPPS Season 1 dropping so soon.',
-    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
+    images: [
+      'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
+      'https://pbs.twimg.com/amplify_video_thumb/2110749511719243776/img/davSLKmJL5ZiYUZz?format=webp&name=medium',
+    ],
     likes: '79',
     retweets: '6.4K views',
     date: 'Oct 15',
@@ -29,9 +32,9 @@ const TWEETS = [
   {
     name: 'Mehtab | Karta Ventures',
     handle: '@MehtabKarta',
-    avatarColor: '#c9a227',
+    avatar: 'https://pbs.twimg.com/profile_images/2013096438251524096/tvL3UYB0_normal.jpg',
     text: 'Look carefully and u might see me eating crayons',
-    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
+    images: ['https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large'],
     likes: '',
     retweets: '',
     date: 'Oct 15',
@@ -40,9 +43,9 @@ const TWEETS = [
   {
     name: 'Bryan MacDonald',
     handle: '@DTCbromozi',
-    avatarColor: '#2d7a3a',
+    avatar: 'https://pbs.twimg.com/profile_images/1885708673856499712/3SebwehN_normal.jpg',
     text: 'Some say @TaylorHoliday is just a nerd. Numbers guy. A wizard. Taylor Potter some people call him. (Not verified)\n\nHowever, let\'s not forget that the man can sell and market the shit out of anything.\n\nPut a C on his chest and some respect on his name.',
-    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
+    images: ['https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large'],
     likes: '',
     retweets: '',
     date: 'Oct 15',
@@ -581,9 +584,10 @@ export default function Home() {
                 {/* Card body */}
                 <div className="tweet-card-body">
                   <div className="tweet-profile-row">
-                    <div className="tweet-avatar" style={{ background: t.avatarColor }}>
-                      {t.handle.slice(1, 3).toUpperCase()}
-                    </div>
+                    {t.avatar
+                      ? <img src={t.avatar} alt={t.name} className="tweet-avatar tweet-avatar-img" />
+                      : <div className="tweet-avatar" style={{ background: '#039F9D' }}>{t.handle.slice(1,3).toUpperCase()}</div>
+                    }
                     <div>
                       <p className="tweet-name">{t.name}</p>
                       <p className="tweet-handle">{t.handle}</p>
@@ -593,9 +597,11 @@ export default function Home() {
                     </svg>
                   </div>
                   <p className="tweet-text" style={{whiteSpace:'pre-line'}}>{t.text}</p>
-                  {t.image && (
-                    <div className="tweet-media">
-                      <img src={t.image} alt="" draggable={false} />
+                  {t.images && t.images.length > 0 && (
+                    <div className={`tweet-media tweet-media-${t.images.length > 1 ? 'multi' : 'single'}`}>
+                      {t.images.map((src: string, mi: number) => (
+                        <img key={mi} src={src} alt="" draggable={false} />
+                      ))}
                     </div>
                   )}
                   <div className="tweet-meta">
