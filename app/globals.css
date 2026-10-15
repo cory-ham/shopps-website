@@ -1411,8 +1411,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .tweet-track {
   display: flex;
-  gap: 24px;
-  padding: 16px max(6vw, 48px);
+  gap: 28px;
+  padding: 20px max(6vw, 48px) 30px;
   animation: tweet-scroll 30s linear infinite;
   width: max-content;
 }
@@ -1421,155 +1421,159 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ── Playing card ── */
 .tweet-card {
-  width: 320px;
+  position: relative;
+  width: 240px;
+  height: 340px;
   flex-shrink: 0;
-  background: #0d0f18;
-  border: 2px solid #039F9D;
-  border-radius: 12px;
+  border: 3px solid #039F9D;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  background: #060810;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 .tweet-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  transform: translateY(-6px) rotate(1deg) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
 }
-.tweet-card-header {
-  background: #000;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.tweet-card-logo {
-  height: 18px;
-  width: auto;
-  object-fit: contain;
-}
-.tweet-card-badge {
+
+/* Rotated side text */
+.tweet-card-side-text {
+  position: absolute;
+  right: -38px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
   font-family: var(--font-antonio);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 2px 7px;
-  border-radius: 4px;
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
 }
-.tweet-card-body {
-  padding: 16px;
+
+/* Top row: S badge + X icon */
+.tweet-card-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 10;
 }
-.tweet-profile-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.tweet-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.tweet-card-s-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-antonio);
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: 700;
   color: #000;
-  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
-.tweet-name {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--white);
-  margin: 0;
-  line-height: 1.2;
-}
-.tweet-handle {
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: rgba(245,248,248,0.45);
-  margin: 0;
-  line-height: 1.2;
-}
-.tweet-x-icon {
+.tweet-card-x-badge {
   width: 16px;
   height: 16px;
-  color: rgba(245,248,248,0.4);
-  margin-left: auto;
-  flex-shrink: 0;
+  color: rgba(255,255,255,0.5);
 }
-.tweet-text {
+
+/* Full bleed photo */
+.tweet-card-photo {
+  position: absolute;
+  inset: 0;
+  bottom: 68px;
+}
+.tweet-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tweet-card-no-photo {
+  width: 100%;
+  height: 100%;
+  background: #0d0f18;
+}
+
+/* Gradient + quote overlay */
+.tweet-card-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 12px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+}
+.tweet-card-quote {
   font-family: var(--font-body);
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: rgba(245,248,248,0.9);
+  font-size: 10px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.9);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.tweet-meta {
+
+/* Bottom nameplate */
+.tweet-card-nameplate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: rgba(0,0,0,0.92);
+  border-top: 2px solid #039F9D;
   display: flex;
-  gap: 14px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: rgba(245,248,248,0.4);
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.07);
   align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  z-index: 10;
 }
-.tweet-date { margin-left: auto; }
-.tweet-media {
-  border-radius: 8px;
-  overflow: hidden;
-  margin: -4px 0 0;
-}
-.tweet-media img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+.tweet-card-shopps-logo img {
+  height: 14px;
+  width: auto;
   display: block;
+  opacity: 0.9;
 }
-.tweet-avatar-img {
-  width: 38px;
-  height: 38px;
+.tweet-card-identity {
+  flex: 1;
+  min-width: 0;
+}
+.tweet-card-name {
+  font-family: var(--font-antonio);
+  font-size: 11px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tweet-card-handle {
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  line-height: 1.2;
+}
+.tweet-card-avatar {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 1.5px solid rgba(255,255,255,0.2);
 }
-.tweet-media-single {
-  border-radius: 8px;
-  overflow: hidden;
-  height: 200px;
-}
-.tweet-media-single img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.tweet-media-multi {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  height: 200px;
-}
-.tweet-media-multi img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.tweet-media-multi img:first-child { border-radius: 6px 0 0 6px; }
-.tweet-media-multi img:last-child  { border-radius: 0 6px 6px 0; }

@@ -576,39 +576,41 @@ export default function Home() {
                 className="tweet-card"
                 style={{ borderColor: TWEET_COLORS[i % TWEET_COLORS.length] }}
               >
-                {/* Card header — Shopps style */}
-                <div className="tweet-card-header">
-                  <img src="/shopps-logo-v2.png" alt="SHOPPS" className="tweet-card-logo" />
-                  <span className="tweet-card-badge">COMMUNITY</span>
+                {/* Side label */}
+                <span className="tweet-card-side-text">SHOPPS COMMUNITY CARD</span>
+
+                {/* Top badge */}
+                <div className="tweet-card-top">
+                  <div className="tweet-card-s-badge" style={{ background: TWEET_COLORS[i % TWEET_COLORS.length] }}>S</div>
+                  <svg className="tweet-card-x-badge" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
                 </div>
-                {/* Card body */}
-                <div className="tweet-card-body">
-                  <div className="tweet-profile-row">
-                    {t.avatar
-                      ? <img src={t.avatar} alt={t.name} className="tweet-avatar tweet-avatar-img" />
-                      : <div className="tweet-avatar" style={{ background: '#039F9D' }}>{t.handle.slice(1,3).toUpperCase()}</div>
-                    }
-                    <div>
-                      <p className="tweet-name">{t.name}</p>
-                      <p className="tweet-handle">{t.handle}</p>
-                    </div>
-                    <svg className="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
+
+                {/* Full-bleed photo */}
+                <div className="tweet-card-photo">
+                  {t.images && t.images.length > 0
+                    ? <img src={t.images[0]} alt="" draggable={false} />
+                    : <div className="tweet-card-no-photo" />
+                  }
+                  {/* Tweet text overlay */}
+                  <div className="tweet-card-text-overlay">
+                    <p className="tweet-card-quote">&ldquo;{t.text}&rdquo;</p>
                   </div>
-                  <p className="tweet-text" style={{whiteSpace:'pre-line'}}>{t.text}</p>
-                  {t.images && t.images.length > 0 && (
-                    <div className={`tweet-media tweet-media-${t.images.length > 1 ? 'multi' : 'single'}`}>
-                      {t.images.map((src: string, mi: number) => (
-                        <img key={mi} src={src} alt="" draggable={false} />
-                      ))}
-                    </div>
+                </div>
+
+                {/* Bottom nameplate */}
+                <div className="tweet-card-nameplate" style={{ borderTopColor: TWEET_COLORS[i % TWEET_COLORS.length] }}>
+                  <div className="tweet-card-shopps-logo">
+                    <img src="/shopps-logo-v2.png" alt="SHOPPS" />
+                  </div>
+                  <div className="tweet-card-identity">
+                    <p className="tweet-card-name">{t.name}</p>
+                    <p className="tweet-card-handle">{t.handle}</p>
+                  </div>
+                  {t.avatar && (
+                    <img src={t.avatar} alt={t.name} className="tweet-card-avatar" />
                   )}
-                  <div className="tweet-meta">
-                    {t.likes && <span>♥ {t.likes}</span>}
-                    {t.retweets && <span>{t.retweets}</span>}
-                    <span className="tweet-date">{t.date}</span>
-                  </div>
                 </div>
               </a>
             ))}
