@@ -1548,19 +1548,27 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   object-fit: cover;
   flex-shrink: 0;
 }
+.tweet-media-single {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 200px;
+}
 .tweet-media-single img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 .tweet-media-multi {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3px;
+  height: 200px;
 }
 .tweet-media-multi img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 .tweet-media-multi img:first-child { border-radius: 6px 0 0 6px; }
