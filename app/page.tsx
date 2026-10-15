@@ -590,11 +590,18 @@ export default function Home() {
                 </div>
 
                 {/* Full-bleed photo */}
-                <div className="tweet-card-photo">
-                  {t.images && t.images.length > 0
-                    ? <img src={t.images[0]} alt="" draggable={false} />
-                    : <div className="tweet-card-no-photo" />
-                  }
+                <div className={`tweet-card-photo ${t.images && t.images.length > 1 ? 'tweet-card-photo-split' : ''}`}>
+                  {t.images && t.images.length > 1 ? (
+                    <>
+                      <img src={t.images[0]} alt="" draggable={false} className="tweet-split-img" />
+                      <div className="tweet-split-gap" />
+                      <img src={t.images[1]} alt="" draggable={false} className="tweet-split-img" />
+                    </>
+                  ) : t.images && t.images.length === 1 ? (
+                    <img src={t.images[0]} alt="" draggable={false} />
+                  ) : (
+                    <div className="tweet-card-no-photo" />
+                  )}
                   {/* Tweet text overlay */}
                   <div className="tweet-card-text-overlay">
                     <p className="tweet-card-quote">&ldquo;{t.text}&rdquo;</p>

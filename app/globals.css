@@ -1509,6 +1509,23 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   height: 100%;
   background: #0d0f18;
 }
+/* Two-image split */
+.tweet-card-photo-split {
+  display: flex;
+  flex-direction: column;
+}
+.tweet-split-img {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  display: block;
+  min-height: 0;
+}
+.tweet-split-gap {
+  height: 2px;
+  background: #000;
+  flex-shrink: 0;
+}
 
 /* Gradient + quote overlay */
 .tweet-card-text-overlay {
