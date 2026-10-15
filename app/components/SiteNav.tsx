@@ -10,7 +10,7 @@ export default function SiteNav() {
         <div className="nav-left">
           <a href="#" className="nav-link">The Set</a>
           <a href="#" className="nav-link">Giveaways</a>
-          <a href="#" className="nav-link">Pulls</a>
+
         </div>
 
         <div className="nav-logo-wrap">
@@ -19,7 +19,6 @@ export default function SiteNav() {
 
         <div className="nav-right">
           <a href="#" className="nav-link">How it works</a>
-          <a href="#" className="nav-link">Nominate</a>
           <a href="#" className="nav-live">LIVE</a>
         </div>
 
