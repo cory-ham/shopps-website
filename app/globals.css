@@ -1527,3 +1527,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   align-items: center;
 }
 .tweet-date { margin-left: auto; }
+.tweet-media {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: -4px 0 0;
+}
+.tweet-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}

@@ -20,8 +20,9 @@ const TWEETS = [
     handle: '@TaylorHoliday',
     avatarColor: '#039F9D',
     text: 'Marketing is gonna hate me for this leak…\n\nBut I\'m too excited.\n\n#SHOPPS Season 1 dropping so soon.',
-    likes: '',
-    retweets: '6.2K views',
+    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
+    likes: '79',
+    retweets: '6.4K views',
     date: 'Oct 15',
     url: 'https://x.com/TaylorHoliday/status/2110749556275351942',
   },
@@ -30,6 +31,7 @@ const TWEETS = [
     handle: '@MehtabKarta',
     avatarColor: '#c9a227',
     text: 'Look carefully and u might see me eating crayons',
+    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
     likes: '',
     retweets: '',
     date: 'Oct 15',
@@ -40,6 +42,7 @@ const TWEETS = [
     handle: '@DTCbromozi',
     avatarColor: '#2d7a3a',
     text: 'Some say @TaylorHoliday is just a nerd. Numbers guy. A wizard. Taylor Potter some people call him. (Not verified)\n\nHowever, let\'s not forget that the man can sell and market the shit out of anything.\n\nPut a C on his chest and some respect on his name.',
+    image: 'https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large',
     likes: '',
     retweets: '',
     date: 'Oct 15',
@@ -590,6 +593,11 @@ export default function Home() {
                     </svg>
                   </div>
                   <p className="tweet-text" style={{whiteSpace:'pre-line'}}>{t.text}</p>
+                  {t.image && (
+                    <div className="tweet-media">
+                      <img src={t.image} alt="" draggable={false} />
+                    </div>
+                  )}
                   <div className="tweet-meta">
                     {t.likes && <span>♥ {t.likes}</span>}
                     {t.retweets && <span>{t.retweets}</span>}
