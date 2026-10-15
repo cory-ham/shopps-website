@@ -1514,7 +1514,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   line-height: 1.6;
   color: rgba(245,248,248,0.9);
   margin: 0;
-  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .tweet-meta {
   display: flex;
