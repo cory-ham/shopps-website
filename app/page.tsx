@@ -330,7 +330,7 @@ export default function Home() {
           <h1 className="hero-headline">100 LEADERS SHAPING ECOMMERCE</h1>
           <p className="hero-collect-label">Only 1,000 packs, free to collect</p>
           <p className="hero-body">
-            Physical trading cards featuring the founders and operators behind the brands you follow, with a mix of card editions and $50,000 in prizes to win.
+            Physical trading cards featuring the founders and operators behind the brands you follow, with rare cards to collect and $50,000 in giveaways.
           </p>
           <div className="hero-buttons">
             <button className="btn-teal">How to Get a Pack</button>
