@@ -464,7 +464,7 @@ export default function Home() {
 
       {/* ──────────────────── PRIZE BOARD ──────────────────── */}
       {/* PSD: heading (673,3824,1004,3874), cards at y=4014-4642 */}
-      <section className="prize-section">
+      <section className="prize-section" style={{display:'none'}}>
         <div className="section-inner">
           <p className="section-eyebrow">$100k+ In Giveaways</p>
           <h2 className="section-heading">The Prize Board</h2>
