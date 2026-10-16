@@ -400,9 +400,9 @@ export default function Home() {
               </svg>
             </div>
             <p className="value-label">Always Free</p>
-            <p className="value-title">Value Prop 1</p>
+            <p className="value-title">Only 1,000 packs</p>
             <p className="value-body">
-              Placeholder copy to explain what the value is — why this thing matters to the collector.
+              The first edition includes chrome cards, rare editions, and one-of-one autographs across a limited run of 1,000 packs.
             </p>
           </div>
 
