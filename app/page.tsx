@@ -522,10 +522,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="howto-disclaimer">
-            <span className="howto-free-label">ALWAYS FREE</span>
-            {' '}Packs are never sold - no purchase, ever. If someone&apos;s charging you for one, it&apos;s not us.
-          </div>
         </div>
       </section>
 
