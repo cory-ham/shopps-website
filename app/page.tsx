@@ -410,7 +410,7 @@ export default function Home() {
 
             <p className="value-title">Only 1,000 packs</p>
             <p className="value-body">
-              The first edition includes chrome cards, rare editions, and one-of-one autographs across a limited run of 1,000 packs.
+              Build a collection of the founders and brands you follow, including chrome cards and rare variants. Open packs to find your favorites and trade with other collectors.
             </p>
           </div>
 
@@ -418,7 +418,7 @@ export default function Home() {
 
             <p className="value-title">$50,000 in giveaways</p>
             <p className="value-body">
-              Select one-of-one autograph cards come with prizes like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. There&apos;s also a chance to find Golden Tickets for a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
+              Select one-of-one autograph cards come with giveaways like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. Golden Tickets offer a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
             </p>
           </div>
 
@@ -426,7 +426,7 @@ export default function Home() {
 
             <p className="value-title">Never for sale</p>
             <p className="value-body">
-              Claim free packs through the pack request form, player drops, live card breaks, and LinkedIn or X. Follow us or sign up for email reminders for the next chance to claim.
+              Claim free packs through the pack request form, player drops, live card breaks, and CTC&apos;s posts on LinkedIn and X. Follow CTC or sign up for email reminders for the next opportunity.
             </p>
           </div>
 
