@@ -633,11 +633,11 @@ export default function Home() {
       <section className="cta-section">
         <div className="cta-glow" />
         <div className="cta-inner">
-          <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
+          <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" style={{marginBottom:'2rem'}} />
           <h2 className="cta-heading">
             734 Packs Left<br />Zero for Sale
           </h2>
-          <button className="btn-cta-outline">START COLLECTING</button>
+          <button className="btn-cta-outline" style={{marginTop:'2.5rem'}}>START COLLECTING</button>
         </div>
       </section>
 
