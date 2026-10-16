@@ -519,6 +519,7 @@ export default function Home() {
             {STEPS.map((step, i) => (
               <div key={i} className="howto-step">
                 <p className="howto-title">{step.title}</p>
+                <br />
                 <p className="howto-body">{step.body}</p>
               </div>
             ))}
