@@ -403,7 +403,7 @@ export default function Home() {
       {/* ──────────────────── VALUE PROPS ──────────────────── */}
       {/* PSD Layer 6 bg: (0,1783,2544,2299). 3 icons: Layer 14 variants */}
       <div className="value-section">
-        <h2 className="section-heading" style={{textAlign:'center',marginBottom:'3rem',padding:'0 6.5%'}}>Built to Lead. Made to Collect.</h2>
+        <h2 className="section-heading" style={{textAlign:'center',marginBottom:'3rem',padding:'0 6.5%'}}>Built to Lead <span style={{color:'#039F9D'}}>Made to Collect</span></h2>
         <div className="value-grid" style={{ maxWidth: 1440, margin: '0 auto', padding: '0 6.5%' }}>
 
           <div className="value-item">
