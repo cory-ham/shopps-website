@@ -530,7 +530,7 @@ export default function Home() {
 
       {/* ──────────────────── LIVE SCHEDULE ──────────────────── */}
       {/* PSD: heading (676,5820,962,5870), events at y=5998-6280 */}
-      <section className="live-section">
+      <section className="live-section" style={{display:'none'}}>
         <div className="section-inner">
           <p className="section-eyebrow">Breaks &amp; Shows</p>
           <h2 className="section-heading">Live Schedule</h2>
