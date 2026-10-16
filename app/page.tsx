@@ -564,7 +564,6 @@ export default function Home() {
       {/* ──────────────────── TWEET FEED ──────────────────── */}
       <section className="tweet-section">
         <div className="section-inner">
-          <p className="section-eyebrow">From the Community</p>
           <h2 className="section-heading">In the Wild</h2>
           <p className="section-body" style={{marginTop:'0.75rem'}}>See what&apos;s being opened, collected, and shared across the SHOPPS community.</p>
         </div>
