@@ -457,7 +457,7 @@ export default function Home() {
           </div>
 
           <div className="top100-footer-row">
-            <button className="btn-teal">SEE THE FULL SET</button>
+            <button className="btn-teal">SEE THE FULL COLLECTION</button>
           </div>
         </div>
       </section>
