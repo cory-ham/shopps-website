@@ -373,7 +373,7 @@ export default function Home() {
           <div className="shopps-copy">
             <h2 className="shopps-heading">What is SHOPPS?</h2>
             <p className="shopps-body">
-              SHOPPS brings the trading card experience to DTC, recognizing the leaders building brands, sharing ideas, and helping shape the industry. The featured founders and operators help bring the collection to life by contributing prizes, signing cards, and sharing packs for anyone to collect.
+              SHOPPS brings the trading card experience to ecommerce, featuring the founders and operators shaping the industry. Created to recognize their work and give something back to the community, the first edition comes in packs of physical cards to collect and trade.
             </p>
             <div className="pack-counter" style={{marginTop:'2rem'}}>
               <div className="pack-label">
