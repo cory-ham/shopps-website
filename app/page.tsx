@@ -55,6 +55,17 @@ const TWEETS = [
     name: 'Bryan MacDonald',
     handle: '@DTCbromozi',
     avatar: 'https://pbs.twimg.com/profile_images/1885708673856499712/3SebwehN_normal.jpg',
+    text: 'For those who missed the greatest live unboxing in @LinkedIn history last time… You have a chance to redeem yourself. Thursday, November 12 at 12 noon EST we are doing it again!',
+    images: ['https://pbs.twimg.com/media/HUw4PboWAAAdfhk?format=jpg&name=large'],
+    likes: '',
+    retweets: '',
+    date: 'Oct 16',
+    url: 'https://x.com/DTCbromozi/status/2111124168854962373',
+  },
+  {
+    name: 'Bryan MacDonald',
+    handle: '@DTCbromozi',
+    avatar: 'https://pbs.twimg.com/profile_images/1885708673856499712/3SebwehN_normal.jpg',
     text: 'Some say @TaylorHoliday is just a nerd. Numbers guy. A wizard. Taylor Potter some people call him. (Not verified)\n\nHowever, let\'s not forget that the man can sell and market the shit out of anything.\n\nPut a C on his chest and some respect on his name.',
     images: ['https://pbs.twimg.com/media/HUrjf2aaAAE2KZi?format=jpg&name=large'],
     likes: '',
@@ -256,7 +267,7 @@ const STEPS = [
   },
   {
     num: '04',
-    title: 'Watch a live card break',
+    title: 'WATCH LIVE BREAKS',
     body: 'Watch packs being opened live on YouTube, LinkedIn, and X, with opportunities to claim packs and win autograph cards with prizes attached.',
   },
 ]
