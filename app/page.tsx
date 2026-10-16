@@ -498,7 +498,7 @@ export default function Home() {
         <div className="section-inner">
           <h2 className="section-heading">How to Get a Pack</h2>
           <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
-            The packs are not for sale. You must follow the players, shows, and community.
+            Packs are never for sale, but there are four ways to claim one.
           </p>
 
           <div className="howto-steps">
