@@ -241,23 +241,23 @@ const PRIZES = [
 const STEPS = [
   {
     num: '01',
-    title: 'Follow the Drop',
-    body: 'Packs release through specific channels – player socials, live breaks, and partner drops. Know where to look.',
+    title: 'Request a pack',
+    body: "Submit the pack request form for a chance to be randomly selected. We'll email selected recipients with next steps.",
   },
   {
     num: '02',
-    title: 'Show Up Live',
-    body: 'Live card breaks and shows are where most packs move. Tune in, play along, win packs on stream.',
+    title: 'Join the conversation',
+    body: 'Share a story or respond to SHOPPS-related posts on LinkedIn and X. Each post will explain how to take part for a chance to claim a pack.',
   },
   {
     num: '03',
-    title: 'Rip Your Pack',
-    body: 'Every pack holds cards from the Top 100 – base, foils, and if you’re lucky, one of the ten 1-of-1 chase cards.',
+    title: 'Follow the players',
+    body: 'Featured founders and operators have packs to share. Follow their posts for announcements and instructions on how to claim.',
   },
   {
     num: '04',
-    title: 'Pull & Win',
-    body: 'Chase cards come with real prizes attached – courtside seats, gift cards, once-ever experiences. Post the pull.',
+    title: 'Watch a live card break',
+    body: 'Watch packs being opened live on YouTube, LinkedIn, and X, with opportunities to claim packs and win autograph cards with prizes attached.',
   },
 ]
 
