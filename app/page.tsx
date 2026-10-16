@@ -425,9 +425,9 @@ export default function Home() {
           <div className="top100-header">
             <div>
               <p className="section-eyebrow">2026 Edition</p>
-              <h2 className="section-heading">The Top 100</h2>
+              <h2 className="section-heading">Meet the lineup</h2>
               <p className="section-body">
-                Every card in the set — operators, founders, and builders shaping eCommerce right now.
+                Get to know the founders, operators, and leaders in the first SHOPPS collection. Select a card to read their story.
               </p>
             </div>
             <Link href="/set" className="btn-outline-sm">View All 100</Link>
