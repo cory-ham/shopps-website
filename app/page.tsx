@@ -443,7 +443,7 @@ export default function Home() {
           </div>
 
           <div className="top100-footer-row">
-            <button className="btn-teal">Browse the Set</button>
+            <button className="btn-teal">SEE THE FULL SET</button>
           </div>
         </div>
       </section>
