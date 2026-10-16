@@ -637,12 +637,7 @@ export default function Home() {
           <h2 className="cta-heading">
             734 Packs Left<br />Zero for Sale
           </h2>
-          <p className="cta-body">
-            Six chase cards are still out there &ndash; including{' '}
-            <span style={{color: 'var(--olive)'}}>courtside seats</span>.
-            Know where to look.
-          </p>
-          <button className="btn-cta-outline">How to Get a Pack</button>
+          <button className="btn-cta-outline">START COLLECTING</button>
         </div>
       </section>
 
