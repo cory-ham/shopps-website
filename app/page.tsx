@@ -41,6 +41,17 @@ const TWEETS = [
     url: 'https://x.com/MehtabKarta/status/2110759297286386137',
   },
   {
+    name: 'Nick Shackelford',
+    handle: '@iamshackelford',
+    avatar: 'https://pbs.twimg.com/profile_images/2095715047033237504/oCljBMkJ_normal.jpg',
+    text: 'Okay! Which one of you guys got the limited edition 1 of 1 Tattoo Chinese Peptide Card 🥹',
+    images: ['https://pbs.twimg.com/media/HUwrQ6SbAAEbuds?format=jpg&name=large'],
+    likes: '',
+    retweets: '',
+    date: 'Oct 16',
+    url: 'https://x.com/iamshackelford/status/2111109898838962320',
+  },
+  {
     name: 'Bryan MacDonald',
     handle: '@DTCbromozi',
     avatar: 'https://pbs.twimg.com/profile_images/1885708673856499712/3SebwehN_normal.jpg',
