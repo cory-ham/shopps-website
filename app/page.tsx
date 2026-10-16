@@ -393,13 +393,7 @@ export default function Home() {
         <div className="value-grid" style={{ maxWidth: 1440, margin: '0 auto', padding: '0 6.5%' }}>
 
           <div className="value-item">
-            <div className="value-icon">
-              <svg viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" stroke="#039F9D" strokeWidth="1.5" />
-                <path d="M10 16 L14 20 L22 12" stroke="#039F9D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <p className="value-label">Always Free</p>
+
             <p className="value-title">Only 1,000 packs</p>
             <p className="value-body">
               The first edition includes chrome cards, rare editions, and one-of-one autographs across a limited run of 1,000 packs.
@@ -407,13 +401,7 @@ export default function Home() {
           </div>
 
           <div className="value-item">
-            <div className="value-icon">
-              <svg viewBox="0 0 32 32" fill="none">
-                <path d="M6 26 L16 6 L26 26" stroke="#039F9D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M9 20 L23 20" stroke="#039F9D" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            </div>
-            <p className="value-label">Real Prizes</p>
+
             <p className="value-title">$50,000 in giveaways</p>
             <p className="value-body">
               Select one-of-one autograph cards come with prizes like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. There&apos;s also a chance to find Golden Tickets for a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
@@ -421,14 +409,7 @@ export default function Home() {
           </div>
 
           <div className="value-item">
-            <div className="value-icon">
-              <svg viewBox="0 0 32 32" fill="none">
-                <rect x="4" y="8" width="24" height="18" rx="2" stroke="#039F9D" strokeWidth="1.5" />
-                <path d="M4 13 L28 13" stroke="#039F9D" strokeWidth="1.5" />
-                <circle cx="16" cy="20" r="3" stroke="#039F9D" strokeWidth="1.5" />
-              </svg>
-            </div>
-            <p className="value-label">100 Icons</p>
+
             <p className="value-title">Never for sale</p>
             <p className="value-body">
               Claim free packs through the pack request form, player drops, live card breaks, and LinkedIn or X. Follow us or sign up for email reminders for the next chance to claim.
