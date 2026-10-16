@@ -252,8 +252,8 @@ const PRIZES = [
 const STEPS = [
   {
     num: '01',
-    title: 'Request a pack',
-    body: "Submit the pack request form for a chance to be randomly selected. We'll email selected recipients with next steps.",
+    title: 'WATCH LIVE BREAKS',
+    body: 'Watch packs being opened live on YouTube, LinkedIn, and X, with opportunities to claim packs and win autograph cards with prizes attached.',
   },
   {
     num: '02',
@@ -267,8 +267,8 @@ const STEPS = [
   },
   {
     num: '04',
-    title: 'WATCH LIVE BREAKS',
-    body: 'Watch packs being opened live on YouTube, LinkedIn, and X, with opportunities to claim packs and win autograph cards with prizes attached.',
+    title: 'Request a pack',
+    body: "Submit the pack request form for a chance to be randomly selected. We'll email selected recipients with next steps.",
   },
 ]
 
