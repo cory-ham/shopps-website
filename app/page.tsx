@@ -369,12 +369,24 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="shopps-content-row">
+        <div className="shopps-content-row" style={{alignItems:'center'}}>
           <div className="shopps-copy">
             <h2 className="shopps-heading">What is SHOPPS?</h2>
             <p className="shopps-body">
               SHOPPS brings the trading card experience to DTC, recognizing the leaders building brands, sharing ideas, and helping shape the industry. The featured founders and operators help bring the collection to life by contributing prizes, signing cards, and sharing packs for anyone to collect.
             </p>
+            <div className="pack-counter" style={{marginTop:'2rem'}}>
+              <div className="pack-label">
+                <span className="pack-label-dot" />
+                Live Pack Count
+              </div>
+              <div className="pack-digits">
+                <span className="pack-digit">7</span>
+                <span className="pack-digit">3</span>
+                <span className="pack-digit">4</span>
+              </div>
+              <p className="pack-of">of 1000 left</p>
+            </div>
           </div>
           <div className="shopps-video-wrap">
             <div className="shopps-play-btn">
@@ -385,20 +397,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div style={{display:'flex',justifyContent:'center',paddingTop:'2.5rem'}}>
-          <div className="pack-counter">
-            <div className="pack-label">
-              <span className="pack-label-dot" />
-              Live Pack Count
-            </div>
-            <div className="pack-digits">
-              <span className="pack-digit">7</span>
-              <span className="pack-digit">3</span>
-              <span className="pack-digit">4</span>
-            </div>
-            <p className="pack-of">of 1000 left</p>
-          </div>
-        </div>
+
       </section>
 
       {/* ──────────────────── VALUE PROPS ──────────────────── */}
