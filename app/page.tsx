@@ -635,7 +635,7 @@ export default function Home() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">
-            734 Packs Left.<br />Zero for Sale.
+            734 Packs Left<br />Zero for Sale
           </h2>
           <p className="cta-body">
             Six chase cards are still out there &ndash; including{' '}
