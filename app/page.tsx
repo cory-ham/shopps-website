@@ -414,9 +414,9 @@ export default function Home() {
               </svg>
             </div>
             <p className="value-label">Real Prizes</p>
-            <p className="value-title">Value Prop 2</p>
+            <p className="value-title">$50,000 in giveaways</p>
             <p className="value-body">
-              Placeholder copy to explain what the value is — why this thing matters to the collector.
+              Select one-of-one autograph cards come with prizes like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. There&apos;s also a chance to find Golden Tickets for a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
             </p>
           </div>
 
