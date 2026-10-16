@@ -327,9 +327,9 @@ export default function Home() {
 
         {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
-          <h1 className="hero-headline">100 LEADERS SHAPING ECOMMERCE</h1>
-          <p className="hero-collect-label">Only 1,000 packs, free to collect</p>
-          <p className="hero-body">
+          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}>100 LEADERS SHAPING ECOMMERCE</h1>
+          <p className="hero-collect-label" style={{marginBottom:'1.5rem'}}>Featured across 1,000 free packs</p>
+          <p className="hero-body" style={{marginBottom:'2rem'}}>
             Physical trading cards featuring the founders and operators behind the brands you follow, with rare cards to collect and $50,000 in giveaways.
           </p>
           <div className="hero-buttons">
