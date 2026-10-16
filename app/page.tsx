@@ -429,9 +429,9 @@ export default function Home() {
               </svg>
             </div>
             <p className="value-label">100 Icons</p>
-            <p className="value-title">Value Prop 3</p>
+            <p className="value-title">Never for sale</p>
             <p className="value-body">
-              Placeholder copy to explain what the value is — why this thing matters to the collector.
+              Claim free packs through the pack request form, player drops, live card breaks, and LinkedIn or X. Follow us or sign up for email reminders for the next chance to claim.
             </p>
           </div>
 
