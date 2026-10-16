@@ -336,18 +336,7 @@ export default function Home() {
             <button className="btn-teal">How to Get a Pack</button>
             <Link href="/set" className="btn-outline">SEE THE CARDS</Link>
           </div>
-          <div className="pack-counter">
-            <div className="pack-label">
-              <span className="pack-label-dot" />
-              Live Pack Count
-            </div>
-            <div className="pack-digits">
-              <span className="pack-digit">7</span>
-              <span className="pack-digit">3</span>
-              <span className="pack-digit">4</span>
-            </div>
-            <p className="pack-of">of 1000 left</p>
-          </div>
+
         </div>
 
       </section>
@@ -394,6 +383,20 @@ export default function Home() {
                 <polygon points="21,17 37,26 21,35" fill="white" fillOpacity="0.9"/>
               </svg>
             </div>
+          </div>
+        </div>
+        <div style={{display:'flex',justifyContent:'center',paddingTop:'2.5rem'}}>
+          <div className="pack-counter">
+            <div className="pack-label">
+              <span className="pack-label-dot" />
+              Live Pack Count
+            </div>
+            <div className="pack-digits">
+              <span className="pack-digit">7</span>
+              <span className="pack-digit">3</span>
+              <span className="pack-digit">4</span>
+            </div>
+            <p className="pack-of">of 1000 left</p>
           </div>
         </div>
       </section>
