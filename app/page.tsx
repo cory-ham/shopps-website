@@ -183,13 +183,13 @@ const TOP100_CARDS = (() => {
 
 const TICKER_ITEMS = [
   { label: 'Fulfil' },
+  { label: 'CTC' },
   { label: 'omnisend' },
   { label: 'Fulfil' },
+  { label: 'CTC' },
   { label: 'omnisend' },
   { label: 'Fulfil' },
-  { label: 'omnisend' },
-  { label: 'Fulfil' },
-  { label: 'omnisend' },
+  { label: 'CTC' },
 ]
 
 const PRIZES = [
@@ -341,24 +341,6 @@ export default function Home() {
 
       </section>
 
-      {/* ── SPONSOR STRIP — static ── */}
-      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'0 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
-      <div className="ticker-wrap">
-        {TICKER_ITEMS.map((item, i) => (
-          <img
-            key={i}
-            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-            alt={item.label}
-            style={{
-              height: '20px',
-              width: 'auto',
-              display: 'block',
-              opacity: 0.55,
-              filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-            }}
-          />
-        ))}
-      </div>
 
       {/* ──────────────────── WHAT IS SHOPPS? ──────────────────── */}
       {/* PSD: Layer 13 video area (929,1057,1618,1444), text (1101,1513,1446,1563) */}
@@ -561,8 +543,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ── SPONSOR STRIP — static ── */}
+      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'2rem 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <div className="ticker-wrap">
+        {TICKER_ITEMS.map((item, i) => (
+          <img
+            key={i}
+            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? 'https://commonthreadco.com/cdn/shop/files/CTC_Logo_Primary_Inverse-2.svg' : '/omnisend-logo.svg'}
+            alt={item.label}
+            style={{
+              height: '20px',
+              width: 'auto',
+              display: 'block',
+              opacity: 0.55,
+              filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+            }}
+          />
+        ))}
+      </div>
 
-      {/* ──────────────────── TWEET FEED ──────────────────── */}
+      {/* ────────────────────── TWEET FEED ──────────────────── */}
       <section className="tweet-section">
         <div className="section-inner">
           <h2 className="section-heading">In the Wild</h2>
