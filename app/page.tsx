@@ -263,11 +263,6 @@ const STEPS = [
     title: 'Follow the players',
     body: 'Featured founders and operators have packs to share with their own audiences. Follow their posts for details on claiming packs and nominating others.',
   },
-  {
-    num: '04',
-    title: 'Request a pack',
-    body: 'Submit the pack request form for a chance to be randomly selected. Selected recipients will receive an email with next steps.',
-  },
 ]
 
 // CAROUSEL_CARDS is now defined above using date-seeded random (see top of file)
