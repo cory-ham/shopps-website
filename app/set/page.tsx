@@ -238,12 +238,7 @@ export default function SetPage() {
         <p className="set-intro">
           Select a card to learn about the leader behind it and their work shaping ecommerce.
         </p>
-        <div className="set-stat-pills">
-          <span className="set-stat-pill">100 PLAYERS</span>
-          <span className="set-stat-pill">3 TIERS</span>
-          <span className="set-stat-pill">99 AUTOGRAPHS</span>
-          <span className="set-stat-pill">4 CATEGORIES</span>
-        </div>
+
       </div>
 
       {/* ──────────────────── FILTER BAR ──────────────────── */}
