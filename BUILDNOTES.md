@@ -1,9 +1,10 @@
 # Shopps Critical Build State — Sep 23 17:45
 
 ## URLs
-- Live: https://shopps-website.vercel.app/
+- Live: https://www.shoppscards.com
 - GitHub: https://github.com/cory-ham/shopps-website (main branch)
-- Domain: shoppscards.com (DNS not yet pointed to Vercel)
+- Domain: shoppscards.com ✓ (GoDaddy → Vercel Pro, upgraded Oct 16 2026)
+- Vercel: Pro plan ($20/mo)
 - Project: ~/Downloads/shopps-website/
 - PSD: ~/Downloads/shopps-design.psd (35MB, 2544x7286)
 
