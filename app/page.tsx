@@ -549,7 +549,7 @@ export default function Home() {
         {TICKER_ITEMS.map((item, i) => (
           <img
             key={i}
-            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? 'https://commonthreadco.com/cdn/shop/files/CTC_Logo_Primary_Inverse-2.svg' : '/omnisend-logo.svg'}
+            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
             alt={item.label}
             style={{
               height: '20px',
