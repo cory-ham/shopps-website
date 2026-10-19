@@ -342,6 +342,7 @@ export default function Home() {
       </section>
 
       {/* ── SPONSOR STRIP — static ── */}
+      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'0 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
           <img
