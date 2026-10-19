@@ -488,10 +488,10 @@ export default function Home() {
         <div className="section-inner">
           <h2 className="section-heading">How to Get a Pack</h2>
           <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
-            Packs are never for sale, but there are four ways to claim one.
+            Packs are never for sale, but there are three ways to claim one.
           </p>
 
-          <div className="howto-steps">
+          <div className="howto-steps howto-steps--3col">
             {STEPS.map((step, i) => (
               <div key={i} className="howto-step">
                 <p className="howto-title">{step.title}</p>
