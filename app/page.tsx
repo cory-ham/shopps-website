@@ -432,7 +432,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="top100-footer-row">
+          <div className="top100-footer-row" style={{justifyContent:'flex-start'}}>
             <button className="btn-teal">VIEW THE COLLECTION</button>
           </div>
         </div>
