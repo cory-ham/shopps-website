@@ -320,7 +320,7 @@ export default function Home() {
 
         {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
-          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}>WHERE ECOMMERCE<br />BECOMES COLLECTIBLE</h1>
+          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}><span style={{display:'block'}}>WHERE ECOMMERCE</span><span style={{display:'block'}}>BECOMES COLLECTIBLE</span></h1>
           <p className="hero-collect-label" style={{marginBottom:'1.5rem'}}>Only 1,000 packs, never for sale</p>
           <p className="hero-body" style={{marginBottom:'2rem'}}>
             Featuring 100 founders and operators behind the brands you follow, with rare cards and $50,000 in products, gift cards, and experiences.
