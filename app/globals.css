@@ -1601,18 +1601,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── Prize Board / Giveaways ─────────────────────────────────────────────── */
 .prizeboard-header {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 24px 48px;
-  text-align: left;
-}
-.prizeboard-eyebrow {
-  font-family: var(--font-antonio);
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin: 0 0 12px;
+  padding: 64px 6vw 48px;
 }
 .prizeboard-h1 {
   font-family: var(--font-antonio);
@@ -1620,178 +1611,154 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 0.95;
   margin: 0 0 16px;
+  letter-spacing: 0.01em;
 }
 .prizeboard-desc {
-  font-size: 15px;
-  color: rgba(245,248,248,0.6);
-  max-width: 520px;
-  margin: 0 0 28px;
-  line-height: 1.6;
+  font-size: clamp(13px, 0.95vw, 15px);
+  color: rgba(245,248,248,0.55);
+  max-width: 480px;
+  margin: 0 0 24px;
+  line-height: 1.65;
 }
 .prizeboard-stats {
   display: flex;
-  gap: 12px;
-  justify-content: flex-start;
+  gap: 10px;
   flex-wrap: wrap;
 }
 .prizeboard-stat {
   font-family: var(--font-antonio);
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  color: var(--teal);
-  background: rgba(3,159,157,0.12);
-  border: 1px solid rgba(3,159,157,0.35);
-  padding: 6px 16px;
-  border-radius: 20px;
+  font-size: clamp(11px, 0.85vw, 13px);
+  letter-spacing: 0.08em;
+  color: rgba(245,248,248,0.7);
+  background: #0d1016;
+  border: 1px solid #182030;
+  padding: 7px 16px;
+  border-radius: 3px;
   text-transform: uppercase;
 }
 .prizeboard-stat-label {
-  color: rgba(245,248,248,0.5);
-  font-size: 11px;
+  color: var(--teal);
   margin-left: 6px;
 }
-
-/* Inner wrapper */
 .prizeboard-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
+  padding-bottom: 80px;
 }
 
 /* Hero prize */
 .prize-hero {
-  background: #0d1018;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 40px 44px;
+  background: #0d1016;
+  border: 1px solid #182030;
+  border-radius: 10px;
+  padding: clamp(28px, 3vw, 48px);
   display: flex;
-  gap: 48px;
+  gap: clamp(24px, 4vw, 56px);
   align-items: center;
-  margin-bottom: 72px;
+  margin-bottom: clamp(48px, 6vw, 80px);
 }
 .prize-hero-text { flex: 1; min-width: 0; }
 .prize-hero-title {
   font-family: var(--font-antonio);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
-  line-height: 1.05;
+  line-height: 1;
   margin: 8px 0 14px;
 }
 .prize-hero-sub { color: var(--teal); }
 .prize-hero-desc {
-  font-size: 14px;
-  color: rgba(245,248,248,0.65);
+  font-size: clamp(13px, 0.9vw, 15px);
+  color: rgba(245,248,248,0.55);
   line-height: 1.65;
   max-width: 420px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-.prize-hero-btn { margin-top: 8px; display: inline-block; }
-.prize-hero-card {
-  flex-shrink: 0;
-  width: 180px;
-}
+.prize-hero-card { flex-shrink: 0; width: clamp(140px, 16vw, 220px); }
 .prize-hero-card img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   filter: drop-shadow(0 12px 40px rgba(0,0,0,0.7));
 }
 
-/* Tags */
+/* Prize tags */
 .prize-tag {
   font-family: var(--font-antonio);
-  font-size: 10px;
+  font-size: clamp(10px, 0.75vw, 12px);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
 }
 .prize-tag--available { color: var(--teal); }
-.prize-tag--claimed   { color: rgba(245,248,248,0.3); }
+.prize-tag--claimed   { color: rgba(245,248,248,0.28); }
 .prize-attached {
   font-family: var(--font-antonio);
-  font-size: 10px;
+  font-size: clamp(9px, 0.7vw, 11px);
   letter-spacing: 0.1em;
-  color: rgba(245,248,248,0.35);
+  color: rgba(245,248,248,0.3);
   text-transform: uppercase;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
-/* Grid */
-.prize-grid-heading {
-  font-family: var(--font-antonio);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 400;
-  color: var(--white);
-  text-transform: uppercase;
-  margin: 0 0 24px;
-}
+/* Prize grid */
 .prize-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 .prize-card {
   position: relative;
-  background: #0d1018;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 24px;
+  background: #0d1016;
+  border: 1px solid #182030;
+  border-radius: 10px;
+  padding: clamp(20px, 2vw, 28px);
   overflow: hidden;
 }
 .prize-card--claimed { opacity: 0.55; }
 .prize-card-title {
   font-family: var(--font-antonio);
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
-  line-height: 1.1;
-  margin: 6px 0 10px;
+  line-height: 1.05;
+  margin: 4px 0 10px;
 }
 .prize-card-title span { color: var(--teal); }
 .prize-card-desc {
-  font-size: 12px;
-  color: rgba(245,248,248,0.55);
-  line-height: 1.6;
+  font-size: clamp(12px, 0.8vw, 13px);
+  color: rgba(245,248,248,0.45);
+  line-height: 1.65;
 }
 
-/* Pulled overlay — bracket corner style */
+/* PULLED overlay — bracket corner style */
 .pulled-overlay {
   position: absolute;
   inset: 0;
+  background: rgba(7,9,14,0.6);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  background: rgba(7,9,14,0.55);
   padding: 0 0 20px 20px;
-  border-radius: 12px;
+  border-radius: 10px;
 }
-/* Bracket corners */
 .pulled-overlay::before,
 .pulled-overlay::after {
   content: '';
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-color: var(--teal);
   border-style: solid;
 }
-.pulled-overlay::before {
-  top: 14px; right: 14px;
-  border-width: 2px 2px 0 0;
-}
-.pulled-overlay::after {
-  bottom: 14px; left: 14px;
-  border-width: 0 0 2px 2px;
-}
+.pulled-overlay::before { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
+.pulled-overlay::after  { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
 .pulled-stamp {
   font-family: var(--font-antonio);
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
   font-weight: 400;
   color: var(--teal);
   letter-spacing: 0.08em;
@@ -1801,13 +1768,12 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   align-items: center;
   gap: 10px;
 }
-/* Extra bracket lines flanking the text */
 .pulled-stamp::before,
 .pulled-stamp::after {
   content: '';
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-color: var(--teal);
   border-style: solid;
   flex-shrink: 0;
@@ -1815,61 +1781,26 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .pulled-stamp::before { border-width: 2px 0 0 2px; }
 .pulled-stamp::after  { border-width: 0 2px 2px 0; }
 .pulled-by {
-  font-size: 10px;
-  color: rgba(245,248,248,0.4);
+  font-size: clamp(10px, 0.7vw, 11px);
+  color: rgba(245,248,248,0.38);
   letter-spacing: 0.05em;
   margin: 6px 0 0;
   text-transform: uppercase;
 }
 
-/* How claiming works steps */
-.howto-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
-}
-.howto-step {
-  background: #0d1018;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 28px 24px;
-}
-.howto-num {
-  font-family: var(--font-antonio);
-  font-size: 3rem;
-  font-weight: 400;
-  color: rgba(3,159,157,0.35);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.howto-title {
-  font-family: var(--font-antonio);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 10px;
-}
-.howto-body {
-  font-size: 13px;
-  color: rgba(245,248,248,0.55);
-  line-height: 1.65;
-  margin: 0;
-}
+/* 3-col override for claiming steps */
+.howto-steps--3col { grid-template-columns: repeat(3, 1fr) !important; }
+
 .prize-disclaimer {
-  font-size: 11px;
-  color: rgba(245,248,248,0.25);
-  text-align: center;
-  max-width: 680px;
-  margin: 40px auto 0;
-  line-height: 1.6;
+  font-size: clamp(11px, 0.72vw, 12px);
+  color: rgba(245,248,248,0.22);
+  max-width: 700px;
+  margin: clamp(28px, 3vw, 44px) 0 0;
+  line-height: 1.65;
 }
 
-@media (max-width: 768px) {
-  .prize-hero { flex-direction: column; padding: 28px 20px; }
-  .prize-hero-card { width: 140px; }
+@media (max-width: 900px) {
+  .prize-hero { flex-direction: column; }
   .prize-grid { grid-template-columns: 1fr; }
-  .howto-steps { grid-template-columns: 1fr; }
+  .howto-steps--3col { grid-template-columns: 1fr !important; }
 }

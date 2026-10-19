@@ -3,23 +3,23 @@ import SiteNav from '../components/SiteNav'
 
 /* ─────────────────────────────────────────────────────────────────────────────
    /giveaways — The Prize Board
-   Prize data: edit PRIZES array to update prizes, status, and attached cards
+   Edit PRIZES to update prizes, status, and attached cards.
 ──────────────────────────────────────────────────────────────────────────────── */
 
 type PrizeStatus = 'available' | 'claimed'
 
 interface Prize {
   id: string
-  tag: string           // "1 OF 1 · STILL OUT THERE" etc.
+  tag: string
   title: string
   subtitle?: string
   description: string
-  attached: string      // "1/1 CHASE · RANK #1"
+  attached: string
   status: PrizeStatus
-  puller?: string       // name if claimed
+  puller?: string
   pulledDate?: string
-  featured?: boolean    // shows in hero slot
-  cardImage?: string    // optional card image for featured prize
+  featured?: boolean
+  cardImage?: string
 }
 
 const PRIZES: Prize[] = [
@@ -60,8 +60,8 @@ const PRIZES: Prize[] = [
     description: 'A $500 gift card redeemable at select partner brands.',
     attached: 'SILVER FOIL REDEMPTION',
     status: 'claimed',
-    puller: 'Jake L.',
-    pulledDate: 'OCT 12',
+    puller: 'Kerri J.',
+    pulledDate: 'WEEK 2 LIVE BREAK',
   },
   {
     id: 'courtside-2',
@@ -80,15 +80,15 @@ const PRIZES: Prize[] = [
     description: 'A full signed Series One box set — every card, signed.',
     attached: 'CHASE · RANK #3',
     status: 'claimed',
-    puller: 'Sarah M.',
-    pulledDate: 'OCT 9',
+    puller: 'Jim H.',
+    pulledDate: 'WEEK 2 LIVE BREAK',
   },
 ]
 
 const STATS = [
-  { label: 'PACKS LEFT', value: '4/30' },
-  { label: 'ALREADY CLAIMED', value: '4' },
-  { label: 'TOTAL VALUE', value: '$100K+' },
+  { label: 'PACKS LEFT',      value: '6/10' },
+  { label: 'ALREADY CLAIMED', value: '4'    },
+  { label: 'TOTAL VALUE',     value: '$100K+' },
 ]
 
 const STEPS = [
@@ -117,7 +117,7 @@ export default function GiveawaysPage() {
     <>
       <SiteNav />
 
-      {/* ── Sponsor strip ── */}
+      {/* Sponsor strip */}
       <div className="ticker-wrap" style={{ marginTop: '60px' }}>
         {Array.from({ length: 8 }).map((_, i) => (
           <img
@@ -137,7 +137,7 @@ export default function GiveawaysPage() {
 
       {/* ── Page header ── */}
       <div className="prizeboard-header">
-        <p className="prizeboard-eyebrow">$100K+ IN GIVEAWAYS</p>
+        <p className="section-eyebrow" style={{ marginBottom: '10px' }}>$100K+ IN GIVEAWAYS</p>
         <h1 className="prizeboard-h1">THE PRIZE BOARD</h1>
         <p className="prizeboard-desc">
           Every chase card has a real prize attached. Grayed out means someone already
@@ -152,18 +152,22 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
-      {/* ── Featured / hero prize ── */}
-      <div className="prizeboard-inner">
+      {/* ── Main content ── */}
+      <div className="section-inner prizeboard-inner">
+
+        {/* Featured hero prize */}
         <div className="prize-hero">
           <div className="prize-hero-text">
             <p className="prize-tag prize-tag--available">{featured.tag}</p>
             <h2 className="prize-hero-title">
-              {featured.title}<br />
-              {featured.subtitle && <span className="prize-hero-sub">{featured.subtitle}</span>}
+              {featured.title}
+              {featured.subtitle && <><br /><span className="prize-hero-sub">{featured.subtitle}</span></>}
             </h2>
             <p className="prize-hero-desc">{featured.description}</p>
             <p className="prize-attached">ATTACHED TO {featured.attached}</p>
-            <a href="#how" className="btn-teal prize-hero-btn">HOW TO GET A PACK</a>
+            <a href="#how" className="btn-teal" style={{ display: 'inline-block', marginTop: '20px' }}>
+              HOW TO GET A PACK
+            </a>
           </div>
           {featured.cardImage && (
             <div className="prize-hero-card">
@@ -172,8 +176,8 @@ export default function GiveawaysPage() {
           )}
         </div>
 
-        {/* ── Prize grid ── */}
-        <h2 className="prize-grid-heading">EVERY PRIZE IN THE SERIES</h2>
+        {/* Prize grid */}
+        <h2 className="section-heading" style={{ marginBottom: '20px' }}>EVERY PRIZE IN THE SERIES</h2>
         <div className="prize-grid">
           {grid.map(prize => (
             <div
@@ -203,12 +207,12 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
-      {/* ── How claiming works ── */}
+      {/* ── How claiming works — reuses site's howto styles ── */}
       <section className="howto-section" id="how">
         <div className="section-inner">
-          <p className="section-eyebrow">CLAIM YOUR PRIZE</p>
+          <p className="section-eyebrow">PULLED A WINNER?</p>
           <h2 className="section-heading">HOW CLAIMING WORKS</h2>
-          <div className="howto-steps">
+          <div className="howto-steps howto-steps--3col">
             {STEPS.map(step => (
               <div key={step.num} className="howto-step">
                 <div className="howto-num">{step.num}</div>
