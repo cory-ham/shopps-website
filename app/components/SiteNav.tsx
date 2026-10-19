@@ -8,9 +8,8 @@ export default function SiteNav() {
     <>
       <nav className="site-nav">
         <div className="nav-left">
-          <a href="#" className="nav-link">The Set</a>
-          <a href="#" className="nav-link">Giveaways</a>
-
+          <a href="#" className="nav-link">View the Collection</a>
+          <a href="#" className="nav-link">How It Works</a>
         </div>
 
         <div className="nav-logo-wrap">
@@ -18,8 +17,8 @@ export default function SiteNav() {
         </div>
 
         <div className="nav-right">
-          <a href="#" className="nav-link">How it works</a>
-          <a href="#" className="nav-live">LIVE</a>
+          <a href="#" className="nav-link">What Cards Unlock</a>
+          <a href="#" className="nav-live">Get a Pack</a>
         </div>
 
         <button className="nav-hamburger" aria-label="Menu" onClick={toggleDrawer}>
@@ -29,12 +28,10 @@ export default function SiteNav() {
 
       <div className="nav-drawer" onClick={closeDrawer}>
         <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>The Set</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>Giveaways</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>Pulls</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>How it Works</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>Nominate</a>
-          <a href="#" className="nav-drawer-live" onClick={closeDrawer}>LIVE</a>
+          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>View the Collection</a>
+          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
+          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>What Cards Unlock</a>
+          <a href="#" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
         </div>
       </div>
     </>
