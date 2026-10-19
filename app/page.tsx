@@ -559,7 +559,7 @@ export default function Home() {
       <section className="tweet-section">
         <div className="section-inner">
           <h2 className="section-heading">In the Wild</h2>
-          <p className="section-body" style={{marginTop:'0.75rem'}}>See what&apos;s being opened, collected, and shared across the SHOPPS community.</p>
+          <p className="section-body" style={{marginTop:'0.75rem'}}>See what&apos;s being opened, collected, and shared across the community.<br />Share your cards and pack openings with #SHOPPS.</p>
         </div>
         <div className="tweet-track-wrap">
           <div className="tweet-track">
