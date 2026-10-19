@@ -326,8 +326,8 @@ export default function Home() {
             Physical trading cards of the founders and operators behind the brands you follow, with rare editions to collect and $50,000 in giveaways.
           </p>
           <div className="hero-buttons">
-            <button className="btn-teal">How to Get a Pack</button>
-            <Link href="/set" className="btn-outline">SEE THE CARDS</Link>
+            <button className="btn-teal">Get a Pack</button>
+            <Link href="/set" className="btn-outline">View the Collection</Link>
           </div>
 
         </div>
