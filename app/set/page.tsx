@@ -233,7 +233,7 @@ export default function SetPage() {
 
       {/* ──────────────────── PAGE HEADER ──────────────────── */}
       <div className="set-page-header">
-        <p className="set-eyebrow">SERIES ONE · 2026 EDITION</p>
+        <p className="set-eyebrow">2026 EDITION</p>
         <h1 className="set-h1">THE TOP 100</h1>
         <p className="set-intro">
           Every card in the set — the operators, founders, and builders shaping ecommerce right now. Tap any card for the full bio.
