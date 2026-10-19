@@ -1601,10 +1601,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── Prize Board / Giveaways ─────────────────────────────────────────────── */
 .prizeboard-header {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 64px 24px 48px;
-  text-align: center;
+  text-align: left;
 }
 .prizeboard-eyebrow {
   font-family: var(--font-antonio);
@@ -1626,14 +1626,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .prizeboard-desc {
   font-size: 15px;
   color: rgba(245,248,248,0.6);
-  max-width: 480px;
-  margin: 0 auto 28px;
+  max-width: 520px;
+  margin: 0 0 28px;
   line-height: 1.6;
 }
 .prizeboard-stats {
   display: flex;
   gap: 12px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .prizeboard-stat {
@@ -1759,32 +1759,67 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   line-height: 1.6;
 }
 
-/* Pulled overlay */
+/* Pulled overlay — bracket corner style */
 .pulled-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(7,9,14,0.6);
-  gap: 6px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: rgba(7,9,14,0.55);
+  padding: 0 0 20px 20px;
+  border-radius: 12px;
+}
+/* Bracket corners */
+.pulled-overlay::before,
+.pulled-overlay::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: var(--teal);
+  border-style: solid;
+}
+.pulled-overlay::before {
+  top: 14px; right: 14px;
+  border-width: 2px 2px 0 0;
+}
+.pulled-overlay::after {
+  bottom: 14px; left: 14px;
+  border-width: 0 0 2px 2px;
 }
 .pulled-stamp {
   font-family: var(--font-antonio);
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 400;
   color: var(--teal);
-  letter-spacing: 0.1em;
-  border: 2px solid var(--teal);
-  padding: 4px 18px;
-  transform: rotate(-8deg);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+/* Extra bracket lines flanking the text */
+.pulled-stamp::before,
+.pulled-stamp::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-color: var(--teal);
+  border-style: solid;
+  flex-shrink: 0;
+}
+.pulled-stamp::before { border-width: 2px 0 0 2px; }
+.pulled-stamp::after  { border-width: 0 2px 2px 0; }
 .pulled-by {
-  font-size: 11px;
-  color: rgba(245,248,248,0.45);
+  font-size: 10px;
+  color: rgba(245,248,248,0.4);
   letter-spacing: 0.05em;
-  margin: 0;
+  margin: 6px 0 0;
+  text-transform: uppercase;
 }
 
 /* How claiming works steps */
