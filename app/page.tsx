@@ -397,7 +397,7 @@ export default function Home() {
 
           <div className="value-item">
 
-            <p className="value-title">$50,000 in giveaways</p>
+            <p className="value-title">$50,000 in real value</p>
             <p className="value-body">
               Select one-of-one autograph cards come with giveaways like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. Golden Tickets offer a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
             </p>
