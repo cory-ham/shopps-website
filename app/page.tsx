@@ -420,12 +420,12 @@ export default function Home() {
           <div className="top100-header">
             <div>
               <p className="section-eyebrow">2026 Edition</p>
-              <h2 className="section-heading">Meet the lineup</h2>
+              <h2 className="section-heading">Meet the Players</h2>
               <p className="section-body">
                 Get to know the founders, operators, and leaders in the first SHOPPS collection. Select a card to read their story.
               </p>
             </div>
-            <Link href="/set" className="btn-outline-sm">View All 100</Link>
+
           </div>
 
           {/* 4×2 grid of front cards — daily-rotating, alternating M/F */}
