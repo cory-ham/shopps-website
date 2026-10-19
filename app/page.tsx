@@ -500,6 +500,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div style={{textAlign:'center',marginTop:'2.5rem'}}>
+            <button className="btn-teal">Remind Me When Packs Drop</button>
+          </div>
 
         </div>
       </section>
