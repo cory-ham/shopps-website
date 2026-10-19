@@ -234,9 +234,9 @@ export default function SetPage() {
       {/* ──────────────────── PAGE HEADER ──────────────────── */}
       <div className="set-page-header">
         <p className="set-eyebrow">2026 EDITION</p>
-        <h1 className="set-h1">THE TOP 100</h1>
+        <h1 className="set-h1">Who&apos;s in the Set?</h1>
         <p className="set-intro">
-          Every card in the set — the operators, founders, and builders shaping ecommerce right now. Tap any card for the full bio.
+          Select a card to learn about the leader behind it and their work shaping ecommerce.
         </p>
         <div className="set-stat-pills">
           <span className="set-stat-pill">100 PLAYERS</span>
