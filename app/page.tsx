@@ -144,6 +144,11 @@ function cardFrontPath(p: number, r: () => number) {
   const offset  = offsets[Math.floor(r() * 3)]
   return `/cards/card-${String(8 * p + offset).padStart(3,'0')}.jpg`
 }
+function cardBackPath(p: number, v: CardVariant) {
+  // back offsets match front: green=2, teal=4, gold=6
+  const backOffset = v === 'green' ? 2 : v === 'teal' ? 4 : 6
+  return `/cards/card-${String(8 * p + backOffset).padStart(3,'0')}.jpg`
+}
 
 // Seed from today's date — stable across server + client on the same day
 const _today    = new Date()
@@ -155,15 +160,20 @@ const _shuffledMale   = seededShuffle([...MALE_P],   _rand)
 const _shuffledFemale = seededShuffle([...FEMALE_P], _rand)
 
 // ── Carousel: 14 unique cards, every 3rd position (2,5,8,11) = female ────────
+// Each person gets TWO consecutive slots: front (slab) then back (raw card back)
+// so they rotate as a matched pair like flipping a card in a pack.
 const _carouselBase = (() => {
   let mi = 0, fi = 0
-  return Array.from({ length: 14 }, (_, pos) => {
+  const pairs: { src: string; name: string }[] = []
+  for (let pos = 0; pos < 14; pos++) {
     const isFemale = pos % 3 === 2
     const pool     = isFemale ? _shuffledFemale : _shuffledMale
     const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
     const v        = VARIANTS[Math.floor(_rand() * 3)]
-    return { slab: slabPath(p, v), name: PERSON_NAME[p] ?? '' }
-  })
+    pairs.push({ src: slabPath(p, v),    name: PERSON_NAME[p] ?? '' })  // front
+    pairs.push({ src: cardBackPath(p, v), name: PERSON_NAME[p] ?? '' }) // back
+  }
+  return pairs
 })()
 
 // Doubled for seamless infinite-scroll animation
@@ -309,7 +319,7 @@ export default function Home() {
           <div className="card-carousel-track">
             {CAROUSEL_CARDS.map((card, i) => (
               <div key={i} className="card-sleeve-img-wrap">
-                <img src={card.slab} alt={card.name} className="card-slab-img" draggable={false} />
+                <img src={card.src} alt={card.name} className="card-slab-img" draggable={false} />
               </div>
             ))}
           </div>
