@@ -1648,22 +1648,18 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* Hero prize */
 .prize-hero {
-  background: #0d1016;
-  border: 1px solid #1e2535;
-  border-radius: 12px;
-  padding: clamp(28px, 3vw, 44px) clamp(28px, 3vw, 44px);
   display: flex;
-  gap: 0;
+  gap: clamp(24px, 3vw, 48px);
   align-items: center;
   margin-bottom: clamp(48px, 6vw, 80px);
-  overflow: visible;
-  position: relative;
-  isolation: isolate;
 }
 .prize-hero-text {
   flex: 1;
   min-width: 0;
-  padding-right: clamp(24px, 4vw, 60px);
+  background: #0d1016;
+  border: 1px solid #1e2535;
+  border-radius: 12px;
+  padding: clamp(28px, 3vw, 44px);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -1687,11 +1683,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .prize-hero-card {
   flex-shrink: 0;
-  width: clamp(200px, 20vw, 270px);
-  transform: rotate(3deg) translateY(-20px);
+  width: clamp(220px, 22vw, 290px);
+  transform: rotate(4deg);
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.75));
-  margin-right: -10px;
-  margin-bottom: -20px;
 }
 .prize-hero-card img {
   width: 100%;
