@@ -335,10 +335,10 @@ export default function Home() {
 
         {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
-          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}><span style={{display:'block'}}>WHERE ECOMMERCE</span><span style={{display:'block'}}>BECOMES COLLECTIBLE</span></h1>
-          <p className="hero-collect-label" style={{marginBottom:'1.5rem'}}>Only 1,000 packs, never for sale</p>
+          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}>TRADING CARDS FOR ECOMMERCE</h1>
+          <p className="hero-collect-label" style={{marginBottom:'1.5rem'}}>Built To Lead. Made To Collect.</p>
           <p className="hero-body" style={{marginBottom:'2rem'}}>
-            Featuring 100 founders and operators behind the brands you follow, with rare cards and $50,000 in products, gift cards, and experiences.
+            Meet the leaders and innovators changing the game of DTC. Collect their cards, chase the ultra-rares, and unlock over $50,000 in real prizes.
           </p>
           <div className="hero-buttons">
             <button className="btn-teal">Get a Pack</button>
