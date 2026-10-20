@@ -266,17 +266,17 @@ const STEPS = [
   {
     num: '01',
     title: 'WATCH LIVE BREAKS',
-    body: 'Watch live pack openings on YouTube, LinkedIn, and X for opportunities to claim packs and win autograph cards with giveaways attached.',
+    body: 'Tune in to live pack openings on YouTube, LinkedIn, and X for your chance to win packs, chase autograph cards, and unlock exclusive prizes.',
   },
   {
     num: '02',
     title: 'Join the conversation',
-    body: 'Follow CTC on LinkedIn and X for opportunities to claim a pack or nominate someone to receive one. Each post explains how to participate.',
+    body: 'Follow the players and Common Thread Collective on LinkedIn and X for surprise drops, pack giveaways, and chances to nominate fellow colleagues.',
   },
   {
     num: '03',
     title: 'Follow the players',
-    body: 'Featured founders and operators have packs to share with their own audiences. Follow their posts for details on claiming packs and nominating others.',
+    body: 'Your favorite founders have packs to give away, too. Follow the featured players for exclusive drops and chances to score a pack.',
   },
 ]
 
@@ -508,7 +508,7 @@ export default function Home() {
           <p className="section-eyebrow">No Purchase Necessary</p>
           <h2 className="section-heading">How to Get a Pack</h2>
           <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
-            Packs are never for sale, but there are three ways to claim one.
+            You can&apos;t buy a pack. You have to win one.<br /><br />Here&apos;s how to get in on the action.
           </p>
 
           <div className="howto-steps howto-steps--3col">
@@ -521,7 +521,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{textAlign:'left',marginTop:'2.5rem'}}>
-            <button className="btn-teal">Remind Me When Packs Drop</button>
+            <button className="btn-teal">DON&apos;T MISS THE NEXT DROP</button>
           </div>
 
         </div>
