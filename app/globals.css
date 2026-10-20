@@ -1749,7 +1749,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   line-height: 1.05;
   margin: 4px 0 10px;
 }
-.prize-card-title span { color: var(--teal); }
+.prize-card-title span { color: var(--white); }
 .prize-card-desc {
   font-size: clamp(12px, 0.8vw, 13px);
   color: rgba(245,248,248,0.45);
@@ -1760,43 +1760,43 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .pulled-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(7,9,14,0.6);
+  background: rgba(7,9,14,0.72);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 0 20px 20px;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  gap: 8px;
 }
 .pulled-overlay::before,
 .pulled-overlay::after {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-color: var(--teal);
   border-style: solid;
 }
-.pulled-overlay::before { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
-.pulled-overlay::after  { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
+.pulled-overlay::before { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.pulled-overlay::after  { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
 .pulled-stamp {
   font-family: var(--font-antonio);
-  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-size: clamp(2.2rem, 2.8vw, 2.8rem);
   font-weight: 400;
   color: var(--teal);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .pulled-stamp::before,
 .pulled-stamp::after {
   content: '';
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-color: var(--teal);
   border-style: solid;
   flex-shrink: 0;
@@ -1804,10 +1804,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .pulled-stamp::before { border-width: 2px 0 0 2px; }
 .pulled-stamp::after  { border-width: 0 2px 2px 0; }
 .pulled-by {
-  font-size: clamp(10px, 0.7vw, 11px);
-  color: rgba(245,248,248,0.38);
-  letter-spacing: 0.05em;
-  margin: 6px 0 0;
+  font-size: 10px;
+  color: rgba(245,248,248,0.4);
+  letter-spacing: 0.08em;
+  margin: 0;
   text-transform: uppercase;
 }
 
