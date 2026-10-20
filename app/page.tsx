@@ -335,7 +335,7 @@ export default function Home() {
 
         {/* TEXT BLOCK — sits on top of carousel */}
         <div className="hero-text">
-          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}>TRADING CARDS FOR ECOMMERCE</h1>
+          <h1 className="hero-headline" style={{marginBottom:'1.25rem'}}><span style={{display:'block'}}>TRADING CARDS</span><span style={{display:'block'}}>FOR ECOMMERCE</span></h1>
           <p className="hero-collect-label" style={{marginBottom:'1.5rem'}}>Built To Lead. Made To Collect.</p>
           <p className="hero-body" style={{marginBottom:'2rem'}}>
             Meet the leaders and innovators changing the game of DTC. Collect their cards, chase the ultra-rares, and unlock over $50,000 in real prizes.
