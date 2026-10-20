@@ -121,7 +121,7 @@ export default function GiveawaysPage() {
           return (
             <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img
-                src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
+                src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
                 alt={label}
                 style={{
                   height: label === 'CTC' ? '28px' : label === 'omnisend' ? '18px' : '20px',

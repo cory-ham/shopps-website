@@ -555,7 +555,7 @@ export default function Home() {
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img
-              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
+              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
               alt={item.label}
               style={{
                 height: item.label === 'CTC' ? '28px' : item.label === 'omnisend' ? '18px' : '20px',
