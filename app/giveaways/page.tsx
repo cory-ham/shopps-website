@@ -203,7 +203,7 @@ export default function GiveawaysPage() {
       </div>
 
       {/* ── How claiming works — reuses site's howto styles ── */}
-      <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 4vw' }}>
+      <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 2vw', scrollMarginTop: '60px' }}>
         <div className="section-inner">
           <p className="section-eyebrow">PULLED A WINNER?</p>
           <h2 className="section-heading">HOW CLAIMING WORKS</h2>
@@ -223,7 +223,7 @@ export default function GiveawaysPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="cta-section">
+      <section className="cta-section" style={{ paddingTop: '4vw' }}>
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
