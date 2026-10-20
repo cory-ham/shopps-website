@@ -223,6 +223,25 @@ export default function GiveawaysPage() {
         </div>
       </section>
 
+      {/* ── SPONSOR BAR ── */}
+      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'3vw 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <div className="ticker-wrap">
+        {(['Fulfil','omnisend','CTC','Fulfil','omnisend','CTC'] as const).map((label, i) => (
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{
+                height: label === 'CTC' ? '42px' : label === 'omnisend' ? '18px' : '20px',
+                width: 'auto',
+                opacity: 0.55,
+                filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
       {/* ── CTA ── */}
       <section className="cta-section" style={{ paddingTop: '4vw' }}>
         <div className="cta-glow" />
