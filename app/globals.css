@@ -1870,7 +1870,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   gap: 16px;
   margin-bottom: 16px;
 }
-.hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 10px; }
+.hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 12px; padding: clamp(28px, 3vw, 44px); }
 .hiw-step-card {
   background: #0d1016;
   border: 1px solid #1e2535;
@@ -1951,13 +1951,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* WHERE PACKS DROP */
 .hiw-where-section {
-  background: #13161f;
-  padding: 4vw 0 5vw;
+  background: var(--bg);
+  padding: 5vw 0 6vw;
 }
 .hiw-channels-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
+  margin-top: 2.5vw;
 }
 .hiw-channel-card {
   background: #0d1016;
@@ -1967,16 +1968,19 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .hiw-channel-badge {
   font-family: var(--font-antonio);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--teal);
-  letter-spacing: 0.1em;
-  background: rgba(3,159,157,0.15);
-  border: 1px solid rgba(3,159,157,0.3);
-  border-radius: 4px;
-  padding: 4px 10px;
-  display: inline-block;
-  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  background: rgba(3,159,157,0.1);
+  border: 1px solid rgba(3,159,157,0.35);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 .hiw-channel-title {
   font-family: var(--font-antonio);
