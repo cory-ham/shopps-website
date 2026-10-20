@@ -1648,21 +1648,26 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* Hero prize */
 .prize-hero {
-  display: flex;
-  gap: clamp(24px, 3vw, 48px);
-  align-items: center;
-  margin-bottom: clamp(48px, 6vw, 80px);
-}
-.prize-hero-text {
-  flex: 1;
-  min-width: 0;
   background: #0d1016;
   border: 1px solid #1e2535;
   border-radius: 12px;
   padding: clamp(28px, 3vw, 44px);
   display: flex;
+  gap: 0;
+  align-items: center;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  overflow: visible;
+  position: relative;
+}
+.prize-hero-text {
+  flex: 1;
+  min-width: 0;
+  padding-right: clamp(20px, 3vw, 40px);
+  display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
+  z-index: 1;
 }
 .prize-hero-title {
   font-family: var(--font-antonio);
@@ -1684,8 +1689,11 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .prize-hero-card {
   flex-shrink: 0;
   width: clamp(220px, 22vw, 290px);
-  transform: rotate(4deg);
+  transform: rotate(4deg) translateY(-30px);
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.75));
+  position: relative;
+  z-index: 2;
+  margin-bottom: -30px;
 }
 .prize-hero-card img {
   width: 100%;
