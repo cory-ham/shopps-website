@@ -1831,7 +1831,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 6vw 48px;
+  padding: 100px 6vw 5vw;
 }
 .hiw-eyebrow {
   font-family: var(--font-antonio);
@@ -1859,15 +1859,15 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 6vw 60px;
+  padding: 0 6vw 5vw;
 }
 
 /* 2×2 step grid */
 .hiw-steps-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 .hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 10px; }
 .hiw-step-card {
@@ -1951,7 +1951,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 /* WHERE PACKS DROP */
 .hiw-where-section {
   background: #13161f;
-  padding: 5vw 0;
+  padding: 6vw 0 7vw;
 }
 .hiw-channels-grid {
   display: grid;

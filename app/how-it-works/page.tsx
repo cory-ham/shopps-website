@@ -111,8 +111,8 @@ export default function HowItWorksPage() {
       {/* ── WHERE PACKS DROP ── */}
       <section className="hiw-where-section">
         <div className="section-inner">
-          <p className="section-eyebrow" style={{ marginBottom: '8px' }}>KNOW WHERE TO LOOK</p>
-          <h2 className="section-heading">WHERE PACKS DROP</h2>
+          <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
+          <h2 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h2>
           <div className="hiw-channels-grid">
             {CHANNELS.map(ch => (
               <div key={ch.abbr} className="prize-card">
