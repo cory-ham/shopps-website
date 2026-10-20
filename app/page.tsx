@@ -159,21 +159,18 @@ const _rand     = dateSeededRandom(_dateSeed)
 const _shuffledMale   = seededShuffle([...MALE_P],   _rand)
 const _shuffledFemale = seededShuffle([...FEMALE_P], _rand)
 
-// ── Carousel: 14 unique cards, every 3rd position (2,5,8,11) = female ────────
-// Each person gets TWO consecutive slots: front (slab) then back (raw card back)
-// so they rotate as a matched pair like flipping a card in a pack.
+// ── Carousel: 14 slab fronts, every 3rd position (2,5,8,11) = female ────────
 const _carouselBase = (() => {
   let mi = 0, fi = 0
-  const pairs: { src: string; name: string }[] = []
+  const cards: { src: string; name: string }[] = []
   for (let pos = 0; pos < 14; pos++) {
     const isFemale = pos % 3 === 2
     const pool     = isFemale ? _shuffledFemale : _shuffledMale
     const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
     const v        = VARIANTS[Math.floor(_rand() * 3)]
-    pairs.push({ src: slabPath(p, v),    name: PERSON_NAME[p] ?? '' })  // front
-    pairs.push({ src: cardBackPath(p, v), name: PERSON_NAME[p] ?? '' }) // back
+    cards.push({ src: slabPath(p, v), name: PERSON_NAME[p] ?? '' })
   }
-  return pairs
+  return cards
 })()
 
 // Doubled for seamless infinite-scroll animation
