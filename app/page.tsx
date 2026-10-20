@@ -436,7 +436,7 @@ export default function Home() {
               <p className="section-eyebrow">2026 Edition</p>
               <h2 className="section-heading">Meet the Players</h2>
               <p className="section-body">
-                Get to know the founders, operators, and leaders in the first SHOPPS collection. Select a card to read their story.
+                The leaders. The innovators. The game changers.<br /><br />One legendary collection.<br /><br />Explore the full roster and discover who&apos;s in the set.
               </p>
             </div>
 
