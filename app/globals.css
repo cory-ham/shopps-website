@@ -1715,6 +1715,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 0 8px;
 }
 .prize-tag--available { color: var(--teal); }
+.prize-tag--one-of-one { color: #c9a227; }
 .prize-tag--claimed   { color: rgba(245,248,248,0.28); }
 .prize-attached {
   font-family: var(--font-antonio);
@@ -1760,55 +1761,45 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .pulled-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(7,9,14,0.72);
+  background: rgba(7,9,14,0.68);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 18px 18px;
   border-radius: 10px;
-  gap: 8px;
+  gap: 6px;
 }
-.pulled-overlay::before,
-.pulled-overlay::after {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border-color: var(--teal);
-  border-style: solid;
-}
-.pulled-overlay::before { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
-.pulled-overlay::after  { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
 .pulled-stamp {
   font-family: var(--font-antonio);
-  font-size: clamp(2.2rem, 2.8vw, 2.8rem);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
   font-weight: 400;
   color: var(--teal);
   letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  position: relative;
+  padding: 10px 20px;
 }
+/* Bracket corners around PULLED text */
 .pulled-stamp::before,
 .pulled-stamp::after {
   content: '';
-  display: block;
-  width: 16px;
-  height: 16px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
   border-color: var(--teal);
   border-style: solid;
-  flex-shrink: 0;
 }
-.pulled-stamp::before { border-width: 2px 0 0 2px; }
-.pulled-stamp::after  { border-width: 0 2px 2px 0; }
+.pulled-stamp::before { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.pulled-stamp::after  { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
 .pulled-by {
   font-size: 10px;
   color: rgba(245,248,248,0.4);
   letter-spacing: 0.08em;
   margin: 0;
   text-transform: uppercase;
+  padding-left: 2px;
 }
 
 /* 3-col override for claiming steps */

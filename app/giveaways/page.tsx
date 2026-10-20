@@ -61,7 +61,7 @@ const PRIZES: Prize[] = [
     attached: 'SILVER FOIL REDEMPTION',
     status: 'claimed',
     puller: 'Kerri J.',
-    pulledDate: 'WEEK 2 LIVE BREAK',
+    pulledDate: 'SEP. 19TH',
   },
   {
     id: 'courtside-2',
@@ -81,7 +81,7 @@ const PRIZES: Prize[] = [
     attached: 'CHASE · RANK #3',
     status: 'claimed',
     puller: 'Jim H.',
-    pulledDate: 'WEEK 2 LIVE BREAK',
+    pulledDate: 'SEP. 15TH',
   },
 ]
 
@@ -110,7 +110,7 @@ const STEPS = [
 ]
 
 const featured = PRIZES.find(p => p.featured)!
-const grid     = PRIZES.filter(p => !p.featured)
+const grid     = PRIZES  // all 6 in the grid
 
 export default function GiveawaysPage() {
   return (
@@ -183,7 +183,7 @@ export default function GiveawaysPage() {
               key={prize.id}
               className={`prize-card${prize.status === 'claimed' ? ' prize-card--claimed' : ''}`}
             >
-              <p className={`prize-tag${prize.status === 'claimed' ? ' prize-tag--claimed' : ' prize-tag--available'}`}>
+              <p className={`prize-tag${prize.status === 'claimed' ? ' prize-tag--claimed' : prize.tag.startsWith('1 OF 1') || prize.tag.startsWith('THE BIG ONE') ? ' prize-tag--one-of-one' : ' prize-tag--available'}`}>
                 {prize.tag}
               </p>
               <h3 className="prize-card-title">
