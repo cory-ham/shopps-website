@@ -59,9 +59,7 @@ const PRIZES: Prize[] = [
     subtitle: 'GIFT CARD',
     description: 'A $500 gift card redeemable at select partner brands.',
     attached: 'SILVER FOIL REDEMPTION',
-    status: 'claimed',
-    puller: 'Kerri J.',
-    pulledDate: 'SEP. 19TH',
+    status: 'available',
   },
   {
     id: 'courtside-2',
@@ -79,9 +77,7 @@ const PRIZES: Prize[] = [
     subtitle: undefined,
     description: 'A full signed Series One box set — every card, signed.',
     attached: 'CHASE · RANK #3',
-    status: 'claimed',
-    puller: 'Jim H.',
-    pulledDate: 'SEP. 15TH',
+    status: 'available',
   },
 ]
 
