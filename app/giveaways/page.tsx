@@ -124,7 +124,7 @@ export default function GiveawaysPage() {
                 src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
                 alt={label}
                 style={{
-                  height: label === 'CTC' ? '28px' : label === 'omnisend' ? '18px' : '20px',
+                  height: label === 'CTC' ? '42px' : label === 'omnisend' ? '18px' : '20px',
                   width: 'auto',
                   display: 'block',
                   opacity: 0.55,

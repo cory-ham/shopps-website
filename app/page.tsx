@@ -558,7 +558,7 @@ export default function Home() {
               src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
               alt={item.label}
               style={{
-                height: item.label === 'CTC' ? '28px' : item.label === 'omnisend' ? '18px' : '20px',
+                height: item.label === 'CTC' ? '42px' : item.label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
                 display: 'block',
                 opacity: 0.55,
