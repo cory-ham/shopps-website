@@ -1652,7 +1652,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   border: 1px solid #1e2535;
   border-radius: 12px;
   display: grid;
-  grid-template-columns: 1fr 38%;
+  grid-template-columns: 1fr 46%;
   align-items: center;
   margin-bottom: clamp(48px, 6vw, 80px);
   overflow: visible;
@@ -1691,11 +1691,11 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   overflow: visible;
 }
 .prize-hero-card img {
-  width: clamp(180px, 18vw, 240px);
+  width: clamp(240px, 26vw, 340px);
   height: auto;
   display: block;
-  transform: rotate(4deg) translateY(-16px);
-  filter: drop-shadow(0 20px 48px rgba(0,0,0,0.8));
+  transform: rotate(4deg) translateY(-20px);
+  filter: drop-shadow(0 24px 56px rgba(0,0,0,0.85));
   position: relative;
   z-index: 2;
 }

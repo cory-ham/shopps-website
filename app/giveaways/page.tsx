@@ -32,7 +32,7 @@ const PRIZES: Prize[] = [
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
-    cardImage: '/slabs/slab-p100-green.png',
+    cardImage: '/slabs/slab-p08-green.png',
   },
   {
     id: 'dinner-top10',
