@@ -115,20 +115,24 @@ export default function GiveawaysPage() {
 
       {/* Sponsor strip */}
       <div className="ticker-wrap" style={{ marginTop: '60px' }}>
-        {Array.from({ length: 8 }).map((_, i) => (
-          <img
-            key={i}
-            src={i % 2 === 0 ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-            alt={i % 2 === 0 ? 'Fulfil' : 'omnisend'}
-            style={{
-              height: i % 2 === 0 ? '20px' : '18px',
-              width: 'auto',
-              display: 'block',
-              opacity: 0.55,
-              filter: i % 2 !== 0 ? 'invert(1) brightness(2)' : 'none',
-            }}
-          />
-        ))}
+        {Array.from({ length: 9 }).map((_, i) => {
+          const logos = ['Fulfil', 'omnisend', 'CTC']
+          const label = logos[i % 3]
+          return (
+            <img
+              key={i}
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{
+                height: label === 'CTC' ? '36px' : label === 'Fulfil' ? '20px' : '18px',
+                width: 'auto',
+                display: 'block',
+                opacity: label === 'CTC' ? 0.75 : 0.55,
+                filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+              }}
+            />
+          )
+        })}
       </div>
 
       {/* ── Page header ── */}
