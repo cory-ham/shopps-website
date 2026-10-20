@@ -164,7 +164,7 @@ export default function GiveawaysPage() {
               {featured.subtitle && <><br />{featured.subtitle}</>}
             </h2>
             <p className="prize-hero-desc">{featured.description}</p>
-            <a href="#how" className="btn-teal" style={{ display: 'inline-block', marginTop: '20px' }}>
+            <a href="#how" className="btn-teal prize-hero-btn">
               HOW TO GET A PACK
             </a>
           </div>
