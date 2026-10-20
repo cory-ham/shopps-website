@@ -1605,7 +1605,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .prizeboard-header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 6vw 48px;
+  padding: 100px 6vw 48px;
 }
 .prizeboard-h1 {
   font-family: var(--font-antonio);
