@@ -513,14 +513,13 @@ export default function Home() {
           <div className="howto-steps howto-steps--3col">
             {STEPS.map((step, i) => (
               <div key={i} className="howto-step">
-                <div className="howto-num">{step.num}</div>
                 <p className="howto-title">{step.title}</p>
                 <p className="howto-body">{step.body}</p>
               </div>
             ))}
           </div>
           <div style={{textAlign:'left',marginTop:'2.5rem'}}>
-            <button className="btn-teal">DON&apos;T MISS THE NEXT DROP</button>
+            <button className="btn-teal" style={{padding:'18px 48px',fontSize:'16px'}}>DON&apos;T MISS THE NEXT DROP</button>
           </div>
 
         </div>
