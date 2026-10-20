@@ -172,7 +172,7 @@ const _carouselBase = (() => {
     slabs.push({ src: slabPath(p, v), name: PERSON_NAME[p] ?? '' })
   }
   // Interleave: pack card pack card (alternating)
-  const PACK = { src: '/shopps-pack-front.png', name: '', isPack: true }
+  const PACK = { src: '/shopps-pack-carousel.png', name: '', isPack: true }
   const result: { src: string; name: string; isPack?: boolean }[] = []
   for (let i = 0; i < slabs.length; i++) {
     result.push(PACK)
