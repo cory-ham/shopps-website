@@ -25,14 +25,14 @@ interface Prize {
 const PRIZES: Prize[] = [
   {
     id: 'courtside-1',
-    tag: '1 OF 1 · STILL OUT THERE',
+    tag: 'THE BIG ONE · STILL OUT THERE',
     title: 'COURTSIDE SEATS',
     subtitle: 'OKC THUNDER',
-    description: 'Pull the Rank #1 chase card and take two courtside seats at a marquee game — flights and hotel covered. The single biggest prize in Series One.',
+    description: 'Pull the Rank #1 chase card and take two courtside seats at a marquee game — flights and hotel covered. The single biggest prize in Series One, and it\'s still in a pack somewhere.',
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
-    cardImage: '/slabs/slab-bart.jpg',
+    cardImage: '/slabs/slab-p100-green.jpg',
   },
   {
     id: 'dinner-top10',
@@ -161,10 +161,9 @@ export default function GiveawaysPage() {
             <p className="prize-tag prize-tag--available">{featured.tag}</p>
             <h2 className="prize-hero-title">
               {featured.title}
-              {featured.subtitle && <><br /><span className="prize-hero-sub">{featured.subtitle}</span></>}
+              {featured.subtitle && <><br />{featured.subtitle}</>}
             </h2>
             <p className="prize-hero-desc">{featured.description}</p>
-            <p className="prize-attached">ATTACHED TO {featured.attached}</p>
             <a href="#how" className="btn-teal" style={{ display: 'inline-block', marginTop: '20px' }}>
               HOW TO GET A PACK
             </a>
