@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
 
       {/* ── Hero ── */}
       <div className="hiw-hero">
-        <p className="hiw-eyebrow">FREE. NEVER SOLD.</p>
+        <p className="section-eyebrow">FREE. NEVER SOLD.</p>
         <h1 className="hiw-h1">HOW TO GET A PACK</h1>
         <p className="hiw-desc">
           You can't buy a SHOPPS pack. Only 1,000 exist, and they're given away–through
@@ -83,13 +83,13 @@ export default function HowItWorksPage() {
       </div>
 
       {/* ── 4-step grid ── */}
-      <div className="hiw-inner">
+      <div className="section-inner">
         <div className="hiw-steps-grid">
           {STEPS.map(step => (
-            <div key={step.num} className="hiw-step-card">
-              <div className="hiw-step-num">{step.num}</div>
-              <h3 className="hiw-step-title">{step.title}</h3>
-              <p className="hiw-step-body">{step.body}</p>
+            <div key={step.num} className="howto-step">
+              <div className="howto-num">{step.num}</div>
+              <h3 className="howto-title">{step.title}</h3>
+              <p className="howto-body">{step.body}</p>
               <ul className="hiw-step-bullets">
                 {step.bullets.map((b, i) => (
                   <li key={i}>{b}</li>
@@ -110,15 +110,15 @@ export default function HowItWorksPage() {
 
       {/* ── WHERE PACKS DROP ── */}
       <section className="hiw-where-section">
-        <div className="hiw-inner">
+        <div className="section-inner">
           <p className="section-eyebrow" style={{ marginBottom: '8px' }}>KNOW WHERE TO LOOK</p>
-          <h2 className="section-heading" style={{ marginBottom: '2vw' }}>WHERE PACKS DROP</h2>
+          <h2 className="section-heading">WHERE PACKS DROP</h2>
           <div className="hiw-channels-grid">
             {CHANNELS.map(ch => (
-              <div key={ch.abbr} className="hiw-channel-card">
+              <div key={ch.abbr} className="prize-card">
                 <div className="hiw-channel-badge">{ch.abbr}</div>
-                <h4 className="hiw-channel-title">{ch.title}</h4>
-                <p className="hiw-channel-body">{ch.body}</p>
+                <h4 className="prize-card-title">{ch.title}</h4>
+                <p className="prize-card-desc">{ch.body}</p>
               </div>
             ))}
           </div>
