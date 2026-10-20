@@ -787,7 +787,8 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
   height: 62vh;
   width: auto;
-  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.85));
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.5));
   transition: filter 0.3s;
 }
 .card-slab-img {
