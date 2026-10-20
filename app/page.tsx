@@ -557,13 +557,7 @@ export default function Home() {
             <img
               src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
               alt={item.label}
-              style={{
-                height: item.label === 'CTC' ? '42px' : item.label === 'omnisend' ? '18px' : '20px',
-                width: 'auto',
-                display: 'block',
-                opacity: 0.55,
-                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-              }}
+              style={{ filter: (label || item?.label) === 'omnisend' ? 'invert(1) brightness(2)' : 'none' }}
             />
           </div>
         ))}
