@@ -362,9 +362,13 @@ export default function Home() {
 
         <div className="shopps-content-row" style={{alignItems:'center'}}>
           <div className="shopps-copy">
-            <h2 className="shopps-heading">What is SHOPPS?</h2>
+            <h2 className="shopps-heading">What is <span style={{color:'#039F9D'}}>SHOPPS</span>?</h2>
             <p className="shopps-body">
-              SHOPPS brings the trading card experience to ecommerce, featuring the founders and operators shaping the industry. Created to recognize their work and give something back to the community, the first edition comes in packs of physical cards to collect and trade.
+              Not every legend wears a jersey.<br /><br />
+              SHOPPS is a limited-edition trading card collection celebrating the founders, leaders, and icons shaping ecommerce.<br /><br />
+              100 players. 1,000 packs. 10 randomized cards per pack.<br /><br />
+              From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1 autographs.<br /><br />
+              <strong>Every pack is a chance to pull greatness.</strong>
             </p>
             <div className="pack-counter" style={{marginTop:'2rem'}}>
               <div className="pack-label">
