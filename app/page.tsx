@@ -161,16 +161,26 @@ const _shuffledFemale = seededShuffle([...FEMALE_P], _rand)
 
 // ── Carousel: 14 slab fronts, every 3rd position (2,5,8,11) = female ────────
 const _carouselBase = (() => {
+  // Build 14 slab cards first
   let mi = 0, fi = 0
-  const cards: { src: string; name: string }[] = []
+  const slabs: { src: string; name: string }[] = []
   for (let pos = 0; pos < 14; pos++) {
     const isFemale = pos % 3 === 2
     const pool     = isFemale ? _shuffledFemale : _shuffledMale
     const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
     const v        = VARIANTS[Math.floor(_rand() * 3)]
-    cards.push({ src: slabPath(p, v), name: PERSON_NAME[p] ?? '' })
+    slabs.push({ src: slabPath(p, v), name: PERSON_NAME[p] ?? '' })
   }
-  return cards
+  // Interleave: card card pack card card pack...
+  const PACK = { src: '/shopps-pack-front.png', name: '' }
+  const result: { src: string; name: string }[] = []
+  let si = 0
+  while (si < slabs.length) {
+    result.push(slabs[si++])
+    if (si < slabs.length) result.push(slabs[si++])
+    result.push(PACK)
+  }
+  return result
 })()
 
 // Doubled for seamless infinite-scroll animation
