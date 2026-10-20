@@ -403,17 +403,17 @@ export default function Home() {
 
           <div className="value-item">
 
-            <p className="value-title">Only 1,000 packs</p>
+            <p className="value-title">Only 1,000 packs exist</p>
             <p className="value-body">
-              Build a collection of the founders and brands you follow, including chrome cards and rare variants. Open packs to find your favorites and trade with other collectors.
+              100 players. 10 cards per pack. Rare parallels, numbered cards, and exclusive 1-of-1s.<br /><br />Every pack is different. Every pull is a chance at something legendary.
             </p>
           </div>
 
           <div className="value-item">
 
-            <p className="value-title">$50,000 in real value</p>
+            <p className="value-title">$50,000 in real prizes</p>
             <p className="value-body">
-              Select one-of-one autograph cards come with giveaways like a $1,000 Ridge gift card or a courtside Oklahoma City Thunder ticket with Mike Beckham. Golden Tickets offer a HexClad Kitchen Refresh Bundle or $500 in SMS credits.
+              Some cards are worth more than the pull.<br /><br />Chase authenticated autograph cards from some of the biggest names in ecommerce, with exclusive products, gift cards, and unforgettable experiences up for grabs.
             </p>
           </div>
 
@@ -421,7 +421,7 @@ export default function Home() {
 
             <p className="value-title">Never for sale</p>
             <p className="value-body">
-              Claim free packs through the pack request form, player drops, live card breaks, and CTC&apos;s posts on LinkedIn and X. Follow CTC or sign up for email reminders for the next opportunity.
+              You can&apos;t buy a pack. You have to win one.<br /><br />Packs drop through live breaks, exclusive events, player giveaways, and community challenges.<br /><br />Stay ready. You never know when the next pack will drop.
             </p>
           </div>
 
