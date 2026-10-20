@@ -171,20 +171,18 @@ const _carouselBase = (() => {
     const v        = VARIANTS[Math.floor(_rand() * 3)]
     slabs.push({ src: slabPath(p, v), name: PERSON_NAME[p] ?? '' })
   }
-  // Interleave: card card pack card card pack...
-  const PACK = { src: '/shopps-pack-front.png', name: '' }
-  const result: { src: string; name: string }[] = []
-  let si = 0
-  while (si < slabs.length) {
-    result.push(slabs[si++])
-    if (si < slabs.length) result.push(slabs[si++])
+  // Interleave: pack card pack card (alternating)
+  const PACK = { src: '/shopps-pack-front.png', name: '', isPack: true }
+  const result: { src: string; name: string; isPack?: boolean }[] = []
+  for (let i = 0; i < slabs.length; i++) {
     result.push(PACK)
+    result.push(slabs[i])
   }
   return result
 })()
 
 // Doubled for seamless infinite-scroll animation
-const CAROUSEL_CARDS = [..._carouselBase, ..._carouselBase]
+const CAROUSEL_CARDS = [..._carouselBase, ..._carouselBase] as { src: string; name: string; isPack?: boolean }[]
 
 // ── Top 100 grid: 8 raw card fronts, alternating M / F ───────────────────────
 // Continue pulling from the shuffled pools after carousel (10 males, 4 females used)
@@ -325,8 +323,8 @@ export default function Home() {
         <div className="card-carousel">
           <div className="card-carousel-track">
             {CAROUSEL_CARDS.map((card, i) => (
-              <div key={i} className="card-sleeve-img-wrap">
-                <img src={card.src} alt={card.name} className="card-slab-img" draggable={false} />
+              <div key={i} className={card.isPack ? 'card-sleeve-img-wrap card-pack-wrap' : 'card-sleeve-img-wrap'}>
+                <img src={card.src} alt={card.name} className={card.isPack ? 'card-pack-img' : 'card-slab-img'} draggable={false} />
               </div>
             ))}
           </div>
