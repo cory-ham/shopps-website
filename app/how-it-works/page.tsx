@@ -74,12 +74,17 @@ export default function HowItWorksPage() {
 
       {/* ── Hero ── */}
       <div className="hiw-hero">
-        <p className="section-eyebrow">FREE. NEVER SOLD.</p>
-        <h1 className="hiw-h1">HOW TO GET A PACK</h1>
-        <p className="hiw-desc">
-          You can't buy a SHOPPS pack. Only 1,000 exist, and they're given away–through
-          the players, the shows, and the community. Here's the playbook.
-        </p>
+        <div className="hiw-hero-text">
+          <p className="section-eyebrow">FREE. NEVER SOLD.</p>
+          <h1 className="hiw-h1">HOW TO GET A PACK</h1>
+          <p className="hiw-desc">
+            You can't buy a SHOPPS pack. Only 1,000 exist, and they're given away–through
+            the players, the shows, and the community. Here's the playbook.
+          </p>
+        </div>
+        <div className="hiw-hero-pack">
+          <img src="/shopps-pack-front.png" alt="SHOPPS Pack" draggable={false} />
+        </div>
       </div>
 
       {/* ── 4-step grid ── */}
