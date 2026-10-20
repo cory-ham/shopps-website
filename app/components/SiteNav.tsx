@@ -12,9 +12,9 @@ export default function SiteNav() {
           <a href="/how-it-works" className="nav-link">How It Works</a>
         </div>
 
-        <div className="nav-logo-wrap">
+        <a href="/" className="nav-logo-wrap">
           <img src="/shopps-logo-v2.png" alt="SHOPPS" className="nav-logo" />
-        </div>
+        </a>
 
         <div className="nav-right">
           <a href="/giveaways" className="nav-link">What Cards Unlock</a>
