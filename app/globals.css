@@ -1860,7 +1860,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 6vw 3vw;
+  padding: 0 6vw 5.5vw;
 }
 
 /* 2×2 step grid */
