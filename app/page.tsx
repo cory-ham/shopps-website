@@ -650,9 +650,10 @@ export default function Home() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" style={{marginBottom:'2rem'}} />
           <h2 className="cta-heading">
-            734 Packs Left<br />Zero for Sale
+            ONLY 1,000 PACKS EXIST.<br />XXX PACKS REMAIN.
           </h2>
-          <a href="/set" className="btn-cta-outline" style={{marginTop:'2.5rem', display:'inline-block'}}>START COLLECTING</a>
+          <p className="cta-body" style={{marginTop:'1.5rem',marginBottom:'1rem'}}>The chase is on.</p>
+          <a href="/set" className="btn-cta-outline" style={{marginTop:'1.5rem', display:'inline-block'}}>START COLLECTING</a>
         </div>
       </section>
 
