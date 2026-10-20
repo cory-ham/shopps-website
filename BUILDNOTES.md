@@ -114,3 +114,26 @@ Build failures on Vercel are always TypeScript errors — fix locally first.
 JSX string replacements can leave orphaned `})}` closing tags. Always:
 1. Run `npx tsc --noEmit` after any code change
 2. Only push when it reports zero errors
+
+## Current Site State — Oct 20 2026
+
+### Pages Live
+- `/` — Homepage: hero carousel (slab fronts only), tweet feed, sponsor bar (Fulfil/Omnisend/CTC)
+- `/set` — The Top 100: 101 cards (p0-p100), filter/search, flip animation, sponsor bar above footer
+- `/giveaways` — Prize Board: 6 prizes, hero card (Mike Beckham gold 1/1), how claiming works, sponsor bar before CTA
+- `/login` — Password: CTC
+
+### Sponsor Bar Rules
+- Pattern: Fulfil → Omnisend → CTC (×2 = 6 slots)
+- Heights: CTC=42px, Fulfil=20px, Omnisend=18px
+- Opacity: 0.55 on all; Omnisend gets `filter: invert(1) brightness(2)`
+- CSS: `.ticker-wrap` with `flex: 1` slots on each logo div
+- "Brought to you by" label above the bar
+
+### Key Assets
+- CTC icon: `public/ctc-icon.png` (navy→white converted, transparent bg)
+- Slab transparent PNGs: `public/slabs/slab-p08-gold.png` (Mike Beckham hero)
+- New sponsor cards: p99 Moiz Ali (Native/Fulfil), p100 Rytis Lauris (Omnisend)
+
+### Git Tag
+- `giveaways-v1` — stable snapshot of all Oct 20 work
