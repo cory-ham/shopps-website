@@ -216,93 +216,19 @@ export default function SetPage() {
       <SiteNav />
 
       {/* ── SPONSOR STRIP — static ── */}
-      <div className="ticker-wrap" style={{ marginTop: '60px' }}>
-        {TICKER_ITEMS.map((item, i) => (
-          <img
-            key={i}
-            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-            alt={item.label}
-            style={{
-              height: item.label === 'Fulfil' ? '20px' : '18px',
-              width: 'auto',
-              display: 'block',
-              opacity: 0.55,
-              filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-            }}
-          />
+      {/* ── SPONSOR STRIP — static ── */}
+      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'2rem 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <div className="ticker-wrap">
+        {['Fulfil','omnisend','CTC','Fulfil','omnisend','CTC'].map((label, i) => (
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{ filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none' }}
+            />
+          </div>
         ))}
       </div>
-
-      {/* ──────────────────── PAGE HEADER ──────────────────── */}
-      <div className="set-page-header">
-        <p className="set-eyebrow">2026 EDITION</p>
-        <h1 className="set-h1">Who&apos;s in the Set?</h1>
-        <p className="set-intro">
-          Select a card to learn about the leader behind it and their work shaping ecommerce.
-        </p>
-
-      </div>
-
-      {/* ──────────────────── FILTER BAR ──────────────────── */}
-      <div className="set-filter-bar">
-        <div className="set-filter-row">
-          <div className="set-filter-pills">
-            {FILTERS.map(f => (
-              <button
-                key={f}
-                className={`set-filter-pill${activeFilter === f ? ' active' : ''}`}
-                onClick={() => setActiveFilter(f)}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-          <input
-            className="set-search-input"
-            type="text"
-            placeholder="Search a name..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-        </div>
-        <p className="set-showing">SHOWING {filtered.length} OF {PEOPLE.length} CARDS</p>
-      </div>
-
-      {/* ──────────────────── CARD GRID ──────────────────── */}
-      <div className="set-grid">
-        {filtered.map(person => {
-          const isAutograph = activeFilter === 'AUTOGRAPH'
-          const v = getVariant(person.p)
-          const isFlipped = flipped.has(person.p)
-          // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
-          const backOffsets: [number,number,number] = [2, 4, 6]
-          const frontSrc = isAutograph
-            ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
-            : cardSrc(person.p, v)
-          const backNum = isAutograph ? 8*person.p+8 : 8*person.p+backOffsets[v]
-          const backSrc = `/cards/card-${String(backNum).padStart(3,'0')}.jpg`
-          return (
-            <div
-              key={person.p}
-              className={`set-card-cell set-card-flip-wrap${isFlipped ? ' is-flipped' : ''}`}
-              onClick={() => toggleFlip(person.p)}
-              title={`${person.name} — click to flip`}
-            >
-              <div className="set-card-flipper">
-                <div className="set-card-front">
-                  <img src={frontSrc} alt={person.name} draggable={false} />
-                  <div className="set-card-overlay">
-                    <p className="set-card-name">{person.name}</p>
-                    <p className="set-card-company">{person.company}</p>
-                  </div>
-                  {!isAutograph && (
-                    <span className="set-variant-dot" style={{ background: DOT_COLORS[v] }} />
-                  )}
-                </div>
-                <div className="set-card-back">
-                  <img src={backSrc} alt={`${person.name} back`} draggable={false} />
-                </div>
-              </div>
             </div>
           )
         })}

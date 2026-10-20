@@ -113,19 +113,19 @@ export default function GiveawaysPage() {
     <>
       <SiteNav />
 
-      {/* Sponsor strip */}
-      <div className="ticker-wrap" style={{ marginTop: '60px' }}>
-        {Array.from({ length: 9 }).map((_, i) => {
-          const logos = ['Fulfil', 'omnisend', 'CTC']
-          const label = logos[i % 3]
-          return (
-            <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img
-                src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
-                alt={label}
-                style={{ filter: (label || item?.label) === 'omnisend' ? 'invert(1) brightness(2)' : 'none' }}
-              />
-            </div>
+            {/* ── SPONSOR STRIP — static ── */}
+      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'2rem 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <div className="ticker-wrap">
+        {['Fulfil','omnisend','CTC','Fulfil','omnisend','CTC'].map((label, i) => (
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{ filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none' }}
+            />
+          </div>
+        ))}
+      </div>
           )
         })}
       </div>
