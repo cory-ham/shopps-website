@@ -123,7 +123,9 @@ const PEOPLE = [
   { p: 95, name: 'Freddy Ward',              company: 'Wild',                     cat: 'founders',  oneOfOne: false },
   { p: 96, name: 'Sienna McCormick',         company: 'Create Wellness',          cat: 'founders',  oneOfOne: false },
   { p: 97, name: 'Taylor Holiday',           company: 'Common Thread Collective', cat: 'operators', oneOfOne: true  },
-  { p: 98, name: 'Mystery Card',             company: 'Absolutely Ridiculous',    cat: 'founders',  oneOfOne: false },
+  { p: 98,  name: 'Mystery Card',             company: 'Absolutely Ridiculous',    cat: 'founders',  oneOfOne: false },
+  { p: 99,  name: 'Moiz Ali',                  company: 'Native / Fulfil',           cat: 'founders',  oneOfOne: false },
+  { p: 100, name: 'Rytis Lauris',              company: 'Omnisend',                  cat: 'founders',  oneOfOne: false },
 ]
 
 type Variant = 0 | 1 | 2
