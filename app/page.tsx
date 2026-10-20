@@ -137,7 +137,7 @@ const VARIANTS = ['green', 'teal', 'gold'] as const
 type CardVariant = typeof VARIANTS[number]
 
 function slabPath(p: number, v: CardVariant) {
-  return `/slabs/slab-p${String(p).padStart(2,'0')}-${v}.jpg`
+  return `/slabs/slab-p${String(p).padStart(2,'0')}-${v}.png`
 }
 function cardFrontPath(p: number, r: () => number) {
   const offsets = [1, 3, 5]  // green, teal, gold fronts
