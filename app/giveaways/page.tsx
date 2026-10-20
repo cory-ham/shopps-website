@@ -124,10 +124,10 @@ export default function GiveawaysPage() {
               src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
               alt={label}
               style={{
-                height: label === 'CTC' ? '36px' : label === 'Fulfil' ? '20px' : '18px',
+                height: label === 'CTC' ? '28px' : label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
                 display: 'block',
-                opacity: label === 'CTC' ? 0.75 : 0.55,
+                opacity: 0.55,
                 filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
               }}
             />
