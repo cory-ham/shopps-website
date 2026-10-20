@@ -131,8 +131,6 @@ export default function GiveawaysPage() {
           </div>
         ))}
       </div>
-        ))}
-      </div>
 
       {/* ── Page header ── */}
       <div className="prizeboard-header">
