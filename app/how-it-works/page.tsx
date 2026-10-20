@@ -83,7 +83,7 @@ export default function HowItWorksPage() {
           </p>
         </div>
         <div className="hiw-hero-pack">
-          <img src="/shopps-pack-front.png" alt="SHOPPS Pack" draggable={false} />
+          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
         </div>
       </div>
 
