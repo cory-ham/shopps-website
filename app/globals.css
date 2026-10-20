@@ -1653,11 +1653,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   border-radius: 12px;
   display: grid;
   grid-template-columns: 1fr 46%;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: clamp(48px, 6vw, 80px);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
-  min-height: 280px;
 }
 .prize-hero-text {
   padding: clamp(36px, 3.5vw, 52px);
@@ -1687,17 +1686,16 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 24px 20px 0;
-  overflow: visible;
+  padding: clamp(28px, 3vw, 44px) clamp(20px, 2vw, 32px);
+  overflow: hidden;
 }
 .prize-hero-card img {
-  width: clamp(240px, 26vw, 340px);
+  width: 100%;
+  max-width: 300px;
   height: auto;
   display: block;
-  transform: rotate(4deg) translateY(-20px);
+  transform: rotate(4deg);
   filter: drop-shadow(0 24px 56px rgba(0,0,0,0.85));
-  position: relative;
-  z-index: 2;
 }
 /* Prize hero button uses antonio for heavier feel */
 .prize-hero-btn {
