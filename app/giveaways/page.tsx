@@ -54,7 +54,7 @@ const PRIZES: Prize[] = [
   },
   {
     id: 'gift-card',
-    tag: 'CLAIMED',
+    tag: 'STILL OUT THERE',
     title: '$500.00 USD',
     subtitle: 'GIFT CARD',
     description: 'A $500 gift card redeemable at select partner brands.',
@@ -72,7 +72,7 @@ const PRIZES: Prize[] = [
   },
   {
     id: 'signed-set',
-    tag: 'CLAIMED',
+    tag: 'STILL OUT THERE',
     title: 'SIGNED SET BOX',
     subtitle: undefined,
     description: 'A full signed Series One box set — every card, signed.',
