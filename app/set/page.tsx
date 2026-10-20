@@ -215,7 +215,7 @@ export default function SetPage() {
 
       {/* ──────────────────── PAGE HEADER ──────────────────── */}
       <div className="set-page-header">
-        <p className="set-eyebrow">2026 EDITION</p>
+        <p className="section-eyebrow">2026 EDITION</p>
         <h1 className="set-h1">Who&apos;s in the Set?</h1>
         <p className="set-intro">
           Select a card to learn about the leader behind it and their work shaping ecommerce.
@@ -289,7 +289,7 @@ export default function SetPage() {
       </div>
 
       {/* ── SPONSOR STRIP ── */}
-      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'3vw 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <p className="sponsor-label">Brought to you by</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -297,7 +297,7 @@ export default function SetPage() {
               src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
               alt={item.label}
               style={{
-                height: item.label === 'CTC' ? '42px' : item.label === 'omnisend' ? '18px' : '20px',
+                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
                 opacity: 0.55,
                 filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',

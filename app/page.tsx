@@ -505,6 +505,7 @@ export default function Home() {
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
       <section className="howto-section">
         <div className="section-inner">
+          <p className="section-eyebrow">No Purchase Necessary</p>
           <h2 className="section-heading">How to Get a Pack</h2>
           <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
             Packs are never for sale, but there are three ways to claim one.
@@ -513,8 +514,8 @@ export default function Home() {
           <div className="howto-steps howto-steps--3col">
             {STEPS.map((step, i) => (
               <div key={i} className="howto-step">
+                <div className="howto-num">{step.num}</div>
                 <p className="howto-title">{step.title}</p>
-                <br />
                 <p className="howto-body">{step.body}</p>
               </div>
             ))}
@@ -559,7 +560,7 @@ export default function Home() {
         </div>
       </section>
       {/* ── SPONSOR STRIP — static ── */}
-      <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'2rem 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
+      <p className="sponsor-label">Brought to you by</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -567,7 +568,7 @@ export default function Home() {
               src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
               alt={item.label}
               style={{
-                height: item.label === 'CTC' ? '42px' : item.label === 'omnisend' ? '18px' : '20px',
+                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
                 opacity: 0.55,
                 filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
