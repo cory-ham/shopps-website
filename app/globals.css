@@ -1128,7 +1128,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 ════════════════════════════════════════════════════════════ */
 
 .set-page-header {
-  padding: 4vw 5vw;
+  padding: 6vw 5vw 3.5vw;
+  padding-top: max(6vw, 100px);
   background: #07090e;
 }
 
