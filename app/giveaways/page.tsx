@@ -203,7 +203,7 @@ export default function GiveawaysPage() {
       </div>
 
       {/* ── How claiming works — reuses site's howto styles ── */}
-      <section className="howto-section" id="how" style={{ background: 'var(--bg)', paddingBottom: '3vw' }}>
+      <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 4vw' }}>
         <div className="section-inner">
           <p className="section-eyebrow">PULLED A WINNER?</p>
           <h2 className="section-heading">HOW CLAIMING WORKS</h2>
