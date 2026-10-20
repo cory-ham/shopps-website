@@ -8,8 +8,8 @@ export default function SiteNav() {
     <>
       <nav className="site-nav">
         <div className="nav-left">
-          <a href="#" className="nav-link">View the Collection</a>
-          <a href="#" className="nav-link">How It Works</a>
+          <a href="/set" className="nav-link">View the Collection</a>
+          <a href="/how-it-works" className="nav-link">How It Works</a>
         </div>
 
         <div className="nav-logo-wrap">
@@ -17,8 +17,8 @@ export default function SiteNav() {
         </div>
 
         <div className="nav-right">
-          <a href="#" className="nav-link">What Cards Unlock</a>
-          <a href="#" className="nav-live">Get a Pack</a>
+          <a href="/giveaways" className="nav-link">What Cards Unlock</a>
+          <a href="/how-it-works" className="nav-live">Get a Pack</a>
         </div>
 
         <button className="nav-hamburger" aria-label="Menu" onClick={toggleDrawer}>
@@ -28,10 +28,10 @@ export default function SiteNav() {
 
       <div className="nav-drawer" onClick={closeDrawer}>
         <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>View the Collection</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
-          <a href="#" className="nav-drawer-link" onClick={closeDrawer}>What Cards Unlock</a>
-          <a href="#" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
+          <a href="/set" className="nav-drawer-link" onClick={closeDrawer}>View the Collection</a>
+          <a href="/how-it-works" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
+          <a href="/giveaways" className="nav-drawer-link" onClick={closeDrawer}>What Cards Unlock</a>
+          <a href="/how-it-works" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
         </div>
       </div>
     </>

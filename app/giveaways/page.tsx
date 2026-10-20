@@ -236,7 +236,7 @@ export default function GiveawaysPage() {
             <span style={{ color: 'var(--teal)' }}>courtside seats</span>.
             Know where to look.
           </p>
-          <button className="btn-cta-outline">HOW TO GET A PACK</button>
+          <a href="/how-it-works" className="btn-cta-outline" style={{display:'inline-block'}}>HOW TO GET A PACK</a>
         </div>
       </section>
 

@@ -341,7 +341,7 @@ export default function Home() {
             Meet the leaders and innovators changing the game of DTC. Collect their cards, chase the ultra-rares, and unlock over $50,000 in real prizes.
           </p>
           <div className="hero-buttons">
-            <button className="btn-teal">Get a Pack</button>
+            <a href="/how-it-works" className="btn-teal">Get a Pack</a>
             <Link href="/set" className="btn-outline">View the Collection</Link>
           </div>
 
@@ -448,7 +448,7 @@ export default function Home() {
           </div>
 
           <div className="top100-footer-row" style={{justifyContent:'flex-start'}}>
-            <button className="btn-teal">VIEW THE COLLECTION</button>
+            <a href="/set" className="btn-teal">VIEW THE COLLECTION</a>
           </div>
         </div>
       </section>
@@ -649,7 +649,7 @@ export default function Home() {
           <h2 className="cta-heading">
             734 Packs Left<br />Zero for Sale
           </h2>
-          <button className="btn-cta-outline" style={{marginTop:'2.5rem'}}>START COLLECTING</button>
+          <a href="/set" className="btn-cta-outline" style={{marginTop:'2.5rem', display:'inline-block'}}>START COLLECTING</a>
         </div>
       </section>
 
