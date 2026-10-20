@@ -229,10 +229,6 @@ export default function SetPage() {
           </div>
         ))}
       </div>
-            </div>
-          )
-        })}
-      </div>
 
       {/* ──────────────────── FOOTER ──────────────────── */}
       <footer className="site-footer">
