@@ -1860,7 +1860,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 6vw 5vw;
+  padding: 0 6vw 3vw;
 }
 
 /* 2×2 step grid */
@@ -1868,7 +1868,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 10px; }
 .hiw-step-card {
@@ -1952,7 +1952,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 /* WHERE PACKS DROP */
 .hiw-where-section {
   background: #13161f;
-  padding: 6vw 0 7vw;
+  padding: 4vw 0 5vw;
 }
 .hiw-channels-grid {
   display: grid;
