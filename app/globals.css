@@ -1831,7 +1831,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 6vw 5vw;
+  padding: 100px 6vw 4vw;
 }
 .hiw-eyebrow {
   font-family: var(--font-antonio);
@@ -1843,17 +1843,18 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .hiw-h1 {
   font-family: var(--font-antonio);
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(3.5rem, 8.5vw, 7rem);
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
-  line-height: 0.93;
-  margin: 0 0 20px;
+  line-height: 0.9;
+  margin: 6px 0 20px;
+  letter-spacing: 0.01em;
 }
 .hiw-desc {
-  font-size: clamp(13px, 0.95vw, 15px);
-  color: rgba(245,248,248,0.55);
-  max-width: 460px;
+  font-size: clamp(13px, 0.9vw, 14px);
+  color: rgba(245,248,248,0.5);
+  max-width: 420px;
   line-height: 1.65;
 }
 .hiw-inner {
