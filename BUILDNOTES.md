@@ -96,3 +96,21 @@ Quickest is to build a demo page or just push each style sequentially.
 - ~/Downloads/shopps-design.psd (35MB)
 - Layer 15 is the only isolated hero card (clean slab with Rytis inside)
 - All other card content is in "Layer 2 copy" which is a flat strip (no sub-layers)
+
+## Carousel Rules — DO NOT CHANGE
+- `CAROUSEL_CARDS` uses **slab fronts only** (`slabPath(p, v)`)
+- Never add `cardBackPath()` to the carousel — this shows the bio/back of cards
+- Cards rotate by date seed — do not add manual card selections
+
+## Pre-Push Checklist
+Always run before any `git push`:
+```bash
+cd ~/Downloads/shopps-website
+npx tsc --noEmit  # must be zero errors
+```
+Build failures on Vercel are always TypeScript errors — fix locally first.
+
+## Why Builds Fail
+JSX string replacements can leave orphaned `})}` closing tags. Always:
+1. Run `npx tsc --noEmit` after any code change
+2. Only push when it reports zero errors
