@@ -519,7 +519,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{textAlign:'left',marginTop:'2.5rem'}}>
-            <button className="btn-teal" style={{padding:'18px 48px',fontSize:'16px'}}>DON&apos;T MISS THE NEXT DROP</button>
+            <button className="btn-teal">DON&apos;T MISS THE NEXT DROP</button>
           </div>
 
         </div>
