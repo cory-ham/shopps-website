@@ -553,18 +553,19 @@ export default function Home() {
       <p style={{textAlign:'center',fontSize:'11px',letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)',margin:'2rem 0 0.75rem',fontFamily:'inherit'}}>Brought to you by</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
-          <img
-            key={i}
-            src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
-            alt={item.label}
-            style={{
-              height: item.label === 'CTC' ? '28px' : item.label === 'omnisend' ? '18px' : '20px',
-              width: 'auto',
-              display: 'block',
-              opacity: 0.55,
-              filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-            }}
-          />
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-logo-white.svg' : '/omnisend-logo.svg'}
+              alt={item.label}
+              style={{
+                height: item.label === 'CTC' ? '28px' : item.label === 'omnisend' ? '18px' : '20px',
+                width: 'auto',
+                display: 'block',
+                opacity: 0.55,
+                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+              }}
+            />
+          </div>
         ))}
       </div>
 
