@@ -30,7 +30,7 @@ function PackDropForm() {
   )
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'nowrap', alignItems: 'center' }}>
       <input
         type="email"
         value={email}
