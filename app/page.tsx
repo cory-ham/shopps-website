@@ -514,7 +514,7 @@ export default function Home() {
             <p className="section-body" style={{marginBottom:'2vw'}}>
               You can&apos;t buy a pack. You have to win one. Here&apos;s how to get in on the action.
             </p>
-            <div className="howto-steps howto-steps--1col">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {STEPS.map((step, i) => (
                 <div key={i} className="howto-step">
                   <p className="howto-title">{step.title}</p>
