@@ -2141,4 +2141,4 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .golden-tickets-grid { grid-template-columns: 1fr; }
 }
 
-.footer-ctc-logo { height: 22px; width: auto; opacity: 0.35; justify-self: end; filter: invert(0); }
+.footer-ctc-logo { height: 28px; width: auto; opacity: 0.55; justify-self: end; }
