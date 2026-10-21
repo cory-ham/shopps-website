@@ -1,8 +1,51 @@
 'use client'
 import SiteNav from './components/SiteNav'
-
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+function PackDropForm() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle'|'loading'|'done'|'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      setStatus(res.ok ? 'done' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'done') return (
+    <p style={{ marginTop: '2rem', color: 'var(--teal)', fontFamily: 'var(--font-antonio)', fontSize: 'clamp(14px, 1vw, 16px)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+      ✓ You&apos;re in. We&apos;ll let you know when packs drop.
+    </p>
+  )
+
+  return (
+    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        required
+        className="pack-drop-input"
+      />
+      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
+        {status === 'loading' ? 'SIGNING UP…' : 'DON’T MISS THE NEXT DROP'}
+      </button>
+      {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', margin: '4px 0 0' }}>Something went wrong. Try again.</p>}
+    </form>
+  )
+}
 
 /* ─────────────────────────────────────────────────────────
    SHOPPS — Full page rebuild from PSD
@@ -547,9 +590,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div style={{marginTop:'2rem'}}>
-              <a href="/how-it-works" className="btn-teal">DON&apos;T MISS THE NEXT DROP</a>
-            </div>
+            <PackDropForm />
           </div>
 
           {/* Right: packs fill to screen edge */}
