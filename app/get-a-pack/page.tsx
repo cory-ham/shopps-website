@@ -72,6 +72,40 @@ export default function GetAPackPage() {
         </div>
       </section>
 
+      {/* ── Live Schedule ── */}
+      <section className="live-section">
+        <div className="section-inner">
+          <p className="section-eyebrow">Breaks &amp; Shows</p>
+          <h2 className="section-heading">Live Schedule</h2>
+          <p className="section-body" style={{ maxWidth: '440px', marginBottom: '2.5vw' }}>
+            Live breaks are where the packs move. Show up, play along, and watch chase cards come off the board in real time.
+          </p>
+          <div className="live-events-box">
+            {[
+              { month: 'OCT', day: '14', title: 'Live Break #7 – Founders Night',       meta: '8:00 PM ET • Streaming IG Live & YouTube • 40 Packs on the table' },
+              { month: 'OCT', day: '21', title: 'The Top 100 Show – Ep. 4',            meta: '7:30 PM ET • Guest: A Top 10 Card, revealed live' },
+              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight’s stack' },
+            ].map((event, i, arr) => (
+              <div key={i} className={'live-event' + (i < arr.length - 1 ? ' live-event-divider' : '')}>
+                <div className="live-date">
+                  <span className="live-date-month">{event.month}</span>
+                  <span className="live-date-day">{event.day}</span>
+                </div>
+                <div className="live-event-body">
+                  <p className="live-title">{event.title}</p>
+                  <p className="live-meta"><span className="live-dot" />{event.meta}</p>
+                </div>
+                <button className="btn-remind">Remind Me</button>
+              </div>
+            ))}
+          </div>
+          <div className="live-email-bar">
+            <input className="live-email-input" type="email" placeholder="you@email.com – never miss a break" />
+            <button className="live-email-btn">Get Reminders</button>
+          </div>
+        </div>
+      </section>
+
       {/* ── Hero: packs + signup ── */}
       <div className="gap-hero">
         <div className="gap-hero-text">
