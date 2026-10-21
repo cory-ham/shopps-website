@@ -139,7 +139,7 @@ export default function HowItWorksPage() {
               src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
               alt={label}
               style={{
-                height: label === 'CTC' ? '36px' : label === 'omnisend' ? '18px' : '20px',
+                height: label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
                 opacity: 0.55,
                 filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
