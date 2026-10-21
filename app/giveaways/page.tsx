@@ -259,7 +259,7 @@ export default function GiveawaysPage() {
 
       <footer className="site-footer">
         <img src="/shopps-logo-v2.png" alt="SHOPPS" className="footer-logo" />
-        <p className="footer-copy">© 2026 SHOPPS. All rights reserved.</p>
+        <p className="footer-copy">2026 COMMON THREAD COLLECTIVE. ALL RIGHTS RESERVED. THIS PRODUCT IS NOT ENDORSED OR AFFILIATED WITH ANY ORGANIZATION OR TEAM. PRINTED IN THE U.S.A.</p>
       </footer>
     </>
   )
