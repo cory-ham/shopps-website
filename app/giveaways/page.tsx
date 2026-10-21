@@ -153,6 +153,23 @@ export default function GiveawaysPage() {
           )}
         </div>
 
+        {/* Golden Tickets */}
+        <div className="golden-tickets-section">
+          <p className="section-eyebrow" style={{ marginBottom: '10px' }}>SPONSOR PRIZES</p>
+          <h2 className="section-heading" style={{ marginBottom: '8px' }}>GOLDEN TICKETS</h2>
+          <p className="prizeboard-desc" style={{ marginBottom: '28px' }}>
+            Two sponsor Golden Tickets are hidden in packs — pull one and redeem for the prize below.
+          </p>
+          <div className="golden-tickets-grid">
+            <div className="golden-ticket-card">
+              <img src="/golden-ticket-fulfil.png" alt="Fulfil Golden Ticket — HexClad Kitchen Refresh Bundle" draggable={false} />
+            </div>
+            <div className="golden-ticket-card">
+              <img src="/golden-ticket-omnisend.png" alt="Omnisend Golden Ticket — $500 SMS Credits" draggable={false} />
+            </div>
+          </div>
+        </div>
+
         {/* Prize grid */}
         <h2 className="section-heading" style={{ marginBottom: '20px' }}>EVERY PRIZE IN THE SERIES</h2>
         <div className="prize-grid">

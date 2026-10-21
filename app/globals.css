@@ -2120,3 +2120,23 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .top100-flip-back {
   transform: rotateY(180deg);
 }
+
+/* ── Golden Tickets ──────────────────────────────────────────────────────── */
+.golden-tickets-section {
+  margin-bottom: clamp(48px, 5vw, 72px);
+}
+.golden-tickets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.golden-ticket-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  filter: drop-shadow(0 8px 32px rgba(200,160,30,0.25));
+}
+@media (max-width: 680px) {
+  .golden-tickets-grid { grid-template-columns: 1fr; }
+}
