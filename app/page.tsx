@@ -31,6 +31,9 @@ function PackDropForm() {
 
   return (
     <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'nowrap', alignItems: 'center' }}>
+      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
+        {status === 'loading' ? 'SIGNING UP…' : 'DON’T MISS THE NEXT DROP'}
+      </button>
       <input
         type="email"
         value={email}
@@ -39,9 +42,6 @@ function PackDropForm() {
         required
         className="pack-drop-input"
       />
-      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
-        {status === 'loading' ? 'SIGNING UP…' : 'DON’T MISS THE NEXT DROP'}
-      </button>
       {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', margin: '4px 0 0' }}>Something went wrong. Try again.</p>}
     </form>
   )
