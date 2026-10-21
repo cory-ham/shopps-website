@@ -325,7 +325,7 @@ a { color: inherit; text-decoration: none; }
 .btn-remind:hover { border-color: var(--teal); color: var(--teal); }
 /* Email bar */
 .live-email-bar { display: flex; gap: 0; border-radius: 6px; overflow: hidden; max-width: 500px; }
-.live-email-input { flex: 1; background: #111620; border: 1px solid #182030; border-right: none; padding: 14px 18px; color: rgba(245,248,248,0.6); font-size: clamp(13px, 0.85vw, 15px); font-family: var(--font-body); outline: none; border-radius: 6px 0 0 6px; }
+.live-email-input { flex: 1; background: #07090f; border: 1px solid #182030; border-right: none; padding: 14px 18px; color: rgba(245,248,248,0.6); font-size: clamp(13px, 0.85vw, 15px); font-family: var(--font-body); outline: none; border-radius: 6px 0 0 6px; }
 .live-email-input::placeholder { color: rgba(245,248,248,0.3); }
 .live-email-btn { background: var(--teal); color: #000; font-family: var(--font-antonio); font-size: clamp(12px, 0.85vw, 15px); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px; border: none; cursor: pointer; border-radius: 0 6px 6px 0; white-space: nowrap; transition: opacity .2s; }
 .live-email-btn:hover { opacity: 0.88; }
