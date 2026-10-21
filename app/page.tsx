@@ -507,10 +507,19 @@ export default function Home() {
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
       <section className="howto-section">
         <div className="section-inner">
-          <h2 className="section-heading">How to Get a Pack</h2>
-          <p className="section-body" style={{maxWidth: '480px', marginBottom: '3vw'}}>
-            You can&apos;t buy a pack. You have to win one.<br /><br />Here&apos;s how to get in on the action.
-          </p>
+
+          {/* ── Hero row: headline left, packs right ── */}
+          <div className="howto-hero-row">
+            <div className="howto-hero-text">
+              <h2 className="section-heading">How to Get a Pack</h2>
+              <p className="section-body" style={{marginBottom: '2.5vw'}}>
+                You can&apos;t buy a pack. You have to win one.<br /><br />Here&apos;s how to get in on the action.
+              </p>
+            </div>
+            <div className="howto-hero-packs">
+              <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+            </div>
+          </div>
 
           <div className="howto-steps howto-steps--3col">
             {STEPS.map((step, i) => (

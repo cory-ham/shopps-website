@@ -2039,3 +2039,29 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .hiw-steps-grid { grid-template-columns: 1fr; }
   .hiw-channels-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── Howto section pack hero row ────────────────────────────────────────── */
+.howto-hero-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+.howto-hero-text {
+  flex: 1;
+  min-width: 0;
+}
+.howto-hero-packs {
+  flex-shrink: 0;
+  width: clamp(260px, 34vw, 480px);
+  filter: drop-shadow(0 24px 48px rgba(3,159,157,0.12));
+}
+.howto-hero-packs img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .howto-hero-row { flex-direction: column; }
+  .howto-hero-packs { width: 85%; margin: 0 auto; }
+}
