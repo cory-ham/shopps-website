@@ -18,7 +18,7 @@ export default function SiteNav() {
 
         <div className="nav-right">
           <a href="/giveaways" className="nav-link">What Cards Unlock</a>
-          <a href="/how-it-works" className="nav-live">Get a Pack</a>
+          <a href="/get-a-pack" className="nav-live">Get a Pack</a>
         </div>
 
         <button className="nav-hamburger" aria-label="Menu" onClick={toggleDrawer}>
@@ -31,7 +31,7 @@ export default function SiteNav() {
           <a href="/set" className="nav-drawer-link" onClick={closeDrawer}>View the Collection</a>
           <a href="/how-it-works" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
           <a href="/giveaways" className="nav-drawer-link" onClick={closeDrawer}>What Cards Unlock</a>
-          <a href="/how-it-works" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
+          <a href="/get-a-pack" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
         </div>
       </div>
     </>
