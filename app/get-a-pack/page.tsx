@@ -51,7 +51,7 @@ export default function GetAPackPage() {
       <SiteNav />
 
       {/* ── WHERE PACKS DROP (moved from How It Works) ── */}
-      <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw', background: '#13161f' }}>
+      <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw' }}>
         <div className="section-inner">
           <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
           <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
@@ -73,7 +73,7 @@ export default function GetAPackPage() {
       </section>
 
       {/* ── Live Schedule ── */}
-      <section className="live-section" style={{ background: 'var(--bg)', padding: '4vw 0' }}>
+      <section className="live-section" style={{ background: '#13161f', padding: '4vw 0' }}>
         <div className="section-inner">
           <p className="section-eyebrow">Breaks &amp; Shows</p>
           <h2 className="section-heading">Live Schedule</h2>
@@ -107,7 +107,7 @@ export default function GetAPackPage() {
       </section>
 
       {/* ── Hero: packs + signup ── */}
-      <div style={{ background: '#13161f' }}>
+      <div style={{ background: 'var(--bg)' }}>
       <div className="gap-hero">
         <div className="gap-hero-text">
           <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
