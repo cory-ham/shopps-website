@@ -192,9 +192,9 @@ const TOP100_CARDS = (() => {
     { p: 99,  src: '/cards/card-793.jpg', back: '/cards/card-794.jpg', name: 'Moiz Ali' },
     { p: 100, src: '/cards/card-801.jpg', back: '/cards/card-802.jpg', name: 'Rytis Lauris' },
   ]
-  // 4 random cards from the daily pool
+  // 6 random cards from the daily pool
   let mi = 10, fi = 4
-  const random = Array.from({ length: 4 }, (_, i) => {
+  const random = Array.from({ length: 6 }, (_, i) => {
     const isFemale = i % 2 === 1
     const pool     = isFemale ? _shuffledFemale : _shuffledMale
     const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
