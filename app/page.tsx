@@ -468,10 +468,10 @@ export default function Home() {
                 }}>
                 <div className="top100-flip-inner">
                   <div className="top100-flip-front">
-                    <img src={card.src} alt={card.name || \`Card \${i + 1}\`} draggable={false} />
+                    <img src={card.src} alt={card.name || ('Card ' + (i + 1))} draggable={false} />
                   </div>
                   <div className="top100-flip-back">
-                    <img src={card.back} alt={\`\${card.name} back\`} draggable={false} />
+                    <img src={card.back} alt={card.name + ' back'} draggable={false} />
                   </div>
                 </div>
               </div>
