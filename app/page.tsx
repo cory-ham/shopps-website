@@ -384,12 +384,14 @@ export default function Home() {
             </div>
           </div>
           <div className="shopps-video-wrap">
-            <div className="shopps-play-btn">
-              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="26" cy="26" r="25" stroke="white" strokeWidth="1.5" strokeOpacity="0.7"/>
-                <polygon points="21,17 37,26 21,35" fill="white" fillOpacity="0.9"/>
-              </svg>
-            </div>
+            <video
+              src="/shopps-intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }}
+            />
           </div>
         </div>
 
