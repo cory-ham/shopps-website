@@ -2040,29 +2040,47 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .hiw-channels-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* ── Howto section — content left, packs right ───────────────────────── */
+/* ── Howto section — half-screen split ────────────────────────── */
+.howto-section--split {
+  padding: 0 !important;
+  overflow: hidden;
+}
 .howto-pack-layout {
   display: grid;
-  grid-template-columns: 1fr clamp(240px, 30vw, 420px);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
+  grid-template-columns: 1fr 48%;
+  min-height: 560px;
+  align-items: stretch;
 }
 .howto-pack-left {
-  min-width: 0;
+  padding: 5vw 4vw 5vw 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .howto-pack-left .howto-steps {
   margin-top: 0;
   margin-bottom: 0;
 }
+.howto-steps--1col {
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
 .howto-pack-right {
-  filter: drop-shadow(0 20px 48px rgba(3,159,157,0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw 3vw 3vw 0;
+  filter: drop-shadow(0 20px 56px rgba(3,159,157,0.15));
 }
 .howto-pack-right img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 @media (max-width: 900px) {
-  .howto-pack-layout { grid-template-columns: 1fr; }
-  .howto-pack-right { width: 75%; margin: 0 auto; }
+  .howto-pack-layout { grid-template-columns: 1fr; min-height: auto; }
+  .howto-pack-left { padding: 8vw 6vw 4vw; }
+  .howto-pack-right { padding: 0 6vw 8vw; justify-content: center; }
+  .howto-pack-right img { max-width: 80%; height: auto; }
 }

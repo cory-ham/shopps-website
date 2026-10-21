@@ -505,35 +505,33 @@ export default function Home() {
 
       {/* ──────────────────── HOW TO GET A PACK ──────────────────── */}
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
-      <section className="howto-section">
-        <div className="section-inner">
-          <div className="howto-pack-layout">
+      <section className="howto-section howto-section--split">
+        <div className="howto-pack-layout">
 
-            {/* Left: all content stacked */}
-            <div className="howto-pack-left">
-              <h2 className="section-heading">How to Get a Pack</h2>
-              <p className="section-body" style={{marginBottom: '2vw'}}>
-                You can&apos;t buy a pack. You have to win one. Here&apos;s how to get in on the action.
-              </p>
-              <div className="howto-steps howto-steps--3col">
-                {STEPS.map((step, i) => (
-                  <div key={i} className="howto-step">
-                    <p className="howto-title">{step.title}</p>
-                    <p className="howto-body">{step.body}</p>
-                  </div>
-                ))}
-              </div>
-              <div style={{marginTop:'2rem'}}>
-                <a href="/how-it-works" className="btn-teal">DON&apos;T MISS THE NEXT DROP</a>
-              </div>
+          {/* Left: headline + vertical step cards + button */}
+          <div className="howto-pack-left">
+            <h2 className="section-heading" style={{marginBottom:'1vw'}}>How to Get a Pack</h2>
+            <p className="section-body" style={{marginBottom:'2vw'}}>
+              You can&apos;t buy a pack. You have to win one. Here&apos;s how to get in on the action.
+            </p>
+            <div className="howto-steps howto-steps--1col">
+              {STEPS.map((step, i) => (
+                <div key={i} className="howto-step">
+                  <p className="howto-title">{step.title}</p>
+                  <p className="howto-body">{step.body}</p>
+                </div>
+              ))}
             </div>
-
-            {/* Right: pack image */}
-            <div className="howto-pack-right">
-              <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+            <div style={{marginTop:'2rem'}}>
+              <a href="/how-it-works" className="btn-teal">DON&apos;T MISS THE NEXT DROP</a>
             </div>
-
           </div>
+
+          {/* Right: packs fill to screen edge */}
+          <div className="howto-pack-right">
+            <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+          </div>
+
         </div>
       </section>
 
