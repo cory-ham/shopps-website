@@ -133,10 +133,10 @@ export default function HowItWorksPage() {
       {/* ── SPONSOR STRIP ── */}
       <p className="sponsor-label">Brought to you by</p>
       <div className="ticker-wrap">
-        {(['Fulfil','omnisend','CTC','Fulfil','omnisend','CTC'] as const).map((label, i) => (
+        {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img
-              src={label === 'Fulfil' ? '/fulfil-logo.svg' : label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
               alt={label}
               style={{
                 height: label === 'CTC' ? '36px' : label === 'omnisend' ? '18px' : '20px',

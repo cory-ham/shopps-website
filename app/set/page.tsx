@@ -16,10 +16,10 @@ import { useState, useMemo } from 'react'
 const TICKER_ITEMS = [
   { label: 'Fulfil' },
   { label: 'omnisend' },
-  { label: 'CTC' },
   { label: 'Fulfil' },
   { label: 'omnisend' },
-  { label: 'CTC' },
+  { label: 'Fulfil' },
+  { label: 'omnisend' },
 ]
 
 const PEOPLE = [
@@ -294,7 +294,7 @@ export default function SetPage() {
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img
-              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : item.label === 'CTC' ? '/ctc-icon.png' : '/omnisend-logo.svg'}
+              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
               alt={item.label}
               style={{
                 height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
