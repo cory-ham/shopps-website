@@ -2084,3 +2084,37 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .howto-pack-right { padding: 0 6vw 8vw; justify-content: center; }
   .howto-pack-right img { max-width: 80%; height: auto; }
 }
+
+/* ── Meet the Players card flip ──────────────────────────────────────────── */
+.top100-flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+.top100-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.top100-flip-card.flipped .top100-flip-inner {
+  transform: rotateY(180deg);
+}
+.top100-flip-front,
+.top100-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.top100-flip-front img,
+.top100-flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+.top100-flip-back {
+  transform: rotateY(180deg);
+}

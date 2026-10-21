@@ -187,13 +187,27 @@ const CAROUSEL_CARDS = [..._carouselBase, ..._carouselBase] as { src: string; na
 // ── Top 100 grid: 8 raw card fronts, alternating M / F ───────────────────────
 // Continue pulling from the shuffled pools after carousel (10 males, 4 females used)
 const TOP100_CARDS = (() => {
+  // Sponsor cards always shown (p=99 Moiz Ali, p=100 Rytis Lauris)
+  const sponsors = [
+    { p: 99,  src: '/cards/card-793.jpg', back: '/cards/card-794.jpg', name: 'Moiz Ali' },
+    { p: 100, src: '/cards/card-801.jpg', back: '/cards/card-802.jpg', name: 'Rytis Lauris' },
+  ]
+  // 4 random cards from the daily pool
   let mi = 10, fi = 4
-  return Array.from({ length: 8 }, (_, i) => {
+  const random = Array.from({ length: 4 }, (_, i) => {
     const isFemale = i % 2 === 1
     const pool     = isFemale ? _shuffledFemale : _shuffledMale
     const p        = pool[(isFemale ? fi++ : mi++) % pool.length]
-    return { src: cardFrontPath(p, _rand), name: PERSON_NAME[p] ?? '' }
+    const v: CardVariant = 'green'
+    return { p, src: cardFrontPath(p, _rand), back: cardBackPath(p, v), name: PERSON_NAME[p] ?? '' }
   })
+  // Shuffle sponsors into random positions
+  const all = [...random, ...sponsors]
+  for (let i = all.length - 1; i > 0; i--) {
+    const j = Math.floor(_rand() * (i + 1));
+    [all[i], all[j]] = [all[j], all[i]]
+  }
+  return all
 })()
 
 const TICKER_ITEMS = [
@@ -444,11 +458,22 @@ export default function Home() {
 
           </div>
 
-          {/* 4×2 grid of front cards — daily-rotating, alternating M/F */}
+          {/* 3×2 grid — 4 random + 2 sponsors, click to flip */}
           <div className="top100-card-grid">
             {TOP100_CARDS.map((card, i) => (
-              <div key={i} className="top100-card-item">
-                <img src={card.src} alt={card.name || `Card ${i + 1}`} draggable={false} />
+              <div key={i} className="top100-card-item top100-flip-card"
+                onClick={e => {
+                  const el = e.currentTarget
+                  el.classList.toggle('flipped')
+                }}>
+                <div className="top100-flip-inner">
+                  <div className="top100-flip-front">
+                    <img src={card.src} alt={card.name || \`Card \${i + 1}\`} draggable={false} />
+                  </div>
+                  <div className="top100-flip-back">
+                    <img src={card.back} alt={\`\${card.name} back\`} draggable={false} />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
