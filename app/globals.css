@@ -148,12 +148,12 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-body {
   font-family: var(--font-body);
-  font-size: 0.95vw;
+  font-size: clamp(15px, 0.95vw, 17px);
   font-weight: 400;
   line-height: 1.65;
   color: rgba(245,248,248,0.92);
   margin: 0 0 1.8vw;
-  max-width: 22vw;
+  max-width: clamp(300px, 28vw, 460px);
   text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 .hero-buttons {
@@ -242,7 +242,7 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 3vw 0 4vw; background: #13161f; text-align: left; position: relative; overflow: hidden; }
+.shopps-section { padding: 4vw 0 5.5vw; background: #13161f; text-align: left; position: relative; overflow: hidden; }
 .shopps-content-row { display: flex; align-items: center; gap: 4vw; padding: 0 6vw; position: relative; z-index: 1; }
 .shopps-copy { flex: 0 0 40%; }
 .shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 8px; padding: 8px; z-index: 0; pointer-events: none; align-content: start; }
@@ -255,13 +255,13 @@ a { color: inherit; text-decoration: none; }
 .shopps-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.75; color: rgba(245,248,248,0.82); max-width: 420px; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
-.value-section { background: #07090f; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 4vw 0; }
+.value-section { background: #07090f; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 5vw 0; }
 .value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
-.value-item { padding: 0 3vw; border-right: 1px solid #14182a; }
+.value-item { padding: 1.5vw 3vw; border-right: 1px solid #14182a; }
 .value-item:last-child { border-right: none; }
 .value-icon { width: 2.5vw; height: 2.5vw; margin-bottom: 1.2vw; }
 .value-label { font-size: 0.72vw; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4vw; }
-.value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); margin-bottom: 0.6vw; }
+.value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); margin-bottom: clamp(10px, 0.8vw, 14px); }
 .value-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
@@ -344,7 +344,7 @@ a { color: inherit; text-decoration: none; }
    Removing this will break the icon every time. */
 .cta-s-icon { width: clamp(80px, 7vw, 110px); height: auto; margin-bottom: 1.8vw; mix-blend-mode: lighten; }
 .cta-heading { font-family: var(--font-antonio); font-size: clamp(40px, 5.5vw, 80px); text-transform: uppercase; color: var(--white); line-height: 0.95; margin-bottom: 1.5vw; letter-spacing: -0.01em; }
-.cta-body { font-size: clamp(13px, 0.9vw, 16px); line-height: 1.7; color: rgba(245,248,248,0.55); max-width: 480px; margin: 0 auto 2.5vw; }
+.cta-body { font-size: clamp(15px, 0.9vw, 16px); line-height: 1.7; color: rgba(245,248,248,0.55); max-width: 480px; margin: 0 auto 2.5vw; }
 .btn-cta-outline { padding: 16px 40px; border: none; background: var(--teal); color: #07090f; font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 3px; cursor: pointer; transition: opacity .2s; line-height: 1; }
 .btn-cta-outline:hover { opacity: 0.88; }
 .btn-teal-lg { font-size: 0.8vw; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #000; background: var(--teal); border: none; padding: 1vw 2.5vw; border-radius: 2px; }
@@ -1175,7 +1175,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 .set-intro {
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-size: clamp(15px, 1.1vw, 16px);
   color: rgba(245,248,248,0.5);
   max-width: 540px;
   margin: 0 0 1.6rem;
@@ -1640,7 +1640,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   letter-spacing: 0.01em;
 }
 .prizeboard-desc {
-  font-size: clamp(13px, 0.95vw, 15px);
+  font-size: clamp(15px, 0.95vw, 16px);
   color: rgba(245,248,248,0.55);
   max-width: 480px;
   margin: 0 0 24px;
@@ -1781,7 +1781,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .prize-card-title span { color: var(--white); }
 .prize-card-desc {
-  font-size: clamp(14px, 0.9vw, 15px);
+  font-size: clamp(15px, 0.9vw, 16px);
   color: rgba(245,248,248,0.78);
   line-height: 1.65;
   flex: 1;
@@ -1909,7 +1909,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   gap: 16px;
   margin-bottom: 16px;
 }
-.hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 12px; padding: clamp(28px, 3vw, 44px); }
+.hiw-steps-grid .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 12px; padding: clamp(24px, 2.5vw, 38px); }
 .hiw-step-card {
   background: #0d1016;
   border: 1px solid #1e2535;
@@ -1935,7 +1935,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 0 8px;
 }
 .hiw-step-body {
-  font-size: clamp(14px, 0.9vw, 15px);
+  font-size: clamp(15px, 0.9vw, 16px);
   color: rgba(245,248,248,0.78);
   line-height: 1.6;
   margin: 0 0 14px;
@@ -2031,7 +2031,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 0 10px;
 }
 .hiw-channel-body {
-  font-size: clamp(14px, 0.9vw, 15px);
+  font-size: clamp(15px, 0.9vw, 16px);
   color: rgba(245,248,248,0.78);
   line-height: 1.6;
   margin: 0;
@@ -2054,10 +2054,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   align-items: stretch;
 }
 .howto-pack-left {
-  padding: 5vw 4vw 5vw max(6vw, calc((100vw - 1200px) / 2 + 6vw));
+  padding: 4vw 4vw 4vw max(6vw, calc((100vw - 1200px) / 2 + 6vw));
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+/* Tighter step cards inside the split layout (text is larger now) */
+.howto-pack-left .howto-step {
+  padding: clamp(16px, 1.6vw, 24px) clamp(18px, 1.8vw, 26px);
 }
 .howto-pack-left .howto-steps {
   margin-top: 0;
