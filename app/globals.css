@@ -2052,7 +2052,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   align-items: stretch;
 }
 .howto-pack-left {
-  padding: 5vw 4vw 5vw 6vw;
+  padding: 5vw 4vw 5vw max(6vw, calc((100vw - 1200px) / 2 + 6vw));
   display: flex;
   flex-direction: column;
   justify-content: center;
