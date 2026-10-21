@@ -1,8 +1,7 @@
 'use client'
 import SiteNav from '../components/SiteNav'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { useState, useMemo } from 'react'
 
 /* ─────────────────────────────────────────────────────────
    /set — The Top 100
