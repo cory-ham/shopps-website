@@ -113,22 +113,7 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
-      {/* ── WHERE PACKS DROP ── */}
-      <section className="hiw-where-section">
-        <div className="section-inner">
-          <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
-          <h2 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h2>
-          <div className="hiw-channels-grid">
-            {CHANNELS.map(ch => (
-              <div key={ch.abbr} className="prize-card">
-                <div className="hiw-channel-badge">{ch.abbr}</div>
-                <h4 className="prize-card-title">{ch.title}</h4>
-                <p className="prize-card-desc">{ch.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── SPONSOR STRIP ── */}
       <p className="sponsor-label">Special thanks to our sponsors.</p>
