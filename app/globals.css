@@ -224,9 +224,9 @@ a { color: inherit; text-decoration: none; }
 /* Shared "Brought to you by" label above every sponsor bar */
 .sponsor-label {
   text-align: center;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: rgba(255,255,255,0.4);
   margin: 2rem 0 0.75rem;
   font-family: var(--font-body);

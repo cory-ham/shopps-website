@@ -131,7 +131,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ── SPONSOR STRIP ── */}
-      <p className="sponsor-label">Brought to you by</p>
+      <p className="sponsor-label">Special thanks to our sponsors.</p>
       <div className="ticker-wrap">
         {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
