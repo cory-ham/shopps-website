@@ -1,6 +1,6 @@
 'use client'
 import SiteNav from '../components/SiteNav'
-
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
 
@@ -141,6 +141,118 @@ function cardSrc(p: number, variant: Variant): string {
 }
 
 const FILTERS = ['ALL'] as const
+
+const VARIANTS_META = [
+  { key: 'base',   label: 'Base Chrome',     color: '#2d7a3a' },
+  { key: 'teal',   label: 'Teal Foil',       color: '#039F9D' },
+  { key: 'gold',   label: 'Gold Auto 1/1',   color: '#c9a227' },
+]
+
+const STORAGE_KEY = 'shopps_checklist_v1'
+
+function SetChecklist() {
+  const [checked, setChecked] = useState<Record<string, boolean>>({})
+  const [filter, setFilter] = useState<string>('all')
+  const [onlyMissing, setOnlyMissing] = useState(false)
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved) setChecked(JSON.parse(saved))
+    } catch {}
+  }, [])
+
+  const toggle = (id: string) => {
+    const next = { ...checked, [id]: !checked[id] }
+    if (!next[id]) delete next[id]
+    setChecked(next)
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)) } catch {}
+  }
+
+  const total = PEOPLE.length * 3
+  const owned = Object.keys(checked).length
+
+  const cats = ['all', ...Array.from(new Set(PEOPLE.map(p => p.cat)))]
+  const visible = PEOPLE.filter(p =>
+    (filter === 'all' || p.cat === filter) &&
+    (!onlyMissing || VARIANTS_META.some(v => !checked[`${p.p}-${v.key}`]))
+  )
+
+  return (
+    <section className="checklist-section">
+      <div className="section-inner">
+        <div className="checklist-header" onClick={() => setOpen(o => !o)}>
+          <div>
+            <p className="section-eyebrow" style={{ marginBottom: '6px' }}>COLLECTOR TOOL</p>
+            <h2 className="section-heading" style={{ margin: 0 }}>COMPLETE CHECKLIST</h2>
+          </div>
+          <div className="checklist-progress">
+            <span className="checklist-count">{owned} <span className="checklist-total">/ {total}</span></span>
+            <div className="checklist-bar"><div className="checklist-fill" style={{ width: `${(owned/total)*100}%` }} /></div>
+            <span className="checklist-toggle-btn">{open ? '▲ HIDE' : '▼ SHOW'}</span>
+          </div>
+        </div>
+
+        {open && (
+          <>
+            <div className="checklist-controls">
+              <div className="checklist-filters">
+                {cats.map(c => (
+                  <button key={c} className={'checklist-filter-btn' + (filter === c ? ' active' : '')} onClick={() => setFilter(c)}>
+                    {c.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+              <label className="checklist-missing-toggle">
+                <input type="checkbox" checked={onlyMissing} onChange={e => setOnlyMissing(e.target.checked)} />
+                Show missing only
+              </label>
+            </div>
+
+            <div className="checklist-table-wrap">
+              <table className="checklist-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>NAME</th>
+                    <th>COMPANY</th>
+                    {VARIANTS_META.map(v => <th key={v.key} style={{ color: v.color }}>{v.label}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  {visible.map(person => (
+                    <tr key={person.p} className="checklist-row">
+                      <td className="checklist-num">{String(person.p + 1).padStart(3, '0')}</td>
+                      <td className="checklist-name">{person.name}</td>
+                      <td className="checklist-co">{person.company}</td>
+                      {VARIANTS_META.map(v => {
+                        const id = `${person.p}-${v.key}`
+                        const has = !!checked[id]
+                        return (
+                          <td key={v.key} className="checklist-check-cell">
+                            <button
+                              className={'checklist-check' + (has ? ' checked' : '')}
+                              onClick={() => toggle(id)}
+                              title={has ? 'Mark as missing' : 'Mark as owned'}
+                              style={{ borderColor: has ? v.color : undefined, background: has ? v.color + '22' : undefined }}
+                            >
+                              {has ? '✓' : ''}
+                            </button>
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
 
 export default function SetPage() {
   const [activeFilter, setActiveFilter] = useState<string>('ALL')
@@ -308,6 +420,9 @@ export default function SetPage() {
       </div>
 
       {/* ──────────────────── FOOTER ──────────────────── */}
+      {/* ── CHECKLIST ── */}
+      <SetChecklist />
+
       <footer className="site-footer">
         <img src="/shopps-logo-v2.png" alt="SHOPPS" className="footer-logo" />
         <p className="footer-copy">2026 COMMON THREAD COLLECTIVE. ALL RIGHTS RESERVED. THIS PRODUCT IS NOT ENDORSED OR AFFILIATED WITH ANY ORGANIZATION OR TEAM. PRINTED IN THE U.S.A.</p>
