@@ -239,7 +239,7 @@ a { color: inherit; text-decoration: none; }
 .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 6vw; }
 .section-eyebrow { font-size: 0.75vw; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6vw; }
 .section-heading { font-family: var(--font-antonio); font-size: 3.6vw; font-weight: 400; text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 1vw; }
-.section-body { font-size: 0.9vw; line-height: 1.65; color: rgba(245,248,248,0.55); max-width: 600px; }
+.section-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
 .shopps-section { padding: 3vw 0 4vw; background: #13161f; text-align: left; position: relative; overflow: hidden; }
@@ -252,7 +252,7 @@ a { color: inherit; text-decoration: none; }
 .shopps-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .shopps-play-btn svg { width: 52px; height: 52px; }
 .shopps-heading { font-family: var(--font-antonio); font-size: 2.8vw; text-transform: uppercase; color: var(--white); margin-bottom: 1.4vw; letter-spacing: .02em; }
-.shopps-body { font-size: clamp(14px, 1vw, 16px); line-height: 1.75; color: rgba(245,248,248,0.5); max-width: 420px; }
+.shopps-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.75; color: rgba(245,248,248,0.82); max-width: 420px; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
 .value-section { background: #07090f; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 4vw 0; }
@@ -262,7 +262,7 @@ a { color: inherit; text-decoration: none; }
 .value-icon { width: 2.5vw; height: 2.5vw; margin-bottom: 1.2vw; }
 .value-label { font-size: 0.72vw; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4vw; }
 .value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--white); margin-bottom: 0.6vw; }
-.value-body { font-size: 0.82vw; line-height: 1.65; color: rgba(245,248,248,0.5); }
+.value-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
 .top100-section { padding: 4vw 0; background: #13161f; }
@@ -304,7 +304,7 @@ a { color: inherit; text-decoration: none; }
 .howto-step { background: #0d1016; border: 1px solid #1e2535; border-radius: 10px; padding: clamp(24px, 2.4vw, 36px) clamp(22px, 2vw, 30px); display: flex; flex-direction: column; }
 .howto-num { font-family: var(--font-antonio); font-size: clamp(52px, 5.5vw, 88px); color: var(--teal); opacity: 0.32; line-height: 1; margin-bottom: 1.2vw; letter-spacing: -0.02em; }
 .howto-title { font-family: var(--font-antonio); font-size: clamp(15px, 1.2vw, 19px); text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.7vw; line-height: 1.1; }
-.howto-body { font-size: clamp(13px, 0.85vw, 15px); line-height: 1.7; color: rgba(245,248,248,0.45); }
+.howto-body { font-size: clamp(15px, 1vw, 16px); line-height: 1.7; color: rgba(245,248,248,0.82); }
 .howto-disclaimer { display: flex; align-items: baseline; gap: 0.6vw; padding: 1vw 1.4vw; border: 1px solid #182030; border-left: 3px solid var(--teal); border-radius: 6px; font-size: clamp(13px, 0.85vw, 15px); color: rgba(245,248,248,0.5); background: #0d1016; }
 .howto-free-label { font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
 
@@ -1701,8 +1701,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   letter-spacing: 0.01em;
 }
 .prize-hero-desc {
-  font-size: clamp(13px, 0.95vw, 15px);
-  color: rgba(245,248,248,0.55);
+  font-size: clamp(15px, 1vw, 16px);
+  color: rgba(245,248,248,0.82);
   line-height: 1.65;
   max-width: 400px;
   margin-bottom: 20px;
@@ -1781,8 +1781,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .prize-card-title span { color: var(--white); }
 .prize-card-desc {
-  font-size: clamp(12px, 0.82vw, 13px);
-  color: rgba(245,248,248,0.45);
+  font-size: clamp(14px, 0.9vw, 15px);
+  color: rgba(245,248,248,0.78);
   line-height: 1.65;
   flex: 1;
 }
@@ -1891,8 +1891,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   letter-spacing: 0.01em;
 }
 .hiw-desc {
-  font-size: clamp(13px, 0.9vw, 14px);
-  color: rgba(245,248,248,0.5);
+  font-size: clamp(15px, 1vw, 16px);
+  color: rgba(245,248,248,0.82);
   max-width: 420px;
   line-height: 1.65;
 }
@@ -1935,8 +1935,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 0 8px;
 }
 .hiw-step-body {
-  font-size: clamp(12px, 0.82vw, 13px);
-  color: rgba(245,248,248,0.5);
+  font-size: clamp(14px, 0.9vw, 15px);
+  color: rgba(245,248,248,0.78);
   line-height: 1.6;
   margin: 0 0 14px;
 }
@@ -2031,8 +2031,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 0 10px;
 }
 .hiw-channel-body {
-  font-size: clamp(11px, 0.78vw, 13px);
-  color: rgba(245,248,248,0.45);
+  font-size: clamp(14px, 0.9vw, 15px);
+  color: rgba(245,248,248,0.78);
   line-height: 1.6;
   margin: 0;
 }
