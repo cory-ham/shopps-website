@@ -4,42 +4,37 @@ import SiteNav from '../components/SiteNav'
 const STEPS = [
   {
     num: '01',
-    title: 'FOLLOW THE DROP',
-    body: 'Packs release through specific channels – never a store, never a checkout.',
-    bullets: [
-      'Player socials announce surprise drops',
-      'Live breaks give packs away on stream',
-      'Partner promos hide packs in the wild',
+    title: 'FOLLOW THE DROPS',
+    lines: [
+      { text: 'You never know when the next pack will drop.', bold: false },
+      { text: 'Follow the featured Players and Common Thread Collective on X, YouTube, and LinkedIn for surprise giveaways, exclusive drops, and your chance to score a pack.', bold: false },
     ],
   },
   {
     num: '02',
     title: 'SHOW UP LIVE',
-    body: 'Live card breaks are where most packs move. Tune in and play along.',
-    bullets: [
-      'Breaks run weekly during the season',
-      'Winners are drawn from the live chat',
-      'Chase-card breaks are announced in advance',
+    lines: [
+      { text: 'The best pulls may happen live.', bold: false },
+      { text: 'Tune in to exclusive pack breaks on X, YouTube, and LinkedIn. Watch the cards fly, chase rare pulls, and enter for your chance to win.', bold: false },
     ],
   },
   {
     num: '03',
     title: 'RIP YOUR PACK',
-    body: 'Every pack holds five cards from the Top 100.',
-    bullets: [
-      'Base chrome in every pack',
-      'Teal Foils in roughly one of four',
-      'Ten Gold 1-of-1s across the whole series',
+    lines: [
+      { text: 'This is where the fun begins.', bold: false },
+      { text: 'Every pack holds a randomized collection of cards featuring the biggest names in ecommerce.', bold: false },
+      { text: 'From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1s.', bold: false },
+      { text: 'Every pack is a chance to pull greatness.', bold: true },
     ],
   },
   {
     num: '04',
     title: 'PULL & WIN',
-    body: 'Chase cards come with real prizes attached – verified and coordinated directly.',
-    bullets: [
-      'Courtside seats, private dinners, funded ad budgets',
-      'Claims verified within 48 hours',
-      'Post the pull – best clips get featured',
+    lines: [
+      { text: 'Some cards come with more than bragging rights.', bold: false },
+      { text: 'Chase authenticated autograph cards with real prizes attached, from exclusive products and gift cards to unforgettable experiences.', bold: false },
+      { text: 'Over $50,000 in prizes waiting to be unlocked.', bold: true },
     ],
   },
 ]
@@ -93,12 +88,11 @@ export default function HowItWorksPage() {
             <div key={step.num} className="howto-step">
               <div className="howto-num">{step.num}</div>
               <h3 className="howto-title">{step.title}</h3>
-              <p className="howto-body">{step.body}</p>
-              <ul className="hiw-step-bullets">
-                {step.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
+              {step.lines.map((line, i) => (
+                <p key={i} className="howto-body">
+                  {line.bold ? <strong>{line.text}</strong> : line.text}
+                </p>
+              ))}
             </div>
           ))}
         </div>
