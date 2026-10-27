@@ -30,7 +30,7 @@ function PackSignupForm() {
   return (
     <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'nowrap', alignItems: 'center' }}>
       <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
-        {status === 'loading' ? 'SIGNING UP…' : 'NOTIFY ME'}
+        {status === 'loading' ? 'SIGNING UP…' : "DON'T MISS THE NEXT DROP"}
       </button>
       <input
         type="email"
@@ -114,8 +114,7 @@ export default function GetAPackPage() {
             You Can&apos;t Buy One.<br />You Have to Win One.
           </h2>
           <p className="section-body" style={{ marginBottom: '0' }}>
-            Every SHOPPS pack is given away — through live breaks, player drops,
-            partner promos, and community moments. No checkout. No price. Just the pull.
+            Only 1,000 packs exist.<br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
           </p>
           <PackSignupForm />
         </div>
