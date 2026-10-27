@@ -371,7 +371,7 @@ export default function SetPage() {
           // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
           const backOffsets: [number,number,number] = [2, 4, 6]
           const frontSrc = isChrome
-            ? `/cards/foil-sig-chrome-${String(person.p + 1).padStart(3, '0')}.png`
+            ? `/cards/foil-sig-chrome-${String(person.p + 1).padStart(3, '0')}.jpg`
             : isAutograph
             ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
             : cardSrc(person.p, v)
