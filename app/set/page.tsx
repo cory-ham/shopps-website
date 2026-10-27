@@ -139,7 +139,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['ALL'] as const
+const FILTERS = ['ALL', '1/1 AUTOGRAPH CHROME PARALLELS'] as const
 
 const VARIANTS_META = [
   { key: 'base',   label: 'Base Chrome',     color: '#2d7a3a' },
@@ -303,7 +303,9 @@ export default function SetPage() {
 
   const filtered = useMemo(() => {
     return shuffled.filter(person => {
-      if (activeFilter === 'AUTOGRAPH') {
+      if (activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS') {
+        if (person.p >= 97) return false
+      } else if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
       } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
@@ -363,11 +365,14 @@ export default function SetPage() {
       <div className="set-grid">
         {filtered.map(person => {
           const isAutograph = activeFilter === 'AUTOGRAPH'
+          const isChrome = activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS'
           const v = getVariant(person.p)
           const isFlipped = flipped.has(person.p)
           // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
           const backOffsets: [number,number,number] = [2, 4, 6]
-          const frontSrc = isAutograph
+          const frontSrc = isChrome
+            ? `/cards/foil-sig-chrome-${String(person.p + 1).padStart(3, '0')}.png`
+            : isAutograph
             ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
             : cardSrc(person.p, v)
           const backNum = isAutograph ? 8*person.p+8 : 8*person.p+backOffsets[v]
