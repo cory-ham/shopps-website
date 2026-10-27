@@ -399,7 +399,7 @@ export default function Home() {
           </p>
           <div className="hero-buttons">
             <a href="/how-it-works" className="btn-teal">Get a Pack</a>
-            <Link href="/set" className="btn-outline">View the Collection</Link>
+            <Link href="/set" className="btn-outline">See the Collection</Link>
           </div>
 
         </div>
