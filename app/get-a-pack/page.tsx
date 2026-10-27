@@ -63,7 +63,6 @@ export default function GetAPackPage() {
               { abbr: 'CM', title: 'COMMUNITY',      body: 'Contests, scavenger drops, and rewards for the best fan content.' },
             ].map(ch => (
               <div key={ch.abbr} className="prize-card">
-                <div className="hiw-channel-badge">{ch.abbr}</div>
                 <h4 className="prize-card-title">{ch.title}</h4>
                 <p className="prize-card-desc">{ch.body}</p>
               </div>
