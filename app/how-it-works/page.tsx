@@ -78,8 +78,7 @@ export default function HowItWorksPage() {
           <p className="section-eyebrow">FREE. NEVER SOLD.</p>
           <h1 className="hiw-h1">HOW TO GET A PACK</h1>
           <p className="hiw-desc">
-            You can't buy a SHOPPS pack. Only 1,000 exist, and they're given away–through
-            the players, the shows, and the community. Here's the playbook.
+            Only 1,000 packs exist. And you can't buy one. <strong>You have to win one.</strong> From exclusive drops and live breaks to player giveaways, here's how to get in on the action.
           </p>
         </div>
         <div className="hiw-hero-pack">
