@@ -57,14 +57,14 @@ export default function GetAPackPage() {
           <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
           <div className="hiw-channels-grid">
             {[
-              { abbr: 'LB', title: 'LIVE BREAKS',    body: 'Weekly streams where most of the 1,000 packs are given away, live on camera.' },
-              { abbr: 'PD', title: 'PLAYER DROPS',   body: 'The Top 100 themselves seed packs through their own channels and events.' },
-              { abbr: 'PP', title: 'PARTNER PROMOS', body: 'Fulfil and Omnisend run surprise giveaways with packs on the line.' },
-              { abbr: 'CM', title: 'COMMUNITY',      body: 'Contests, scavenger drops, and rewards for the best fan content.' },
+              { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
+              { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
+              { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
+              { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
             ].map(ch => (
               <div key={ch.abbr} className="prize-card">
                 <h4 className="prize-card-title">{ch.title}</h4>
-                <p className="prize-card-desc">{ch.body}</p>
+                <p className="prize-card-desc">{ch.el ?? ch.body}</p>
               </div>
             ))}
           </div>
