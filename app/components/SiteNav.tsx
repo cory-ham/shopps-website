@@ -17,7 +17,7 @@ export default function SiteNav() {
         </a>
 
         <div className="nav-right">
-          <a href="/giveaways" className="nav-link">What Cards Unlock</a>
+          <a href="/giveaways" className="nav-link">View the Prizes</a>
           <a href="/get-a-pack" className="nav-live">Get a Pack</a>
         </div>
 
@@ -30,7 +30,7 @@ export default function SiteNav() {
         <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
           <a href="/set" className="nav-drawer-link" onClick={closeDrawer}>View the Collection</a>
           <a href="/how-it-works" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
-          <a href="/giveaways" className="nav-drawer-link" onClick={closeDrawer}>What Cards Unlock</a>
+          <a href="/giveaways" className="nav-drawer-link" onClick={closeDrawer}>View the Prizes</a>
           <a href="/get-a-pack" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
         </div>
       </div>
