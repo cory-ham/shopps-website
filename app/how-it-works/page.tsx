@@ -7,7 +7,7 @@ const STEPS = [
     title: 'FOLLOW THE DROPS',
     lines: [
       { text: 'You never know when the next pack will drop.', bold: false },
-      { text: 'Follow the featured Players and Common Thread Collective on X, YouTube, and LinkedIn for surprise giveaways, exclusive drops, and your chance to score a pack.', bold: false },
+      { el: <>Follow the featured Players and Common Thread Collective on <a href="https://x.com/CommnThreadCo" target="_blank" rel="noopener noreferrer">X</a>, <a href="https://www.youtube.com/channel/UCjtbFqsqVORPBJMein0zLWQ" target="_blank" rel="noopener noreferrer">YouTube</a>, and <a href="https://www.linkedin.com/company/common-thread-collective" target="_blank" rel="noopener noreferrer">LinkedIn</a> for surprise giveaways, exclusive drops, and your chance to score a pack.</>, bold: false },
     ],
   },
   {
@@ -15,7 +15,7 @@ const STEPS = [
     title: 'SHOW UP LIVE',
     lines: [
       { text: 'The best pulls may happen live.', bold: false },
-      { text: 'Tune in to exclusive pack breaks on X, YouTube, and LinkedIn. Watch the cards fly, chase rare pulls, and enter for your chance to win.', bold: false },
+      { el: <>Tune in to exclusive pack breaks on <a href="https://x.com/CommnThreadCo" target="_blank" rel="noopener noreferrer">X</a>, <a href="https://www.youtube.com/channel/UCjtbFqsqVORPBJMein0zLWQ" target="_blank" rel="noopener noreferrer">YouTube</a>, and <a href="https://www.linkedin.com/company/common-thread-collective" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Watch the cards fly, chase rare pulls, and enter for your chance to win.</>, bold: false },
     ],
   },
   {
@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
               <h3 className="howto-title">{step.title}</h3>
               {step.lines.map((line, i) => (
                 <p key={i} className="howto-body">
-                  {line.bold ? <strong>{line.text}</strong> : line.text}
+                  {line.bold ? <strong>{line.el ?? line.text}</strong> : (line.el ?? line.text)}
                 </p>
               ))}
             </div>
