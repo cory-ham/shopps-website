@@ -74,10 +74,10 @@ export default function GetAPackPage() {
       {/* ── Live Schedule ── */}
       <section className="live-section" style={{ background: '#13161f', padding: '4vw 0' }}>
         <div className="section-inner">
-          <p className="section-eyebrow">Breaks &amp; Shows</p>
-          <h2 className="section-heading">Live Schedule</h2>
+          <p className="section-eyebrow">JOIN IN LIVE</p>
+          <h2 className="section-heading">DON&apos;T MISS A LIVE BREAK</h2>
           <p className="section-body" style={{ maxWidth: '440px', marginBottom: '2.5vw' }}>
-            Live breaks are where the packs move. Show up, play along, and watch chase cards come off the board in real time.
+            The biggest pulls may happen live. Tune in for exclusive pack openings, surprise giveaways, and your chance to watch rare cards get pulled in real time.
           </p>
           <div className="live-events-box">
             {[
