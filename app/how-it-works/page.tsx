@@ -97,13 +97,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        {/* ── ALWAYS FREE bar ── */}
-        <div className="hiw-always-free">
-          <span className="hiw-always-free-label">ALWAYS FREE</span>
-          <span className="hiw-always-free-text">
-            Packs are never sold – no purchase, ever. If someone's charging you for one, it's not us.
-          </span>
-        </div>
+
       </div>
 
 
