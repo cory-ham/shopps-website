@@ -292,7 +292,7 @@ export default function SetPage() {
   }
 
   // Shuffle once per page load — new order every visit
-  const [shuffled] = useState<typeof PEOPLE>(() => {
+  const [shuffled, setShuffled] = useState<typeof PEOPLE>(() => {
     const arr = [...PEOPLE]
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -300,6 +300,17 @@ export default function SetPage() {
     }
     return arr
   })
+
+  useEffect(() => {
+    setShuffled(prev => {
+      const arr = [...prev]
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      return arr
+    })
+  }, [activeFilter])
 
   const filtered = useMemo(() => {
     return shuffled.filter(person => {
