@@ -408,26 +408,65 @@ export default function Home() {
 
 
       {/* ──────────────────── WHAT IS SHOPPS? ──────────────────── */}
-      {/* PSD: Layer 13 video area (929,1057,1618,1444), text (1101,1513,1446,1563) */}
       <section className="shopps-section">
-        {/* Responsive card grid background — auto-fill so no cutoffs */}
         <div className="shopps-card-grid" aria-hidden="true">
           {Array.from({length: 80}).map((_, i) => (
             <div key={i} className="shopps-bg-card" />
           ))}
         </div>
 
-        <div className="shopps-content-row" style={{alignItems:'center'}}>
-          <div className="shopps-copy">
-            <h2 className="shopps-heading">What is <span style={{color:'#039F9D'}}>SHOPPS</span>?</h2>
-            <p className="shopps-body">
-              Not every legend wears a jersey.<br /><br />
-              SHOPPS is a limited-edition trading card collection celebrating the founders, leaders, and icons shaping ecommerce.<br /><br />
-              100 players. 1,000 packs. 10 randomized cards per pack.<br /><br />
-              From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1 autographs.<br /><br />
-              <strong>Every pack is a chance to pull greatness.</strong>
-            </p>
-            <div className="pack-counter" style={{marginTop:'2rem'}}>
+        <div className="shopps-inner">
+          {/* Two-column layout: 40% text / 60% video */}
+          <div className="shopps-cols">
+
+            {/* Text column */}
+            <div className="shopps-text-col">
+              <h2 className="shopps-heading">What is <span style={{color:'#039F9D'}}>SHOPPS</span>?</h2>
+              <p className="shopps-opening">Not every legend wears a jersey.</p>
+              <p className="shopps-def">SHOPPS is a limited-edition trading card collection celebrating the founders, leaders, and icons shaping ecommerce.</p>
+
+              {/* Video — mobile only (stacks after definition, before stats) */}
+              <div className="shopps-vid-mobile">
+                <div className="shopps-video-wrap">
+                  <video src="/shopps-intro.mp4" autoPlay muted loop playsInline
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
+                </div>
+              </div>
+
+              {/* Stats row — 3 columns with dividers */}
+              <div className="shopps-stats">
+                <div className="shopps-stat">
+                  <span className="shopps-stat-num">100</span>
+                  <span className="shopps-stat-label">Players</span>
+                </div>
+                <div className="shopps-stat-divider" aria-hidden="true" />
+                <div className="shopps-stat">
+                  <span className="shopps-stat-num">1,000</span>
+                  <span className="shopps-stat-label">Packs</span>
+                </div>
+                <div className="shopps-stat-divider" aria-hidden="true" />
+                <div className="shopps-stat">
+                  <span className="shopps-stat-num">10</span>
+                  <span className="shopps-stat-label">Randomized cards per pack</span>
+                </div>
+              </div>
+
+              <p className="shopps-def">From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1 autographs.</p>
+              <p className="shopps-closing"><strong>Every pack is a chance to pull greatness.</strong></p>
+            </div>
+
+            {/* Video column — desktop only, aligned to top */}
+            <div className="shopps-vid-col">
+              <div className="shopps-video-wrap">
+                <video src="/shopps-intro.mp4" autoPlay muted loop playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
+              </div>
+            </div>
+          </div>
+
+          {/* Live counter — compact full-width strip below columns */}
+          <div className="shopps-counter-strip">
+            <div className="pack-counter">
               <div className="pack-label">
                 <span className="pack-label-dot" />
                 Live Pack Count
@@ -440,18 +479,7 @@ export default function Home() {
               <p className="pack-of">of 1000 left</p>
             </div>
           </div>
-          <div className="shopps-video-wrap">
-            <video
-              src="/shopps-intro.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }}
-            />
-          </div>
         </div>
-
       </section>
 
       {/* ──────────────────── VALUE PROPS ──────────────────── */}
