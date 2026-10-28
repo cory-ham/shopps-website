@@ -139,7 +139,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['ALL', '1/1 AUTOGRAPH CHROME PARALLELS', '/5 CHROME', '/6 CHROME', '1/1 CHROME', '/10 BLUE'] as const
+const FILTERS = ['ALL', '1/1 AUTOGRAPH CHROME PARALLELS', '/5 CHROME', '/6 CHROME', '1/1 CHROME', '/10 BLUE', '/5 GOLD'] as const
 
 const VARIANTS_META = [
   { key: 'base',   label: 'Base Chrome',     color: '#2d7a3a' },
@@ -336,7 +336,7 @@ export default function SetPage() {
   }, [activeFilter, search])
 
   const displayList = useMemo(() => {
-    if (activeFilter === '/10 BLUE') {
+    if (activeFilter === '/10 BLUE' || activeFilter === '/5 GOLD') {
       return filtered.map((p, i) => ({ ...p, blueVariant: i % 2 === 0 ? 'green' : 'teal' }))
     }
     return filtered as any[]
@@ -392,6 +392,7 @@ export default function SetPage() {
           const isPackGold = activeFilter === '1/1 CHROME'
           const isPack = isPackGreen || isPackTeal || isPackGold
           const isBlue = activeFilter === '/10 BLUE'
+          const isGold = activeFilter === '/5 GOLD'
           const v = getVariant(person.p)
           const isFlipped = flipped.has(person.p)
           // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
@@ -405,6 +406,8 @@ export default function SetPage() {
             ? `/cards/pack-chrome-${String(person.p + 1).padStart(3, '0')}-${packColor}.jpg`
             : isBlue
             ? `/cards/blue-${String(person.p + 1).padStart(3, '0')}-${(person as any).blueVariant ?? 'green'}.jpg`
+            : isGold
+            ? `/cards/gold-${String(person.p + 1).padStart(3, '0')}-${(person as any).blueVariant ?? 'green'}.jpg`
             : cardSrc(person.p, v)
           const packBackOffset = isPackGreen ? 2 : isPackTeal ? 4 : 6
           const backNum = isAutograph || isChrome ? 8*person.p+8 : isPack ? 8*person.p+packBackOffset : 8*person.p+backOffsets[v]
@@ -423,7 +426,7 @@ export default function SetPage() {
                     <p className="set-card-name">{person.name}</p>
                     <p className="set-card-company">{person.company}</p>
                   </div>
-                  {!isAutograph && !isPack && !isBlue && (
+                  {!isAutograph && !isPack && !isBlue && !isGold && (
                     <span className="set-variant-dot" style={{ background: DOT_COLORS[v] }} />
                   )}
                 </div>
