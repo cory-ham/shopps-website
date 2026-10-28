@@ -335,6 +335,17 @@ export default function SetPage() {
     })
   }, [activeFilter, search])
 
+  const displayList = useMemo(() => {
+    if (activeFilter === '/10 BLUE') {
+      const greens = filtered.map(p => ({ ...p, blueVariant: 'green' }))
+      const teals  = filtered.map(p => ({ ...p, blueVariant: 'teal' }))
+      const merged: any[] = []
+      for (let i = 0; i < greens.length; i++) { merged.push(greens[i], teals[i]) }
+      return merged
+    }
+    return filtered as any[]
+  }, [filtered, activeFilter])
+
   return (
     <>
       {/* ──────────────────── NAV ──────────────────── */}
@@ -377,7 +388,7 @@ export default function SetPage() {
 
       {/* ──────────────────── CARD GRID ──────────────────── */}
       <div className="set-grid">
-        {filtered.map(person => {
+        {displayList.map((person) => {
           const isAutograph = activeFilter === 'AUTOGRAPH'
           const isChrome = activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS'
           const isPackGreen = activeFilter === '/5 CHROME'
@@ -397,14 +408,14 @@ export default function SetPage() {
             : isPack
             ? `/cards/pack-chrome-${String(person.p + 1).padStart(3, '0')}-${packColor}.jpg`
             : isBlue
-            ? `/cards/blue-${String(person.p + 1).padStart(3, '0')}.jpg`
+            ? `/cards/blue-${String(person.p + 1).padStart(3, '0')}-${(person as any).blueVariant ?? 'green'}.jpg`
             : cardSrc(person.p, v)
           const packBackOffset = isPackGreen ? 2 : isPackTeal ? 4 : 6
           const backNum = isAutograph || isChrome ? 8*person.p+8 : isPack ? 8*person.p+packBackOffset : 8*person.p+backOffsets[v]
           const backSrc = `/cards/card-${String(backNum).padStart(3,'0')}.jpg`
           return (
             <div
-              key={person.p}
+              key={person.p + '-' + ((person as any).blueVariant ?? '')}
               className={`set-card-cell set-card-flip-wrap${isFlipped ? ' is-flipped' : ''}`}
               onClick={() => toggleFlip(person.p)}
               title={`${person.name} — click to flip`}
