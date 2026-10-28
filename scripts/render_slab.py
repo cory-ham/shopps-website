@@ -133,7 +133,7 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
 
     # 3. Fill header zone with dark background colour
     draw = ImageDraw.Draw(canvas)
-    draw.rectangle([HDR_L, HDR_T, HDR_R - 1, HDR_B - 1], fill=(10, 12, 16, 255))
+    draw.rectangle([HDR_L, HDR_T, HDR_R - 1, HDR_B - 1], fill=(0, 0, 0, 255))
 
     # 4. Alpha-composite the frame on top (chrome ridges visible; windows transparent)
     canvas = Image.alpha_composite(canvas, _frame)
