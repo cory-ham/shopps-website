@@ -304,7 +304,8 @@ export default function SetPage() {
   const filtered = useMemo(() => {
     return shuffled.filter(person => {
       if (activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS') {
-        if (person.p >= 97) return false
+        const CHROME_PEOPLE = new Set([0,1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,27,29,48,49,50,51,52,53,54,55,56,58,71,74,75,76,77,79,81,82,88,90,91,92,93,98])
+        if (!CHROME_PEOPLE.has(person.p)) return false
       } else if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
       } else if (activeFilter !== 'ALL') {
