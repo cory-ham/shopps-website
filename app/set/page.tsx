@@ -319,7 +319,7 @@ export default function SetPage() {
         if (!CHROME_PEOPLE.has(person.p)) return false
       } else if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
-      } else if (activeFilter === '/5 CHROME' || activeFilter === '/6 CHROME' || activeFilter === '1/1 CHROME' || activeFilter === '/10 BLUE') {
+      } else if (activeFilter === '/5 CHROME' || activeFilter === '/6 CHROME' || activeFilter === '1/1 CHROME' || activeFilter === '/10 BLUE' || activeFilter === '/5 GOLD') {
         if (person.p > 96) return false
       } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
