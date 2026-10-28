@@ -337,11 +337,7 @@ export default function SetPage() {
 
   const displayList = useMemo(() => {
     if (activeFilter === '/10 BLUE') {
-      const greens = filtered.map(p => ({ ...p, blueVariant: 'green' }))
-      const teals  = filtered.map(p => ({ ...p, blueVariant: 'teal' }))
-      const merged: any[] = []
-      for (let i = 0; i < greens.length; i++) { merged.push(greens[i], teals[i]) }
-      return merged
+      return filtered.map((p, i) => ({ ...p, blueVariant: i % 2 === 0 ? 'green' : 'teal' }))
     }
     return filtered as any[]
   }, [filtered, activeFilter])
