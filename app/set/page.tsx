@@ -376,7 +376,7 @@ export default function SetPage() {
             : isAutograph
             ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
             : cardSrc(person.p, v)
-          const backNum = isAutograph ? 8*person.p+8 : 8*person.p+backOffsets[v]
+          const backNum = isAutograph || isChrome ? 8*person.p+8 : 8*person.p+backOffsets[v]
           const backSrc = `/cards/card-${String(backNum).padStart(3,'0')}.jpg`
           return (
             <div
