@@ -269,7 +269,7 @@ export default function SetPage() {
       const forbidden = new Set<number>()
       if (i % cols !== 0) forbidden.add(grid[i - 1])       // left
       if (i >= cols)       forbidden.add(grid[i - cols])    // above
-      const available = ([0, 1, 2] as Variant[]).filter(x => !forbidden.has(x))
+      const available = ([0, 1] as Variant[]).filter(x => !forbidden.has(x))
       const pick = available[Math.floor(rand() * available.length)]
       grid[i] = pick
       v[i] = pick
