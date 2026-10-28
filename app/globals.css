@@ -242,7 +242,7 @@ a { color: inherit; text-decoration: none; }
 .section-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); max-width: 600px; }
 
 /* ─── WHAT IS SHOPPS ─────────────────────────────────── */
-.shopps-section { padding: 4vw 0 5.5vw; background: #13161f; text-align: left; position: relative; overflow: hidden; }
+.shopps-section { padding: 4vw 0 3.5vw; background: #13161f; text-align: left; position: relative; overflow: hidden; }
 .shopps-content-row { display: flex; align-items: center; gap: 4vw; padding: 0 6vw; position: relative; z-index: 1; }
 .shopps-copy { flex: 0 0 40%; }
 .shopps-card-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 8px; padding: 8px; z-index: 0; pointer-events: none; align-content: start; }
@@ -254,16 +254,19 @@ a { color: inherit; text-decoration: none; }
 .shopps-heading { font-family: var(--font-antonio); font-size: 2.8vw; text-transform: uppercase; color: var(--white); margin-bottom: 1.4vw; letter-spacing: .02em; }
 .shopps-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.75; color: rgba(245,248,248,0.82); max-width: 420px; }
 /* Revised "What is SHOPPS?" layout */
-.shopps-inner { padding: 0 6vw; position: relative; z-index: 1; }
+.shopps-inner { padding: 0 clamp(24px, 4.5vw, 64px); position: relative; z-index: 1; }
 .shopps-cols { display: grid; grid-template-columns: 40fr 60fr; gap: 48px; align-items: start; }
-.shopps-text-col { display: flex; flex-direction: column; gap: 18px; }
+.shopps-text-col { display: flex; flex-direction: column; gap: 20px; }
 .shopps-vid-col .shopps-video-wrap { width: 100%; height: auto; flex: none; }
 .shopps-vid-mobile { display: none; }
 .shopps-opening { font-size: clamp(16px,1.1vw,19px); line-height: 1.5; color: rgba(245,248,248,0.65); }
 .shopps-def { font-size: clamp(16px,1.05vw,18px); line-height: 1.6; color: rgba(245,248,248,0.82); }
 .shopps-closing { font-size: clamp(16px,1.05vw,18px); line-height: 1.6; color: var(--white); font-weight: 500; }
-.shopps-stats { display: flex; align-items: flex-start; padding: 6px 0; }
+.shopps-stats { display: flex; align-items: stretch; gap: 12px; }
 .shopps-stat { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.shopps-stat-card { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 10px; padding: 18px 16px; }
+.shopps-live-compact { display: flex; align-items: center; gap: 0; font-size: 13px; color: rgba(245,248,248,0.5); line-height: 1.4; margin-top: -4px; }
+.shopps-counter-strip { display: none; }
 .shopps-stat-num { font-family: var(--font-antonio); font-size: clamp(30px,2.6vw,46px); font-weight: 400; color: var(--white); line-height: 1; }
 .shopps-stat-label { font-size: clamp(12px,0.8vw,14px); color: rgba(245,248,248,0.5); line-height: 1.4; }
 .shopps-stat-divider { width: 1px; background: rgba(255,255,255,0.12); align-self: stretch; min-height: 40px; margin: 0 clamp(14px,1.5vw,24px); }
@@ -987,8 +990,9 @@ a { color: inherit; text-decoration: none; }
   .shopps-vid-mobile { display: block; border-radius: 8px; overflow: hidden; }
   .shopps-stat-num { font-size: clamp(24px,7vw,36px); }
   .shopps-stat-label { font-size: 14px; }
-  .shopps-stat-divider { margin: 0 clamp(8px,4vw,16px); }
-  .shopps-counter-strip { margin-top: 28px; padding-top: 24px; }
+  .shopps-stat-card { padding: 14px 12px; border-radius: 8px; }
+  .shopps-stat-num { font-size: clamp(24px,7vw,36px); }
+  .shopps-stat-label { font-size: 13px; }
 
   /* ── VALUE PROPS — 1 column, no dividers ─────────────── */
   .value-section { padding: 32px 0; }

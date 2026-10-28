@@ -433,23 +433,26 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Stats row — 3 columns with dividers */}
+              {/* Stats row — 3 equal cards */}
               <div className="shopps-stats">
-                <div className="shopps-stat">
+                <div className="shopps-stat-card">
                   <span className="shopps-stat-num">100</span>
                   <span className="shopps-stat-label">Players</span>
                 </div>
-                <div className="shopps-stat-divider" aria-hidden="true" />
-                <div className="shopps-stat">
+                <div className="shopps-stat-card">
                   <span className="shopps-stat-num">1,000</span>
                   <span className="shopps-stat-label">Packs</span>
                 </div>
-                <div className="shopps-stat-divider" aria-hidden="true" />
-                <div className="shopps-stat">
+                <div className="shopps-stat-card">
                   <span className="shopps-stat-num">10</span>
                   <span className="shopps-stat-label">Randomized cards per pack</span>
                 </div>
               </div>
+              {/* Compact inline live counter */}
+              <p className="shopps-live-compact">
+                <span className="pack-label-dot" aria-hidden="true" />
+                Live pack count · 734 of 1,000 left
+              </p>
 
               <p className="shopps-def">From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1 autographs.</p>
               <p className="shopps-closing"><strong>Every pack is a chance to pull greatness.</strong></p>
@@ -461,22 +464,6 @@ export default function Home() {
                 <video src="/shopps-intro.mp4" autoPlay muted loop playsInline
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
               </div>
-            </div>
-          </div>
-
-          {/* Live counter — compact full-width strip below columns */}
-          <div className="shopps-counter-strip">
-            <div className="pack-counter">
-              <div className="pack-label">
-                <span className="pack-label-dot" />
-                Live Pack Count
-              </div>
-              <div className="pack-digits">
-                <span className="pack-digit">7</span>
-                <span className="pack-digit">3</span>
-                <span className="pack-digit">4</span>
-              </div>
-              <p className="pack-of">of 1000 left</p>
             </div>
           </div>
         </div>
