@@ -1014,7 +1014,7 @@ a { color: inherit; text-decoration: none; }
     flex-direction: column;
     gap: 16px;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: clamp(60px, 8vw, 100px);
   }
   .top100-card-grid {
     grid-template-columns: repeat(2, 1fr);
