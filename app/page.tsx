@@ -401,6 +401,11 @@ export default function Home() {
             <a href="/how-it-works" className="btn-teal">Get a Pack</a>
             <Link href="/set" className="btn-outline">See the Collection</Link>
           </div>
+          {/* Live pack counter — below hero CTA buttons */}
+          <p className="shopps-live-compact" style={{marginTop:'1.25rem'}}>
+            <span className="pack-label-dot" aria-hidden="true" />
+            Live pack count · 734 of 1,000 left
+          </p>
 
         </div>
 
@@ -450,11 +455,7 @@ export default function Home() {
               </div>
               <p className="shopps-def">From base cards and chrome parallels to ultra-rare numbered cards and exclusive 1-of-1 autographs.</p>
               <p className="shopps-closing"><strong>Every pack is a chance to pull greatness.</strong></p>
-              {/* Live counter — sits beneath closing line */}
-              <p className="shopps-live-compact">
-                <span className="pack-label-dot" aria-hidden="true" />
-                Live pack count · 734 of 1,000 left
-              </p>
+
             </div>
 
             {/* Video column — desktop only, aligned to top */}
