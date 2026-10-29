@@ -68,7 +68,7 @@ export default function GetAPackPage() {
 
 
       {/* ── WHERE PACKS DROP (moved from How It Works) ── */}
-      <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw' }}>
+      <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw', background: '#13161f' }}>
         <div className="section-inner">
           <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
           <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
@@ -89,7 +89,7 @@ export default function GetAPackPage() {
       </section>
 
       {/* ── Live Schedule ── */}
-      <section className="live-section" style={{ background: '#13161f', padding: '4vw 0' }}>
+      <section className="live-section" style={{ background: 'var(--bg)', padding: '4vw 0' }}>
         <div className="section-inner">
           <p className="section-eyebrow">JOIN IN LIVE</p>
           <h2 className="section-heading">DON&apos;T MISS A LIVE BREAK</h2>
