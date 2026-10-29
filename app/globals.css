@@ -2225,13 +2225,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .gap-hero-packs img { width: 100%; height: auto; display: block; }
 .gap-h1 {
   font-family: var(--font-antonio);
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
-  line-height: 0.93;
+  line-height: 1.05;
   margin: 8px 0 18px;
 }
+.gap-h1 span { display: block; }
 .gap-pack-count {
   display: flex;
   align-items: baseline;

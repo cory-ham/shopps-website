@@ -53,7 +53,7 @@ export default function GetAPackPage() {
 
       <div className="gap-hero" style={{ paddingTop: 'clamp(80px, 8vw, 120px)' }}>
         <div className="gap-hero-text">
-          <h2 className="gap-h1" style={{display:'flex', flexDirection:'column'}}>
+          <h2 className="gap-h1">
             <span>You Can&apos;t Buy One.</span>
             <span>You Have to Win One.</span>
           </h2>
