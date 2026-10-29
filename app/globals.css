@@ -274,13 +274,15 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── VALUE PROPS ────────────────────────────────────── */
 .value-section { background: #07090f; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; padding: 5vw 0; }
-.value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
-.value-item { padding: 1.5vw 3vw; border-right: 1px solid #14182a; }
+.value-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: auto auto 1fr; gap: 0; }
+.value-item { display: grid; grid-template-rows: subgrid; grid-row: span 3; padding: 1.5vw 3vw; border-right: 1px solid #14182a; }
 .value-item:last-child { border-right: none; }
 .value-icon { width: 2.5vw; height: 2.5vw; margin-bottom: 1.2vw; }
 .value-label { font-size: 0.72vw; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4vw; }
-.value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--olive); margin-bottom: clamp(10px, 0.8vw, 14px); }
-.value-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); }
+.value-title { font-family: var(--font-antonio); font-size: 1.4vw; text-transform: uppercase; color: var(--olive); margin-bottom: 0; }
+.value-opening { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.92); font-weight: 500; margin: 16px 0 0; }
+.value-supporting { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.value-body { font-size: clamp(15px, 1vw, 17px); line-height: 1.65; color: rgba(245,248,248,0.82); margin: 0; }
 
 /* ─── TOP 100 ────────────────────────────────────────── */
 .top100-section { padding: 4vw 0; background: #13161f; }
@@ -1001,8 +1003,9 @@ a { color: inherit; text-decoration: none; }
 
   /* ── VALUE PROPS — 1 column, no dividers ─────────────── */
   .value-section { padding: 32px 0; }
-  .value-grid { grid-template-columns: 1fr !important; }
+  .value-grid { grid-template-columns: 1fr !important; grid-template-rows: none; }
   .value-item {
+    display: block;
     padding: 24px 0;
     border-right: none;
     border-bottom: 1px solid #14182a;
@@ -1011,6 +1014,8 @@ a { color: inherit; text-decoration: none; }
   .value-icon { width: 32px; height: 32px; }
   .value-label { font-size: 11px; }
   .value-title { font-size: 20px; }
+  .value-opening { font-size: 16px; margin: 12px 0 0; }
+  .value-supporting { margin-top: 16px; gap: 12px; }
   .value-body { font-size: 15px; }
 
   /* ── TOP 100 — 2-column grid ─────────────────────────── */

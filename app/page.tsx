@@ -476,27 +476,29 @@ export default function Home() {
         <div className="value-grid" style={{ maxWidth: 1440, margin: '0 auto', padding: '0 6.5%' }}>
 
           <div className="value-item">
-
             <p className="value-title">Only 1,000 packs exist</p>
-            <p className="value-body">
-              100 players. 10 cards per pack. Rare parallels, numbered cards, and exclusive 1-of-1s.<br /><br />Every pack is different. Every pull is a chance at something legendary.
-            </p>
+            <p className="value-opening">100 players. 10 cards per pack.</p>
+            <div className="value-supporting">
+              <p className="value-body">Rare parallels, numbered cards, and exclusive 1-of-1s.</p>
+              <p className="value-body">Every pack is different. Every pull is a chance at something legendary.</p>
+            </div>
           </div>
 
           <div className="value-item">
-
             <p className="value-title">$50,000 in real prizes</p>
-            <p className="value-body">
-              Some cards are worth more than the pull.<br /><br />Chase authenticated autograph cards from some of the biggest names in ecommerce, with exclusive products, gift cards, and unforgettable experiences up for grabs.
-            </p>
+            <p className="value-opening">Some cards are worth more than the pull.</p>
+            <div className="value-supporting">
+              <p className="value-body">Chase authenticated autograph cards from some of the biggest names in ecommerce, with exclusive products, gift cards, and unforgettable experiences up for grabs.</p>
+            </div>
           </div>
 
           <div className="value-item">
-
             <p className="value-title">Never for sale</p>
-            <p className="value-body">
-              You can&apos;t buy a pack. You have to win one.<br /><br />Packs drop through live breaks, exclusive events, player giveaways, and community challenges.<br /><br />Stay ready. You never know when the next pack will drop.
-            </p>
+            <p className="value-opening">You can&apos;t buy a pack. You have to win one.</p>
+            <div className="value-supporting">
+              <p className="value-body">Packs drop through live breaks, exclusive events, player giveaways, and community challenges.</p>
+              <p className="value-body">Stay ready. You never know when the next pack will drop.</p>
+            </div>
           </div>
 
         </div>
