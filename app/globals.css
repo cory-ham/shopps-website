@@ -2228,7 +2228,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   grid-template-columns: 1fr clamp(260px, 34vw, 480px);
   align-items: center;
   gap: clamp(32px, 5vw, 72px);
-  padding: clamp(80px, 8vw, 120px) max(24px, calc((100vw - 1400px) / 2 + 48px));
+  padding: clamp(60px, 6vw, 100px) 4vw;
 }
 .gap-hero-text { min-width: 0; container-type: inline-size; }
 .gap-hero-packs {
