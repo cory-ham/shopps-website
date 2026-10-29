@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
           <p className="section-eyebrow">FREE. NEVER SOLD.</p>
           <h1 className="hiw-h1">HOW TO GET A PACK</h1>
           <p className="hiw-desc">
-            Only 1,000 packs exist. And you can't buy one.<br /><span style={{color:'var(--olive)',fontWeight:700}}>You have to win one.</span><br />From exclusive drops and live breaks to player giveaways, here's how to get in on the action.
+            Only 1,000 packs exist. And you can't buy one.<br /><span style={{color:'var(--teal)',fontWeight:700}}>You have to win one.</span><br />From exclusive drops and live breaks to player giveaways, here's how to get in on the action.
           </p>
         </div>
         <div className="hiw-hero-pack">
