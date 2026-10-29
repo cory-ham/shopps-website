@@ -1981,6 +1981,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .hiw-step-body a { color: var(--teal); text-decoration: none; }
 .hiw-step-body a:hover { text-decoration: underline; }
+.howto-body a { color: var(--teal); text-decoration: none; }
+.howto-body a:hover { text-decoration: underline; }
 .hiw-step-bullets {
   list-style: none;
   padding: 0;
