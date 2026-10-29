@@ -399,10 +399,9 @@ export default function GiveawaysPage() {
 
       {/* ── GOLDEN TICKETS ── */}
       <div className="section-inner" style={{ paddingTop: '2vw', paddingBottom: '3vw' }}>
-        <p className="section-eyebrow" style={{ marginBottom: '10px' }}>SPONSOR PRIZES</p>
         <h2 className="section-heading" style={{ marginBottom: '8px' }}>GOLDEN TICKETS</h2>
         <p className="prizeboard-desc" style={{ marginBottom: '28px' }}>
-          Two sponsor Golden Tickets are hidden in packs — pull one and redeem for the prize below.
+          Pull one from a pack and claim a prize from our sponsors, Fulfil and Omnisend.
         </p>
         <div className="golden-tickets-grid">
           <div className="golden-ticket-card">
