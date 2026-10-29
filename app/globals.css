@@ -1672,7 +1672,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .prizeboard-header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 6vw 32px;
+  padding: 48px 6vw 0;
 }
 .prizeboard-h1 {
   font-family: var(--font-antonio);
@@ -1681,14 +1681,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   color: var(--white);
   text-transform: uppercase;
   line-height: 0.95;
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   letter-spacing: 0.01em;
 }
 .prizeboard-desc {
   font-size: clamp(15px, 0.95vw, 16px);
   color: rgba(245,248,248,0.55);
-  max-width: 480px;
-  margin: 0 0 24px;
+  max-width: 760px;
+  margin: 0 0 16px;
   line-height: 1.65;
 }
 .prizeboard-stats {
@@ -1697,7 +1697,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   flex-wrap: wrap;
 }
 /* Progress tracker */
-.prizeboard-tracker { margin-top: 28px; max-width: 480px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 20px 24px; }
+.prizeboard-tracker { margin-top: 24px; max-width: 760px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 16px 20px; }
 .prizeboard-tracker-labels { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
 .prizeboard-tracker-count { font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); letter-spacing: 0.06em; text-transform: uppercase; }
 .prizeboard-tracker-label { color: rgba(245,248,248,0.5); font-size: clamp(10px, 0.75vw, 12px); letter-spacing: 0.1em; }
@@ -2415,8 +2415,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 /* ── Prizeboard header — tighter mobile padding ── */
 @media (max-width: 768px) {
   .prizeboard-header {
-    padding: 48px 5vw 20px !important;
+    padding: 32px 5vw 0 !important;
   }
+  .prizeboard-tracker { max-width: 100% !important; }
   .prizeboard-h1 {
     font-size: clamp(2.5rem, 10vw, 4rem) !important;
   }

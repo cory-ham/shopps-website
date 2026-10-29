@@ -156,7 +156,7 @@ export default function GiveawaysPage() {
       </div>
 
       {/* ── Featured hero ── */}
-      <div style={{ padding: '0 6vw 48px', maxWidth: 'none' }}>
+      <div style={{ padding: '40px 6vw 48px', maxWidth: 'none' }}>
         <div className="prize-hero">
           <div className="prize-hero-text">
             <p className="prize-tag prize-tag--available">{featured.tag}</p>
