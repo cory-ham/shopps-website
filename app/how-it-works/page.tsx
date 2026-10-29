@@ -113,7 +113,7 @@ export default function HowItWorksPage() {
               style={{
                 height: label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
-                opacity: 0.55,
+                
                 filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
               }}
             />

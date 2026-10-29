@@ -659,7 +659,7 @@ export default function Home() {
               style={{
                 height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
                 width: 'auto',
-                opacity: 0.55,
+                
                 filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
               }}
             />

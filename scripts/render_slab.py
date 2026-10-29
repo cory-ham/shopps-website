@@ -117,12 +117,12 @@ def _ibm_reg(size_pt: int) -> ImageFont.FreeTypeFont:
 
 
 # ─── main compositor ──────────────────────────────────────────────────────────
-def render_slab(card_path: str, name: str, company: str, title: str, out_path: str) -> None:
-    """Render a PSA-slab composite and save as JPEG quality=95."""
+def render_slab(card_path: str, name: str, company: str, title: str, out_path: str, show_header: bool = True, transparent_bg: bool = False) -> None:
+    """Render a PSA-slab composite. show_header=False omits icon/badge/text. transparent_bg=True saves PNG with alpha."""
     _load_assets()
 
-    # 1. Black base canvas
-    canvas = Image.new('RGBA', (W, H), (0, 0, 0, 255))
+    # 1. Base canvas
+    canvas = Image.new('RGBA', (W, H), (0, 0, 0, 0) if transparent_bg else (0, 0, 0, 255))
 
     # 2. Paste card image into card window (resize to exact window size)
     cw = CRD_R - CRD_L   # 705
@@ -138,10 +138,11 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
     # 4. Alpha-composite the frame on top (chrome ridges visible; windows transparent)
     canvas = Image.alpha_composite(canvas, _frame)
 
-    # 5. Lighten-paste S icon and badge into header
+    # 5. Lighten-paste S icon and badge into header (skipped when show_header=False)
     canvas_arr = np.array(canvas).copy()
-    _lighten_paste(canvas_arr, _s_icon, ICON_X, ICON_Y)
-    _lighten_paste(canvas_arr, _badge,  BADGE_X, BADGE_Y)
+    if show_header:
+        _lighten_paste(canvas_arr, _s_icon, ICON_X, ICON_Y)
+        _lighten_paste(canvas_arr, _badge,  BADGE_X, BADGE_Y)
     canvas = Image.fromarray(canvas_arr)
 
     # 6. Render text at SCALE× for crispness, then scale back down
@@ -197,15 +198,19 @@ def render_slab(card_path: str, name: str, company: str, title: str, out_path: s
     # ── Title
     tdraw.text((0, y - ti_bb[1]), title.upper(), font=ti_font, fill=(185, 190, 200, 255))
     # Scale text back to 1× and paste into canvas
-    txt_final = txt_img.resize((TXT_ZONE_W, HDR_H), Image.LANCZOS)
-    canvas.paste(txt_final, (TXT_X0, HDR_T), txt_final)
+    if show_header:
+        txt_final = txt_img.resize((TXT_ZONE_W, HDR_H), Image.LANCZOS)
+        canvas.paste(txt_final, (TXT_X0, HDR_T), txt_final)
 
-    # 7. Flatten onto black background and save as JPEG
-    final = Image.new('RGB', (W, H), (0, 0, 0))
-    flat  = Image.alpha_composite(Image.new('RGBA', (W, H), (0, 0, 0, 255)), canvas)
-    final.paste(flat.convert('RGB'))
+    # 7. Save — transparent PNG or flattened JPEG
     os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
-    final.save(out_path, 'JPEG', quality=95)
+    if transparent_bg:
+        canvas.save(out_path, 'PNG')
+    else:
+        final = Image.new('RGB', (W, H), (0, 0, 0))
+        flat  = Image.alpha_composite(Image.new('RGBA', (W, H), (0, 0, 0, 255)), canvas)
+        final.paste(flat.convert('RGB'))
+        final.save(out_path, 'JPEG', quality=95)
     print(f'  ✓ {os.path.basename(out_path)}')
 
 

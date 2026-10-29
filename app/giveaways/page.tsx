@@ -421,7 +421,7 @@ export default function GiveawaysPage() {
             <img
               src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
               alt={label}
-              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', opacity: 0.55, filter: label === 'omnisend' ? 'invert(1) brightness(2)' : 'none' }}
+              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
             />
           </div>
         ))}
