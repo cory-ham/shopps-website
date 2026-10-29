@@ -165,11 +165,11 @@ export default function GiveawaysPage() {
           animation-play-state: paused;
         }
         .giveaway-tile {
-          width: 240px;
+          width: 300px;
           flex-shrink: 0;
           background: var(--surface, #111);
           border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 14px;
+          border-radius: 16px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
@@ -179,14 +179,14 @@ export default function GiveawaysPage() {
           position: relative;
         }
         .giveaway-tile:hover {
-          transform: scale(1.18);
+          transform: scale(1.14);
           z-index: 20;
-          border-color: rgba(3, 159, 157, 0.5);
-          box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(3,159,157,0.3);
+          border-color: rgba(3, 159, 157, 0.6);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.8), 0 0 0 1px rgba(3,159,157,0.4);
         }
         .giveaway-card-img {
           width: 100%;
-          height: 180px;
+          height: 240px;
           overflow: hidden;
           background: #0a0a0a;
           flex-shrink: 0;
@@ -199,10 +199,11 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-text {
-          padding: 14px;
+          padding: 18px;
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 6px;
+          flex: 1;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
@@ -227,13 +228,13 @@ export default function GiveawaysPage() {
                   </div>
                 )}
                 <div className="giveaway-text">
-                  <p style={{ margin: 0, fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--teal, #039F9D)', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
+                  <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: 'var(--teal, #039F9D)', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
                     {g.company}
                   </p>
-                  <p style={{ margin: 0, fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.55)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
+                  <p style={{ margin: 0, fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.55)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
                     {g.name}
                   </p>
-                  <p style={{ margin: '4px 0 0', fontSize: '13px', fontWeight: 600, color: '#fff', lineHeight: 1.5 }}>
+                  <p style={{ margin: '6px 0 0', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.55 }}>
                     {g.prize}
                   </p>
                 </div>
