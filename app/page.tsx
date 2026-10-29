@@ -641,7 +641,7 @@ export default function Home() {
         </div>
       </section>
 
-      <p className="sponsor-label">Special thanks to our sponsors.</p>
+      <p className="sponsor-label">Thanks to our sponsors</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
