@@ -177,6 +177,7 @@ export default function GiveawaysPage() {
 
       {/* ── Auto-scroll giveaway ticker ── */}
       <style>{`
+        @keyframes giveaway-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         div[style*="overflowX: scroll"]::-webkit-scrollbar { display: none; }
         div[style*="overflowX: scroll"]:active { cursor: grabbing; }
 
@@ -184,63 +185,57 @@ export default function GiveawaysPage() {
           display: flex;
           gap: 20px;
           width: max-content;
-          /* animation handled by JS */
           align-items: flex-start;
-          padding: 20px 0;
+          padding: 20px 24px;
         }
 
+        /* Flip card */
         .giveaway-tile {
           width: 240px;
-          flex-shrink: 0;
-          background: var(--surface, #111);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 16px;
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          cursor: default;
-          transition: zoom 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-          position: relative;
-        }
-        .giveaway-tile:hover {
-          zoom: 1.12;
-          z-index: 20;
-          border-color: rgba(3, 159, 157, 0.6);
-          box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(3,159,157,0.4);
-        }
-        .giveaway-card-img {
-          width: 100%;
           aspect-ratio: 864 / 1210;
-          overflow: hidden;
-          background: #0a0a0a;
           flex-shrink: 0;
+          perspective: 1000px;
+          cursor: pointer;
         }
-        .giveaway-card-img img {
+        .giveaway-tile:hover { z-index: 20; }
+
+        .giveaway-flipper {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .giveaway-tile:hover .giveaway-flipper {
+          transform: rotateY(180deg);
+        }
+
+        .giveaway-face {
+          position: absolute;
+          inset: 0;
+          border-radius: 14px;
+          overflow: hidden;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+        .giveaway-face-front img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center center;
           display: block;
         }
-        .giveaway-text {
-          min-height: 130px;
-          padding: 16px;
+        .giveaway-face-back {
+          transform: rotateY(180deg);
+          background: #0d0f13;
+          border: 2px solid #c9a227;
           display: flex;
           flex-direction: column;
+          align-items: center;
           justify-content: center;
-          border-top: 2px solid #039F9D;
+          padding: 24px 20px;
+          gap: 14px;
+          text-align: center;
           box-sizing: border-box;
-          flex-shrink: 0;
-          overflow: hidden;
-          transition: min-height 0.3s ease;
-        }
-        .giveaway-tile:hover .giveaway-text {
-          min-height: 180px;
-          overflow: visible;
-        }
-        .giveaway-tile:hover .prize-text {
-          -webkit-line-clamp: unset !important;
-          display: block !important;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
