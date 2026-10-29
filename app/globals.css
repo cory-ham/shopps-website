@@ -1697,7 +1697,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   flex-wrap: wrap;
 }
 /* Progress tracker */
-.prizeboard-tracker { margin-top: 24px; max-width: 480px; }
+.prizeboard-tracker { margin-top: 28px; max-width: 480px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 20px 24px; }
 .prizeboard-tracker-labels { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
 .prizeboard-tracker-count { font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); letter-spacing: 0.06em; text-transform: uppercase; }
 .prizeboard-tracker-label { color: rgba(245,248,248,0.5); font-size: clamp(10px, 0.75vw, 12px); letter-spacing: 0.1em; }
