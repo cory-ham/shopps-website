@@ -84,11 +84,8 @@ const PRIZES: Prize[] = [
   },
 ]
 
-const STATS = [
-  { label: 'GIVEAWAYS',       value: '51'    },
-  { label: 'ALREADY CLAIMED', value: '0'     },
-  { label: 'TOTAL VALUE',     value: '$100K+' },
-]
+const TOTAL_GIVEAWAYS = 51
+const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
   { num: '01', title: 'PULL THE CARD',    body: "Chase cards and redemption foils are marked on the card face. If you're holding one, you've won." },
@@ -147,12 +144,15 @@ export default function GiveawaysPage() {
           Select one-of-one autograph cards and Golden Tickets come with giveaways attached.<br /><br />
           Keep the card. Claim what comes with it.
         </p>
-        <div className="prizeboard-stats">
-          {STATS.map(s => (
-            <span key={s.label} className="prizeboard-stat">
-              {s.value} <span className="prizeboard-stat-label">{s.label}</span>
-            </span>
-          ))}
+        <div className="prizeboard-tracker">
+          <div className="prizeboard-tracker-labels">
+            <span className="prizeboard-tracker-count"><span style={{color:'var(--teal)'}}>{CLAIMED_GIVEAWAYS}</span> <span className="prizeboard-tracker-label">CLAIMED</span></span>
+            <span className="prizeboard-tracker-count"><span style={{color:'var(--white)'}}>{TOTAL_GIVEAWAYS}</span> <span className="prizeboard-tracker-label">TOTAL GIVEAWAYS</span></span>
+          </div>
+          <div className="prizeboard-track">
+            <div className="prizeboard-fill" style={{width: `${Math.round((CLAIMED_GIVEAWAYS / TOTAL_GIVEAWAYS) * 100)}%`}} />
+          </div>
+          <p className="prizeboard-tracker-sub">{TOTAL_GIVEAWAYS - CLAIMED_GIVEAWAYS} giveaways still unclaimed</p>
         </div>
       </div>
 

@@ -1696,6 +1696,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   gap: 10px;
   flex-wrap: wrap;
 }
+/* Progress tracker */
+.prizeboard-tracker { margin-top: 24px; max-width: 480px; }
+.prizeboard-tracker-labels { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.prizeboard-tracker-count { font-family: var(--font-antonio); font-size: clamp(13px, 1vw, 16px); letter-spacing: 0.06em; text-transform: uppercase; }
+.prizeboard-tracker-label { color: rgba(245,248,248,0.5); font-size: clamp(10px, 0.75vw, 12px); letter-spacing: 0.1em; }
+.prizeboard-track { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+.prizeboard-fill { height: 100%; background: var(--teal); border-radius: 3px; transition: width 0.4s ease; min-width: 3px; }
+.prizeboard-tracker-sub { margin-top: 8px; font-size: clamp(11px, 0.75vw, 13px); color: rgba(245,248,248,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
 .prizeboard-stat {
   font-family: var(--font-antonio);
   font-size: clamp(11px, 0.85vw, 13px);
