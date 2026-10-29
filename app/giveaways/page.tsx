@@ -393,9 +393,7 @@ export default function GiveawaysPage() {
               </div>
             ))}
           </div>
-          <p className="prize-disclaimer">
-            All prize values are placeholder pending final sponsor confirmation. No purchase necessary — packs are free and distributed only through official SHOPPS channels. Full rules published before launch.
-          </p>
+
         </div>
       </section>
 
