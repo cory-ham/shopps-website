@@ -434,7 +434,7 @@ export default function Home() {
               <div className="shopps-vid-mobile">
                 <div className="shopps-video-wrap">
                   <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1lKkLmQhiGfs?rel=0&modestbranding=1mute=1lKkLmQhiGfs?rel=0&modestbranding=1controls=0lKkLmQhiGfs?rel=0&modestbranding=1rel=0lKkLmQhiGfs?rel=0&modestbranding=1modestbranding=1lKkLmQhiGfs?rel=0&modestbranding=1showinfo=0lKkLmQhiGfs?rel=0&modestbranding=1iv_load_policy=3lKkLmQhiGfs?rel=0&modestbranding=1loop=1lKkLmQhiGfs?rel=0&modestbranding=1playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
+                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                 </div>
                 </div>
               </div>
@@ -463,7 +463,7 @@ export default function Home() {
             <div className="shopps-vid-col">
               <div className="shopps-video-wrap">
                 <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1lKkLmQhiGfs?rel=0&modestbranding=1mute=1lKkLmQhiGfs?rel=0&modestbranding=1controls=0lKkLmQhiGfs?rel=0&modestbranding=1rel=0lKkLmQhiGfs?rel=0&modestbranding=1modestbranding=1lKkLmQhiGfs?rel=0&modestbranding=1showinfo=0lKkLmQhiGfs?rel=0&modestbranding=1iv_load_policy=3lKkLmQhiGfs?rel=0&modestbranding=1loop=1lKkLmQhiGfs?rel=0&modestbranding=1playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
+                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                 </div>
               </div>
             </div>
@@ -599,7 +599,7 @@ export default function Home() {
           <div className="howto-pack-left">
             <h2 className="section-heading" style={{marginBottom:'1vw'}}>How to Get a Pack</h2>
             <p className="section-body" style={{marginBottom:'2vw'}}>
-              You can&apos;t buy a pack. You have to win one.<br />Here&apos;s how to get in on the action.
+              You can&apos;t buy a pack. You have to win one. Here&apos;s how to get in on the action.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {STEPS.map((step, i) => (
