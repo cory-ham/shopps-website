@@ -637,7 +637,7 @@ export default function Home() {
           <div className="howto-pack-left">
             <h2 className="section-heading" style={{marginBottom:'1vw'}}>How to Get a Pack</h2>
             <p className="section-body" style={{marginBottom:'2vw'}}>
-              You can&apos;t buy a pack. You have to win one. Here&apos;s how to get in on the action.
+              You can&apos;t buy a pack. You have to win one.<br />Here&apos;s how to get in on the action.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {STEPS.map((step, i) => (
