@@ -108,21 +108,20 @@ export default function GiveawaysPage() {
   }, [])
 
 
-  // JS-driven auto-scroll with wheel/trackpad scroll on hover
+  // Mouse-position-driven scroll — hover left/right to scroll
   const trackRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef(0)
   const rafRef = useRef<number | undefined>(undefined)
-  const isHovering = useRef(false)
+  const scrollSpeedRef = useRef(-0.6) // default auto-scroll
 
   useEffect(() => {
     const ITEM_WIDTH = 340 + 20
     const HALF = shuffled.length * ITEM_WIDTH
 
     const tick = () => {
-      if (!isHovering.current) {
-        offsetRef.current -= 0.6
-        if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
-      }
+      offsetRef.current += scrollSpeedRef.current
+      if (offsetRef.current > 0) offsetRef.current -= HALF
+      if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
       if (trackRef.current) {
         trackRef.current.style.transform = `translateX(${offsetRef.current}px)`
       }
@@ -132,15 +131,21 @@ export default function GiveawaysPage() {
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [shuffled])
 
-  const onMouseEnter = () => { isHovering.current = true }
-  const onMouseLeave = () => { isHovering.current = false }
-  const onWheel = (e: React.WheelEvent) => {
-    const ITEM_WIDTH = 340 + 20
-    const HALF = shuffled.length * ITEM_WIDTH
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
-    offsetRef.current -= delta * 1.5
-    if (offsetRef.current > 0) offsetRef.current -= HALF
-    if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
+  const onMouseEnter = () => { /* speed set by onMouseMove */ }
+  const onMouseLeave = () => { scrollSpeedRef.current = -0.6 }
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const pct = x / rect.width // 0 = far left, 1 = far right
+    const centered = pct - 0.5  // -0.5 to 0.5
+    const DEADZONE = 0.15
+    if (Math.abs(centered) < DEADZONE) {
+      scrollSpeedRef.current = 0
+    } else {
+      const sign = centered > 0 ? 1 : -1
+      const mag = (Math.abs(centered) - DEADZONE) / (0.5 - DEADZONE)
+      scrollSpeedRef.current = sign * mag * 5
+    }
   }
 
   return (
@@ -250,7 +255,7 @@ export default function GiveawaysPage() {
           style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          onWheel={onWheel}
+          onMouseMove={onMouseMove}
         >
           <div className="giveaway-track" ref={trackRef}>
             {[...shuffled, ...shuffled].map((g, i) => (
