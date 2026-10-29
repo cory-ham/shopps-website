@@ -11,7 +11,7 @@ interface Prize {
 }
 
 interface Giveaway {
-  name: string; company: string; prize: string; cardImg?: string; backImg?: string
+  name: string; company: string; prize: string; cardImg?: string; backImg?: string; backColor?: string
 }
 
 const GIVEAWAYS: Giveaway[] = [
@@ -41,7 +41,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/cards/card-200.jpg' },
   { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg', backImg: '/cards/card-224.jpg' },
   { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg', backImg: '/cards/card-240.jpg' },
-  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg' },
+  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg', backColor: '#1f3753' },
   { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg', backImg: '/cards/card-392.jpg' },
   { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg', backImg: '/cards/card-400.jpg' },
   { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg', backImg: '/cards/card-408.jpg' },
@@ -66,7 +66,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg', backImg: '/cards/card-728.jpg' },
   { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg', backImg: '/cards/card-744.jpg' },
   { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg', backImg: '/cards/card-752.jpg' },
-  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg' },
+  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg', backColor: '#1f3753' },
 ]
 
 const PRIZES: Prize[] = [
@@ -205,7 +205,7 @@ export default function GiveawaysPage() {
           position: relative;
           transform-style: preserve-3d;
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
-          border-radius: 14px;
+          border-radius: 8px;
         }
         .giveaway-tile:hover .giveaway-flipper {
           transform: rotateY(180deg);
@@ -214,7 +214,7 @@ export default function GiveawaysPage() {
         .giveaway-face {
           position: absolute;
           inset: 0;
-          border-radius: 14px;
+          border-radius: 8px;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
         }
@@ -226,7 +226,6 @@ export default function GiveawaysPage() {
         }
         .giveaway-face-back {
           transform: rotateY(180deg);
-          background: #e8a111;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -261,7 +260,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-back-box {
           background: #fff;
-          border-radius: 12px;
+          border-radius: 6px;
           padding: 14px 14px 16px;
           flex: 1;
           margin: 12px 0;
@@ -354,7 +353,7 @@ export default function GiveawaysPage() {
                     )}
                   </div>
                   {/* Back — CSS card back design, no image overlay */}
-                  <div className="giveaway-face giveaway-face-back">
+                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
                     {/* Name + Company */}
                     <div className="giveaway-back-header">
                       <p className="giveaway-back-name">{g.name}</p>
