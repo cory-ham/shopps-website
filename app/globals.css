@@ -1732,7 +1732,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   overflow: visible;
   margin-bottom: clamp(60px, 8vw, 100px);
   padding: clamp(32px, 3.5vw, 48px) clamp(32px, 3.5vw, 48px);
-  padding-right: 46%;
+  padding-right: 38%;
   display: flex;
   align-items: center;
 }
@@ -1765,7 +1765,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   right: clamp(32px, 4vw, 56px);
   top: 50%;
   transform: translateY(-50%) rotate(4deg);
-  width: clamp(260px, 28vw, 360px);
+  width: clamp(220px, 24vw, 300px);
   filter: drop-shadow(0 24px 56px rgba(0,0,0,0.85));
 }
 .prize-hero-card img {
