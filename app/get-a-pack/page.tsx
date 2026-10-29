@@ -53,11 +53,12 @@ export default function GetAPackPage() {
 
       <div className="gap-hero" style={{ paddingTop: 'clamp(80px, 8vw, 120px)' }}>
         <div className="gap-hero-text">
-          <h2 className="gap-h1">
-            <span style={{display:'block'}}>You Can&apos;t Buy One.</span><span style={{display:'block'}}>You Have to Win One.</span>
+          <h2 className="gap-h1" style={{display:'flex', flexDirection:'column'}}>
+            <span>You Can&apos;t Buy One.</span>
+            <span>You Have to Win One.</span>
           </h2>
           <p className="section-body" style={{ marginBottom: '0' }}>
-            <span style={{color:'var(--teal)'}}>Only 1,000 packs exist.</span><br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
+            <span style={{color:'var(--olive)'}}>Only 1,000 packs exist.</span><br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
           </p>
           <PackSignupForm />
         </div>
