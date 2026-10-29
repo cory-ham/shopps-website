@@ -138,71 +138,39 @@ export default function GiveawaysPage() {
     <>
       <SiteNav />
 
-      {/* ── Full-width two-column hero ── */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        minHeight: '90vh',
-        padding: '0',
-        alignItems: 'stretch',
-      }}>
-        {/* Left — headline + prize info */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: 'clamp(60px, 8vw, 100px) clamp(32px, 5vw, 80px)',
-          borderRight: '1px solid #1e2535',
-        }}>
-          <p className="section-eyebrow" style={{ marginBottom: '16px' }}>$100K+ IN GIVEAWAYS</p>
-          <h1 className="prizeboard-h1" style={{ fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', marginBottom: '24px' }}>
-            THE PRIZE BOARD
-          </h1>
-          <p style={{ fontSize: 'clamp(16px, 1.1vw, 18px)', color: 'rgba(245,248,248,0.65)', lineHeight: 1.65, marginBottom: '32px', maxWidth: '480px' }}>
-            Every card in the set has a real prize attached to it. Pull a card, claim your prize. The bigger the rarity, the bigger the reward.
-          </p>
-          <div className="prizeboard-stats" style={{ marginBottom: '40px' }}>
-            {STATS.map(s => (
-              <span key={s.label} className="prizeboard-stat">
-                {s.value} <span className="prizeboard-stat-label">{s.label}</span>
-              </span>
-            ))}
-          </div>
-          {/* Featured prize callout */}
-          <div style={{ borderTop: '1px solid #1e2535', paddingTop: '32px' }}>
-            <p className="prize-tag prize-tag--available" style={{ marginBottom: '8px' }}>{featured.tag}</p>
-            <h2 style={{ fontFamily: 'var(--font-antonio)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#fff', textTransform: 'uppercase', lineHeight: 0.95, margin: '0 0 16px', letterSpacing: '0.01em' }}>
-              {featured.title}{featured.subtitle && <><br />{featured.subtitle}</>}
+      {/* ── Page header ── */}
+      <div className="prizeboard-header" style={{ maxWidth: 'none', padding: '80px 6vw 32px' }}>
+        <p className="section-eyebrow" style={{ marginBottom: '10px' }}>$100K+ IN GIVEAWAYS</p>
+        <h1 className="prizeboard-h1">THE PRIZE BOARD</h1>
+        <p className="prizeboard-desc" style={{ maxWidth: '680px' }}>
+          Every card in the set has a real prize attached to it. Pull a card, claim your prize.
+          The bigger the rarity, the bigger the reward.
+        </p>
+        <div className="prizeboard-stats">
+          {STATS.map(s => (
+            <span key={s.label} className="prizeboard-stat">
+              {s.value} <span className="prizeboard-stat-label">{s.label}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Featured hero ── */}
+      <div style={{ padding: '0 6vw 48px', maxWidth: 'none' }}>
+        <div className="prize-hero">
+          <div className="prize-hero-text">
+            <p className="prize-tag prize-tag--available">{featured.tag}</p>
+            <h2 className="prize-hero-title">
+              {featured.title}
+              {featured.subtitle && <><br />{featured.subtitle}</>}
             </h2>
-            <p style={{ fontSize: '15px', color: 'rgba(245,248,248,0.75)', lineHeight: 1.6, marginBottom: '20px', maxWidth: '400px' }}>
-              {featured.description}
-            </p>
+            <p className="prize-hero-desc" style={{ maxWidth: '520px' }}>{featured.description}</p>
             <a href="#how" className="btn-teal prize-hero-btn">HOW TO GET A PACK</a>
           </div>
-        </div>
-
-        {/* Right — featured slab card, full height */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: '#080b10',
-          padding: 'clamp(40px, 6vw, 80px)',
-          position: 'relative',
-        }}>
           {featured.cardImage && (
-            <img
-              src={featured.cardImage}
-              alt="Chase card"
-              draggable={false}
-              style={{
-                width: 'clamp(260px, 40%, 400px)',
-                height: 'auto',
-                display: 'block',
-                filter: 'drop-shadow(0 32px 80px rgba(0,0,0,0.9))',
-                transform: 'rotate(4deg)',
-              }}
-            />
+            <div className="prize-hero-card">
+              <img src={featured.cardImage} alt="Chase card" draggable={false} />
+            </div>
           )}
         </div>
       </div>
