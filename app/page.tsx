@@ -679,12 +679,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <PackDropForm />
           </div>
 
-          {/* Right: packs original position */}
-          <div className="howto-pack-right">
+          {/* Right: packs + form below */}
+          <div className="howto-pack-right" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+            <PackDropForm />
           </div>
 
         </div>
