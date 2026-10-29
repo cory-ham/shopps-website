@@ -226,7 +226,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-face-back {
           transform: rotateY(180deg);
-          position: relative;
+          background: #e8a111;
         }
         .giveaway-back-header {
           display: flex;
