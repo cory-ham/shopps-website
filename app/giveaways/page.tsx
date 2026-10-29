@@ -432,7 +432,7 @@ export default function GiveawaysPage() {
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
-          <h2 className="cta-heading"><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.</h2>
+          <h2 className="cta-heading">ONLY 1,000 PACKS EXIST.<br /><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> PACKS REMAIN.</h2>
           <p className="cta-body">
             The chase isn&apos;t over. Follow upcoming drops and live card breaks for chances to claim packs and win autograph cards with prizes attached.
           </p>
