@@ -226,16 +226,69 @@ export default function GiveawaysPage() {
         }
         .giveaway-face-back {
           transform: rotateY(180deg);
-          background: #0d0f13;
-          border: 2px solid #c9a227;
+          background: #c9a227;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          padding: 24px 20px;
-          gap: 14px;
+          justify-content: space-between;
+          padding: 20px 16px 16px;
           text-align: center;
           box-sizing: border-box;
+        }
+        .giveaway-back-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2px;
+        }
+        .giveaway-back-name {
+          font-family: var(--font-antonio, sans-serif);
+          font-size: 18px;
+          font-weight: 900;
+          color: #0d0d0d;
+          text-transform: uppercase;
+          line-height: 1.1;
+          letter-spacing: -0.01em;
+        }
+        .giveaway-back-company {
+          font-family: var(--font-antonio, sans-serif);
+          font-size: 11px;
+          font-weight: 700;
+          color: #0d0d0d;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          opacity: 0.75;
+        }
+        .giveaway-back-box {
+          background: #fff;
+          border-radius: 12px;
+          padding: 14px 14px 16px;
+          flex: 1;
+          margin: 12px 0;
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        .giveaway-back-label {
+          background: #0d0d0d;
+          color: #fff;
+          font-family: var(--font-antonio, sans-serif);
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          padding: 4px 14px;
+          border-radius: 20px;
+        }
+        .giveaway-back-prize {
+          font-size: 14px;
+          font-weight: 700;
+          color: #0d0d0d;
+          line-height: 1.45;
+          text-align: center;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
@@ -300,19 +353,18 @@ export default function GiveawaysPage() {
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
-                  {/* Back */}
+                  {/* Back — matches card back design */}
                   <div className="giveaway-face giveaway-face-back">
-                    <img src="/shopps-s-icon-v2.png" alt="SHOPPS" draggable={false}
-                      style={{ width: '48px', opacity: 0.9 }} />
-                    <p style={{ margin: 0, fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', color: '#039F9D', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
-                      GIVEAWAY PRIZE
-                    </p>
-                    <p style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#fff', lineHeight: 1.35, letterSpacing: '-0.01em' }}>
-                      {g.prize}
-                    </p>
-                    <p style={{ margin: 0, fontSize: '11px', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--font-antonio, sans-serif)' }}>
-                      {g.name} · {g.company}
-                    </p>
+                    <div className="giveaway-back-header">
+                      <p className="giveaway-back-name">{g.name}</p>
+                      <p className="giveaway-back-company">{g.company}</p>
+                    </div>
+                    <div className="giveaway-back-box">
+                      <span className="giveaway-back-label">GIVEAWAY PRIZE</span>
+                      <p className="giveaway-back-prize">{g.prize}</p>
+                    </div>
+                    <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
+                      style={{ height: '28px', width: 'auto', opacity: 0.85 }} />
                   </div>
                 </div>
               </div>
