@@ -1,4 +1,5 @@
 'use client'
+import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
 
 const STEPS = [
@@ -127,7 +128,7 @@ export default function HowItWorksPage() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">
-            734 Packs Left.<br />Zero for Sale.
+            {PACKS_REMAINING} Packs Left.<br />Zero for Sale.
           </h2>
           <p className="cta-body">
             <strong><em>The chase isn&apos;t over.</em></strong> <em>Rare cards. Exclusive prizes. 1-of-1 pulls.</em><br />

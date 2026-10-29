@@ -1,4 +1,5 @@
 'use client'
+import { PACKS_REMAINING, PACKS_TOTAL } from './lib/pack-count'
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -452,7 +453,7 @@ export default function Home() {
           {/* Live pack counter — below hero CTA buttons */}
           <p className="shopps-live-compact" style={{marginTop:'1.25rem'}}>
             <span className="pack-label-dot" aria-hidden="true" />
-            {' '}Live pack count · 734 of 1,000 left
+            {' '}Live pack count · {PACKS_REMAINING} of {PACKS_TOTAL} left
           </p>
 
         </div>
@@ -789,7 +790,7 @@ export default function Home() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" style={{marginBottom:'2rem'}} />
           <h2 className="cta-heading">
-            ONLY 1,000 PACKS EXIST.<br />XXX PACKS REMAIN.
+            ONLY 1,000 PACKS EXIST.<br /><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> PACKS REMAIN.
           </h2>
           <p className="cta-body" style={{marginTop:'1.5rem',marginBottom:'1rem'}}>The chase is on.</p>
           <a href="/set" className="btn-cta-outline" style={{marginTop:'1.5rem', display:'inline-block'}}>START COLLECTING</a>

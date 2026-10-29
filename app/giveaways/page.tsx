@@ -1,4 +1,5 @@
 'use client'
+import { PACKS_REMAINING } from '../lib/pack-count'
 import { useMemo, useRef, useEffect, useState } from 'react'
 import SiteNav from '../components/SiteNav'
 
@@ -432,7 +433,7 @@ export default function GiveawaysPage() {
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
-          <h2 className="cta-heading">734 Packs Left.<br />Zero for Sale.</h2>
+          <h2 className="cta-heading">{PACKS_REMAINING} Packs Left.<br />Zero for Sale.</h2>
           <p className="cta-body">
             Every card has a prize attached.{' '}
             <span style={{ color: 'var(--teal)' }}>51 giveaways</span>. Know where to look.
