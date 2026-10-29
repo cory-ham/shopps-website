@@ -354,10 +354,10 @@ export default function GiveawaysPage() {
                     )}
                     {/* Prize overlay — sits over the biography box area */}
                     <div style={{
-                      position: 'absolute', left: '8%', right: '8%', top: '28%', bottom: '15%',
+                      position: 'absolute', left: '6%', right: '6%', top: '31%', bottom: '20%',
                       background: '#fff', borderRadius: '10px',
                       display: 'flex', flexDirection: 'column', alignItems: 'center',
-                      justifyContent: 'center', padding: '10px 12px', gap: '8px', textAlign: 'center'
+                      justifyContent: 'center', padding: '16px 14px', gap: '10px', textAlign: 'center'
                     }}>
                       <span style={{ background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio, sans-serif)', fontSize: '9px', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 12px', borderRadius: '20px' }}>
                         GIVEAWAY PRIZE
