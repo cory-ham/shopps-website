@@ -639,6 +639,25 @@ export default function Home() {
         </div>
       </section>
 
+      <p className="sponsor-label">Special thanks to our sponsors.</p>
+      <div className="ticker-wrap">
+        {TICKER_ITEMS.map((item, i) => (
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
+              alt={item.label}
+              style={{
+                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
+                width: 'auto',
+                
+                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+
       {/* ──────────────────── HOW TO GET A PACK ──────────────────── */}
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
       <section className="howto-section howto-section--split">
@@ -702,24 +721,6 @@ export default function Home() {
         </div>
       </section>
       {/* ── SPONSOR STRIP — static ── */}
-      <p className="sponsor-label">Special thanks to our sponsors.</p>
-      <div className="ticker-wrap">
-        {TICKER_ITEMS.map((item, i) => (
-          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img
-              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-              alt={item.label}
-              style={{
-                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
-                width: 'auto',
-                
-                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-              }}
-            />
-          </div>
-        ))}
-      </div>
-
       {/* ────────────────────── TWEET FEED ──────────────────── */}
       <section className="tweet-section">
         <div className="section-inner">
