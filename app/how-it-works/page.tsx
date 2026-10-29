@@ -87,7 +87,7 @@ export default function HowItWorksPage() {
         <div className="hiw-steps-grid">
           {STEPS.map(step => (
             <div key={step.num} className="howto-step">
-              <div className="howto-num">{step.num}</div>
+
               <h3 className="howto-title">{step.title}</h3>
               {step.lines.map((line, i) => (
                 <p key={i} className="howto-body">
