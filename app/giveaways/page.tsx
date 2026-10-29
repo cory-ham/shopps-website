@@ -79,7 +79,7 @@ const PRIZES: Prize[] = [
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
-    cardImage: '/slabs/slab-p08-gold.png',
+    cardImage: '/cards/foil-sig-chrome-009.jpg',
   },
 ]
 
