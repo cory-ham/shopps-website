@@ -2,30 +2,56 @@
 import React from 'react'
 
 function ShoppsVideo() {
-  const [playing, setPlaying] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
   return (
-    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '14px', overflow: 'hidden', background: '#0a0c14', cursor: playing ? 'default' : 'pointer' }}
-      onClick={() => !playing && setPlaying(true)}>
-      {playing ? (
-        <iframe
-          src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
-          title="SHOPPS"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-        />
-      ) : (
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', background: '#0a0c14' }}>
+    <>
+      {/* Thumbnail card — always visible */}
+      <div
+        onClick={() => setOpen(true)}
+        style={{
+          position: 'relative', width: '100%', paddingBottom: '56.25%',
+          borderRadius: '14px', overflow: 'hidden', cursor: 'pointer',
+          backgroundImage: 'url(https://img.youtube.com/vi/lKkLmQhiGfs/maxresdefault.jpg)',
+          backgroundSize: 'cover', backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
           <p style={{ fontFamily: 'var(--font-antonio)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', color: '#fff', margin: 0, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', padding: '0 20px' }}>
             What Is SHOPPS?
           </p>
-          <button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '100px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '3px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
             Watch Video
           </button>
         </div>
+      </div>
+
+      {/* Fullscreen modal */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); setOpen(false) }}
+            style={{ position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', color: '#fff', fontSize: '32px', cursor: 'pointer', lineHeight: 1, opacity: 0.7 }}
+          >✕</button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ width: 'min(90vw, 1100px)', aspectRatio: '16/9', borderRadius: '6px', overflow: 'hidden' }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+              title="SHOPPS"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ width: '100%', height: '100%', border: 'none' }}
+            />
+          </div>
+        </div>
       )}
-    </div>
+    </>
   )
 }
 
