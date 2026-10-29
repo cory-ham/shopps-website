@@ -404,7 +404,7 @@ export default function Home() {
           {/* Live pack counter — below hero CTA buttons */}
           <p className="shopps-live-compact" style={{marginTop:'1.25rem'}}>
             <span className="pack-label-dot" aria-hidden="true" />
-             Live pack count · 734 of 1,000 left
+            {' '}Live pack count · 734 of 1,000 left
           </p>
 
         </div>
