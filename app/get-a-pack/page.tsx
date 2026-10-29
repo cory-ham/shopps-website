@@ -50,7 +50,7 @@ export default function GetAPackPage() {
     <>
       <SiteNav />
 
-      <div className="gap-hero">
+      <div className="gap-hero" style={{ paddingTop: 'clamp(80px, 8vw, 120px)' }}>
         <div className="gap-hero-text">
           <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
           <h2 className="gap-h1">
