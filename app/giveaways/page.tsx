@@ -354,7 +354,7 @@ export default function GiveawaysPage() {
                     )}
                     {/* Prize overlay — sits over the biography box area */}
                     <div style={{
-                      position: 'absolute', left: '6%', right: '6%', top: '31%', bottom: '20%',
+                      position: 'absolute', left: '6%', right: '6%', top: '24%', bottom: '20%',
                       background: '#fff', borderRadius: '10px',
                       display: 'flex', flexDirection: 'column', alignItems: 'center',
                       justifyContent: 'center', padding: '16px 14px', gap: '10px', textAlign: 'center'
