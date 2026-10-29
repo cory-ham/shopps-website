@@ -1979,6 +1979,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   line-height: 1.6;
   margin: 0 0 14px;
 }
+.hiw-step-body a { color: var(--teal); text-decoration: none; }
+.hiw-step-body a:hover { text-decoration: underline; }
 .hiw-step-bullets {
   list-style: none;
   padding: 0;
