@@ -199,14 +199,14 @@ export default function GiveawaysPage() {
           display: flex;
           flex-direction: column;
           cursor: default;
-          transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-          transform-origin: center center;
+          transition: zoom 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
           position: relative;
         }
         .giveaway-tile:hover {
-          border-color: rgba(3, 159, 157, 0.8);
-          box-shadow: 0 0 0 2px rgba(3,159,157,0.6), 0 8px 32px rgba(3,159,157,0.2);
+          zoom: 1.12;
           z-index: 20;
+          border-color: rgba(3, 159, 157, 0.6);
+          box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(3,159,157,0.4);
         }
         .giveaway-card-img {
           width: 100%;
