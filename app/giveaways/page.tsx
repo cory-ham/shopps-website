@@ -111,7 +111,7 @@ export default function GiveawaysPage() {
   // JS-driven auto-scroll with drag support
   const trackRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef(0)
-  const rafRef = useRef<number>()
+  const rafRef = useRef<number | undefined>(undefined)
   const isDragging = useRef(false)
   const isHovering = useRef(false)
   const dragStartX = useRef(0)
