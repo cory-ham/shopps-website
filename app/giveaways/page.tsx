@@ -166,6 +166,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-tile {
           width: 300px;
+          height: 440px;
           flex-shrink: 0;
           background: var(--surface, #111);
           border: 1px solid rgba(255,255,255,0.08);
@@ -234,7 +235,7 @@ export default function GiveawaysPage() {
                   <p style={{ margin: 0, fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.55)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
                     {g.name}
                   </p>
-                  <p style={{ margin: '6px 0 0', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.55 }}>
+                  <p style={{ margin: '6px 0 0', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.55, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
                     {g.prize}
                   </p>
                 </div>
