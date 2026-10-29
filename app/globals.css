@@ -2221,9 +2221,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 /* ── Get a Pack page ─────────────────────────────────────────────────────── */
 .gap-hero {
   display: grid;
-  grid-template-columns: 1fr clamp(260px, 34vw, 480px);
+  grid-template-columns: 1fr clamp(320px, 44vw, 620px);
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 56px);
   padding: clamp(60px, 6vw, 100px) 4vw;
 }
 .gap-hero-text { min-width: 0; container-type: inline-size; }
