@@ -88,9 +88,9 @@ const TOTAL_GIVEAWAYS = 51
 const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
-  { num: '01', title: 'PULL THE CARD',    body: "Chase cards and redemption foils are marked on the card face. If you're holding one, you've won." },
-  { num: '02', title: 'VERIFY IT',        body: 'Snap the card and its serial, submit through the claim form, and the committee verifies within 48 hours.' },
-  { num: '03', title: 'CLAIM YOUR PRIZE', body: 'Once verified, we coordinate the prize directly with you. Claims stay open for 90 days after pull.' },
+  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your 1:1 autograph card or Golden Ticket.' },
+  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to [claim email] so we can verify the card.' },
+  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the products, credit, or experience attached to your card." },
 ]
 
 const featured = PRIZES[0]
@@ -382,8 +382,8 @@ export default function GiveawaysPage() {
       {/* ── How claiming works ── */}
       <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 2vw', scrollMarginTop: '60px' }}>
         <div className="section-inner">
-          <p className="section-eyebrow">PULLED A WINNER?</p>
-          <h2 className="section-heading">HOW CLAIMING WORKS</h2>
+          <p className="section-eyebrow">PULLED A WINNING CARD?</p>
+          <h2 className="section-heading">How Claiming Works</h2>
           <div className="howto-steps howto-steps--3col">
             {STEPS.map(step => (
               <div key={step.num} className="howto-step">
