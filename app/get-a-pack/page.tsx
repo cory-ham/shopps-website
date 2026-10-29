@@ -50,6 +50,22 @@ export default function GetAPackPage() {
     <>
       <SiteNav />
 
+      <div className="gap-hero">
+        <div className="gap-hero-text">
+          <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
+          <h2 className="gap-h1">
+            You Can&apos;t Buy One.<br />You Have to Win One.
+          </h2>
+          <p className="section-body" style={{ marginBottom: '0' }}>
+            Only 1,000 packs exist.<br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
+          </p>
+          <PackSignupForm />
+        </div>
+        <div className="gap-hero-packs">
+          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+        </div>
+      </div>
+
 
       {/* ── WHERE PACKS DROP (moved from How It Works) ── */}
       <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw' }}>
@@ -108,21 +124,6 @@ export default function GetAPackPage() {
 
       {/* ── Hero: packs + signup ── */}
       <div style={{ background: 'var(--bg)' }}>
-      <div className="gap-hero">
-        <div className="gap-hero-text">
-          <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
-          <h2 className="gap-h1">
-            You Can&apos;t Buy One.<br />You Have to Win One.
-          </h2>
-          <p className="section-body" style={{ marginBottom: '0' }}>
-            Only 1,000 packs exist.<br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
-          </p>
-          <PackSignupForm />
-        </div>
-        <div className="gap-hero-packs">
-          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
-        </div>
-      </div>
 
       </div>
 
