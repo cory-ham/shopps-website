@@ -13,12 +13,17 @@ function ShoppsVideo() {
   }, [])
 
   useEffect(() => {
+    const nav = document.querySelector('.site-nav') as HTMLElement | null
     if (open) {
       document.body.style.overflow = 'hidden'
-      document.body.classList.add('video-modal-open')
+      if (nav) nav.style.display = 'none'
     } else {
       document.body.style.overflow = ''
-      document.body.classList.remove('video-modal-open')
+      if (nav) nav.style.display = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      if (nav) nav.style.display = ''
     }
   }, [open])
 
