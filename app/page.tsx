@@ -12,7 +12,13 @@ function ShoppsVideo() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      document.body.classList.add('video-modal-open')
+    } else {
+      document.body.style.overflow = ''
+      document.body.classList.remove('video-modal-open')
+    }
   }, [open])
 
   return (
