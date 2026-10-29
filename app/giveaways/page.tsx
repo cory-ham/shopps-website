@@ -108,45 +108,38 @@ export default function GiveawaysPage() {
   }, [])
 
 
-  // Mouse-position-driven scroll — hover left/right to scroll
-  const trackRef = useRef<HTMLDivElement>(null)
-  const offsetRef = useRef(0)
+  // Native scroll container — browser handles wheel/trackpad/touch naturally
+  const containerRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | undefined>(undefined)
-  const scrollSpeedRef = useRef(-0.6) // default auto-scroll
+  const isHovering = useRef(false)
 
   useEffect(() => {
-    const ITEM_WIDTH = 240 + 20
-    const HALF = shuffled.length * ITEM_WIDTH
+    const el = containerRef.current
+    if (!el) return
 
     const tick = () => {
-      offsetRef.current += scrollSpeedRef.current
-      if (offsetRef.current > 0) offsetRef.current -= HALF
-      if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
-      if (trackRef.current) {
-        trackRef.current.style.transform = `translateX(${offsetRef.current}px)`
+      if (!isHovering.current) {
+        el.scrollLeft += 0.8
+        // Seamless loop: content is doubled, reset halfway through
+        if (el.scrollLeft >= el.scrollWidth / 2) {
+          el.scrollLeft = 0
+        }
       }
       rafRef.current = requestAnimationFrame(tick)
     }
     rafRef.current = requestAnimationFrame(tick)
-    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
-  }, [shuffled])
 
-  const onMouseEnter = () => { /* speed set by onMouseMove */ }
-  const onMouseLeave = () => { scrollSpeedRef.current = -0.6 }
-  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const pct = x / rect.width // 0 = far left, 1 = far right
-    const centered = pct - 0.5  // -0.5 to 0.5
-    const DEADZONE = 0.15
-    if (Math.abs(centered) < DEADZONE) {
-      scrollSpeedRef.current = 0
-    } else {
-      const sign = centered > 0 ? 1 : -1
-      const mag = (Math.abs(centered) - DEADZONE) / (0.5 - DEADZONE)
-      scrollSpeedRef.current = sign * mag * 5
+    const onEnter = () => { isHovering.current = true }
+    const onLeave = () => { isHovering.current = false }
+    el.addEventListener('mouseenter', onEnter)
+    el.addEventListener('mouseleave', onLeave)
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      el.removeEventListener('mouseenter', onEnter)
+      el.removeEventListener('mouseleave', onLeave)
     }
-  }
+  }, [shuffled])
 
   return (
     <>
@@ -191,6 +184,8 @@ export default function GiveawaysPage() {
 
       {/* ── Auto-scroll giveaway ticker ── */}
       <style>{`
+        div[style*="overflowX: scroll"]::-webkit-scrollbar { display: none; }
+        div[style*="overflowX: scroll"]:active { cursor: grabbing; }
 
         .giveaway-track {
           display: flex;
@@ -250,12 +245,16 @@ export default function GiveawaysPage() {
           </p>
         </div>
         <div
-          style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onMouseMove={onMouseMove}
+          ref={containerRef}
+          style={{
+            overflowX: 'scroll',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            width: '100%',
+            cursor: 'grab',
+          }}
         >
-          <div className="giveaway-track" ref={trackRef}>
+          <div className="giveaway-track">
             {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} className="giveaway-tile">
                 {g.cardImg && (
