@@ -214,7 +214,7 @@ export default function GiveawaysPage() {
         .giveaway-face {
           position: absolute;
           inset: 0;
-          border-radius: 8px;
+          border-radius: 4px;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
         }
