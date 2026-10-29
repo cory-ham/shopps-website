@@ -433,7 +433,8 @@ export default function Home() {
               {/* Video — mobile only (stacks after definition, before stats) */}
               <div className="shopps-vid-mobile">
                 <div className="shopps-video-wrap">
-                  <video src="/shopps-intro.mp4" autoPlay muted loop playsInline
+                  {/* YouTube embed replaced local video */}
+                  <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}><iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
                 </div>
               </div>
@@ -461,7 +462,8 @@ export default function Home() {
             {/* Video column — desktop only, aligned to top */}
             <div className="shopps-vid-col">
               <div className="shopps-video-wrap">
-                <video src="/shopps-intro.mp4" autoPlay muted loop playsInline
+                {/* YouTube embed replaced local video */}
+                  <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}><iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
               </div>
             </div>
