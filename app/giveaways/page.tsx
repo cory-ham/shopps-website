@@ -108,21 +108,18 @@ export default function GiveawaysPage() {
   }, [])
 
 
-  // JS-driven auto-scroll with drag support
+  // JS-driven auto-scroll with wheel/trackpad scroll on hover
   const trackRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef(0)
   const rafRef = useRef<number | undefined>(undefined)
-  const isDragging = useRef(false)
   const isHovering = useRef(false)
-  const dragStartX = useRef(0)
-  const dragStartOffset = useRef(0)
 
   useEffect(() => {
     const ITEM_WIDTH = 340 + 20
     const HALF = shuffled.length * ITEM_WIDTH
 
     const tick = () => {
-      if (!isDragging.current && !isHovering.current) {
+      if (!isHovering.current) {
         offsetRef.current -= 0.6
         if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
       }
@@ -136,22 +133,15 @@ export default function GiveawaysPage() {
   }, [shuffled])
 
   const onMouseEnter = () => { isHovering.current = true }
-  const onMouseLeave = () => { isHovering.current = false; isDragging.current = false }
-  const onMouseDown = (e: React.MouseEvent) => {
-    isDragging.current = true
-    dragStartX.current = e.clientX
-    dragStartOffset.current = offsetRef.current
-  }
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current) return
+  const onMouseLeave = () => { isHovering.current = false }
+  const onWheel = (e: React.WheelEvent) => {
     const ITEM_WIDTH = 340 + 20
     const HALF = shuffled.length * ITEM_WIDTH
-    const dx = e.clientX - dragStartX.current
-    offsetRef.current = dragStartOffset.current + dx * 2
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+    offsetRef.current -= delta * 1.5
     if (offsetRef.current > 0) offsetRef.current -= HALF
     if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
   }
-  const onMouseUp = () => { isDragging.current = false }
 
   return (
     <>
@@ -205,12 +195,7 @@ export default function GiveawaysPage() {
           align-items: flex-start;
           padding: 20px 0;
         }
-        .giveaway-track {
-          cursor: grab;
-        }
-        .giveaway-track:active {
-          cursor: grabbing;
-        }
+
         .giveaway-tile {
           width: 340px;
           height: 520px;
@@ -265,9 +250,7 @@ export default function GiveawaysPage() {
           style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
+          onWheel={onWheel}
         >
           <div className="giveaway-track" ref={trackRef}>
             {[...shuffled, ...shuffled].map((g, i) => (
