@@ -1,5 +1,5 @@
 'use client'
-import { useMemo } from 'react'
+import { useMemo, useRef, useEffect, useState } from 'react'
 import SiteNav from '../components/SiteNav'
 
 type PrizeStatus = 'available' | 'claimed'
@@ -41,7 +41,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg' },
   { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg' },
   { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg' },
-  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration' },
+  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg' },
   { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg' },
   { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg' },
   { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg' },
@@ -66,6 +66,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg' },
   { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg' },
   { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg' },
+  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg' },
 ]
 
 const PRIZES: Prize[] = [
@@ -105,6 +106,52 @@ export default function GiveawaysPage() {
     }
     return arr
   }, [])
+
+
+  // JS-driven auto-scroll with drag support
+  const trackRef = useRef<HTMLDivElement>(null)
+  const offsetRef = useRef(0)
+  const rafRef = useRef<number>()
+  const isDragging = useRef(false)
+  const isHovering = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartOffset = useRef(0)
+
+  useEffect(() => {
+    const ITEM_WIDTH = 340 + 20
+    const HALF = shuffled.length * ITEM_WIDTH
+
+    const tick = () => {
+      if (!isDragging.current && !isHovering.current) {
+        offsetRef.current -= 0.6
+        if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
+      }
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translateX(${offsetRef.current}px)`
+      }
+      rafRef.current = requestAnimationFrame(tick)
+    }
+    rafRef.current = requestAnimationFrame(tick)
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
+  }, [shuffled])
+
+  const onMouseEnter = () => { isHovering.current = true }
+  const onMouseLeave = () => { isHovering.current = false; isDragging.current = false }
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true
+    dragStartX.current = e.clientX
+    dragStartOffset.current = offsetRef.current
+  }
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return
+    const ITEM_WIDTH = 340 + 20
+    const HALF = shuffled.length * ITEM_WIDTH
+    const dx = e.clientX - dragStartX.current
+    offsetRef.current = dragStartOffset.current + dx * 2
+    if (offsetRef.current > 0) offsetRef.current -= HALF
+    if (Math.abs(offsetRef.current) >= HALF) offsetRef.current += HALF
+  }
+  const onMouseUp = () => { isDragging.current = false }
 
   return (
     <>
@@ -149,20 +196,20 @@ export default function GiveawaysPage() {
 
       {/* ── Auto-scroll giveaway ticker ── */}
       <style>{`
-        @keyframes giveaway-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
+
         .giveaway-track {
           display: flex;
           gap: 20px;
           width: max-content;
-          animation: giveaway-scroll 120s linear infinite;
+          /* animation handled by JS */
           align-items: flex-start;
           padding: 20px 0;
         }
-        .giveaway-track:hover {
-          animation-play-state: paused;
+        .giveaway-track {
+          cursor: grab;
+        }
+        .giveaway-track:active {
+          cursor: grabbing;
         }
         .giveaway-tile {
           width: 340px;
@@ -214,8 +261,15 @@ export default function GiveawaysPage() {
             Pull the 1/1 Autograph Chrome card for any person below and the prize is yours.
           </p>
         </div>
-        <div style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}>
-          <div className="giveaway-track">
+        <div
+          style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+        >
+          <div className="giveaway-track" ref={trackRef}>
             {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} className="giveaway-tile">
                 {g.cardImg && (
