@@ -140,7 +140,7 @@ export default function GiveawaysPage() {
       <div className="prizeboard-header" style={{ maxWidth: 'none', padding: '80px 6vw 32px' }}>
         <h1 className="prizeboard-h1">$50K IN REAL PRIZES</h1>
         <p className="prizeboard-desc" style={{ maxWidth: '680px' }}>
-          Select one-of-one autograph cards and Golden Tickets come with products, gift cards, and experiences attached.<br /><br />
+          Win any 1:1 autograph card or Golden Ticket, and the products, gift cards, or experiences attached are yours.<br /><br />
           <strong style={{color:'var(--olive)',fontWeight:700}}>Keep the card. Claim what comes with it.</strong>
         </p>
         <div className="prizeboard-tracker">
