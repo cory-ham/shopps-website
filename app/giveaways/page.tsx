@@ -165,8 +165,8 @@ export default function GiveawaysPage() {
           animation-play-state: paused;
         }
         .giveaway-tile {
-          width: 300px;
-          height: 440px;
+          width: 340px;
+          height: 520px;
           flex-shrink: 0;
           background: var(--surface, #111);
           border: 1px solid rgba(255,255,255,0.08);
@@ -187,7 +187,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-card-img {
           width: 100%;
-          height: 240px;
+          height: 320px;
           overflow: hidden;
           background: #0a0a0a;
           flex-shrink: 0;
