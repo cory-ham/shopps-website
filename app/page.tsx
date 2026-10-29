@@ -512,9 +512,9 @@ export default function Home() {
           <div className="top100-header">
             <div>
               <p className="section-eyebrow">2026 Edition</p>
-              <h2 className="section-heading">Meet the Players</h2>
+              <h2 className="section-heading">The Leaders. The Innovators. The Game Changers.</h2>
               <p className="section-body">
-                The leaders. The innovators. The game changers.<br /><br />One legendary collection.<br /><br />Explore the full roster and discover who&apos;s in the set.
+                Explore the full roster and discover who&apos;s in the set.
               </p>
             </div>
 
