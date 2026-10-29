@@ -129,7 +129,8 @@ export default function GetAPackPage() {
       </div>
 
       {/* ── Prize tease CTA ── */}
-<p className="sponsor-label">Special thanks to our sponsors.</p>
+      {/* ── Sponsor bar ── */}
+      <p className="sponsor-label">Special thanks to our sponsors.</p>
       <div className="ticker-wrap">
         {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -139,14 +140,17 @@ export default function GetAPackPage() {
               style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
             />
           </div>
+        ))}
+      </div>
 
+      {/* ── CTA ── */}
       <section className="cta-section" style={{ paddingTop: '3vw' }}>
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">{PACKS_REMAINING} Packs Left.<br />Zero for Sale.</h2>
           <p className="cta-body">
-            Six chase cards are still out there — including{' '}
+            Six chase cards are still out there &mdash;{' '}
             <span style={{ color: 'var(--teal)' }}>courtside seats</span>.
           </p>
           <a href="/giveaways" className="btn-cta-outline" style={{ display: 'inline-block', marginTop: '2rem' }}>
@@ -154,10 +158,6 @@ export default function GetAPackPage() {
           </a>
         </div>
       </section>
-
-      {/* ── Sponsor bar ── */}
-        ))}
-      </div>
 
       <footer className="site-footer">
         <img src="/shopps-logo-v2.png" alt="SHOPPS" className="footer-logo" />
