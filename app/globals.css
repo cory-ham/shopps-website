@@ -2276,3 +2276,186 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .checklist-check { width: 24px; height: 24px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 4px; background: transparent; cursor: pointer; font-size: 13px; color: var(--white); display: flex; align-items: center; justify-content: center; transition: all 0.15s; margin: 0 auto; }
 .checklist-check:hover { border-color: rgba(255,255,255,0.4); }
 .checklist-check.checked { color: var(--white); }
+/* ═══════════════════════════════════════════════════════════
+   MOBILE CLEANUP — Oct 29 2026
+   Fixes: prize-hero card overlap, giveaway tiles, channel grid,
+   filter tabs, form overflow, signup form, 3col howto steps
+════════════════════════════════════════════════════════════ */
+
+/* ── Giveaway flip tiles — responsive width ── */
+@media (max-width: 768px) {
+  .giveaway-tile {
+    width: 180px !important;
+  }
+  .giveaway-face-back {
+    padding: 14px 12px 10px !important;
+  }
+  .giveaway-back-name {
+    font-size: 14px !important;
+  }
+  .giveaway-back-prize {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .giveaway-tile {
+    width: 160px !important;
+  }
+}
+
+/* ── Prize hero — hide floating card on small screens ── */
+@media (max-width: 768px) {
+  .prize-hero {
+    padding-right: clamp(24px, 5vw, 40px) !important;
+  }
+  .prize-hero-card {
+    display: none;
+  }
+  .prize-hero-title {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+}
+
+/* ── Howto 3col — collapse on mobile ── */
+@media (max-width: 768px) {
+  .howto-steps--3col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── HIW channels grid — 1 col on mobile ── */
+@media (max-width: 480px) {
+  .hiw-channels-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Set page filter tabs — horizontal scroll ── */
+@media (max-width: 768px) {
+  .set-filter-row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap !important;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .set-filter-row::-webkit-scrollbar { display: none; }
+  .set-filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 11px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* ── Pack drop input — full width on mobile ── */
+@media (max-width: 600px) {
+  .pack-drop-input {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+  .gap-signup-form-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
+
+/* ── Gap hero signup form — wrap properly on mobile ── */
+@media (max-width: 640px) {
+  .gap-hero form {
+    flex-wrap: wrap !important;
+  }
+  .gap-hero form button {
+    order: 2;
+    width: 100%;
+  }
+  .gap-hero form input {
+    width: 100% !important;
+    order: 1;
+  }
+}
+
+/* ── GAP hero grid — stack on mobile ── */
+@media (max-width: 768px) {
+  .gap-hero {
+    padding-top: clamp(48px, 8vw, 80px) !important;
+  }
+}
+
+/* ── Prizeboard header — tighter mobile padding ── */
+@media (max-width: 768px) {
+  .prizeboard-header {
+    padding: 48px 5vw 20px !important;
+  }
+  .prizeboard-h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+  }
+  .prizeboard-desc {
+    max-width: 100% !important;
+  }
+}
+
+/* ── Set page header — tighter on mobile ── */
+@media (max-width: 768px) {
+  .set-page-header {
+    padding: 80px 5vw 3vw !important;
+  }
+  .set-h1 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+  .set-showing {
+    font-size: 11px !important;
+  }
+}
+
+/* ── How-it-works hero — stack on mobile ── */
+@media (max-width: 768px) {
+  .hiw-hero {
+    flex-direction: column !important;
+    padding: 72px 5vw 4vw !important;
+  }
+  .hiw-hero-pack {
+    width: 70% !important;
+    margin: 0 auto;
+  }
+  .hiw-h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+  }
+  .hiw-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── CTA section — prevent overflow ── */
+@media (max-width: 480px) {
+  .cta-inner {
+    padding: 0 20px;
+  }
+  .cta-glow {
+    width: 100vw;
+  }
+}
+
+/* ── Tweet cards — smaller on mobile ── */
+@media (max-width: 480px) {
+  .tweet-card {
+    width: 200px !important;
+    height: 290px !important;
+  }
+  .tweet-track {
+    gap: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* ── Footer — ensure logo doesn't overflow ── */
+@media (max-width: 480px) {
+  .footer-logo {
+    height: 28px !important;
+  }
+  .footer-ctc-logo {
+    height: 32px !important;
+  }
+}

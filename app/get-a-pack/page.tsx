@@ -28,7 +28,7 @@ function PackSignupForm() {
   )
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'nowrap', alignItems: 'center' }}>
+    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
       <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
         {status === 'loading' ? 'SIGNING UP…' : "DON'T MISS THE NEXT DROP"}
       </button>
