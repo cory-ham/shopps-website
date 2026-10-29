@@ -45,33 +45,72 @@ function PackSignupForm() {
   )
 }
 
+const CHANNELS = [
+  { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
+  { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
+  { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
+  { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
+]
+
+const BLOCK_COLORS = ['#0d0f13', '#0a1e1e', '#0d0f13', '#0a1e1e']
+
 export default function GetAPackPage() {
   return (
     <>
       <SiteNav />
 
-      {/* ── WHERE PACKS DROP (moved from How It Works) ── */}
-      <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw' }}>
-        <div className="section-inner">
+      {/* ── 1. Hero: YOU CAN'T BUY ONE ── */}
+      <div style={{ background: 'var(--bg)' }}>
+        <div className="gap-hero">
+          <div className="gap-hero-text">
+            <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
+            <h1 className="gap-h1">
+              You Can&apos;t Buy One.<br />You Have to Win One.
+            </h1>
+            <p className="section-body" style={{ marginBottom: '0' }}>
+              Only 1,000 packs exist.<br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
+            </p>
+            <PackSignupForm />
+          </div>
+          <div className="gap-hero-packs">
+            <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+          </div>
+        </div>
+      </div>
+
+      {/* ── 2. WHERE PACKS DROP — alternating block colors ── */}
+      <section style={{ padding: 'max(5vw, 80px) 0 0' }}>
+        <div className="section-inner" style={{ marginBottom: '2.5vw' }}>
           <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
-          <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
-          <div className="hiw-channels-grid">
-            {[
-              { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
-              { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
-              { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
-              { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
-            ].map(ch => (
-              <div key={ch.abbr} className="prize-card">
-                <h4 className="prize-card-title">{ch.title}</h4>
+          <h2 className="section-heading">WHERE PACKS DROP</h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {CHANNELS.map((ch, i) => (
+            <div
+              key={ch.abbr}
+              style={{
+                background: BLOCK_COLORS[i],
+                padding: '3.5vw max(24px, calc((100vw - 1200px) / 2 + 24px))',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '3vw',
+                borderTop: i === 0 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                borderBottom: '1px solid rgba(255,255,255,0.06)',
+              }}
+            >
+              <div style={{ width: '56px', flexShrink: 0, paddingTop: '4px' }}>
+                <span style={{ fontFamily: 'var(--font-antonio)', fontSize: '13px', fontWeight: 700, color: 'var(--teal)', letterSpacing: '0.1em' }}>{ch.abbr}</span>
+              </div>
+              <div style={{ flex: 1 }}>
+                <h4 className="prize-card-title" style={{ marginBottom: '10px' }}>{ch.title}</h4>
                 <p className="prize-card-desc">{ch.el ?? ch.body}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ── Live Schedule ── */}
+      {/* ── 3. Live Schedule ── */}
       <section className="live-section" style={{ background: '#13161f', padding: '4vw 0' }}>
         <div className="section-inner">
           <p className="section-eyebrow">JOIN IN LIVE</p>
@@ -83,7 +122,7 @@ export default function GetAPackPage() {
             {[
               { month: 'OCT', day: '14', title: 'Live Break #7 – Founders Night',       meta: '8:00 PM ET • Streaming IG Live & YouTube • 40 Packs on the table' },
               { month: 'OCT', day: '21', title: 'The Top 100 Show – Ep. 4',            meta: '7:30 PM ET • Guest: A Top 10 Card, revealed live' },
-              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight’s stack' },
+              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight's stack' },
             ].map((event, i, arr) => (
               <div key={i} className={'live-event' + (i < arr.length - 1 ? ' live-event-divider' : '')}>
                 <div className="live-date">
@@ -105,27 +144,7 @@ export default function GetAPackPage() {
         </div>
       </section>
 
-      {/* ── Hero: packs + signup ── */}
-      <div style={{ background: 'var(--bg)' }}>
-      <div className="gap-hero">
-        <div className="gap-hero-text">
-          <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
-          <h2 className="gap-h1">
-            You Can&apos;t Buy One.<br />You Have to Win One.
-          </h2>
-          <p className="section-body" style={{ marginBottom: '0' }}>
-            Only 1,000 packs exist.<br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
-          </p>
-          <PackSignupForm />
-        </div>
-        <div className="gap-hero-packs">
-          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
-        </div>
-      </div>
-
-      </div>
-
-      {/* ── Prize tease CTA ── */}
+      {/* ── 4. Prize tease CTA ── */}
       <section className="cta-section" style={{ paddingTop: '3vw' }}>
         <div className="cta-glow" />
         <div className="cta-inner">
