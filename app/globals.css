@@ -2218,14 +2218,14 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   margin: 0 auto;
   padding: 4vw 6vw 5vw;
 }
-.gap-hero-text { min-width: 0; }
+.gap-hero-text { min-width: 0; container-type: inline-size; }
 .gap-hero-packs {
   filter: drop-shadow(0 20px 48px rgba(3,159,157,0.12));
 }
 .gap-hero-packs img { width: 100%; height: auto; display: block; }
 .gap-h1 {
   font-family: var(--font-antonio);
-  font-size: clamp(1.6rem, 4.5vw, 5.5rem);
+  font-size: 9cqi;
   font-weight: 400;
   color: var(--white);
   text-transform: uppercase;
