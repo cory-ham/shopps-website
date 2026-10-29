@@ -1,4 +1,34 @@
 'use client'
+import React from 'react'
+
+function ShoppsVideo() {
+  const [playing, setPlaying] = React.useState(false)
+  return (
+    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '14px', overflow: 'hidden', background: '#0a0c14', cursor: playing ? 'default' : 'pointer' }}
+      onClick={() => !playing && setPlaying(true)}>
+      {playing ? (
+        <iframe
+          src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+          title="SHOPPS"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+        />
+      ) : (
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', background: '#0a0c14' }}>
+          <p style={{ fontFamily: 'var(--font-antonio)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', color: '#fff', margin: 0, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', padding: '0 20px' }}>
+            What Is SHOPPS?
+          </p>
+          <button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '100px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
+            Watch Video
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 import SiteNav from './components/SiteNav'
 import { useState } from 'react'
 import Image from 'next/image'
@@ -433,9 +463,7 @@ export default function Home() {
               {/* Video — mobile only (stacks after definition, before stats) */}
               <div className="shopps-vid-mobile">
                 <div className="shopps-video-wrap">
-                  <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
-                </div>
+                  <ShoppsVideo />
                 </div>
               </div>
 
@@ -462,9 +490,7 @@ export default function Home() {
             {/* Video column — desktop only, aligned to top */}
             <div className="shopps-vid-col">
               <div className="shopps-video-wrap">
-                <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
-                </div>
+                <ShoppsVideo />
               </div>
             </div>
           </div>
