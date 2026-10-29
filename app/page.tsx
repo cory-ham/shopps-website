@@ -450,15 +450,17 @@ export default function Home() {
           <p className="hero-body" style={{marginBottom:'2rem'}}>
             Meet the leaders and innovators changing the game of DTC. Collect their cards, chase the ultra-rares, and unlock over $50,000 in real prizes.
           </p>
-          <div className="hero-buttons">
-            <a href="/how-it-works" className="btn-teal">Get a Pack</a>
-            <Link href="/set" className="btn-outline">See the Collection</Link>
+          <div className="hero-cta-stack">
+            <div className="hero-buttons">
+              <a href="/how-it-works" className="btn-teal">Get a Pack</a>
+              <Link href="/set" className="btn-outline">See the Collection</Link>
+            </div>
+            {/* Live pack counter — aligns with button row edges */}
+            <p className="shopps-live-compact">
+              <span className="pack-label-dot" aria-hidden="true" />
+              {' '}Live pack count · {PACKS_REMAINING} of {PACKS_TOTAL} left
+            </p>
           </div>
-          {/* Live pack counter — below hero CTA buttons */}
-          <p className="shopps-live-compact" style={{marginTop:'1.25rem'}}>
-            <span className="pack-label-dot" aria-hidden="true" />
-            {' '}Live pack count · {PACKS_REMAINING} of {PACKS_TOTAL} left
-          </p>
 
         </div>
 
