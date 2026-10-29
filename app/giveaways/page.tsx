@@ -224,10 +224,15 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-text {
-          padding: 14px 16px;
+          height: 130px;
+          padding: 16px;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: center;
+          border-top: 2px solid #039F9D;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          overflow: hidden;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
@@ -295,7 +300,7 @@ export default function GiveawaysPage() {
                   </div>
                 )}
                 <div className="giveaway-text">
-                  <p style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#fff', lineHeight: 1.45, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+                  <p style={{ margin: 0, fontSize: '19px', fontWeight: 800, color: '#fff', lineHeight: 1.35, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden', letterSpacing: '-0.01em' }}>
                     {g.prize}
                   </p>
                 </div>
