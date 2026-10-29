@@ -137,7 +137,22 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
-      {/* ── Scrollable giveaway bar ── */}
+      {/* ── Auto-scroll giveaway ticker ── */}
+      <style>{`
+        @keyframes giveaway-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .giveaway-track {
+          display: flex;
+          gap: 16px;
+          width: max-content;
+          animation: giveaway-scroll 90s linear infinite;
+        }
+        .giveaway-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
       <div style={{ padding: '0 0 60px' }}>
         <div className="section-inner" style={{ paddingBottom: '16px' }}>
           <h2 className="section-heading" style={{ marginBottom: '6px' }}>EVERY GIVEAWAY IN THE SET</h2>
@@ -145,18 +160,9 @@ export default function GiveawaysPage() {
             Pull the 1/1 Autograph Chrome card for any person below and the prize is yours.
           </p>
         </div>
-        <div style={{
-          overflowX: 'auto',
-          WebkitOverflowScrolling: 'touch',
-          paddingLeft: 'max(24px, calc((100vw - 1200px) / 2))',
-          paddingRight: '24px',
-          paddingTop: '24px',
-          paddingBottom: '24px',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        }}>
-          <div style={{ display: 'flex', gap: '16px', width: 'max-content' }}>
-            {GIVEAWAYS.map((g, i) => (
+        <div style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}>
+          <div className="giveaway-track">
+            {[...GIVEAWAYS, ...GIVEAWAYS].map((g, i) => (
               <div key={i} style={{
                 width: '200px',
                 flexShrink: 0,
