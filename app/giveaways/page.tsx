@@ -140,18 +140,18 @@ export default function GiveawaysPage() {
       <div className="prizeboard-header" style={{ maxWidth: 'none', padding: '80px 6vw 32px' }}>
         <h1 className="prizeboard-h1">$50K IN REAL PRIZES</h1>
         <p className="prizeboard-desc" style={{ maxWidth: '680px' }}>
-          Select one-of-one autograph cards and Golden Tickets come with giveaways attached.<br /><br />
+          Select one-of-one autograph cards and Golden Tickets come with products, gift cards, and experiences attached.<br /><br />
           Keep the card. Claim what comes with it.
         </p>
         <div className="prizeboard-tracker">
           <div className="prizeboard-tracker-labels">
             <span className="prizeboard-tracker-count"><span style={{color:'var(--teal)'}}>{CLAIMED_GIVEAWAYS}</span> <span className="prizeboard-tracker-label">CLAIMED</span></span>
-            <span className="prizeboard-tracker-count"><span style={{color:'var(--white)'}}>{TOTAL_GIVEAWAYS}</span> <span className="prizeboard-tracker-label">TOTAL GIVEAWAYS</span></span>
+            <span className="prizeboard-tracker-count"><span style={{color:'var(--white)'}}>{TOTAL_GIVEAWAYS}</span> <span className="prizeboard-tracker-label">TOTAL</span></span>
           </div>
           <div className="prizeboard-track">
             <div className="prizeboard-fill" style={{width: `${Math.round((CLAIMED_GIVEAWAYS / TOTAL_GIVEAWAYS) * 100)}%`}} />
           </div>
-          <p className="prizeboard-tracker-sub">{TOTAL_GIVEAWAYS - CLAIMED_GIVEAWAYS} giveaways still unclaimed</p>
+          <p className="prizeboard-tracker-sub">{TOTAL_GIVEAWAYS - CLAIMED_GIVEAWAYS} STILL UNCLAIMED</p>
         </div>
       </div>
 
