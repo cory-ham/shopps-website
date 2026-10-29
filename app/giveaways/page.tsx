@@ -76,7 +76,7 @@ const PRIZES: Prize[] = [
     tag: 'THE BIG ONE · STILL OUT THERE',
     title: 'COURTSIDE SEATS',
     subtitle: 'OKC THUNDER',
-    description: "Pull the Rank #1 chase card and take two courtside seats at a marquee game — flights and hotel covered. The single biggest prize in Series One, and it's still in a pack somewhere.",
+    description: "Pull Mike Beckham's one-of-one autograph card and win two courtside seats at a marquee Oklahoma City Thunder game. The single biggest prize and it's still in a pack somewhere.",
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
