@@ -83,24 +83,22 @@ export default function HowItWorksPage() {
       </div>
 
       {/* ── 4-step grid ── */}
-      <div style={{ background: '#13161f' }}>
-      <div className="section-inner">
-        <div className="hiw-steps-grid">
-          {STEPS.map(step => (
-            <div key={step.num} className="howto-step">
-
-              <h3 className="howto-title">{step.title}</h3>
-              {step.lines.map((line, i) => (
-                <p key={i} className="howto-body">
-                  {line.bold ? <strong>{line.el ?? line.text}</strong> : (line.el ?? line.text)}
-                </p>
-              ))}
-            </div>
-          ))}
+      <section style={{ background: '#13161f', padding: '4vw 0' }}>
+        <div className="section-inner">
+          <div className="hiw-steps-grid">
+            {STEPS.map(step => (
+              <div key={step.num} className="howto-step">
+                <h3 className="howto-title">{step.title}</h3>
+                {step.lines.map((line, i) => (
+                  <p key={i} className="howto-body">
+                    {line.bold ? <strong>{line.el ?? line.text}</strong> : (line.el ?? line.text)}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-
-
-      </div>
+      </section>
 
 
 
