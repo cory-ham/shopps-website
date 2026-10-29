@@ -224,7 +224,7 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-text {
-          height: 130px;
+          min-height: 130px;
           padding: 16px;
           display: flex;
           flex-direction: column;
@@ -233,6 +233,15 @@ export default function GiveawaysPage() {
           box-sizing: border-box;
           flex-shrink: 0;
           overflow: hidden;
+          transition: min-height 0.3s ease;
+        }
+        .giveaway-tile:hover .giveaway-text {
+          min-height: 180px;
+          overflow: visible;
+        }
+        .giveaway-tile:hover .prize-text {
+          -webkit-line-clamp: unset !important;
+          display: block !important;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
@@ -300,7 +309,7 @@ export default function GiveawaysPage() {
                   </div>
                 )}
                 <div className="giveaway-text">
-                  <p style={{ margin: 0, fontSize: '19px', fontWeight: 800, color: '#fff', lineHeight: 1.35, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden', letterSpacing: '-0.01em' }}>
+                  <p className="prize-text" style={{ margin: 0, fontSize: '19px', fontWeight: 800, color: '#fff', lineHeight: 1.35, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden', letterSpacing: '-0.01em' }}>
                     {g.prize}
                   </p>
                 </div>
