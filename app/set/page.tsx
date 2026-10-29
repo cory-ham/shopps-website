@@ -142,16 +142,25 @@ function cardSrc(p: number, variant: Variant): string {
 const FILTERS = ['ALL', '1/1 AUTOGRAPH CHROME PARALLELS', '/5 CHROME', '/6 CHROME', '1/1 CHROME', '/10 BLUE', '/5 GOLD'] as const
 
 const VARIANTS_META = [
-  { key: 'base',   label: 'Base Chrome',     color: '#2d7a3a' },
-  { key: 'teal',   label: 'Teal Foil',       color: '#039F9D' },
-  { key: 'gold',   label: 'Gold Auto 1/1',   color: '#c9a227' },
+  { key: 'base-green',  label: 'Base (Green)',       color: '#2d7a3a' },
+  { key: 'base-teal',   label: 'Base (Teal)',         color: '#039F9D' },
+  { key: 'chrome',      label: '1/1 Auto Chrome',     color: '#c9a227' },
+  { key: 'pack5-green', label: '/5 Chrome (Green)',   color: '#2d7a3a' },
+  { key: 'pack5-teal',  label: '/5 Chrome (Teal)',    color: '#039F9D' },
+  { key: 'pack6-green', label: '/6 Chrome (Green)',   color: '#2d7a3a' },
+  { key: 'pack6-teal',  label: '/6 Chrome (Teal)',    color: '#039F9D' },
+  { key: 'pack1',       label: '1/1 Chrome',          color: '#c9a227' },
+  { key: 'blue-green',  label: '/10 Blue (Green)',    color: '#1f3753' },
+  { key: 'blue-teal',   label: '/10 Blue (Teal)',     color: '#3659ab' },
+  { key: 'gold-green',  label: '/5 Gold (Green)',     color: '#2d7a3a' },
+  { key: 'gold-teal',   label: '/5 Gold (Teal)',      color: '#039F9D' },
 ]
 
 const STORAGE_KEY = 'shopps_checklist_v1'
 
 function SetChecklist() {
   const [checked, setChecked] = useState<Record<string, boolean>>({})
-  const [filter, setFilter] = useState<string>('all')
+  const [filter, setFilter] = useState<string>('base')
   const [onlyMissing, setOnlyMissing] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -169,11 +178,10 @@ function SetChecklist() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)) } catch {}
   }
 
-  const total = PEOPLE.length * 3
+  const total = PEOPLE.length * 12
   const owned = Object.keys(checked).length
 
   const CARD_VARIETIES = [
-    { key: 'all',     label: 'ALL' },
     { key: 'base',    label: 'BASE' },
     { key: 'chrome',  label: '1/1 AUTOGRAPH CHROME' },
     { key: 'pack5',   label: '/5 CHROME' },
