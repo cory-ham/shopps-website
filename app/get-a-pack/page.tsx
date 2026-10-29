@@ -60,10 +60,10 @@ export default function GetAPackPage() {
           <p className="section-body" style={{ marginBottom: '0' }}>
             <span style={{color:'var(--olive)'}}>Only 1,000 packs exist.</span><br />From live breaks and player giveaways to surprise drops, every pack is a chance to pull greatness. The chase is on. Don&apos;t miss your shot.
           </p>
-          <PackSignupForm />
         </div>
-        <div className="gap-hero-packs">
+        <div className="gap-hero-packs" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
           <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} />
+          <PackSignupForm />
         </div>
       </div>
 
