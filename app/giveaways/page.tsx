@@ -432,12 +432,11 @@ export default function GiveawaysPage() {
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
-          <h2 className="cta-heading">{PACKS_REMAINING} Packs Left.<br />Zero for Sale.</h2>
+          <h2 className="cta-heading"><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.</h2>
           <p className="cta-body">
-            Every card has a prize attached.{' '}
-            <span style={{ color: 'var(--teal)' }}>51 giveaways</span>. Know where to look.
+            The chase isn&apos;t over. Follow upcoming drops and live card breaks for chances to claim packs and win autograph cards with prizes attached.
           </p>
-          <a href="/how-it-works" className="btn-cta-outline" style={{ display: 'inline-block' }}>HOW TO GET A PACK</a>
+          <a href="/get-a-pack" className="btn-cta-outline" style={{ display: 'inline-block' }}>GET A PACK</a>
         </div>
       </section>
 
