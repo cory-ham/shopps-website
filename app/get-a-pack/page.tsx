@@ -122,7 +122,7 @@ export default function GetAPackPage() {
             {[
               { month: 'OCT', day: '14', title: 'Live Break #7 – Founders Night',       meta: '8:00 PM ET • Streaming IG Live & YouTube • 40 Packs on the table' },
               { month: 'OCT', day: '21', title: 'The Top 100 Show – Ep. 4',            meta: '7:30 PM ET • Guest: A Top 10 Card, revealed live' },
-              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight's stack' },
+              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight&apos;s stack' },
             ].map((event, i, arr) => (
               <div key={i} className={'live-event' + (i < arr.length - 1 ? ' live-event-divider' : '')}>
                 <div className="live-date">
