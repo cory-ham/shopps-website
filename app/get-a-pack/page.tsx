@@ -52,7 +52,6 @@ const CHANNELS = [
   { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
 ]
 
-const BLOCK_COLORS = ['#0d0f13', '#0a1e1e', '#0d0f13', '#0a1e1e']
 
 export default function GetAPackPage() {
   return (
@@ -60,8 +59,8 @@ export default function GetAPackPage() {
       <SiteNav />
 
       {/* ── 1. Hero: YOU CAN'T BUY ONE ── */}
-      <div style={{ background: 'var(--bg)' }}>
-        <div className="gap-hero">
+      <div style={{ background: 'var(--bg)', paddingBottom: 0 }}>
+        <div className="gap-hero" style={{ paddingBottom: 'max(4vw, 48px)' }}>
           <div className="gap-hero-text">
             <p className="section-eyebrow">1,000 PACKS. ZERO FOR SALE.</p>
             <h1 className="gap-h1">
@@ -78,35 +77,19 @@ export default function GetAPackPage() {
         </div>
       </div>
 
-      {/* ── 2. WHERE PACKS DROP — alternating block colors ── */}
-      <section style={{ padding: 'max(5vw, 80px) 0 0' }}>
-        <div className="section-inner" style={{ marginBottom: '2.5vw' }}>
+      {/* ── 2. WHERE PACKS DROP — original grid with alternating card colors ── */}
+      <section className="hiw-where-section" style={{ paddingTop: 'max(4vw, 48px)', paddingBottom: '4vw' }}>
+        <div className="section-inner">
           <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
-          <h2 className="section-heading">WHERE PACKS DROP</h2>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {CHANNELS.map((ch, i) => (
-            <div
-              key={ch.abbr}
-              style={{
-                background: BLOCK_COLORS[i],
-                padding: '3.5vw max(24px, calc((100vw - 1200px) / 2 + 24px))',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '3vw',
-                borderTop: i === 0 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
-              }}
-            >
-              <div style={{ width: '56px', flexShrink: 0, paddingTop: '4px' }}>
-                <span style={{ fontFamily: 'var(--font-antonio)', fontSize: '13px', fontWeight: 700, color: 'var(--teal)', letterSpacing: '0.1em' }}>{ch.abbr}</span>
-              </div>
-              <div style={{ flex: 1 }}>
-                <h4 className="prize-card-title" style={{ marginBottom: '10px' }}>{ch.title}</h4>
+          <h2 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h2>
+          <div className="hiw-channels-grid">
+            {CHANNELS.map((ch, i) => (
+              <div key={ch.abbr} className="prize-card" style={{ background: i % 2 === 0 ? 'var(--surface, #111)' : '#0a1e1e' }}>
+                <h4 className="prize-card-title">{ch.title}</h4>
                 <p className="prize-card-desc">{ch.el ?? ch.body}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
