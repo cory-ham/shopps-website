@@ -227,6 +227,13 @@ export default function GiveawaysPage() {
         .giveaway-face-back {
           transform: rotateY(180deg);
           background: #e8a111;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 16px 14px;
+          text-align: center;
+          box-sizing: border-box;
         }
         .giveaway-back-header {
           display: flex;
@@ -346,26 +353,21 @@ export default function GiveawaysPage() {
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
-                  {/* Back — real card back image with prize overlay */}
+                  {/* Back — CSS card back design, no image overlay */}
                   <div className="giveaway-face giveaway-face-back">
-                    {g.backImg && (
-                      <img src={g.backImg} alt="card back" draggable={false}
-                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                    )}
-                    {/* Prize overlay — sits over the biography box area */}
-                    <div style={{
-                      position: 'absolute', left: '6%', right: '6%', top: '24%', bottom: '20%',
-                      background: '#fff', borderRadius: '10px',
-                      display: 'flex', flexDirection: 'column', alignItems: 'center',
-                      justifyContent: 'center', padding: '16px 14px', gap: '10px', textAlign: 'center'
-                    }}>
-                      <span style={{ background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio, sans-serif)', fontSize: '9px', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 12px', borderRadius: '20px' }}>
-                        GIVEAWAY PRIZE
-                      </span>
-                      <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: '#0d0d0d', lineHeight: 1.4 }}>
-                        {g.prize}
-                      </p>
+                    {/* Name + Company */}
+                    <div className="giveaway-back-header">
+                      <p className="giveaway-back-name">{g.name}</p>
+                      <p className="giveaway-back-company">{g.company}</p>
                     </div>
+                    {/* Prize box */}
+                    <div className="giveaway-back-box">
+                      <span className="giveaway-back-label">GIVEAWAY PRIZE</span>
+                      <p className="giveaway-back-prize">{g.prize}</p>
+                    </div>
+                    {/* SHOPPS logo */}
+                    <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
+                      style={{ height: '24px', width: 'auto', opacity: 0.9 }} />
                   </div>
                 </div>
               </div>
