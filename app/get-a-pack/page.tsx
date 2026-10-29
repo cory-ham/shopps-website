@@ -50,6 +50,7 @@ export default function GetAPackPage() {
     <>
       <SiteNav />
 
+
       {/* ── WHERE PACKS DROP (moved from How It Works) ── */}
       <section className="hiw-where-section" style={{ paddingTop: 'max(5vw, 80px)', paddingBottom: '4vw' }}>
         <div className="section-inner">
