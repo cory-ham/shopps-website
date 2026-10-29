@@ -73,18 +73,26 @@ export default function GetAPackPage() {
         <div className="section-inner">
           <p className="section-eyebrow" style={{ marginBottom: '10px' }}>KNOW WHERE TO LOOK</p>
           <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
-          <div className="hiw-channels-grid">
-            {[
-              { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
-              { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
-              { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
-              { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
-            ].map(ch => (
-              <div key={ch.abbr} className="prize-card">
-                <h4 className="prize-card-title">{ch.title}</h4>
-                <p className="prize-card-desc">{ch.el ?? ch.body}</p>
-              </div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '4vw', alignItems: 'start' }}>
+            {/* Left: channel cards */}
+            <div className="hiw-channels-grid">
+              {[
+                { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
+                { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
+                { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
+                { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
+              ].map(ch => (
+                <div key={ch.abbr} className="prize-card">
+                  <h4 className="prize-card-title">{ch.title}</h4>
+                  <p className="prize-card-desc">{ch.el ?? ch.body}</p>
+                </div>
+              ))}
+            </div>
+            {/* Right: pack image + CTA form */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', paddingTop: '1rem' }}>
+              <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} style={{ width: '100%', maxWidth: '400px' }} />
+              <PackSignupForm />
+            </div>
           </div>
         </div>
       </section>
