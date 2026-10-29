@@ -1,58 +1,41 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 function ShoppsVideo() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+  }, [open])
+
   return (
     <>
-      {/* Video looping in background, overlay on top */}
-      <div
-        style={{
-          position: 'relative', width: '100%', paddingBottom: '56.25%',
-          borderRadius: '14px', overflow: 'hidden',
-        }}
-      >
-        {/* Muted autoplay local background video — no YouTube UI */}
-        <video
-          autoPlay muted loop playsInline
-          style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', objectFit: 'cover', pointerEvents: 'none' }}
-        >
+      <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '14px', overflow: 'hidden' }}>
+        <video autoPlay muted loop playsInline style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', objectFit: 'cover', pointerEvents: 'none' }}>
           <source src="/shopps-intro-bg.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay + clickable content */}
-        <div
-          onClick={() => setOpen(true)}
-          style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', cursor: 'pointer' }}>
-<button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '3px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div onClick={() => setOpen(true)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+          <button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '3px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
             Watch Video
           </button>
         </div>
       </div>
-
-      {/* Fullscreen modal */}
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
-          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, background: 'rgba(0,0,0,0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-        >
-          <button
-            onClick={(e) => { e.stopPropagation(); setOpen(false) }}
-            style={{ position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', color: '#fff', fontSize: '32px', cursor: 'pointer', lineHeight: 1, opacity: 0.7 }}
-          >✕</button>
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{ width: 'min(90vw, 1100px)', aspectRatio: '16/9', borderRadius: '6px', overflow: 'hidden' }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
-              title="SHOPPS"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ width: '100%', height: '100%', border: 'none' }}
-            />
+      {mounted && open && createPortal(
+        <div onClick={() => setOpen(false)} style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 99999, background: 'rgba(0,0,0,0.93)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={(e) => { e.stopPropagation(); setOpen(false) }} style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 100000, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', fontSize: '20px', cursor: 'pointer', width: '40px', height: '40px', borderRadius: '3px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✕</button>
+          <div onClick={(e) => e.stopPropagation()} style={{ width: 'min(90vw, 1100px)', aspectRatio: '16/9', borderRadius: '6px', overflow: 'hidden' }}>
+            <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ width: '100%', height: '100%', border: 'none' }} />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )
