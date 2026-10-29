@@ -434,7 +434,7 @@ export default function Home() {
               <div className="shopps-vid-mobile">
                 <div className="shopps-video-wrap">
                   <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
+                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                 </div>
                 </div>
               </div>
@@ -463,7 +463,7 @@ export default function Home() {
             <div className="shopps-vid-col">
               <div className="shopps-video-wrap">
                 <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden' }}>
-                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?rel=0&modestbranding=1" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
+                  <iframe src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=lKkLmQhiGfs" title="SHOPPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }} />
                 </div>
               </div>
             </div>
