@@ -202,8 +202,7 @@ export default function GiveawaysPage() {
         }
 
         .giveaway-tile {
-          width: 340px;
-          height: 560px;
+          width: 240px;
           flex-shrink: 0;
           background: var(--surface, #111);
           border: 1px solid rgba(255,255,255,0.08);
@@ -224,7 +223,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-card-img {
           width: 100%;
-          height: 450px;
+          aspect-ratio: 864 / 1210;
           overflow: hidden;
           background: #0a0a0a;
           flex-shrink: 0;
@@ -233,16 +232,14 @@ export default function GiveawaysPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: top center;
+          object-position: center center;
           display: block;
         }
         .giveaway-text {
-          padding: 12px 16px;
+          padding: 14px 16px;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          height: 110px;
-          overflow: hidden;
+          justify-content: flex-start;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
