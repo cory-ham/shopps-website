@@ -129,6 +129,17 @@ export default function GetAPackPage() {
       </div>
 
       {/* ── Prize tease CTA ── */}
+<p className="sponsor-label">Special thanks to our sponsors.</p>
+      <div className="ticker-wrap">
+        {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
+          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+            />
+          </div>
+
       <section className="cta-section" style={{ paddingTop: '3vw' }}>
         <div className="cta-glow" />
         <div className="cta-inner">
@@ -145,16 +156,6 @@ export default function GetAPackPage() {
       </section>
 
       {/* ── Sponsor bar ── */}
-      <p className="sponsor-label">Special thanks to our sponsors.</p>
-      <div className="ticker-wrap">
-        {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
-          <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img
-              src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-              alt={label}
-              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
-          </div>
         ))}
       </div>
 
