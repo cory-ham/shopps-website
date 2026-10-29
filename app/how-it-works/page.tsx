@@ -77,9 +77,11 @@ export default function HowItWorksPage() {
             Only 1,000 packs exist. And you can't buy one.<br /><span style={{color:'var(--teal)',fontWeight:700}}>You have to win one.</span><br />From exclusive drops and live breaks to player giveaways, here's how to get in on the action.
           </p>
         </div>
-        <div className="hiw-hero-pack" style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
-          <img src="/shopps-pack-front.png" alt="SHOPPS Pack Front" draggable={false} style={{ width: '45%', height: 'auto', filter: 'drop-shadow(0 16px 40px rgba(0,0,0,0.6))' }} />
-          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false} style={{ width: '55%', height: 'auto' }} />
+        <div className="hiw-hero-pack" style={{ position: 'relative' }}>
+          <img src="/shopps-pack-front.png" alt="SHOPPS Pack Front" draggable={false}
+            style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 24px 56px rgba(0,0,0,0.7))' }} />
+          <img src="/shopps-packs-fan.png" alt="SHOPPS Packs" draggable={false}
+            style={{ position: 'absolute', bottom: '-10%', right: '-20%', width: '55%', height: 'auto', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.6))' }} />
         </div>
       </div>
 
