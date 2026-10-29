@@ -174,17 +174,20 @@ export default function GiveawaysPage() {
           <div className="giveaway-track">
             {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} style={{
-                width: '200px',
+                width: '320px',
                 flexShrink: 0,
                 background: 'var(--surface, #111)',
                 border: '1px solid rgba(255,255,255,0.08)',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
+                alignItems: 'stretch',
+                gap: 0,
               }}>
+                {/* Small card thumbnail */}
                 {g.cardImg && (
-                  <div style={{ width: '100%', aspectRatio: '864/1210', background: '#0a0a0a', overflow: 'hidden' }}>
+                  <div style={{ width: '72px', flexShrink: 0, background: '#0a0a0a', overflow: 'hidden' }}>
                     <img
                       src={g.cardImg}
                       alt={g.name}
@@ -194,14 +197,15 @@ export default function GiveawaysPage() {
                     />
                   </div>
                 )}
-                <div style={{ padding: '14px', flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                {/* Prize text — the focus */}
+                <div style={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', borderLeft: '1px solid rgba(255,255,255,0.06)' }}>
                   <p style={{ margin: 0, fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--teal, #039F9D)', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
                     {g.company}
                   </p>
-                  <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: '#fff', lineHeight: 1.3, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
+                  <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
                     {g.name}
                   </p>
-                  <p style={{ margin: '6px 0 0', fontSize: '11px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
+                  <p style={{ margin: '4px 0 0', fontSize: '13px', fontWeight: 600, color: '#fff', lineHeight: 1.5 }}>
                     {g.prize}
                   </p>
                 </div>
