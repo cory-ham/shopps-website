@@ -139,7 +139,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['ALL', '1/1 AUTOGRAPH CHROME PARALLELS', '/5 CHROME', '/6 CHROME', '1/1 CHROME', '/10 BLUE', '/5 GOLD'] as const
+const FILTERS = ['ALL', 'AUTOGRAPHS · 1/1', 'CHROME · /5', 'CHROME · /6', 'CHROME · 1/1', 'BASE · /10', 'BASE · /5'] as const
 
 const VARIANTS_META = [
   { key: 'base-green',  label: 'Base (Green)',       color: '#2d7a3a' },
@@ -184,11 +184,11 @@ function SetChecklist() {
   const CARD_VARIETIES = [
     { key: 'base',    label: 'BASE' },
     { key: 'chrome',  label: '1/1 AUTOGRAPH CHROME' },
-    { key: 'pack5',   label: '/5 CHROME' },
-    { key: 'pack6',   label: '/6 CHROME' },
-    { key: 'pack1',   label: '1/1 CHROME' },
-    { key: 'blue10',  label: '/10 BLUE' },
-    { key: 'gold5',   label: '/5 GOLD' },
+    { key: 'pack5',   label: 'CHROME · /5' },
+    { key: 'pack6',   label: 'CHROME · /6' },
+    { key: 'pack1',   label: 'CHROME · 1/1' },
+    { key: 'blue10',  label: 'BASE · /10' },
+    { key: 'gold5',   label: 'BASE · /5' },
   ]
   const visible = PEOPLE.filter(p =>
     (!onlyMissing || VARIANTS_META.some(v => !checked[`${p.p}-${v.key}`]))
@@ -330,12 +330,12 @@ export default function SetPage() {
 
   const filtered = useMemo(() => {
     return shuffled.filter(person => {
-      if (activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS') {
+      if (activeFilter === 'AUTOGRAPHS · 1/1') {
         const CHROME_PEOPLE = new Set([0,1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,27,29,48,49,50,51,52,53,54,55,56,58,71,74,75,76,77,79,81,82,88,90,91,92,93,98])
         if (!CHROME_PEOPLE.has(person.p)) return false
       } else if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
-      } else if (activeFilter === '/5 CHROME' || activeFilter === '/6 CHROME' || activeFilter === '1/1 CHROME' || activeFilter === '/10 BLUE' || activeFilter === '/5 GOLD') {
+      } else if (activeFilter === 'CHROME · /5' || activeFilter === 'CHROME · /6' || activeFilter === 'CHROME · 1/1' || activeFilter === 'BASE · /10' || activeFilter === 'BASE · /5') {
         if (person.p > 96) return false
       } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
@@ -352,7 +352,7 @@ export default function SetPage() {
   }, [activeFilter, search])
 
   const displayList = useMemo(() => {
-    if (activeFilter === '/10 BLUE' || activeFilter === '/5 GOLD') {
+    if (activeFilter === 'BASE · /10' || activeFilter === 'BASE · /5') {
       return filtered.map((p, i) => ({ ...p, blueVariant: i % 2 === 0 ? 'green' : 'teal' }))
     }
     return filtered as any[]
@@ -402,13 +402,13 @@ export default function SetPage() {
       <div className="set-grid">
         {displayList.map((person) => {
           const isAutograph = activeFilter === 'AUTOGRAPH'
-          const isChrome = activeFilter === '1/1 AUTOGRAPH CHROME PARALLELS'
-          const isPackGreen = activeFilter === '/5 CHROME'
-          const isPackTeal = activeFilter === '/6 CHROME'
-          const isPackGold = activeFilter === '1/1 CHROME'
+          const isChrome = activeFilter === 'AUTOGRAPHS · 1/1'
+          const isPackGreen = activeFilter === 'CHROME · /5'
+          const isPackTeal = activeFilter === 'CHROME · /6'
+          const isPackGold = activeFilter === 'CHROME · 1/1'
           const isPack = isPackGreen || isPackTeal || isPackGold
-          const isBlue = activeFilter === '/10 BLUE'
-          const isGold = activeFilter === '/5 GOLD'
+          const isBlue = activeFilter === 'BASE · /10'
+          const isGold = activeFilter === 'BASE · /5'
           const v = getVariant(person.p)
           const isFlipped = flipped.has(person.p)
           // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
