@@ -203,7 +203,7 @@ export default function GiveawaysPage() {
 
         .giveaway-tile {
           width: 340px;
-          height: 520px;
+          height: 560px;
           flex-shrink: 0;
           background: var(--surface, #111);
           border: 1px solid rgba(255,255,255,0.08);
@@ -224,7 +224,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-card-img {
           width: 100%;
-          height: 320px;
+          height: 420px;
           overflow: hidden;
           background: #0a0a0a;
           flex-shrink: 0;
@@ -237,11 +237,12 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-text {
-          padding: 18px;
+          padding: 14px 16px;
           display: flex;
           flex-direction: column;
-          gap: 6px;
-          flex: 1;
+          gap: 3px;
+          height: 140px;
+          overflow: hidden;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
