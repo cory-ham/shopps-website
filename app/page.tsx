@@ -5,18 +5,23 @@ function ShoppsVideo() {
   const [open, setOpen] = React.useState(false)
   return (
     <>
-      {/* Thumbnail card — always visible */}
+      {/* Video looping in background, overlay on top */}
       <div
-        onClick={() => setOpen(true)}
         style={{
           position: 'relative', width: '100%', paddingBottom: '56.25%',
-          borderRadius: '14px', overflow: 'hidden', cursor: 'pointer',
-          backgroundImage: 'url(https://img.youtube.com/vi/lKkLmQhiGfs/maxresdefault.jpg)',
-          backgroundSize: 'cover', backgroundPosition: 'center',
+          borderRadius: '14px', overflow: 'hidden',
         }}
       >
-        {/* Dark overlay */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
+        {/* Muted autoplay background video */}
+        <iframe
+          src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&loop=1&playlist=lKkLmQhiGfs&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1"
+          allow="autoplay; encrypted-media"
+          style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', border: 'none', pointerEvents: 'none' }}
+        />
+        {/* Dark overlay + clickable content */}
+        <div
+          onClick={() => setOpen(true)}
+          style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', cursor: 'pointer' }}>
           <p style={{ fontFamily: 'var(--font-antonio)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', color: '#fff', margin: 0, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', padding: '0 20px' }}>
             What Is SHOPPS?
           </p>
