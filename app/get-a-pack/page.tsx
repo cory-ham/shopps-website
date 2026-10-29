@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
 import { useState } from 'react'
