@@ -155,12 +155,54 @@ export default function GiveawaysPage() {
         }
         .giveaway-track {
           display: flex;
-          gap: 16px;
+          gap: 20px;
           width: max-content;
-          animation: giveaway-scroll 90s linear infinite;
+          animation: giveaway-scroll 120s linear infinite;
+          align-items: flex-start;
+          padding: 20px 0;
         }
         .giveaway-track:hover {
           animation-play-state: paused;
+        }
+        .giveaway-tile {
+          width: 240px;
+          flex-shrink: 0;
+          background: var(--surface, #111);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 14px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          cursor: default;
+          transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+          transform-origin: center center;
+          position: relative;
+        }
+        .giveaway-tile:hover {
+          transform: scale(1.18);
+          z-index: 20;
+          border-color: rgba(3, 159, 157, 0.5);
+          box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(3,159,157,0.3);
+        }
+        .giveaway-card-img {
+          width: 100%;
+          height: 180px;
+          overflow: hidden;
+          background: #0a0a0a;
+          flex-shrink: 0;
+        }
+        .giveaway-card-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+        .giveaway-text {
+          padding: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
         }
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
@@ -173,36 +215,22 @@ export default function GiveawaysPage() {
         <div style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}>
           <div className="giveaway-track">
             {[...shuffled, ...shuffled].map((g, i) => (
-              <div key={i} style={{
-                width: '320px',
-                flexShrink: 0,
-                background: 'var(--surface, #111)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'stretch',
-                gap: 0,
-              }}>
-                {/* Small card thumbnail */}
+              <div key={i} className="giveaway-tile">
                 {g.cardImg && (
-                  <div style={{ width: '72px', flexShrink: 0, background: '#0a0a0a', overflow: 'hidden' }}>
+                  <div className="giveaway-card-img">
                     <img
                       src={g.cardImg}
                       alt={g.name}
                       draggable={false}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                     />
                   </div>
                 )}
-                {/* Prize text — the focus */}
-                <div style={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px', borderLeft: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="giveaway-text">
                   <p style={{ margin: 0, fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--teal, #039F9D)', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
                     {g.company}
                   </p>
-                  <p style={{ margin: 0, fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
+                  <p style={{ margin: 0, fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.55)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
                     {g.name}
                   </p>
                   <p style={{ margin: '4px 0 0', fontSize: '13px', fontWeight: 600, color: '#fff', lineHeight: 1.5 }}>
