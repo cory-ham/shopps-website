@@ -1209,12 +1209,12 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 .set-h1 {
   font-family: var(--font-antonio);
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  font-weight: 400;
   color: var(--white);
   letter-spacing: 0.01em;
-  line-height: 1;
-  margin: 0 0 1rem;
+  line-height: 0.92;
+  margin: 8px 0 22px;
   text-transform: uppercase;
 }
 
