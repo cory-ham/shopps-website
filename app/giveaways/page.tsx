@@ -11,61 +11,61 @@ interface Prize {
 }
 
 interface Giveaway {
-  name: string; company: string; prize: string; cardImg?: string
+  name: string; company: string; prize: string; cardImg?: string; backImg?: string
 }
 
 const GIVEAWAYS: Giveaway[] = [
-  { name: 'Bart Szaniewski',       company: 'Dad Gang Co.',          prize: 'A one-hour brand-growth consultation',                                          cardImg: '/cards/foil-sig-chrome-001.jpg' },
-  { name: 'Bear Handlon',          company: 'Born Primitive',        prize: 'A $1,000 Born Primitive gift card and a 30-minute Zoom call',                   cardImg: '/cards/foil-sig-chrome-002.jpg' },
-  { name: 'Ben Cogan',             company: 'Beanstalk',             prize: 'A ticket to Beanstalk',                                                         cardImg: '/cards/foil-sig-chrome-003.jpg' },
-  { name: 'Sean Frank',            company: 'Ridge',                 prize: 'A $1,000 Ridge gift card',                                                      cardImg: '/cards/foil-sig-chrome-005.jpg' },
-  { name: 'Chad Janis',            company: 'Grüns',                 prize: 'Dinner at any Austin restaurant, or a two-hour roundtable for up to 8',         cardImg: '/cards/foil-sig-chrome-006.jpg' },
-  { name: 'Matthew Bertulli',      company: 'Pela',                  prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-007.jpg' },
-  { name: 'Chris Hall',            company: 'Ecomm Cowboy',          prize: 'Consulting call + show appearance + $1,500 matched ad credits + partner perks', cardImg: '/cards/foil-sig-chrome-008.jpg' },
-  { name: 'Mike Beckham',          company: 'Simple Modern',         prize: 'Courtside OKC Thunder ticket + $200 drinkware + a year of Trevi',               cardImg: '/cards/foil-sig-chrome-009.jpg' },
-  { name: 'Nick Shackelford',      company: 'Brez',                  prize: 'A 30-min consultation + 3 cases Cadence + 12 cases Drink Magna',                cardImg: '/cards/foil-sig-chrome-010.jpg' },
-  { name: 'Ezra Firestone',        company: 'BOOM! Beauty',          prize: '30-min call + Navage Bundle + $1,000 in gift cards + Zipify AOV session',       cardImg: '/cards/foil-sig-chrome-011.jpg' },
-  { name: 'John Roman',            company: 'BattlBox',              prize: 'Two one-hour consulting calls',                                                  cardImg: '/cards/foil-sig-chrome-012.jpg' },
-  { name: 'Jimmy Kim',             company: 'Commerce Roundtable',   prize: 'Two tickets to Commerce Roundtable',                                            cardImg: '/cards/foil-sig-chrome-013.jpg' },
-  { name: 'Zach Stuck',            company: 'Mars Men',              prize: 'A year of Mars Men + a 30-minute consultation',                                  cardImg: '/cards/foil-sig-chrome-014.jpg' },
-  { name: 'Andrew Youderian',      company: 'eComFuel',              prize: 'One-year eComFuel membership (or $2,500 ECF Live ticket)',                       cardImg: '/cards/foil-sig-chrome-015.jpg' },
-  { name: 'Ronak Shah',            company: 'Obvi',                  prize: 'Three 30-min calls + a year of Obvi + $100 to your chosen charity',              cardImg: '/cards/foil-sig-chrome-016.jpg' },
-  { name: 'Josh Haskins',          company: 'Hollow Socks',          prize: 'A year of Hollow Socks + a 30-minute consultation',                              cardImg: '/cards/foil-sig-chrome-017.jpg' },
-  { name: 'Isaac Medeiros',        company: 'Content Forge',         prize: 'Three Mini Katana-style videos',                                                 cardImg: '/cards/foil-sig-chrome-018.jpg' },
-  { name: 'Michael McVerry',       company: 'Urban Armor Gear',      prize: '$250 in UAG/NomadGoods products + a 30-min ecommerce consultation',              cardImg: '/cards/foil-sig-chrome-019.jpg' },
-  { name: 'Paul Jauregui',         company: 'BK Beauty',             prize: 'A $500 BK Beauty gift card',                                                    cardImg: '/cards/foil-sig-chrome-020.jpg' },
-  { name: 'Robert Felder',         company: 'Bearbottom Clothing',   prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-021.jpg' },
-  { name: 'Jessica Berman',        company: 'BodyBio',               prize: 'A year of BodyBio Cell Essentials + 30-min call + personalized supplement protocol', cardImg: '/cards/foil-sig-chrome-022.jpg' },
-  { name: 'Jason Panzer',          company: 'HexClad',               prize: 'A 12-piece HexClad pots and pans set',                                          cardImg: '/cards/foil-sig-chrome-023.jpg' },
-  { name: 'Brad Blankinship',      company: 'Sun Day Red',           prize: 'A Sun Day Red care package — polo, hat, and shoes',                              cardImg: '/cards/foil-sig-chrome-024.jpg' },
-  { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg' },
-  { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg' },
-  { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg' },
+  { name: 'Bart Szaniewski',       company: 'Dad Gang Co.',          prize: 'A one-hour brand-growth consultation',                                          cardImg: '/cards/foil-sig-chrome-001.jpg', backImg: '/cards/card-008.jpg' },
+  { name: 'Bear Handlon',          company: 'Born Primitive',        prize: 'A $1,000 Born Primitive gift card and a 30-minute Zoom call',                   cardImg: '/cards/foil-sig-chrome-002.jpg', backImg: '/cards/card-016.jpg' },
+  { name: 'Ben Cogan',             company: 'Beanstalk',             prize: 'A ticket to Beanstalk',                                                         cardImg: '/cards/foil-sig-chrome-003.jpg', backImg: '/cards/card-024.jpg' },
+  { name: 'Sean Frank',            company: 'Ridge',                 prize: 'A $1,000 Ridge gift card',                                                      cardImg: '/cards/foil-sig-chrome-005.jpg', backImg: '/cards/card-040.jpg' },
+  { name: 'Chad Janis',            company: 'Grüns',                 prize: 'Dinner at any Austin restaurant, or a two-hour roundtable for up to 8',         cardImg: '/cards/foil-sig-chrome-006.jpg', backImg: '/cards/card-048.jpg' },
+  { name: 'Matthew Bertulli',      company: 'Pela',                  prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-007.jpg', backImg: '/cards/card-056.jpg' },
+  { name: 'Chris Hall',            company: 'Ecomm Cowboy',          prize: 'Consulting call + show appearance + $1,500 matched ad credits + partner perks', cardImg: '/cards/foil-sig-chrome-008.jpg', backImg: '/cards/card-064.jpg' },
+  { name: 'Mike Beckham',          company: 'Simple Modern',         prize: 'Courtside OKC Thunder ticket + $200 drinkware + a year of Trevi',               cardImg: '/cards/foil-sig-chrome-009.jpg', backImg: '/cards/card-072.jpg' },
+  { name: 'Nick Shackelford',      company: 'Brez',                  prize: 'A 30-min consultation + 3 cases Cadence + 12 cases Drink Magna',                cardImg: '/cards/foil-sig-chrome-010.jpg', backImg: '/cards/card-080.jpg' },
+  { name: 'Ezra Firestone',        company: 'BOOM! Beauty',          prize: '30-min call + Navage Bundle + $1,000 in gift cards + Zipify AOV session',       cardImg: '/cards/foil-sig-chrome-011.jpg', backImg: '/cards/card-088.jpg' },
+  { name: 'John Roman',            company: 'BattlBox',              prize: 'Two one-hour consulting calls',                                                  cardImg: '/cards/foil-sig-chrome-012.jpg', backImg: '/cards/card-096.jpg' },
+  { name: 'Jimmy Kim',             company: 'Commerce Roundtable',   prize: 'Two tickets to Commerce Roundtable',                                            cardImg: '/cards/foil-sig-chrome-013.jpg', backImg: '/cards/card-104.jpg' },
+  { name: 'Zach Stuck',            company: 'Mars Men',              prize: 'A year of Mars Men + a 30-minute consultation',                                  cardImg: '/cards/foil-sig-chrome-014.jpg', backImg: '/cards/card-112.jpg' },
+  { name: 'Andrew Youderian',      company: 'eComFuel',              prize: 'One-year eComFuel membership (or $2,500 ECF Live ticket)',                       cardImg: '/cards/foil-sig-chrome-015.jpg', backImg: '/cards/card-120.jpg' },
+  { name: 'Ronak Shah',            company: 'Obvi',                  prize: 'Three 30-min calls + a year of Obvi + $100 to your chosen charity',              cardImg: '/cards/foil-sig-chrome-016.jpg', backImg: '/cards/card-128.jpg' },
+  { name: 'Josh Haskins',          company: 'Hollow Socks',          prize: 'A year of Hollow Socks + a 30-minute consultation',                              cardImg: '/cards/foil-sig-chrome-017.jpg', backImg: '/cards/card-136.jpg' },
+  { name: 'Isaac Medeiros',        company: 'Content Forge',         prize: 'Three Mini Katana-style videos',                                                 cardImg: '/cards/foil-sig-chrome-018.jpg', backImg: '/cards/card-144.jpg' },
+  { name: 'Michael McVerry',       company: 'Urban Armor Gear',      prize: '$250 in UAG/NomadGoods products + a 30-min ecommerce consultation',              cardImg: '/cards/foil-sig-chrome-019.jpg', backImg: '/cards/card-152.jpg' },
+  { name: 'Paul Jauregui',         company: 'BK Beauty',             prize: 'A $500 BK Beauty gift card',                                                    cardImg: '/cards/foil-sig-chrome-020.jpg', backImg: '/cards/card-160.jpg' },
+  { name: 'Robert Felder',         company: 'Bearbottom Clothing',   prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-021.jpg', backImg: '/cards/card-168.jpg' },
+  { name: 'Jessica Berman',        company: 'BodyBio',               prize: 'A year of BodyBio Cell Essentials + 30-min call + personalized supplement protocol', cardImg: '/cards/foil-sig-chrome-022.jpg', backImg: '/cards/card-176.jpg' },
+  { name: 'Jason Panzer',          company: 'HexClad',               prize: 'A 12-piece HexClad pots and pans set',                                          cardImg: '/cards/foil-sig-chrome-023.jpg', backImg: '/cards/card-184.jpg' },
+  { name: 'Brad Blankinship',      company: 'Sun Day Red',           prize: 'A Sun Day Red care package — polo, hat, and shoes',                              cardImg: '/cards/foil-sig-chrome-024.jpg', backImg: '/cards/card-192.jpg' },
+  { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/cards/card-200.jpg' },
+  { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg', backImg: '/cards/card-224.jpg' },
+  { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg', backImg: '/cards/card-240.jpg' },
   { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg' },
-  { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg' },
-  { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg' },
-  { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg' },
-  { name: 'Cody Plofker',          company: 'Winks',                 prize: 'A 12-week supply of Winks + a 30-minute call',                                   cardImg: '/cards/foil-sig-chrome-052.jpg' },
-  { name: 'Steven Borrelli',       company: 'CUTS',                  prize: 'A $1,000 CUTS gift card + signed bat + one-hour Zoom call',                     cardImg: '/cards/foil-sig-chrome-053.jpg' },
-  { name: "Kayti O'Connell Carr",  company: 'MATE the Label',        prize: 'A $500 MATE the Label gift card',                                                cardImg: '/cards/foil-sig-chrome-054.jpg' },
-  { name: 'Chris Lang',            company: 'Fresh Chile',           prize: 'A year of Fresh Chile products + a 30-min ecommerce strategy call',              cardImg: '/cards/foil-sig-chrome-055.jpg' },
-  { name: "Bill D'Alessandro",     company: 'Elements Brands',       prize: 'A limited-edition Natural Dog Company tumbler + a 30-min consultation',          cardImg: '/cards/foil-sig-chrome-056.jpg' },
-  { name: 'Brian Waddick',         company: "SMACKIN'",              prize: "A year of SMACKIN' + a 30-minute consultation",                                  cardImg: '/cards/foil-sig-chrome-057.jpg' },
-  { name: 'Alejandro Chahin',      company: 'Mott & Bow',            prize: 'A $1,000 Mott & Bow gift card + a one-hour consultation',                       cardImg: '/cards/foil-sig-chrome-059.jpg' },
-  { name: 'Camron Collard',        company: 'MicroPerfumes',         prize: 'A $250 MicroPerfumes gift card + a hosted round of golf',                        cardImg: '/cards/foil-sig-chrome-072.jpg' },
-  { name: 'Cherene Aubert',        company: 'Growth Capital',        prize: 'Two months of Oasis free + a 30-minute growth session',                          cardImg: '/cards/foil-sig-chrome-075.jpg' },
-  { name: 'Mark Mastrandrea',      company: 'IKONICK',               prize: 'Two pieces of art from IKONICK',                                                 cardImg: '/cards/foil-sig-chrome-076.jpg' },
-  { name: 'Edward Wimmer IV',      company: 'ROAD iD',               prize: '$200 gift card each for ROAD iD, DOG iD, and Rack Rabbit + 30-min consult',     cardImg: '/cards/foil-sig-chrome-077.jpg' },
-  { name: 'Ryan Babenzien',        company: 'Jolie',                 prize: 'A Jolie showerhead + a year of filters + three 60-min consultation calls',       cardImg: '/cards/foil-sig-chrome-078.jpg' },
-  { name: 'Brian Garofalow',       company: 'Skullcandy',            prize: 'Tony Hawk-signed skateboard deck + Skullcandy package + 30-min consult',         cardImg: '/cards/foil-sig-chrome-080.jpg' },
-  { name: 'Dean Brennan',          company: 'Heart & Soil',          prize: 'Flights to Heart & Soil HQ + steak + one-year subscription (US only)',           cardImg: '/cards/foil-sig-chrome-082.jpg' },
-  { name: 'Tyler McCann',          company: 'Taste Salud',           prize: 'A year of Taste Salud products + a 30-minute consultation',                      cardImg: '/cards/foil-sig-chrome-083.jpg' },
-  { name: 'Jordan Palmer',         company: 'Thread Performance',    prize: 'A 30-minute leadership consultation',                                            cardImg: '/cards/foil-sig-chrome-089.jpg' },
-  { name: 'Kevin Lavelle',         company: 'Mizzen+Main',           prize: 'A $750 Mizzen+Main gift card',                                                   cardImg: '/cards/foil-sig-chrome-092.jpg' },
-  { name: 'Imagined by X',         company: 'Absolutely Ridiculous', prize: 'A one-of-one custom full-grain cowhide glove + 30-min phone consultation',       cardImg: '/cards/foil-sig-chrome-099.jpg' },
-  { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg' },
-  { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg' },
-  { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg' },
+  { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg', backImg: '/cards/card-392.jpg' },
+  { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg', backImg: '/cards/card-400.jpg' },
+  { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg', backImg: '/cards/card-408.jpg' },
+  { name: 'Cody Plofker',          company: 'Winks',                 prize: 'A 12-week supply of Winks + a 30-minute call',                                   cardImg: '/cards/foil-sig-chrome-052.jpg', backImg: '/cards/card-416.jpg' },
+  { name: 'Steven Borrelli',       company: 'CUTS',                  prize: 'A $1,000 CUTS gift card + signed bat + one-hour Zoom call',                     cardImg: '/cards/foil-sig-chrome-053.jpg', backImg: '/cards/card-424.jpg' },
+  { name: "Kayti O'Connell Carr",  company: 'MATE the Label',        prize: 'A $500 MATE the Label gift card',                                                cardImg: '/cards/foil-sig-chrome-054.jpg', backImg: '/cards/card-432.jpg' },
+  { name: 'Chris Lang',            company: 'Fresh Chile',           prize: 'A year of Fresh Chile products + a 30-min ecommerce strategy call',              cardImg: '/cards/foil-sig-chrome-055.jpg', backImg: '/cards/card-440.jpg' },
+  { name: "Bill D'Alessandro",     company: 'Elements Brands',       prize: 'A limited-edition Natural Dog Company tumbler + a 30-min consultation',          cardImg: '/cards/foil-sig-chrome-056.jpg', backImg: '/cards/card-448.jpg' },
+  { name: 'Brian Waddick',         company: "SMACKIN'",              prize: "A year of SMACKIN' + a 30-minute consultation",                                  cardImg: '/cards/foil-sig-chrome-057.jpg', backImg: '/cards/card-456.jpg' },
+  { name: 'Alejandro Chahin',      company: 'Mott & Bow',            prize: 'A $1,000 Mott & Bow gift card + a one-hour consultation',                       cardImg: '/cards/foil-sig-chrome-059.jpg', backImg: '/cards/card-472.jpg' },
+  { name: 'Camron Collard',        company: 'MicroPerfumes',         prize: 'A $250 MicroPerfumes gift card + a hosted round of golf',                        cardImg: '/cards/foil-sig-chrome-072.jpg', backImg: '/cards/card-576.jpg' },
+  { name: 'Cherene Aubert',        company: 'Growth Capital',        prize: 'Two months of Oasis free + a 30-minute growth session',                          cardImg: '/cards/foil-sig-chrome-075.jpg', backImg: '/cards/card-600.jpg' },
+  { name: 'Mark Mastrandrea',      company: 'IKONICK',               prize: 'Two pieces of art from IKONICK',                                                 cardImg: '/cards/foil-sig-chrome-076.jpg', backImg: '/cards/card-608.jpg' },
+  { name: 'Edward Wimmer IV',      company: 'ROAD iD',               prize: '$200 gift card each for ROAD iD, DOG iD, and Rack Rabbit + 30-min consult',     cardImg: '/cards/foil-sig-chrome-077.jpg', backImg: '/cards/card-616.jpg' },
+  { name: 'Ryan Babenzien',        company: 'Jolie',                 prize: 'A Jolie showerhead + a year of filters + three 60-min consultation calls',       cardImg: '/cards/foil-sig-chrome-078.jpg', backImg: '/cards/card-624.jpg' },
+  { name: 'Brian Garofalow',       company: 'Skullcandy',            prize: 'Tony Hawk-signed skateboard deck + Skullcandy package + 30-min consult',         cardImg: '/cards/foil-sig-chrome-080.jpg', backImg: '/cards/card-640.jpg' },
+  { name: 'Dean Brennan',          company: 'Heart & Soil',          prize: 'Flights to Heart & Soil HQ + steak + one-year subscription (US only)',           cardImg: '/cards/foil-sig-chrome-082.jpg', backImg: '/cards/card-656.jpg' },
+  { name: 'Tyler McCann',          company: 'Taste Salud',           prize: 'A year of Taste Salud products + a 30-minute consultation',                      cardImg: '/cards/foil-sig-chrome-083.jpg', backImg: '/cards/card-664.jpg' },
+  { name: 'Jordan Palmer',         company: 'Thread Performance',    prize: 'A 30-minute leadership consultation',                                            cardImg: '/cards/foil-sig-chrome-089.jpg', backImg: '/cards/card-712.jpg' },
+  { name: 'Kevin Lavelle',         company: 'Mizzen+Main',           prize: 'A $750 Mizzen+Main gift card',                                                   cardImg: '/cards/foil-sig-chrome-092.jpg', backImg: '/cards/card-736.jpg' },
+  { name: 'Imagined by X',         company: 'Absolutely Ridiculous', prize: 'A one-of-one custom full-grain cowhide glove + 30-min phone consultation',       cardImg: '/cards/foil-sig-chrome-099.jpg', backImg: '/cards/card-792.jpg' },
+  { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg', backImg: '/cards/card-728.jpg' },
+  { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg', backImg: '/cards/card-744.jpg' },
+  { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg', backImg: '/cards/card-752.jpg' },
   { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg' },
 ]
 
@@ -226,14 +226,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-face-back {
           transform: rotateY(180deg);
-          background: #e8a111;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-          padding: 20px 16px 16px;
-          text-align: center;
-          box-sizing: border-box;
+          position: relative;
         }
         .giveaway-back-header {
           display: flex;
@@ -353,18 +346,26 @@ export default function GiveawaysPage() {
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
-                  {/* Back — matches card back design */}
+                  {/* Back — real card back image with prize overlay */}
                   <div className="giveaway-face giveaway-face-back">
-                    <div className="giveaway-back-header">
-                      <p className="giveaway-back-name">{g.name}</p>
-                      <p className="giveaway-back-company">{g.company}</p>
+                    {g.backImg && (
+                      <img src={g.backImg} alt="card back" draggable={false}
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                    {/* Prize overlay — sits over the biography box area */}
+                    <div style={{
+                      position: 'absolute', left: '8%', right: '8%', top: '35%', bottom: '18%',
+                      background: 'rgba(255,255,255,0.97)', borderRadius: '10px',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center',
+                      justifyContent: 'center', padding: '10px 12px', gap: '8px', textAlign: 'center'
+                    }}>
+                      <span style={{ background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio, sans-serif)', fontSize: '9px', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 12px', borderRadius: '20px' }}>
+                        GIVEAWAY PRIZE
+                      </span>
+                      <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: '#0d0d0d', lineHeight: 1.4 }}>
+                        {g.prize}
+                      </p>
                     </div>
-                    <div className="giveaway-back-box">
-                      <span className="giveaway-back-label">GIVEAWAY PRIZE</span>
-                      <p className="giveaway-back-prize">{g.prize}</p>
-                    </div>
-                    <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
-                      style={{ height: '28px', width: 'auto', opacity: 0.85 }} />
                   </div>
                 </div>
               </div>
