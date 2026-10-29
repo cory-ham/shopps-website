@@ -1902,9 +1902,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── How It Works Page ──────────────────────────────────────────────── */
 .hiw-hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 100px 6vw 4vw; /* 100px matches prizeboard + set pages; 60px nav + 40px breathing room */
+  padding: 100px 4vw 4vw;
   display: flex;
   align-items: center;
   gap: clamp(32px, 5vw, 80px);
