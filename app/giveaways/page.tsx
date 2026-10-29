@@ -292,9 +292,9 @@ export default function GiveawaysPage() {
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
         <div className="section-inner" style={{ paddingBottom: '16px' }}>
-          <h2 className="section-heading" style={{ marginBottom: '6px' }}>EVERY GIVEAWAY IN THE SET</h2>
+          <h2 className="section-heading" style={{ marginBottom: '6px' }}>EVERY PRIZE IN THE SET</h2>
           <p className="prizeboard-desc" style={{ marginBottom: 0 }}>
-            Pull the 1/1 Autograph Chrome card for any person below and the prize is yours.
+            Win a 1/1 autograph card from the lineup below and claim what&apos;s attached.
           </p>
         </div>
         <div
