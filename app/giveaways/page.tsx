@@ -205,6 +205,7 @@ export default function GiveawaysPage() {
           position: relative;
           transform-style: preserve-3d;
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+          border-radius: 14px;
         }
         .giveaway-tile:hover .giveaway-flipper {
           transform: rotateY(180deg);
@@ -214,7 +215,6 @@ export default function GiveawaysPage() {
           position: absolute;
           inset: 0;
           border-radius: 14px;
-          overflow: hidden;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
         }
