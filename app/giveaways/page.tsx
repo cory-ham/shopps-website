@@ -224,7 +224,7 @@ export default function GiveawaysPage() {
         }
         .giveaway-card-img {
           width: 100%;
-          height: 420px;
+          height: 450px;
           overflow: hidden;
           background: #0a0a0a;
           flex-shrink: 0;
@@ -237,11 +237,11 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-text {
-          padding: 14px 16px;
+          padding: 12px 16px;
           display: flex;
           flex-direction: column;
-          gap: 3px;
-          height: 140px;
+          justify-content: center;
+          height: 110px;
           overflow: hidden;
         }
       `}</style>
@@ -272,13 +272,7 @@ export default function GiveawaysPage() {
                   </div>
                 )}
                 <div className="giveaway-text">
-                  <p style={{ margin: 0, fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', color: 'var(--teal, #039F9D)', textTransform: 'uppercase', fontFamily: 'var(--font-antonio, sans-serif)' }}>
-                    {g.company}
-                  </p>
-                  <p style={{ margin: 0, fontSize: '15px', fontWeight: 700, color: 'rgba(255,255,255,0.55)', lineHeight: 1.2, fontFamily: 'var(--font-antonio, sans-serif)', textTransform: 'uppercase' }}>
-                    {g.name}
-                  </p>
-                  <p style={{ margin: '6px 0 0', fontSize: '17px', fontWeight: 600, color: '#fff', lineHeight: 1.5, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+                  <p style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#fff', lineHeight: 1.45, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
                     {g.prize}
                   </p>
                 </div>
