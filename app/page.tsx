@@ -12,12 +12,13 @@ function ShoppsVideo() {
           borderRadius: '14px', overflow: 'hidden',
         }}
       >
-        {/* Muted autoplay background video */}
-        <iframe
-          src="https://www.youtube.com/embed/lKkLmQhiGfs?autoplay=1&mute=1&controls=0&loop=1&playlist=lKkLmQhiGfs&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1"
-          allow="autoplay; encrypted-media"
-          style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', border: 'none', pointerEvents: 'none' }}
-        />
+        {/* Muted autoplay local background video — no YouTube UI */}
+        <video
+          autoPlay muted loop playsInline
+          style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', objectFit: 'cover', pointerEvents: 'none' }}
+        >
+          <source src="/shopps-intro-bg.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay + clickable content */}
         <div
           onClick={() => setOpen(true)}
