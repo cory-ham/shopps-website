@@ -128,7 +128,7 @@ export default function HowItWorksPage() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">
-            {PACKS_REMAINING} Packs Left.<br />Zero for Sale.
+            <span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.
           </h2>
           <p className="cta-body">
             <strong><em>The chase isn&apos;t over.</em></strong> <em>Rare cards. Exclusive prizes. 1-of-1 pulls.</em><br />

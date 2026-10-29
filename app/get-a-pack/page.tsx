@@ -148,7 +148,7 @@ export default function GetAPackPage() {
         <div className="cta-glow" />
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
-          <h2 className="cta-heading">{PACKS_REMAINING} Packs Left.<br />Zero for Sale.</h2>
+          <h2 className="cta-heading"><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.</h2>
           <p className="cta-body">
             Six chase cards are still out there &mdash;{' '}
             <span style={{ color: 'var(--teal)' }}>courtside seats</span>.
