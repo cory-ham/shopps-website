@@ -23,10 +23,7 @@ function ShoppsVideo() {
         <div
           onClick={() => setOpen(true)}
           style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', cursor: 'pointer' }}>
-          <p style={{ fontFamily: 'var(--font-antonio)', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', color: '#fff', margin: 0, textTransform: 'uppercase', letterSpacing: '0.02em', textAlign: 'center', padding: '0 20px' }}>
-            What Is SHOPPS?
-          </p>
-          <button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '3px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
+<button style={{ background: '#039F9D', color: '#fff', border: 'none', borderRadius: '3px', padding: '14px 32px', fontFamily: 'var(--font-antonio)', fontSize: '15px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
             Watch Video
           </button>
