@@ -1670,9 +1670,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── Prize Board / Giveaways ─────────────────────────────────────────────── */
 .prizeboard-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 6vw 0;
+  padding: 80px 4vw 0;
 }
 .prizeboard-h1 {
   font-family: var(--font-antonio);
