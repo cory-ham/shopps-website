@@ -108,38 +108,31 @@ export default function GiveawaysPage() {
   }, [])
 
 
-  // Native scroll container — browser handles wheel/trackpad/touch naturally
   const containerRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | undefined>(undefined)
   const isHovering = useRef(false)
+  const [showArrows, setShowArrows] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
-
     const tick = () => {
       if (!isHovering.current) {
         el.scrollLeft += 0.8
-        // Seamless loop: content is doubled, reset halfway through
-        if (el.scrollLeft >= el.scrollWidth / 2) {
-          el.scrollLeft = 0
-        }
+        if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0
       }
       rafRef.current = requestAnimationFrame(tick)
     }
     rafRef.current = requestAnimationFrame(tick)
-
-    const onEnter = () => { isHovering.current = true }
-    const onLeave = () => { isHovering.current = false }
-    el.addEventListener('mouseenter', onEnter)
-    el.addEventListener('mouseleave', onLeave)
-
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      el.removeEventListener('mouseenter', onEnter)
-      el.removeEventListener('mouseleave', onLeave)
-    }
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [shuffled])
+
+  const onSectionEnter = () => { isHovering.current = true; setShowArrows(true) }
+  const onSectionLeave = () => { isHovering.current = false; setShowArrows(false) }
+
+  const scrollBy = (dir: number) => {
+    containerRef.current?.scrollBy({ left: dir * 780, behavior: 'smooth' })
+  }
 
   return (
     <>
@@ -245,15 +238,49 @@ export default function GiveawaysPage() {
           </p>
         </div>
         <div
-          ref={containerRef}
-          style={{
-            overflowX: 'scroll',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            width: '100%',
-            cursor: 'grab',
-          }}
+          style={{ position: 'relative' }}
+          onMouseEnter={onSectionEnter}
+          onMouseLeave={onSectionLeave}
         >
+          {/* Left arrow */}
+          <button
+            onClick={() => scrollBy(-1)}
+            style={{
+              position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)',
+              zIndex: 30, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(255,255,255,0.15)',
+              color: '#fff', borderRadius: '50%', width: '44px', height: '44px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', fontSize: '20px', lineHeight: 1,
+              opacity: showArrows ? 1 : 0, transition: 'opacity 0.2s ease',
+              backdropFilter: 'blur(8px)',
+            }}
+            aria-label="Scroll left"
+          >‹</button>
+
+          {/* Right arrow */}
+          <button
+            onClick={() => scrollBy(1)}
+            style={{
+              position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)',
+              zIndex: 30, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(255,255,255,0.15)',
+              color: '#fff', borderRadius: '50%', width: '44px', height: '44px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', fontSize: '20px', lineHeight: 1,
+              opacity: showArrows ? 1 : 0, transition: 'opacity 0.2s ease',
+              backdropFilter: 'blur(8px)',
+            }}
+            aria-label="Scroll right"
+          >›</button>
+
+          <div
+            ref={containerRef}
+            style={{
+              overflowX: 'scroll',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              width: '100%',
+            }}
+          >
           <div className="giveaway-track">
             {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} className="giveaway-tile">
@@ -274,6 +301,7 @@ export default function GiveawaysPage() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>
