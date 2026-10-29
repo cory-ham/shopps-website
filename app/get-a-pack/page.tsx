@@ -75,7 +75,7 @@ export default function GetAPackPage() {
           <h1 className="section-heading" style={{ marginBottom: '2.5vw' }}>WHERE PACKS DROP</h1>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '4vw', alignItems: 'start' }}>
             {/* Left: channel cards */}
-            <div className="hiw-channels-grid">
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
                 { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
                 { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
