@@ -30,7 +30,7 @@ function ShoppsVideo() {
   return (
     <>
       <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '14px', overflow: 'hidden' }}>
-        <video autoPlay muted loop playsInline style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', objectFit: 'cover', pointerEvents: 'none' }}>
+        <video autoPlay muted loop playsInline preload="none" style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', transform: 'translate(-50%,-50%)', objectFit: 'cover', pointerEvents: 'none' }}>
           <source src="/shopps-intro-bg.mp4" type="video/mp4" />
         </video>
         <div onClick={() => setOpen(true)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>

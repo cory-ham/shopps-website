@@ -114,15 +114,18 @@ export default function GiveawaysPage() {
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
+    let visible = false
+    const observer = new IntersectionObserver(([e]) => { visible = e.isIntersecting }, { threshold: 0 })
+    observer.observe(el)
     const tick = () => {
-      if (!isHovering.current) {
+      if (!isHovering.current && visible) {
         el.scrollLeft += 0.8
         if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0
       }
       rafRef.current = requestAnimationFrame(tick)
     }
     rafRef.current = requestAnimationFrame(tick)
-    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); observer.disconnect() }
   }, [shuffled])
 
   const onSectionEnter = () => { isHovering.current = true; setShowArrows(true) }
