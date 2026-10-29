@@ -294,7 +294,7 @@ export default function GiveawaysPage() {
         <div className="section-inner" style={{ paddingBottom: '16px' }}>
           <h2 className="section-heading" style={{ marginBottom: '6px' }}>EVERY PRIZE IN THE SET</h2>
           <p className="prizeboard-desc" style={{ marginBottom: 0 }}>
-            Win a 1/1 autograph card from the lineup below and claim what&apos;s attached.
+            Here&apos;s what the leaders behind SHOPPS are sharing with the community.
           </p>
         </div>
         <div
