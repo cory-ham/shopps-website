@@ -1,4 +1,5 @@
 'use client'
+import { useMemo } from 'react'
 import SiteNav from '../components/SiteNav'
 
 type PrizeStatus = 'available' | 'claimed'
@@ -96,6 +97,15 @@ const STEPS = [
 const featured = PRIZES[0]
 
 export default function GiveawaysPage() {
+  const shuffled = useMemo(() => {
+    const arr = [...GIVEAWAYS]
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    return arr
+  }, [])
+
   return (
     <>
       <SiteNav />
@@ -162,7 +172,7 @@ export default function GiveawaysPage() {
         </div>
         <div style={{ overflow: 'hidden', width: '100%', paddingTop: '24px', paddingBottom: '24px' }}>
           <div className="giveaway-track">
-            {[...GIVEAWAYS, ...GIVEAWAYS].map((g, i) => (
+            {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} style={{
                 width: '200px',
                 flexShrink: 0,
