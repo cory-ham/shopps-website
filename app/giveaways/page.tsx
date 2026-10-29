@@ -115,7 +115,7 @@ export default function GiveawaysPage() {
   const scrollSpeedRef = useRef(-0.6) // default auto-scroll
 
   useEffect(() => {
-    const ITEM_WIDTH = 340 + 20
+    const ITEM_WIDTH = 240 + 20
     const HALF = shuffled.length * ITEM_WIDTH
 
     const tick = () => {
