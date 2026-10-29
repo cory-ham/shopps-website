@@ -88,7 +88,7 @@ const TOTAL_GIVEAWAYS = 51
 const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
-  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your 1:1 autograph card or Golden Ticket.' },
+  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your 1/1 autograph card or Golden Ticket.' },
   { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to [claim email] so we can verify the card.' },
   { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the prize attached to your card." },
 ]
@@ -143,7 +143,7 @@ export default function GiveawaysPage() {
       <div className="prizeboard-header" style={{ maxWidth: 'none', padding: '80px 6vw 32px' }}>
         <h1 className="prizeboard-h1">$50K IN REAL PRIZES</h1>
         <p className="prizeboard-desc" style={{ maxWidth: '680px' }}>
-          Win any 1:1 autograph card or Golden Ticket, and the products, gift cards, or experiences attached are yours.<br /><br />
+          Win any 1/1 autograph card or Golden Ticket, and the products, gift cards, or experiences attached are yours.<br /><br />
           <strong style={{color:'var(--olive)',fontWeight:700}}>Keep the card. Claim what comes with it.</strong>
         </p>
         <div className="prizeboard-tracker">
