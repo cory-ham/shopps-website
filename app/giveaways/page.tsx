@@ -204,10 +204,9 @@ export default function GiveawaysPage() {
           position: relative;
         }
         .giveaway-tile:hover {
-          transform: scale(1.14);
+          border-color: rgba(3, 159, 157, 0.8);
+          box-shadow: 0 0 0 2px rgba(3,159,157,0.6), 0 8px 32px rgba(3,159,157,0.2);
           z-index: 20;
-          border-color: rgba(3, 159, 157, 0.6);
-          box-shadow: 0 16px 48px rgba(0,0,0,0.8), 0 0 0 1px rgba(3,159,157,0.4);
         }
         .giveaway-card-img {
           width: 100%;
