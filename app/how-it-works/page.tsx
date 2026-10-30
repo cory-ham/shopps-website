@@ -122,8 +122,14 @@ export default function HowItWorksPage() {
           </p>
         </div>
         <div className="hiw-hero-pack">
-          <img src="/shopps-pack-front.png" alt="SHOPPS Pack Front" draggable={false}
-            style={{ width: '75%', height: 'auto', filter: 'drop-shadow(0 24px 56px rgba(0,0,0,0.7))', display: 'block', margin: '0 auto' }} />
+          <div className="hiw-pack-stack">
+            {/* Back pack — smallest, furthest left */}
+            <img src="/shopps-pack-front.png" alt="" draggable={false} className="hiw-pack hiw-pack--back" />
+            {/* Middle pack */}
+            <img src="/shopps-pack-front.png" alt="" draggable={false} className="hiw-pack hiw-pack--mid" />
+            {/* Front pack — largest, foreground */}
+            <img src="/shopps-pack-front.png" alt="SHOPPS Pack" draggable={false} className="hiw-pack hiw-pack--front" />
+          </div>
         </div>
       </div>
 
