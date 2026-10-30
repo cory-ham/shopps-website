@@ -800,7 +800,7 @@ export default function Home() {
             ONLY 1,000 PACKS EXIST.<br /><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> PACKS REMAIN.
           </h2>
           <p className="cta-body" style={{marginTop:'1.5rem',marginBottom:'1rem'}}>The chase is on.</p>
-          <a href="/get-a-pack" className="btn-cta-outline" style={{marginTop:'1.5rem', display:'inline-block'}}>START COLLECTING</a>
+          <a href="/how-it-works" className="btn-cta-outline" style={{marginTop:'1.5rem', display:'inline-block'}}>START COLLECTING</a>
         </div>
       </section>
 
