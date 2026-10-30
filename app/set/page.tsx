@@ -368,7 +368,7 @@ export default function SetPage() {
         <p className="section-eyebrow">2026 EDITION</p>
         <h1 className="set-h1">Who&apos;s in the Set?</h1>
         <p className="set-intro">
-          Select a card to learn about the leader behind it and their work shaping ecommerce.
+          Click a card to flip it and learn about the leader&apos;s role in shaping ecommerce.
         </p>
 
       </div>
