@@ -186,11 +186,8 @@ export default function HowItWorksPage() {
           <h2 className="cta-heading">
             <span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.
           </h2>
-          <p className="cta-body">
-            <strong><em>The chase isn&apos;t over.</em></strong> <em>Rare cards. Exclusive prizes. 1-of-1 pulls.</em><br />
-            <em>And your next chance to win could be right around the corner.</em>
-          </p>
-          <a href="/get-a-pack" className="btn-cta-outline" style={{display:'inline-block'}}>DON&apos;T MISS THE NEXT DROP</a>
+
+          <a href="/get-a-pack" className="btn-cta-outline" style={{display:'inline-block', marginTop:'2.5rem'}}>DON&apos;T MISS THE NEXT DROP</a>
         </div>
       </section>
 
