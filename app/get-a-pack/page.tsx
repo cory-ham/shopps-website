@@ -5,6 +5,17 @@ import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
 import { useState } from 'react'
 
+
+
+function HubSpotEmbed() {
+  const containerId = 'hs-form-gap'
+  React.useEffect(() => {
+    const load = () => { (window as any).hbspt?.forms.create({ portalId: '5507026', formId: 'a3670688-2592-4f58-bdfb-0a78a2b0eb42', region: 'na1', target: '#' + containerId }) }
+    if ((window as any).hbspt) { load(); return }
+    const s = document.createElement('script'); s.src = '//js.hsforms.net/forms/embed/v2.js'; s.async = true; s.onload = load; document.head.appendChild(s)
+  }, [])
+  return <div id={containerId} style={{ marginTop: '1.5rem' }} />
+}
 function PackSignupForm() { return <HubSpotEmbed /> }
 
 export default function GetAPackPage() {
