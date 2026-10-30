@@ -1183,10 +1183,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ─── SPONSOR BAR MOBILE ─────────────────────────── */
 @media (max-width: 768px) {
-  .ticker-wrap { overflow: hidden; padding: 0 12px; height: 44px; justify-content: space-evenly; }
-  /* Hide every other logo — show only 4 of 8 */
-  .ticker-wrap > img:nth-child(odd) { display: none; }
-  .ticker-wrap > img { height: 16px !important; }
+  .ticker-wrap { overflow: hidden; padding: 0 8px; height: 48px; gap: 0; }
+  /* On mobile: 3 items visible = show first 3 divs, hide rest */
+  .ticker-wrap > div:nth-child(n+4) { display: none; }
+  .ticker-wrap img { height: 18px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -2732,7 +2732,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── GLOBAL — sponsor ticker on mobile ── */
 @media (max-width: 480px) {
-  .ticker-wrap { height: 40px; }
+  .ticker-wrap { height: 44px; padding: 0 4px; }
+  .ticker-wrap > div:nth-child(n+3) { display: none; }
+  .ticker-wrap img { height: 16px !important; }
 }
 
 /* ── HOMEPAGE — PackDropForm mobile stacking fix ── */
