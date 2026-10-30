@@ -1943,7 +1943,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-pack { position: absolute; width: auto; bottom: 0; }
 /* Back pack: smallest, leftmost */
 .hiw-pack--back {
-  height: 52%;
+  height: 40%;
   left: 0;
   transform: rotate(-8deg) translateX(-4%);
   filter: drop-shadow(0 12px 28px rgba(0,0,0,0.65)) brightness(0.65);
@@ -1951,7 +1951,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Middle pack */
 .hiw-pack--mid {
-  height: 65%;
+  height: 52%;
   left: 18%;
   transform: rotate(-3deg);
   filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.82);
@@ -1959,7 +1959,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Front pack: largest, foreground */
 .hiw-pack--front {
-  height: 80%;
+  height: 65%;
   right: 0;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 24px rgba(3,159,157,0.32)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
