@@ -349,14 +349,14 @@ export default function GiveawaysPage() {
               <div key={i} className="giveaway-tile">
                 <div className="giveaway-flipper">
                   {/* Front */}
-                  <div className="giveaway-face giveaway-face-front">
+                  <div className="giveaway-face giveaway-face-back">
                     {g.cardImg && (
                       <img src={g.cardImg} alt={g.name} draggable={false}
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
                   {/* Back — CSS card back design, no image overlay */}
-                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
+                  <div className="giveaway-face giveaway-face-front" style={{ background: g.backColor ?? '#e8a111' }}>
                     {/* Name + Company */}
                     <div className="giveaway-back-header">
                       <p className="giveaway-back-name">{g.name}</p>
