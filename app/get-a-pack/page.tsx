@@ -30,16 +30,21 @@ function PackSignupForm() {
 
 function LiveRemindersForm() {
   const [email, setEmail] = React.useState('')
-  const [status, setStatus] = React.useState('idle')
-  const handleSubmit = async (e: React.FormEvent) => {
+  const [status, setStatus] = React.useState<'idle'|'loading'|'done'|'error'>('idle')
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (!email) return
     setStatus('loading')
-    const res = await fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
-    }).catch(() => null)
-    setStatus(res?.ok ? 'done' : 'error')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      setStatus(res.ok ? 'done' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
   if (status === 'done') return (
     <div className="live-email-bar">
@@ -49,9 +54,19 @@ function LiveRemindersForm() {
     </div>
   )
   return (
-    <form onSubmit={handleSubmit} className="live-email-bar">
-      <input className="live-email-input" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@email.com – never miss a break" required />
-      <button type="submit" className="live-email-btn" disabled={status === 'loading'}>{status === 'loading' ? 'SIGNING UP…' : 'GET REMINDERS'}</button>
+    <form onSubmit={submit} className="live-email-bar">
+      <input
+        className="live-email-input"
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="you@email.com – never miss a break"
+        required
+        autoComplete="email"
+      />
+      <button type="submit" className="live-email-btn" disabled={status === 'loading'}>
+        {status === 'loading' ? 'SIGNING UP…' : status === 'error' ? 'TRY AGAIN' : 'GET REMINDERS'}
+      </button>
     </form>
   )
 }
