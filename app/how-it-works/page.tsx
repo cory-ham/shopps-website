@@ -123,6 +123,7 @@ export default function HowItWorksPage() {
         </div>
         <div className="hiw-hero-pack">
           <div className="hiw-pack-duo">
+            <img src="/shopps-pack-front.png" alt="" draggable={false} className="hiw-pack-duo__smallest" />
             <img src="/shopps-pack-front.png" alt="" draggable={false} className="hiw-pack-duo__back" />
             <img src="/shopps-pack-front.png" alt="SHOPPS Pack" draggable={false} className="hiw-pack-duo__front" />
           </div>
