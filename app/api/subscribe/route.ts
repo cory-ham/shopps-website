@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const LIST_ID = '4374'
 
 export async function POST(req: NextRequest) {
-  const HS_KEY = *** || ''
+  const HS_KEY = process.env.HUBSPOT_API_KEY || ''
   const { email } = await req.json()
   if (!email || !email.includes('@')) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     // Create contact
     const createRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': '***' *** HS_KEY },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${HS_KEY}` },
       body: JSON.stringify({ properties: { email, lifecyclestage: 'subscriber', hs_lead_status: 'NEW' } }),
     })
 
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     } else if (createRes.status === 409) {
       const lu = await fetch(
         'https://api.hubapi.com/crm/v3/objects/contacts/' + encodeURIComponent(email) + '?idProperty=email',
-        { headers: { 'Authorization': '***' *** HS_KEY } }
+        { headers: { 'Authorization': `Bearer ${HS_KEY}` } }
       )
       if (lu.ok) vid = (await lu.json())?.id
     }
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     if (vid) {
       await fetch('https://api.hubapi.com/contacts/v1/lists/' + LIST_ID + '/add', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': '***' *** HS_KEY },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${HS_KEY}` },
         body: JSON.stringify({ vids: [parseInt(vid)] }),
       })
     }
