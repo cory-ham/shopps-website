@@ -1,9 +1,6 @@
 'use client'
 import { useState } from 'react'
 
-const PORTAL_ID = '5507026'
-const FORM_ID = 'a3670688-2592-4f58-bdfb-0a78a2b0eb42'
-
 export default function LiveRemindersForm() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle'|'loading'|'done'|'error'>('idle')
@@ -12,17 +9,11 @@ export default function LiveRemindersForm() {
     e.preventDefault()
     setStatus('loading')
     try {
-      const res = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            fields: [{ objectTypeId: '0-1', name: 'email', value: email }],
-            context: { pageUri: 'shoppscards.com/get-a-pack', pageName: 'SHOPPS — Get a Pack' },
-          }),
-        }
-      )
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'get-reminders' }),
+      })
       setStatus(res.ok ? 'done' : 'error')
     } catch {
       setStatus('error')
