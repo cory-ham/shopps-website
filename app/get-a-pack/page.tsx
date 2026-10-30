@@ -40,7 +40,7 @@ function PackSignupForm() {
         className="pack-drop-input"
       />
       <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
-        {status === 'loading' ? 'SIGNING UP…' : "DON'T MISS THE NEXT DROP"}
+        {status === 'loading' ? 'SIGNING UP…' : 'WIN YOUR NEXT PACK'}
       </button>
       {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', marginTop: '6px' }}>Something went wrong. Try again.</p>}
     </form>
@@ -87,7 +87,7 @@ export default function GetAPackPage() {
             ))}
           </div>
           <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <p style={{ margin: '0 0 6px', fontFamily: 'var(--font-body)', fontSize: 'clamp(13px,0.9vw,15px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)', textAlign: 'left' }}>
+            <p style={{ margin: '0 0 6px', fontFamily: 'var(--font-body)', fontSize: 'clamp(16px,1.1vw,18px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)', textAlign: 'left' }}>
               <strong style={{color:'var(--teal)'}}>Enter your email for a chance to win a pack.</strong><br />We&apos;ll pick winners at random each weekday through November 13.
             </p>
             <PackSignupForm />
