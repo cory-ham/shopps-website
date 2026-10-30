@@ -42,7 +42,6 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/giveaway-backs/giveaway-back-v2-200.jpg' },
   { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg', backImg: '/giveaway-backs/giveaway-back-v2-224.jpg' },
   { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg', backImg: '/giveaway-backs/giveaway-back-v2-240.jpg' },
-  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg', backColor: '#3659ab', backImg: '/giveaway-backs/giveaway-back-v2-rytis.jpg' },
   { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg', backImg: '/giveaway-backs/giveaway-back-v2-392.jpg' },
   { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg', backImg: '/giveaway-backs/giveaway-back-v2-400.jpg' },
   { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg', backImg: '/giveaway-backs/giveaway-back-v2-408.jpg' },
@@ -66,8 +65,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Imagined by X',         company: 'Absolutely Ridiculous', prize: 'A one-of-one custom full-grain cowhide glove + 30-min phone consultation',       cardImg: '/cards/foil-sig-chrome-099.jpg', backImg: '/giveaway-backs/giveaway-back-v2-792.jpg' },
   { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg', backImg: '/giveaway-backs/giveaway-back-v2-728.jpg' },
   { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg', backImg: '/giveaway-backs/giveaway-back-v2-744.jpg' },
-  { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg', backImg: '/giveaway-backs/giveaway-back-v2-752.jpg' },
-  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg', backColor: '#3659ab', backImg: '/giveaway-backs/giveaway-back-v2-moiz.jpg' },
+  { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg', backImg: '/giveaway-backs/giveaway-back-v2-752.jpg' }
 ]
 
 const PRIZES: Prize[] = [
@@ -81,7 +79,7 @@ const PRIZES: Prize[] = [
     status: 'available',
     featured: true,
     cardImage: '/slabs/slab-p08-chrome.png',
-  },
+  }
 ]
 
 const TOTAL_GIVEAWAYS = 51
@@ -90,7 +88,7 @@ const CLAIMED_GIVEAWAYS = 0
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your 1/1 autograph card or Golden Ticket.' },
   { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to [claim email] so we can verify the card.' },
-  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the prize attached to your card." },
+  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the prize attached to your card." }
 ]
 
 const featured = PRIZES[0]
