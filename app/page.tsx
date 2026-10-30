@@ -97,7 +97,7 @@ function PackDropForm() {
         style={{ width: '100%' }}
       />
       <button type="submit" className="btn-teal" disabled={status === 'loading'}>
-        {status === 'loading' ? 'SIGNING UP…' : 'DON’T MISS THE NEXT DROP'}
+        {status === 'loading' ? 'SIGNING UP…' : 'ENTER TO WIN A PACK'}
       </button>
       {status === 'error' && <p style={{ color: '#e55', fontSize: '13px', margin: '4px 0 0' }}>Something went wrong. Try again.</p>}
     </form>
