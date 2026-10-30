@@ -568,7 +568,7 @@ export default function Home() {
               <p className="section-eyebrow">2026 Edition</p>
               <h2 className="section-heading">The Leaders. The Innovators. The Game Changers.</h2>
               <p className="section-body">
-                Explore the full roster and discover who&apos;s in the set.
+                Discover who&apos;s in the set. Click or tap a card to flip it and read their story.
               </p>
             </div>
 
