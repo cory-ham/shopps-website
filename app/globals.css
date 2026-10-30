@@ -1825,7 +1825,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   font-family: var(--font-antonio);
   font-size: clamp(1.5rem, 2.1vw, 1.9rem);
   font-weight: 400;
-  color: var(--white);
+  color: var(--olive);
   text-transform: uppercase;
   line-height: 1;
   margin: 6px 0 12px;
