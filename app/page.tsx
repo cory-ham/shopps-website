@@ -662,19 +662,23 @@ export default function Home() {
 
       <div className="marquee-wrap">
         <p className="marquee-label">THANK YOU TO OUR SPONSORS</p>
-        <div className="marquee-track">
-          {[...Array(8)].map((_, i) => (
-            <span key={i} className="marquee-item">
-              <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt="Fulfil" className="marquee-logo marquee-logo--fulfil" /></span>
-              <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt="Omnisend" className="marquee-logo marquee-logo--omnisend" /></span>
-            </span>
-          ))}
-          {[...Array(8)].map((_, i) => (
-            <span key={"b"+i} className="marquee-item" aria-hidden="true">
-              <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt="" className="marquee-logo marquee-logo--fulfil" /></span>
-              <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt="" className="marquee-logo marquee-logo--omnisend" /></span>
-            </span>
-          ))}
+        <div className="marquee-outer">
+          <div className="marquee-track">
+            {[...Array(6)].map((_, i) => (
+              <span key={i} className="marquee-item">
+                <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt="Fulfil" className="marquee-logo marquee-logo--fulfil" /></span>
+                <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt="Omnisend" className="marquee-logo marquee-logo--omnisend" /></span>
+              </span>
+            ))}
+          </div>
+          <div className="marquee-track" aria-hidden="true">
+            {[...Array(6)].map((_, i) => (
+              <span key={i} className="marquee-item">
+                <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt="" className="marquee-logo marquee-logo--fulfil" /></span>
+                <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt="" className="marquee-logo marquee-logo--omnisend" /></span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
