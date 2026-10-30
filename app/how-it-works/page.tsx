@@ -1,6 +1,50 @@
 'use client'
+import { useState } from 'react'
 import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
+
+function PackWinForm() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle'|'loading'|'done'|'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      setStatus(res.ok ? 'done' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'done') return (
+    <p style={{ marginTop: '1rem', color: 'var(--teal)', fontFamily: 'var(--font-antonio)', fontSize: 'clamp(14px,1vw,16px)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+      ✓ You&apos;re in. We&apos;ll pick winners each weekday through November 13.
+    </p>
+  )
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        required
+        className="pack-drop-input"
+      />
+      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
+        {status === 'loading' ? 'SIGNING UP…' : 'WIN YOUR NEXT PACK'}
+      </button>
+      {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', marginTop: '6px' }}>Something went wrong. Try again.</p>}
+    </form>
+  )
+}
 
 const STEPS = [
   {
@@ -97,6 +141,13 @@ export default function HowItWorksPage() {
                 ))}
               </div>
             ))}
+          </div>
+          {/* ── Email capture ── */}
+          <div style={{ marginTop: '3.5vw', paddingTop: '3vw', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <p style={{ margin: '0 0 10px', fontFamily: 'var(--font-body)', fontSize: 'clamp(16px,1.1vw,18px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)' }}>
+              <strong style={{color:'var(--teal)'}}>Enter your email for a chance to win a pack.</strong><br />We&apos;ll pick winners at random each weekday through November 13.
+            </p>
+            <PackWinForm />
           </div>
         </div>
       </section>
