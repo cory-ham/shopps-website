@@ -1916,7 +1916,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── How It Works Page ──────────────────────────────────────────────── */
 .hiw-hero {
-  padding: 100px 4vw 2vw;
+  padding: clamp(64px, 5.5vw, 80px) 4vw 2vw;
   display: flex;
   align-items: center;
   gap: clamp(16px, 2.5vw, 40px);
@@ -1937,7 +1937,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 
 /* Layered pack stack */
-.hiw-pack-stack { position: relative; width: 100%; padding-bottom: 140%; }
+.hiw-pack-stack { position: relative; width: 100%; padding-bottom: 90%; }
 .hiw-pack { position: absolute; height: auto; }
 /* Back pack: smallest, leftmost, slightly rotated */
 .hiw-pack--back {
