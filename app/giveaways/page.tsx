@@ -209,7 +209,6 @@ export default function GiveawaysPage() {
           transform-style: preserve-3d;
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
           border-radius: 8px;
-          transform: rotateY(180deg);
         }
         .giveaway-tile:hover .giveaway-flipper {
           transform: rotateY(180deg);
@@ -350,14 +349,14 @@ export default function GiveawaysPage() {
               <div key={i} className="giveaway-tile">
                 <div className="giveaway-flipper">
                   {/* Front */}
-                  <div className="giveaway-face giveaway-face-back">
+                  <div className="giveaway-face giveaway-face-front">
                     {g.cardImg && (
                       <img src={g.cardImg} alt={g.name} draggable={false}
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
                   {/* Back — CSS card back design, no image overlay */}
-                  <div className="giveaway-face giveaway-face-front" style={{ background: g.backColor ?? '#e8a111' }}>
+                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
                     {/* Name + Company */}
                     <div className="giveaway-back-header">
                       <p className="giveaway-back-name">{g.name}</p>
