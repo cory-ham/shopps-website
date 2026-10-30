@@ -27,6 +27,34 @@ function PackSignupForm() {
   )
 }
 
+
+function LiveRemindersForm() {
+  const [email, setEmail] = React.useState('')
+  const [status, setStatus] = React.useState('idle')
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    }).catch(() => null)
+    setStatus(res?.ok ? 'done' : 'error')
+  }
+  if (status === 'done') return (
+    <div className="live-email-bar">
+      <p style={{ color: 'var(--teal)', fontFamily: 'var(--font-antonio)', fontSize: '14px', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0 }}>
+        ✓ You&apos;re in — we&apos;ll remind you before every break.
+      </p>
+    </div>
+  )
+  return (
+    <form onSubmit={handleSubmit} className="live-email-bar">
+      <input className="live-email-input" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@email.com – never miss a break" required />
+      <button type="submit" className="live-email-btn" disabled={status === 'loading'}>{status === 'loading' ? 'SIGNING UP…' : 'GET REMINDERS'}</button>
+    </form>
+  )
+}
 export default function GetAPackPage() {
   return (
     <>
@@ -102,10 +130,7 @@ export default function GetAPackPage() {
               </div>
             ))}
           </div>
-          <div className="live-email-bar">
-            <input className="live-email-input" type="email" placeholder="you@email.com – never miss a break" />
-            <button className="live-email-btn">Get Reminders</button>
-          </div>
+          <LiveRemindersForm />
         </div>
       </section>
 
