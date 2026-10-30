@@ -84,7 +84,6 @@ function PackDropForm() {
 
   return (
     <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'flex-start' }}>
-      <p style={{ margin: '0 0 4px', fontFamily: 'var(--font-body)', fontSize: 'clamp(13px,0.9vw,15px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)' }}>Enter your email for a chance to win a pack. We&apos;ll pick winners at random each weekday through November 13.</p>
       <input
         type="email"
         value={email}
@@ -95,7 +94,7 @@ function PackDropForm() {
         style={{ width: '100%' }}
       />
       <button type="submit" className="btn-teal" disabled={status === 'loading'}>
-        {status === 'loading' ? 'SIGNING UP…' : 'REQUEST A PACK'}
+        {status === 'loading' ? 'SIGNING UP…' : 'DON’T MISS THE NEXT DROP'}
       </button>
       {status === 'error' && <p style={{ color: '#e55', fontSize: '13px', margin: '4px 0 0' }}>Something went wrong. Try again.</p>}
     </form>
