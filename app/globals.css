@@ -1916,11 +1916,11 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── How It Works Page ──────────────────────────────────────────────── */
 .hiw-hero {
-  padding: clamp(64px, 5.5vw, 80px) 4vw 0;
+  padding: clamp(64px, 5.5vw, 80px) 4vw clamp(24px, 2.5vw, 40px);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: clamp(16px, 2.5vw, 40px);
-  overflow: hidden;
+  overflow: visible;
 }
 .hiw-hero-text {
   flex: 1;
@@ -1929,9 +1929,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-hero-pack {
   flex-shrink: 0;
   width: clamp(240px, 28vw, 400px);
-  filter: none;
-  overflow: hidden;
-  align-self: flex-end;
+  align-self: center;
+  overflow: visible;
 }
 .hiw-hero-pack img {
   width: 100%;
@@ -1939,32 +1938,32 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   display: block;
 }
 
-/* Layered pack stack */
-.hiw-pack-stack { position: relative; width: 100%; height: clamp(220px, 22vw, 340px); overflow: hidden; }
-.hiw-pack { position: absolute; width: auto; bottom: 0; }
-/* Back pack: smallest, leftmost */
+/* Layered pack stack — flex overlap approach, no clipping */
+.hiw-pack-stack {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+.hiw-pack { flex-shrink: 0; height: auto; }
 .hiw-pack--back {
-  height: 38%;
-  left: 0;
-  transform: rotate(-8deg) translateX(-4%);
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.65)) brightness(0.65);
+  width: 36%;
+  transform: rotate(-8deg) translateX(24px);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6)) brightness(0.65);
   z-index: 1;
+  margin-right: -18%;
 }
-/* Middle pack */
 .hiw-pack--mid {
-  height: 50%;
-  left: 18%;
-  transform: rotate(-3deg);
-  filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.82);
+  width: 46%;
+  transform: rotate(-3deg) translateX(12px);
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.6)) brightness(0.82);
   z-index: 2;
+  margin-right: -20%;
 }
-/* Front pack: largest, foreground */
 .hiw-pack--front {
-  height: 90%;
-  right: 0;
-  bottom: 0;
+  width: 58%;
   transform: rotate(1deg);
-  filter: drop-shadow(0 0 24px rgba(3,159,157,0.32)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
+  filter: drop-shadow(0 0 22px rgba(3,159,157,0.3)) drop-shadow(0 16px 36px rgba(0,0,0,0.7));
   z-index: 3;
 }
 .hiw-eyebrow {
