@@ -18,8 +18,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'SHOPPS — The Top 100 In Ecommerce',
-  description: 'The Top 100 operators, founders, and legends of the industry — immortalized in a collector card series.',
+  title: 'SHOPPS — Trading Cards for Ecommerce',
+  description: 'Physical trading cards featuring 100 leaders shaping ecommerce. Only 1,000 packs, never for sale, with $50,000 in prizes.',
 }
 
 export default function RootLayout({
