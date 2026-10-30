@@ -413,17 +413,19 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
-      {/* ── SPONSOR BAR ── */}
-      <div className="ticker-wrap">
-        {(['Fulfil','omnisend'] as const).map((label, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}>
-            <img
-              src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-              alt={label}
-              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
+            {/* ── SPONSOR STRIP ── */}
+      <div className="marquee-wrap">
+        <p className="marquee-label">THANK YOU TO OUR SPONSORS</p>
+        <div className="marquee-outer">
+          <div className="marquee-track">
+            {[...Array(12)].map((_, i) => (
+              <span key={i} className="marquee-item">
+                <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt={i === 0 ? "Fulfil" : ""} className="marquee-logo marquee-logo--fulfil" /></span>
+                <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt={i === 0 ? "Omnisend" : ""} className="marquee-logo marquee-logo--omnisend" /></span>
+              </span>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
       {/* ── CTA ── */}

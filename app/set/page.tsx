@@ -456,21 +456,18 @@ export default function SetPage() {
       </div>
 
       {/* ── SPONSOR STRIP ── */}
-      <div className="ticker-wrap">
-        {TICKER_ITEMS.map((item, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', minWidth: 0 }}>
-            <img
-              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-              alt={item.label}
-              style={{
-                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
-                width: 'auto',
-                
-                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-              }}
-            />
+      <div className="marquee-wrap">
+        <p className="marquee-label">THANK YOU TO OUR SPONSORS</p>
+        <div className="marquee-outer">
+          <div className="marquee-track">
+            {[...Array(12)].map((_, i) => (
+              <span key={i} className="marquee-item">
+                <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt={i === 0 ? "Fulfil" : ""} className="marquee-logo marquee-logo--fulfil" /></span>
+                <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt={i === 0 ? "Omnisend" : ""} className="marquee-logo marquee-logo--omnisend" /></span>
+              </span>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
       {/* ──────────────────── FOOTER ──────────────────── */}
