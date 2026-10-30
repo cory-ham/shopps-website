@@ -210,9 +210,8 @@ export default function GiveawaysPage() {
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
           border-radius: 8px;
         }
-        .giveaway-tile:hover .giveaway-flipper {
-          transform: rotateY(180deg);
-        }
+        .giveaway-flipper { transform: rotateY(180deg); }
+        .giveaway-tile:hover .giveaway-flipper { transform: rotateY(0deg); }
 
         .giveaway-face {
           position: absolute;
@@ -221,6 +220,7 @@ export default function GiveawaysPage() {
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
         }
+        .giveaway-face-front { transform: rotateY(180deg); }
         .giveaway-face-front img {
           width: 100%;
           height: 100%;
@@ -228,7 +228,7 @@ export default function GiveawaysPage() {
           display: block;
         }
         .giveaway-face-back {
-          transform: rotateY(180deg);
+          transform: rotateY(0deg);
           display: flex;
           flex-direction: column;
           align-items: center;
