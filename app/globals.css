@@ -1920,6 +1920,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   display: flex;
   align-items: center;
   gap: clamp(16px, 2.5vw, 40px);
+  overflow: visible;
 }
 .hiw-hero-text {
   flex: 1;
@@ -1942,7 +1943,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-pack { position: absolute; height: auto; }
 /* Back pack: smallest, leftmost, slightly rotated */
 .hiw-pack--back {
-  width: 52%;
+  width: 44%;
   bottom: 0;
   left: 0;
   transform: rotate(-8deg) translateY(4%);
@@ -1951,19 +1952,18 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Middle pack */
 .hiw-pack--mid {
-  width: 64%;
+  width: 54%;
   bottom: 0;
-  left: 12%;
+  left: 10%;
   transform: rotate(-3deg) translateY(2%);
   filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.85);
   z-index: 2;
 }
 /* Front pack: largest, foreground, no rotation */
 .hiw-pack--front {
-  width: 68%;
+  width: 62%;
   bottom: 0;
   right: 0;
-  top: auto;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 28px rgba(3,159,157,0.35)) drop-shadow(0 24px 48px rgba(0,0,0,0.7));
   z-index: 3;
