@@ -127,8 +127,13 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
+      {/* ── Divider ── */}
+      <div style={{ padding: '0 4vw', marginBottom: '2.5vw' }}>
+        <div style={{ height: '2px', background: 'linear-gradient(90deg, var(--teal) 0%, rgba(3,159,157,0.15) 60%, transparent 100%)', borderRadius: '2px' }} />
+      </div>
+
       {/* ── 4-step grid ── */}
-      <section style={{ background: 'var(--bg)', padding: '5vw 0' }}>
+      <section style={{ background: 'var(--bg)', padding: '0 0 4vw' }}>
         <div className="section-inner">
           <div className="hiw-steps-grid">
             {STEPS.map(step => (
