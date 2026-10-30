@@ -1939,30 +1939,27 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 
 /* Layered pack stack */
-.hiw-pack-stack { position: relative; width: 100%; height: clamp(300px, 30vw, 460px); overflow: visible; }
-.hiw-pack { position: absolute; height: auto; }
-/* Back pack: smallest, leftmost, slightly rotated */
+.hiw-pack-stack { position: relative; width: 100%; height: clamp(280px, 28vw, 420px); overflow: hidden; }
+.hiw-pack { position: absolute; width: auto; bottom: 0; }
+/* Back pack: smallest, leftmost */
 .hiw-pack--back {
-  width: 36%;
-  bottom: 0;
+  height: 62%;
   left: 0;
-  transform: rotate(-8deg);
+  transform: rotate(-8deg) translateX(-4%);
   filter: drop-shadow(0 12px 28px rgba(0,0,0,0.65)) brightness(0.65);
   z-index: 1;
 }
 /* Middle pack */
 .hiw-pack--mid {
-  width: 46%;
-  bottom: 0;
-  left: 10%;
+  height: 78%;
+  left: 18%;
   transform: rotate(-3deg);
   filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.82);
   z-index: 2;
 }
 /* Front pack: largest, foreground */
 .hiw-pack--front {
-  width: 56%;
-  bottom: 0;
+  height: 96%;
   right: 0;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 24px rgba(3,159,157,0.32)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
