@@ -210,8 +210,9 @@ export default function GiveawaysPage() {
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
           border-radius: 8px;
         }
-        .giveaway-flipper { transform: rotateY(0deg); }
-        .giveaway-tile:hover .giveaway-flipper { transform: rotateY(180deg); }
+        .giveaway-tile:hover .giveaway-flipper {
+          transform: rotateY(180deg);
+        }
 
         .giveaway-face {
           position: absolute;
@@ -220,7 +221,6 @@ export default function GiveawaysPage() {
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
         }
-        .giveaway-face-front { transform: rotateY(0deg); }
         .giveaway-face-front img {
           width: 100%;
           height: 100%;
@@ -349,14 +349,14 @@ export default function GiveawaysPage() {
               <div key={i} className="giveaway-tile">
                 <div className="giveaway-flipper">
                   {/* Front */}
-                  <div className="giveaway-face giveaway-face-back">
+                  <div className="giveaway-face giveaway-face-front">
                     {g.cardImg && (
                       <img src={g.cardImg} alt={g.name} draggable={false}
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
                   {/* Back — CSS card back design, no image overlay */}
-                  <div className="giveaway-face giveaway-face-front" style={{ background: g.backColor ?? '#e8a111' }}>
+                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
                     {/* Name + Company */}
                     <div className="giveaway-back-header">
                       <p className="giveaway-back-name">{g.name}</p>
@@ -413,19 +413,18 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
-            {/* ── SPONSOR STRIP ── */}
-      <div className="marquee-wrap">
-        <p className="marquee-label">THANK YOU TO OUR SPONSORS</p>
-        <div className="marquee-outer">
-          <div className="marquee-track">
-            {[...Array(12)].map((_, i) => (
-              <span key={i} className="marquee-item">
-                <span className="marquee-logo-wrap"><img src="/fulfil-logo.svg" alt={i === 0 ? "Fulfil" : ""} className="marquee-logo marquee-logo--fulfil" /></span>
-                <span className="marquee-logo-wrap"><img src="/omnisend-logo.svg" alt={i === 0 ? "Omnisend" : ""} className="marquee-logo marquee-logo--omnisend" /></span>
-              </span>
-            ))}
+      {/* ── SPONSOR BAR ── */}
+      <p className="sponsor-label" style={{fontSize:'18px',fontWeight:'700',letterSpacing:'0.12em'}}>THANK YOU TO OUR SPONSORS</p>
+      <div className="ticker-wrap">
+        {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', minWidth: 0 }}>
+            <img
+              src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
+              alt={label}
+              style={{ height: label === 'omnisend' ? '18px' : '20px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+            />
           </div>
-        </div>
+        ))}
       </div>
 
       {/* ── CTA ── */}
@@ -435,7 +434,7 @@ export default function GiveawaysPage() {
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">ONLY 1,000 PACKS EXIST.<br /><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> PACKS REMAIN.</h2>
 
-          <a href="/get-a-pack" className="btn-cta-outline" style={{ display: 'inline-block', marginTop: '2.5rem' }}>GET A PACK</a>
+          <a href="/get-a-pack" className="btn-cta-outline" style={{ display: 'inline-block' }}>GET A PACK</a>
         </div>
       </section>
 
