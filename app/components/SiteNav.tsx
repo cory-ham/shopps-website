@@ -8,7 +8,7 @@ export default function SiteNav() {
     <>
       <nav className="site-nav">
         <div className="nav-left">
-          <a href="/the-collection" className="nav-link">The Collection</a>
+          <a href="/set" className="nav-link">The Collection</a>
           <a href="/how-it-works" className="nav-link">How It Works</a>
         </div>
 
@@ -28,7 +28,7 @@ export default function SiteNav() {
 
       <div className="nav-drawer" onClick={closeDrawer}>
         <div className="nav-drawer-inner" onClick={e => e.stopPropagation()}>
-          <a href="/the-collection" className="nav-drawer-link" onClick={closeDrawer}>The Collection</a>
+          <a href="/set" className="nav-drawer-link" onClick={closeDrawer}>The Collection</a>
           <a href="/how-it-works" className="nav-drawer-link" onClick={closeDrawer}>How It Works</a>
           <a href="/giveaways" className="nav-drawer-link" onClick={closeDrawer}>View the Prizes</a>
           <a href="/get-a-pack" className="nav-drawer-live" onClick={closeDrawer}>Get a Pack</a>
