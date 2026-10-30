@@ -1929,6 +1929,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   flex-shrink: 0;
   width: clamp(240px, 28vw, 400px);
   filter: none;
+  overflow: visible;
 }
 .hiw-hero-pack img {
   width: 100%;
@@ -1937,7 +1938,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 
 /* Layered pack stack */
-.hiw-pack-stack { position: relative; width: 100%; height: clamp(280px, 28vw, 440px); }
+.hiw-pack-stack { position: relative; width: 100%; height: clamp(300px, 30vw, 460px); overflow: visible; }
 .hiw-pack { position: absolute; height: auto; }
 /* Back pack: smallest, leftmost, slightly rotated */
 .hiw-pack--back {
@@ -1959,9 +1960,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Front pack: largest, foreground, no rotation */
 .hiw-pack--front {
-  width: 72%;
+  width: 68%;
   bottom: 0;
   right: 0;
+  top: auto;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 28px rgba(3,159,157,0.35)) drop-shadow(0 24px 48px rgba(0,0,0,0.7));
   z-index: 3;
