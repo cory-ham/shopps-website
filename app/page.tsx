@@ -642,10 +642,16 @@ export default function Home() {
 
       <div className="marquee-wrap">
         <div className="marquee-track">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <span key={i} className="marquee-item">
               <img src="/fulfil-logo.svg" alt="Fulfil" className="marquee-logo" />
               <img src="/omnisend-logo.svg" alt="Omnisend" className="marquee-logo marquee-logo--omnisend" />
+            </span>
+          ))}
+          {[...Array(8)].map((_, i) => (
+            <span key={"b"+i} className="marquee-item" aria-hidden="true">
+              <img src="/fulfil-logo.svg" alt="" className="marquee-logo" />
+              <img src="/omnisend-logo.svg" alt="" className="marquee-logo marquee-logo--omnisend" />
             </span>
           ))}
         </div>
