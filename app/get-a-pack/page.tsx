@@ -1,51 +1,11 @@
 'use client'
+import React from 'react'
 export const dynamic = 'force-dynamic'
 import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
 import { useState } from 'react'
 
-function PackSignupForm() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle'|'loading'|'done'|'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'get-a-pack' }),
-      })
-      setStatus(res.ok ? 'done' : 'error')
-    } catch {
-      setStatus('error')
-    }
-  }
-
-  if (status === 'done') return (
-    <p className="gap-signup-confirm">
-      ✓ You&apos;re in. We&apos;ll let you know the moment packs drop.
-    </p>
-  )
-
-  return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-      <input
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        required
-        className="pack-drop-input"
-      />
-      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>
-        {status === 'loading' ? 'SIGNING UP…' : 'WIN YOUR NEXT PACK'}
-      </button>
-      {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', marginTop: '6px' }}>Something went wrong. Try again.</p>}
-    </form>
-  )
-}
+function PackSignupForm() { return <HubSpotEmbed /> }
 
 export default function GetAPackPage() {
   return (

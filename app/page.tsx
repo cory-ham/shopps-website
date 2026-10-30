@@ -57,52 +57,37 @@ import SiteNav from './components/SiteNav'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function PackDropForm() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle'|'loading'|'done'|'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'homepage' }),
+function HubSpotEmbed() {
+  const containerId = 'hs-form-shopps'
+  React.useEffect(() => {
+    if ((window as any).hbspt) {
+      ;(window as any).hbspt.forms.create({
+        portalId: '5507026',
+        formId: 'a3670688-2592-4f58-bdfb-0a78a2b0eb42',
+        region: 'na1',
+        target: '#' + containerId,
       })
-      setStatus(res.ok ? 'done' : 'error')
-    } catch {
-      setStatus('error')
+      return
     }
-  }
-
-  if (status === 'done') return (
-    <p style={{ marginTop: '2rem', color: 'var(--teal)', fontFamily: 'var(--font-antonio)', fontSize: 'clamp(14px, 1vw, 16px)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-      ✓ You&apos;re in. We&apos;ll let you know when packs drop.
-    </p>
-  )
-
-  return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
-      <p style={{ margin: '0 0 6px', fontFamily: 'var(--font-body)', fontSize: 'clamp(13px,0.9vw,15px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)', textAlign: 'center' }}>
-        <strong>Enter your email for a chance to win a pack.</strong><br />We&apos;ll pick winners at random each weekday through November 13.
-      </p>
-      <input
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        required
-        className="pack-drop-input"
-        style={{ width: '100%' }}
-      />
-      <button type="submit" className="btn-teal" disabled={status === 'loading'}>
-        {status === 'loading' ? 'SIGNING UP…' : 'ENTER TO WIN A PACK'}
-      </button>
-      {status === 'error' && <p style={{ color: '#e55', fontSize: '13px', margin: '4px 0 0' }}>Something went wrong. Try again.</p>}
-    </form>
-  )
+    const script = document.createElement('script')
+    script.src = '//js.hsforms.net/forms/embed/v2.js'
+    script.charset = 'utf-8'
+    script.async = true
+    script.onload = () => {
+      ;(window as any).hbspt?.forms.create({
+        portalId: '5507026',
+        formId: 'a3670688-2592-4f58-bdfb-0a78a2b0eb42',
+        region: 'na1',
+        target: '#' + containerId,
+      })
+    }
+    document.head.appendChild(script)
+  }, [])
+  return <div id={containerId} style={{ marginTop: '1.5rem' }} />
 }
+
+function PackDropForm() { return <HubSpotEmbed /> }
+function PackSignupForm() { return <HubSpotEmbed /> }
 
 /* ─────────────────────────────────────────────────────────
    SHOPPS — Full page rebuild from PSD
