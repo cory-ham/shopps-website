@@ -1939,11 +1939,11 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 
 /* Layered pack stack */
-.hiw-pack-stack { position: relative; width: 100%; height: clamp(280px, 28vw, 420px); overflow: hidden; }
+.hiw-pack-stack { position: relative; width: 100%; height: clamp(280px, 28vw, 420px); overflow: visible; }
 .hiw-pack { position: absolute; width: auto; bottom: 0; }
 /* Back pack: smallest, leftmost */
 .hiw-pack--back {
-  height: 62%;
+  height: 52%;
   left: 0;
   transform: rotate(-8deg) translateX(-4%);
   filter: drop-shadow(0 12px 28px rgba(0,0,0,0.65)) brightness(0.65);
@@ -1951,7 +1951,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Middle pack */
 .hiw-pack--mid {
-  height: 78%;
+  height: 65%;
   left: 18%;
   transform: rotate(-3deg);
   filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.82);
@@ -1959,7 +1959,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Front pack: largest, foreground */
 .hiw-pack--front {
-  height: 96%;
+  height: 80%;
   right: 0;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 24px rgba(3,159,157,0.32)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
