@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const HS_API_KEY = *** || ''
+const HS_API_KEY = process.env.HUBSPOT_API_KEY || ''
 const SHOPPS_LIST_ID = '4374'
 
 export async function POST(req: NextRequest) {
@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // 1. Create contact (409 = already exists, both are fine)
+    // 1. Create contact
     const createRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
       headers: {
@@ -22,7 +22,6 @@ export async function POST(req: NextRequest) {
           email,
           hs_lead_status: 'NEW',
           lifecyclestage: 'subscriber',
-          shopps_signup_source: source || 'shoppscards.com',
         },
       }),
     })
@@ -33,17 +32,16 @@ export async function POST(req: NextRequest) {
       const data = await createRes.json()
       contactId = data?.id
     } else if (createRes.status === 409) {
-      // Contact exists — look them up by email
-      const searchRes = await fetch(
+      // Already exists — look up by email
+      const lookupRes = await fetch(
         `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(email)}?idProperty=email`,
         { headers: { 'Authorization': `Bearer ${HS_API_KEY}` } }
       )
-      if (searchRes.ok) {
-        const data = await searchRes.json()
-        contactId = data?.id
+      if (lookupRes.ok) {
+        contactId = (await lookupRes.json())?.id
       }
     } else {
-      const err = await createRes.json()
+      const err = await createRes.json().catch(() => ({}))
       console.error('HubSpot create error:', err)
       return NextResponse.json({ error: 'HubSpot error' }, { status: 500 })
     }
@@ -66,3 +64,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
   }
 }
+
