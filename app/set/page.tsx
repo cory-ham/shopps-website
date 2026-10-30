@@ -456,7 +456,7 @@ export default function SetPage() {
       </div>
 
       {/* ── SPONSOR STRIP ── */}
-      <p className="sponsor-label" style={{fontSize:'15px'}}>THANK YOU TO OUR SPONSORS</p>
+      <p className="sponsor-label" style={{fontSize:'18px',fontWeight:'700',letterSpacing:'0.12em'}}>THANK YOU TO OUR SPONSORS</p>
       <div className="ticker-wrap">
         {TICKER_ITEMS.map((item, i) => (
           <div key={i} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
