@@ -660,8 +660,8 @@ export default function Home() {
         </div>
       </section>
 
-      <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: '15px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(245,248,248,0.9)', margin: '0 0 12px' }}>THANK YOU TO OUR SPONSORS</p>
       <div className="marquee-wrap">
+        <p className="marquee-label">THANK YOU TO OUR SPONSORS</p>
         <div className="marquee-track">
           {[...Array(8)].map((_, i) => (
             <span key={i} className="marquee-item">
