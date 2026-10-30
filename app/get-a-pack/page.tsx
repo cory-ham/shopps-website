@@ -155,9 +155,7 @@ export default function GetAPackPage() {
         <div className="cta-inner">
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading"><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> Packs Left.<br />Zero for Sale.</h2>
-          <p className="cta-body">
-            Pull a Golden Ticket or win a 1/1 autograph card and claim what&apos;s attached, from $1,000 gift cards to courtside seats.
-          </p>
+
           <a href="/giveaways" className="btn-cta-outline" style={{ display: 'inline-block', marginTop: '2.5rem' }}>
             VIEW THE PRIZES
           </a>
