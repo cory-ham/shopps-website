@@ -640,21 +640,15 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="ticker-wrap">
-        {TICKER_ITEMS.map((item, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', minWidth: 0 }}>
-            <img
-              src={item.label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
-              alt={item.label}
-              style={{
-                height: item.label === 'CTC' ? '36px' : item.label === 'omnisend' ? '18px' : '20px',
-                width: 'auto',
-                
-                filter: item.label === 'omnisend' ? 'invert(1) brightness(2)' : 'none',
-              }}
-            />
-          </div>
-        ))}
+      <div className="marquee-wrap">
+        <div className="marquee-track">
+          {[...Array(6)].map((_, i) => (
+            <span key={i} className="marquee-item">
+              <img src="/fulfil-logo.svg" alt="Fulfil" className="marquee-logo" />
+              <img src="/omnisend-logo.svg" alt="Omnisend" className="marquee-logo marquee-logo--omnisend" />
+            </span>
+          ))}
+        </div>
       </div>
 
 

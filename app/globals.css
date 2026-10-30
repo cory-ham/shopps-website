@@ -239,6 +239,14 @@ a { color: inherit; text-decoration: none; }
 }
 .ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; height: 56px; display: flex; align-items: center; justify-content: space-evenly; padding: 0 1vw; overflow: hidden; }
 .ticker-wrap > div { flex: 0 0 auto; width: 130px; height: 38px; display: flex; align-items: center; justify-content: center; }
+
+/* Homepage marquee sponsor bar */
+.marquee-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; height: 56px; overflow: hidden; display: flex; align-items: center; }
+.marquee-track { display: flex; align-items: center; gap: 0; animation: marquee-scroll 18s linear infinite; white-space: nowrap; }
+.marquee-item { display: inline-flex; align-items: center; gap: 80px; padding: 0 80px; }
+.marquee-logo { height: 20px; width: auto; display: inline-block; filter: brightness(0) invert(1); opacity: 0.85; }
+.marquee-logo--omnisend { height: 18px; filter: invert(1) brightness(2); }
+@keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .ticker-wrap img { width: auto; height: auto; display: block; opacity: 1; filter: brightness(0) invert(1); }
 
 /* ─── SHARED SECTION STYLES ─────────────────────────── */
