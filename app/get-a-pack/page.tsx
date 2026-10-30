@@ -105,9 +105,9 @@ export default function GetAPackPage() {
           </p>
           <div className="live-events-box">
             {[
-              { month: 'OCT', day: '14', title: 'Live Break #7 – Founders Night',       meta: '8:00 PM ET • Streaming IG Live & YouTube • 40 Packs on the table' },
-              { month: 'OCT', day: '21', title: 'The Top 100 Show – Ep. 4',            meta: '7:30 PM ET • Guest: A Top 10 Card, revealed live' },
-              { month: 'OCT', day: '28', title: 'Live Break #8 – Chase Card Special',  meta: '8:00 PM ET • A confirmed 1/1 is in tonight’s stack' },
+              { month: 'NOV', day: '5',  title: 'Live Break #1', meta: '10:00 AM PT • Streaming on X, YouTube, and LinkedIn' },
+              { month: 'NOV', day: '10', title: 'Live Break #2', meta: '3:00 PM PT • Streaming on X, YouTube, and LinkedIn' },
+              { month: 'NOV', day: '12', title: 'Live Break #3', meta: '12:00 PM PT • Streaming on X, YouTube, and LinkedIn' },
             ].map((event, i, arr) => (
               <div key={i} className={'live-event' + (i < arr.length - 1 ? ' live-event-divider' : '')}>
                 <div className="live-date">
