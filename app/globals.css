@@ -1928,12 +1928,27 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-hero-pack {
   flex-shrink: 0;
   width: clamp(260px, 32vw, 480px);
-  filter: drop-shadow(0 32px 60px rgba(3,159,157,0.15)), drop-shadow(0 16px 40px rgba(0,0,0,0.5));
 }
-.hiw-hero-pack img {
-  width: 100%;
+.hiw-pack-duo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+}
+.hiw-pack-duo__back {
+  width: 44%;
   height: auto;
-  display: block;
+  transform: rotate(-6deg) translateX(12px);
+  filter: brightness(0.7) drop-shadow(0 12px 24px rgba(0,0,0,0.7));
+  flex-shrink: 0;
+}
+.hiw-pack-duo__front {
+  width: 55%;
+  height: auto;
+  transform: rotate(1.5deg);
+  filter: drop-shadow(0 0 24px rgba(3,159,157,0.4)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
+  flex-shrink: 0;
+  z-index: 1;
 }
 .hiw-eyebrow {
   font-family: var(--font-antonio);
