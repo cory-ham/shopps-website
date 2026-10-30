@@ -348,8 +348,15 @@ export default function GiveawaysPage() {
             {[...shuffled, ...shuffled].map((g, i) => (
               <div key={i} className="giveaway-tile">
                 <div className="giveaway-flipper">
-                  {/* Front — prize content (visible by default) */}
-                  <div className="giveaway-face giveaway-face-front" style={{ background: g.backColor ?? '#e8a111' }}>
+                  {/* Front */}
+                  <div className="giveaway-face giveaway-face-front">
+                    {g.cardImg && (
+                      <img src={g.cardImg} alt={g.name} draggable={false}
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                    )}
+                  </div>
+                  {/* Back — CSS card back design, no image overlay */}
+                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
                     {/* Name + Company */}
                     <div className="giveaway-back-header">
                       <p className="giveaway-back-name">{g.name}</p>
@@ -363,13 +370,6 @@ export default function GiveawaysPage() {
                     {/* SHOPPS logo */}
                     <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
                       style={{ height: '24px', width: 'auto', opacity: 0.9 }} />
-                  </div>
-                  {/* Back — card image (revealed on hover) */}
-                  <div className="giveaway-face giveaway-face-back">
-                    {g.cardImg && (
-                      <img src={g.cardImg} alt={g.name} draggable={false}
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
-                    )}
                   </div>
                 </div>
               </div>
