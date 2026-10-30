@@ -2850,3 +2850,105 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
   .prize-card-title { font-size: clamp(0.9rem, 4vw, 1.1rem) !important; }
   .prize-card-desc { font-size: 14px !important; line-height: 1.6 !important; }
 }
+
+/* ── HERO — button sizing on mobile ── */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-buttons .btn-teal,
+  .hero-buttons .btn-outline {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px !important;
+    font-size: 13px !important;
+  }
+  .hero-cta-stack { width: 100%; align-items: stretch; }
+  .shopps-live-compact { text-align: center; justify-content: center; }
+}
+
+/* ── HERO — text sizing ── */
+@media (max-width: 380px) {
+  .hero-headline { font-size: clamp(38px, 13vw, 52px) !important; }
+  .hero-body { font-size: 14px !important; }
+}
+
+/* ── BUTTONS — fix vw-based sizing on mobile ── */
+@media (max-width: 768px) {
+  .btn-outline-sm {
+    font-size: 11px !important;
+    padding: 10px 18px !important;
+  }
+  .btn-teal-lg {
+    font-size: 13px !important;
+    padding: 14px 24px !important;
+  }
+}
+
+/* ── INPUTS — full width on all forms ── */
+@media (max-width: 640px) {
+  input[type="email"], input[type="text"] {
+    font-size: 16px !important; /* prevents iOS zoom */
+  }
+}
+
+/* ── NAV DRAWER — touch targets ── */
+@media (max-width: 768px) {
+  .nav-drawer-link {
+    padding: 16px 0 !important;
+    font-size: 22px !important;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-drawer-live {
+    padding: 18px 0 !important;
+    font-size: 22px !important;
+  }
+}
+
+/* ── PRIZE TAG on giveaways ── */
+@media (max-width: 480px) {
+  .prize-tag {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+  }
+}
+
+/* ── HOW IT WORKS — live events ── */
+@media (max-width: 480px) {
+  .live-section { padding: 8vw 0 !important; }
+  .live-events-box { border-radius: 8px !important; }
+  .live-date-month { font-size: 10px !important; }
+  .live-date-day { font-size: clamp(1.5rem, 8vw, 2.5rem) !important; }
+  .live-title { font-size: 13px !important; }
+}
+
+/* ── PREVENT HORIZONTAL OVERFLOW SITEWIDE ── */
+@media (max-width: 768px) {
+  .section-inner { overflow-x: hidden; }
+  .cta-section { overflow: hidden; }
+}
+
+/* ── GIVEAWAYS — fix arrows on mobile ── */
+@media (max-width: 768px) {
+  .giveaway-section-arrows button {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* ── SET PAGE — active filter highlight ── */
+@media (max-width: 480px) {
+  .set-filter-btn {
+    font-size: 10px !important;
+    padding: 8px 10px !important;
+    letter-spacing: 0.08em !important;
+  }
+  .set-filter-btn.active {
+    background: rgba(3,159,157,0.15) !important;
+  }
+}
