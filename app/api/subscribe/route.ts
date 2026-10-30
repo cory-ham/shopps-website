@@ -5,7 +5,7 @@ const FORM_ID = 'a3670688-2592-4f58-bdfb-0a78a2b0eb42'
 const LIST_ID = '4374'
 
 export async function POST(req: NextRequest) {
-  const HS_KEY = *** || ''
+  const HS_KEY = process.env.HUBSPOT_API_KEY || ''
   const body = await req.json()
   const { email } = body
   if (!email || !email.includes('@')) {
