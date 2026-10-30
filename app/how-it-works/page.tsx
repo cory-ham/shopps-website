@@ -128,7 +128,7 @@ export default function HowItWorksPage() {
       </div>
 
       {/* ── 4-step grid ── */}
-      <section style={{ background: '#13161f', padding: '5vw 0' }}>
+      <section style={{ background: 'var(--bg)', padding: '5vw 0' }}>
         <div className="section-inner">
           <div className="hiw-steps-grid">
             {STEPS.map(step => (
