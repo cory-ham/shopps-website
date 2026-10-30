@@ -358,22 +358,21 @@ export default function GiveawaysPage() {
                   </div>
                   {/* Back — CSS card back design, no image overlay */}
                   <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
-                    {/* Name */}
-                    <div style={{ marginBottom: '6px' }}>
-                      <p style={{ margin: 0, fontFamily: 'var(--font-antonio)', fontSize: '13px', fontWeight: 800, color: '#0d0d0d', letterSpacing: '0.06em', textTransform: 'uppercase', lineHeight: 1.1 }}>{g.name}</p>
-                      <p style={{ margin: '2px 0 0', fontFamily: 'var(--font-antonio)', fontSize: '10px', fontWeight: 700, color: '#0d0d0d', letterSpacing: '0.08em', textTransform: 'uppercase', opacity: 0.75 }}>{g.company}</p>
+                    {/* Name + Company */}
+                    <div style={{ textAlign: 'center', marginBottom: '6px' }}>
+                      <p style={{ margin: 0, fontFamily: 'var(--font-antonio)', fontSize: '12px', fontWeight: 800, color: '#0d0d0d', letterSpacing: '0.06em', textTransform: 'uppercase', lineHeight: 1.1 }}>{g.name}</p>
+                      <p style={{ margin: '1px 0 0', fontFamily: 'var(--font-antonio)', fontSize: '9px', fontWeight: 700, color: '#0d0d0d', letterSpacing: '0.08em', textTransform: 'uppercase', opacity: 0.7 }}>{g.company}</p>
                     </div>
-                    {/* Prize box — matches BIOGRAPHY box on real card */}
-                    <div style={{ background: '#fff', borderRadius: '8px', flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 10px', gap: '6px', margin: '4px 0' }}>
-                      <span style={{ background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio)', fontSize: '9px', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '3px 12px', borderRadius: '20px' }}>GIVEAWAY PRIZE</span>
-                      <p style={{ margin: 0, fontSize: '11px', fontWeight: 600, color: '#0d0d0d', lineHeight: 1.35, fontFamily: 'var(--font-body)' }}>{g.prize}</p>
+                    {/* Prize box fills remaining space */}
+                    <div style={{ background: '#fff', borderRadius: '8px', flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '8px 10px', gap: '8px' }}>
+                      <span style={{ background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio)', fontSize: '8px', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: '20px', flexShrink: 0 }}>GIVEAWAY PRIZE</span>
+                      <p style={{ margin: 0, fontSize: '10px', fontWeight: 600, color: '#0d0d0d', lineHeight: 1.4, fontFamily: 'var(--font-body)', textAlign: 'center' }}>{g.prize}</p>
                     </div>
                     {/* Black SHOPPS logo + copyright */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', marginTop: '6px' }}>
                       <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
-                        style={{ height: '18px', width: 'auto', filter: 'brightness(0)' }} />
-                      <p style={{ margin: 0, fontSize: '5px', color: '#0d0d0d', opacity: 0.5, letterSpacing: '0.04em', textAlign: 'center', lineHeight: 1.3, fontFamily: 'var(--font-body)' }}>© 2026 COMMON THREAD COLLECTIVE. ALL RIGHTS RESERVED.
-SHOPPSCARDS.COM</p>
+                        style={{ height: '16px', width: 'auto', filter: 'brightness(0)' }} />
+                      <p style={{ margin: 0, fontSize: '4.5px', color: '#0d0d0d', opacity: 0.45, letterSpacing: '0.03em', textAlign: 'center', lineHeight: 1.3, fontFamily: 'var(--font-body)' }}>© 2026 COMMON THREAD COLLECTIVE. SHOPPSCARDS.COM</p>
                     </div>
                   </div>
                 </div>
