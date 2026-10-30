@@ -1943,7 +1943,7 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hiw-pack { position: absolute; width: auto; bottom: 0; }
 /* Back pack: smallest, leftmost */
 .hiw-pack--back {
-  height: 40%;
+  height: 38%;
   left: 0;
   transform: rotate(-8deg) translateX(-4%);
   filter: drop-shadow(0 12px 28px rgba(0,0,0,0.65)) brightness(0.65);
@@ -1951,16 +1951,17 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 /* Middle pack */
 .hiw-pack--mid {
-  height: 52%;
+  height: 50%;
   left: 18%;
   transform: rotate(-3deg);
   filter: drop-shadow(0 16px 36px rgba(0,0,0,0.65)) brightness(0.82);
   z-index: 2;
 }
-/* Front pack: largest, foreground */
+/* Front pack: largest, foreground — bleeds into nav padding intentionally */
 .hiw-pack--front {
-  height: 65%;
+  height: clamp(240px, 24vw, 380px);
   right: 0;
+  bottom: 0;
   transform: rotate(1deg);
   filter: drop-shadow(0 0 24px rgba(3,159,157,0.32)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
   z-index: 3;
