@@ -211,7 +211,7 @@ export default function GiveawaysPage() {
           border-radius: 8px;
         }
         .giveaway-flipper { transform: rotateY(180deg); }
-        PLACEHOLDER {
+        .giveaway-tile:hover .giveaway-flipper {
           transform: rotateY(0deg);
         }
 
