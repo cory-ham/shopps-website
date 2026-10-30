@@ -242,7 +242,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Homepage marquee sponsor bar */
 .marquee-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 28px 0 28px; }
-.marquee-label { font-family: var(--font-body); font-size: 15px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin: 0 0 28px; padding: 0; text-align: center; }
+.marquee-label { font-family: var(--font-body); font-size: 15px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--olive); margin: 0 0 28px; padding: 0; text-align: center; }
 .marquee-track-wrap { padding-bottom: 0; }
 .marquee-track { display: flex; align-items: center; flex-shrink: 0; min-width: 100%; animation: marquee-scroll 50s linear infinite; }
 .marquee-item { display: inline-flex; align-items: center; gap: 0; flex-shrink: 0; }
