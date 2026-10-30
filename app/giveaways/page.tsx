@@ -209,6 +209,7 @@ export default function GiveawaysPage() {
           transform-style: preserve-3d;
           transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
           border-radius: 8px;
+          transform: rotateY(180deg);
         }
         .giveaway-tile:hover .giveaway-flipper {
           transform: rotateY(180deg);
