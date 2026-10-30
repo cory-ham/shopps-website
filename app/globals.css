@@ -237,7 +237,7 @@ a { color: inherit; text-decoration: none; }
   margin: 2rem 0 0.75rem;
   font-family: var(--font-body);
 }
-.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; height: 56px; display: flex; align-items: center; justify-content: space-evenly; padding: 0 1vw; }
+.ticker-wrap { width: 100%; background: #0a0c14; border-top: 1px solid #14182a; border-bottom: 1px solid #14182a; height: 56px; display: flex; align-items: center; justify-content: space-evenly; padding: 0 1vw; overflow: hidden; }
 .ticker-wrap > div { flex: 0 0 auto; width: 130px; height: 38px; display: flex; align-items: center; justify-content: center; }
 .ticker-wrap img { width: auto; height: auto; display: block; opacity: 1; filter: brightness(0) invert(1); }
 
@@ -1183,9 +1183,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ─── SPONSOR BAR MOBILE ─────────────────────────── */
 @media (max-width: 768px) {
-  .ticker-wrap { overflow: hidden; padding: 0 8px; height: 48px; gap: 0; }
-  /* On mobile: 3 items visible = show first 3 divs, hide rest */
-  .ticker-wrap > div:nth-child(n+4) { display: none; }
+  .ticker-wrap { overflow: hidden; padding: 0 16px; height: 48px; justify-content: space-around; }
+  .ticker-wrap > div { flex: 0 0 calc(100% / 4); }
   .ticker-wrap img { height: 18px !important; }
 }
 
@@ -2733,8 +2732,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── GLOBAL — sponsor ticker on mobile ── */
 @media (max-width: 480px) {
-  .ticker-wrap { height: 44px; padding: 0 4px; }
-  .ticker-wrap > div:nth-child(n+3) { display: none; }
+  .ticker-wrap { height: 44px; padding: 0 12px; justify-content: space-around; }
+  .ticker-wrap > div { flex: 0 0 calc(100% / 2); }
   .ticker-wrap img { height: 16px !important; }
 }
 
