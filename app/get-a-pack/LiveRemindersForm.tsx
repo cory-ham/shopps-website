@@ -9,17 +9,11 @@ export default function LiveRemindersForm() {
     e.preventDefault()
     setStatus('loading')
     try {
-      const res = await fetch(
-        'https://api.hsforms.com/submissions/v3/integration/submit/5507026/a3670688-2592-4f58-bdfb-0a78a2b0eb42',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            fields: [{ objectTypeId: '0-1', name: 'email', value: email }],
-            context: { pageUri: 'shoppscards.com/get-a-pack', pageName: 'SHOPPS Pack Drop' },
-          }),
-        }
-      )
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
       setStatus(res.ok ? 'done' : 'error')
     } catch {
       setStatus('error')
