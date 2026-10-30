@@ -42,7 +42,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/giveaway-backs/giveaway-back-v2-200.jpg' },
   { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg', backImg: '/giveaway-backs/giveaway-back-v2-224.jpg' },
   { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg', backImg: '/giveaway-backs/giveaway-back-v2-240.jpg' },
-  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg', backColor: '#3659ab' },
+  { name: 'Rytis Lauris',          company: 'Omnisend',              prize: '30% off Omnisend for 3 months + complimentary migration',                       cardImg: '/cards/sponsor-rytis.jpg', backColor: '#3659ab', backImg: '/giveaway-backs/giveaway-back-v2-rytis.jpg' },
   { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg', backImg: '/giveaway-backs/giveaway-back-v2-392.jpg' },
   { name: 'Vicky Williams Grahan', company: 'Coyuchi',               prize: 'A set of Coyuchi sheets + a 30-minute consultation',                             cardImg: '/cards/foil-sig-chrome-050.jpg', backImg: '/giveaway-backs/giveaway-back-v2-400.jpg' },
   { name: 'Andrew Faris',          company: 'AJF Growth',            prize: 'A 30-minute consultation',                                                      cardImg: '/cards/foil-sig-chrome-051.jpg', backImg: '/giveaway-backs/giveaway-back-v2-408.jpg' },
@@ -67,7 +67,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Bryan Cano',            company: 'Made Adaptive',         prize: 'A one-hour consultation',                                                        cardImg: '/cards/foil-sig-chrome-091.jpg', backImg: '/giveaway-backs/giveaway-back-v2-728.jpg' },
   { name: 'Victor Tam',            company: 'Monos',                 prize: 'An aluminum Monos carry-on + a 60-minute consultation',                          cardImg: '/cards/foil-sig-chrome-093.jpg', backImg: '/giveaway-backs/giveaway-back-v2-744.jpg' },
   { name: 'Eric Panofsky',         company: 'SLTWTR',                prize: 'A free site audit or 30 minutes of consulting',                                  cardImg: '/cards/foil-sig-chrome-094.jpg', backImg: '/giveaway-backs/giveaway-back-v2-752.jpg' },
-  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg', backColor: '#3659ab' },
+  { name: 'Moiz Ali',              company: 'Native / Fulfil',        prize: 'A conversation with Moiz Ali, founder of Native (acquired by P&G for $100M)',   cardImg: '/cards/sponsor-moiz.jpg', backColor: '#3659ab', backImg: '/giveaway-backs/giveaway-back-v2-moiz.jpg' },
 ]
 
 const PRIZES: Prize[] = [
