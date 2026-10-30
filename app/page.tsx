@@ -60,7 +60,7 @@ import Link from 'next/link'
 function PackDropForm() {
   const [email, setEmail] = React.useState('')
   const [status, setStatus] = React.useState('idle')
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
     const res = await fetch('/api/subscribe', {
