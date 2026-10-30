@@ -2734,3 +2734,119 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 @media (max-width: 480px) {
   .ticker-wrap { height: 40px; }
 }
+
+/* ── HOMEPAGE — PackDropForm mobile stacking fix ── */
+@media (max-width: 900px) {
+  .howto-pack-right {
+    flex-direction: column-reverse !important;
+    gap: 2rem !important;
+    padding: 0 5vw 6vw !important;
+    align-items: center !important;
+  }
+  .howto-pack-right img {
+    max-height: 260px !important;
+    width: auto !important;
+    max-width: 80% !important;
+  }
+}
+
+/* ── HOMEPAGE — value section mobile ── */
+@media (max-width: 768px) {
+  .value-section { padding: 8vw 0 6vw; }
+  .value-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 5vw !important;
+  }
+  .value-item { padding: 24px 20px; }
+  .value-title { font-size: clamp(1.1rem, 5vw, 1.4rem); }
+}
+
+/* ── HOMEPAGE — SHOPPS intro section mobile ── */
+@media (max-width: 768px) {
+  .shopps-inner { padding: 0 5vw; }
+  .shopps-cols {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .shopps-heading { font-size: clamp(2rem, 9vw, 3rem); }
+  .shopps-stats {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .shopps-stat-card {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .shopps-stat-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ── HOMEPAGE — live tracker hero ── */
+@media (max-width: 480px) {
+  .live-tracker-strip {
+    font-size: 11px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+/* ── SET PAGE — card grid gaps on mobile ── */
+@media (max-width: 480px) {
+  .set-grid { gap: 8px !important; padding: 3vw 4vw 10vw !important; }
+  .set-card-img { border-radius: 4px; }
+  .set-page-header { padding: 72px 4vw 3vw !important; }
+  .set-eyebrow { font-size: 9px !important; }
+}
+
+/* ── SET PAGE — checklist section touch targets ── */
+@media (max-width: 480px) {
+  .checklist-check { width: 22px; height: 22px; }
+  .checklist-name { font-size: 12px; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* ── GIVEAWAYS PAGE — how claiming works ── */
+@media (max-width: 768px) {
+  .howto-section { padding: 8vw 5vw 6vw !important; }
+  .howto-steps { gap: 12px !important; }
+  .howto-num { font-size: clamp(2rem, 9vw, 3rem) !important; }
+  .howto-title { font-size: clamp(0.9rem, 4vw, 1.2rem) !important; }
+  .howto-body { font-size: 14px !important; }
+  .prize-disclaimer { font-size: 11px !important; }
+}
+
+/* ── GIVEAWAYS PAGE — golden tickets ── */
+@media (max-width: 640px) {
+  .golden-tickets-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .golden-ticket-card img { width: 100% !important; height: auto !important; }
+}
+
+/* ── GIVEAWAYS PAGE — giveaway section heading ── */
+@media (max-width: 480px) {
+  .prizeboard-h1 { font-size: clamp(2.2rem, 11vw, 3.5rem) !important; }
+}
+
+/* ── HOW IT WORKS PAGE — step card content ── */
+@media (max-width: 768px) {
+  .howto-step {
+    padding: 20px 16px !important;
+  }
+  .howto-num { font-size: clamp(2rem, 8vw, 3rem) !important; margin-bottom: 8px !important; }
+  .howto-title { font-size: clamp(0.95rem, 4.5vw, 1.3rem) !important; }
+  .howto-body { font-size: 14px !important; line-height: 1.6 !important; }
+}
+
+/* ── HOW IT WORKS PAGE — HIW where section ── */
+@media (max-width: 768px) {
+  .hiw-where-section { padding: max(4vw, 48px) 0 4vw !important; }
+  .hiw-where-section .section-heading { padding: 0 5vw; }
+  .hiw-where-section .section-eyebrow { padding: 0 5vw; }
+  .hiw-channels-grid { padding: 0 5vw !important; }
+  .prize-card-title { font-size: clamp(0.9rem, 4vw, 1.1rem) !important; }
+  .prize-card-desc { font-size: 14px !important; line-height: 1.6 !important; }
+}
