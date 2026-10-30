@@ -623,7 +623,7 @@ export default function Home() {
         </div>
       </section>
 
-      <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: '15px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(245,248,248,0.9)', margin: '0', paddingTop: '1.5vw', paddingBottom: '12px' }}>THANK YOU TO OUR SPONSORS</p>
+      <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: '15px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(245,248,248,0.9)', margin: '0 0 12px' }}>THANK YOU TO OUR SPONSORS</p>
       <div className="marquee-wrap">
         <div className="marquee-track">
           {[...Array(8)].map((_, i) => (
