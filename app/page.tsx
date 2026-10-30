@@ -401,7 +401,7 @@ const STEPS = [
   {
     num: '02',
     title: 'Join the conversation',
-    body: 'Follow the players and Common Thread Collective on LinkedIn and X for surprise drops, pack giveaways, and chances to nominate fellow colleagues.',
+    body: 'Follow the players and Common Thread Collective on LinkedIn and X for surprise drops, pack giveaways, and chances to win real prizes.',
   },
   {
     num: '03',
