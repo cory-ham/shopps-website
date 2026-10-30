@@ -313,10 +313,6 @@ const TOP100_CARDS = (() => {
 const TICKER_ITEMS = [
   { label: 'Fulfil' },
   { label: 'omnisend' },
-  { label: 'Fulfil' },
-  { label: 'omnisend' },
-  { label: 'Fulfil' },
-  { label: 'omnisend' },
 ]
 
 const PRIZES = [

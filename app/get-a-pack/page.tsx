@@ -138,8 +138,8 @@ export default function GetAPackPage() {
       {/* ── Sponsor bar ── */}
       <p className="sponsor-label" style={{fontSize:'18px',fontWeight:'700',letterSpacing:'0.12em'}}>THANK YOU TO OUR SPONSORS</p>
       <div className="ticker-wrap">
-        {(['Fulfil','omnisend','Fulfil','omnisend','Fulfil','omnisend'] as const).map((label, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', minWidth: 0 }}>
+        {(['Fulfil','omnisend'] as const).map((label, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}>
             <img
               src={label === 'Fulfil' ? '/fulfil-logo.svg' : '/omnisend-logo.svg'}
               alt={label}
