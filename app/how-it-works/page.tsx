@@ -143,7 +143,7 @@ export default function HowItWorksPage() {
             ))}
           </div>
           {/* ── Email capture ── */}
-          <div style={{ marginTop: '3.5vw', paddingTop: '3vw', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ marginTop: '3.5vw', paddingTop: '3vw', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <p style={{ margin: '0 0 10px', fontFamily: 'var(--font-body)', fontSize: 'clamp(16px,1.1vw,18px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)' }}>
               <strong style={{color:'var(--teal)'}}>Enter your email for a chance to win a pack.</strong><br />We&apos;ll pick winners at random each weekday through November 13.
             </p>
