@@ -9,11 +9,17 @@ export default function LiveRemindersForm() {
     e.preventDefault()
     setStatus('loading')
     try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'get-reminders' }),
-      })
+      const res = await fetch(
+        'https://api.hsforms.com/submissions/v3/integration/submit/5507026/a3670688-2592-4f58-bdfb-0a78a2b0eb42',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: [{ objectTypeId: '0-1', name: 'email', value: email }],
+            context: { pageUri: 'shoppscards.com/get-a-pack', pageName: 'SHOPPS Pack Drop' },
+          }),
+        }
+      )
       setStatus(res.ok ? 'done' : 'error')
     } catch {
       setStatus('error')
@@ -30,15 +36,7 @@ export default function LiveRemindersForm() {
 
   return (
     <form onSubmit={submit} className="live-email-bar">
-      <input
-        className="live-email-input"
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="you@email.com – never miss a break"
-        required
-        autoComplete="email"
-      />
+      <input className="live-email-input" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@email.com – never miss a break" required autoComplete="email" />
       <button type="submit" className="live-email-btn" disabled={status === 'loading'}>
         {status === 'loading' ? 'SIGNING UP…' : status === 'error' ? 'TRY AGAIN' : 'GET REMINDERS'}
       </button>
