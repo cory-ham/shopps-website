@@ -3,6 +3,7 @@ import React from 'react'
 export const dynamic = 'force-dynamic'
 import { PACKS_REMAINING } from '../lib/pack-count'
 import SiteNav from '../components/SiteNav'
+import LiveRemindersForm from './LiveRemindersForm'
 import { useState } from 'react'
 
 
@@ -28,48 +29,6 @@ function PackSignupForm() {
 }
 
 
-function LiveRemindersForm() {
-  const [email, setEmail] = React.useState('')
-  const [status, setStatus] = React.useState<'idle'|'loading'|'done'|'error'>('idle')
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!email) return
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-      setStatus(res.ok ? 'done' : 'error')
-    } catch {
-      setStatus('error')
-    }
-  }
-  if (status === 'done') return (
-    <div className="live-email-bar">
-      <p style={{ color: 'var(--teal)', fontFamily: 'var(--font-antonio)', fontSize: '14px', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0 }}>
-        ✓ You&apos;re in — we&apos;ll remind you before every break.
-      </p>
-    </div>
-  )
-  return (
-    <form onSubmit={submit} className="live-email-bar">
-      <input
-        className="live-email-input"
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="you@email.com – never miss a break"
-        required
-        autoComplete="email"
-      />
-      <button type="submit" className="live-email-btn" disabled={status === 'loading'}>
-        {status === 'loading' ? 'SIGNING UP…' : status === 'error' ? 'TRY AGAIN' : 'GET REMINDERS'}
-      </button>
-    </form>
-  )
-}
 export default function GetAPackPage() {
   return (
     <>
