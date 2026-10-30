@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const HS_API_KEY = process.env.HUBSPOT_API_KEY || ''
-const SHOPPS_LIST_ID = '4374' // SHOPPS — Pack Drop Signups
+const HS_API_KEY = *** || ''
+const SHOPPS_LIST_ID = '4374'
 
 export async function POST(req: NextRequest) {
   const { email, source } = await req.json()
@@ -10,35 +10,43 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // 1. Create or update contact
-    const contactRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/upsert', {
+    // 1. Create contact (409 = already exists, both are fine)
+    const createRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${HS_API_KEY}`,
       },
       body: JSON.stringify({
-        inputs: [{
-          properties: {
-            email,
-            hs_lead_status: 'NEW',
-            lifecyclestage: 'subscriber',
-            hs_analytics_source: 'OTHER_CAMPAIGNS',
-            shopps_signup_source: source || 'shoppscards.com',
-          },
-          idProperty: 'email',
-        }],
+        properties: {
+          email,
+          hs_lead_status: 'NEW',
+          lifecyclestage: 'subscriber',
+          shopps_signup_source: source || 'shoppscards.com',
+        },
       }),
     })
 
-    if (!contactRes.ok) {
-      const err = await contactRes.json()
-      console.error('HubSpot upsert error:', err)
+    let contactId: string | null = null
+
+    if (createRes.ok) {
+      const data = await createRes.json()
+      contactId = data?.id
+    } else if (createRes.status === 409) {
+      // Contact exists — look them up by email
+      const searchRes = await fetch(
+        `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(email)}?idProperty=email`,
+        { headers: { 'Authorization': `Bearer ${HS_API_KEY}` } }
+      )
+      if (searchRes.ok) {
+        const data = await searchRes.json()
+        contactId = data?.id
+      }
+    } else {
+      const err = await createRes.json()
+      console.error('HubSpot create error:', err)
       return NextResponse.json({ error: 'HubSpot error' }, { status: 500 })
     }
-
-    const contactData = await contactRes.json()
-    const contactId = contactData?.results?.[0]?.id
 
     // 2. Add to SHOPPS list
     if (contactId) {
@@ -48,7 +56,7 @@ export async function POST(req: NextRequest) {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${HS_API_KEY}`,
         },
-        body: JSON.stringify({ vids: [contactId] }),
+        body: JSON.stringify({ vids: [parseInt(contactId)] }),
       })
     }
 
