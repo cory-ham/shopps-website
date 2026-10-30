@@ -356,24 +356,21 @@ export default function GiveawaysPage() {
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     )}
                   </div>
-                  {/* Back — CSS card back design, no image overlay */}
-                  <div className="giveaway-face giveaway-face-back" style={{ background: g.backColor ?? '#e8a111' }}>
-                    {/* Name — bold Antonio heavy like real card */}
-                    <div style={{ textAlign: 'center', marginBottom: '5px', lineHeight: 1 }}>
-                      <p style={{ margin: 0, fontFamily: 'var(--font-antonio)', fontSize: '11px', fontWeight: 900, color: '#0d0d0d', letterSpacing: '0.04em', textTransform: 'uppercase', lineHeight: 1.0 }}>{g.name}</p>
-                      <p style={{ margin: '2px 0 0', fontFamily: 'var(--font-antonio)', fontSize: '8.5px', fontWeight: 700, color: '#0d0d0d', letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 1 }}>{g.company}</p>
-                    </div>
-                    {/* White box fills most of card — like real biography box */}
-                    <div style={{ background: '#fff', borderRadius: '10px', flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '8px 8px 6px', gap: '6px', overflow: 'hidden' }}>
-                      <span style={{ display: 'block', background: '#0d0d0d', color: '#fff', fontFamily: 'var(--font-antonio)', fontSize: '7.5px', fontWeight: 900, letterSpacing: '0.18em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: '20px', textAlign: 'center', whiteSpace: 'nowrap' }}>GIVEAWAY PRIZE</span>
-                      <p style={{ margin: 0, fontSize: '9.5px', fontWeight: 500, color: '#0d0d0d', lineHeight: 1.45, fontFamily: 'var(--font-antonio)', textAlign: 'center', letterSpacing: '0.01em' }}>{g.prize}</p>
-                    </div>
-                    {/* Black SHOPPS logo + copyright */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', marginTop: '5px' }}>
-                      <img src="/shopps-logo-v2.png" alt="SHOPPS" draggable={false}
-                        style={{ height: '14px', width: 'auto', filter: 'brightness(0)' }} />
-                      <p style={{ margin: 0, fontSize: '4px', color: '#0d0d0d', opacity: 0.4, letterSpacing: '0.02em', textAlign: 'center', lineHeight: 1.3, fontFamily: 'var(--font-body)', textTransform: 'uppercase' }}>© 2026 COMMON THREAD COLLECTIVE. SHOPPSCARDS.COM</p>
-                    </div>
+                  {/* Back — rendered giveaway card back image */}
+                  <div className="giveaway-face giveaway-face-back">
+                    {g.backImg ? (
+                      <img src={g.backImg} alt={g.name + ' giveaway'} draggable={false}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
+                        onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
+                    ) : (
+                      <div style={{ width: '100%', height: '100%', background: g.backColor ?? '#e8a111', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '12px', boxSizing: 'border-box', borderRadius: '4px' }}>
+                        <p style={{ margin: 0, fontFamily: 'var(--font-antonio)', fontSize: '11px', fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', textAlign: 'center' }}>{g.name}</p>
+                        <p style={{ margin: '3px 0 8px', fontFamily: 'var(--font-antonio)', fontSize: '9px', color: '#0d0d0d', textTransform: 'uppercase', textAlign: 'center' }}>{g.company}</p>
+                        <div style={{ background: '#fff', borderRadius: '8px', flex: 1, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px' }}>
+                          <p style={{ margin: 0, fontFamily: 'var(--font-antonio)', fontSize: '10px', color: '#0d0d0d', textAlign: 'center', lineHeight: 1.3 }}>{g.prize}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
