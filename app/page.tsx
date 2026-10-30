@@ -739,7 +739,7 @@ export default function Home() {
       <section className="tweet-section">
         <div className="section-inner">
           <h2 className="section-heading">In the Wild</h2>
-          <p className="section-body" style={{marginTop:'0.75rem'}}>See what the community is opening, collecting, and trading.<br />Show us your favorites with <span style={{color:'#039F9D'}}>#SHOPPS</span>.</p>
+          <p className="section-body" style={{marginTop:'0.75rem'}}>Follow the players and Common Thread Collective on LinkedIn and X for surprise drops, pack giveaways, and chances to win real prizes.</p>
         </div>
         <div className="tweet-track-wrap">
           <div className="tweet-track">
