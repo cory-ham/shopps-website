@@ -136,7 +136,6 @@ export default function GetAPackPage() {
 
       {/* ── Prize tease CTA ── */}
       {/* ── Sponsor bar ── */}
-      <p className="sponsor-label" style={{fontSize:'18px',fontWeight:'700',letterSpacing:'0.12em'}}>THANK YOU TO OUR SPONSORS</p>
       <div className="ticker-wrap">
         {(['Fulfil','omnisend'] as const).map((label, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}>
