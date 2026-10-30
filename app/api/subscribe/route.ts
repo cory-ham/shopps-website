@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${HS_KEY}` },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fields: [{ objectTypeId: '0-1', name: 'email', value: email }],
           context: { pageUri: 'shoppscards.com', pageName: 'SHOPPS Pack Drop' },
