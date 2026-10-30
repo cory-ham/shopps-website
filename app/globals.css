@@ -1183,9 +1183,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ─── SPONSOR BAR MOBILE ─────────────────────────── */
 @media (max-width: 768px) {
-  .ticker-wrap { overflow: hidden; padding: 0 16px; height: 48px; justify-content: space-around; }
-  .ticker-wrap > div { flex: 0 0 calc(100% / 4); }
-  .ticker-wrap img { height: 18px !important; }
+  .ticker-wrap { overflow: hidden; padding: 0 20px; height: 48px; justify-content: center; gap: 40px; }
+  .ticker-wrap > div:nth-child(n+3) { display: none; }
+  .ticker-wrap > div { flex: 0 0 auto; }
+  .ticker-wrap img { height: 20px !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -2732,9 +2733,9 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── GLOBAL — sponsor ticker on mobile ── */
 @media (max-width: 480px) {
-  .ticker-wrap { height: 44px; padding: 0 12px; justify-content: space-around; }
-  .ticker-wrap > div { flex: 0 0 calc(100% / 2); }
-  .ticker-wrap img { height: 16px !important; }
+  .ticker-wrap { height: 44px; padding: 0 20px; justify-content: center; gap: 32px; }
+  .ticker-wrap > div:nth-child(n+3) { display: none; }
+  .ticker-wrap img { height: 18px !important; }
 }
 
 /* ── HOMEPAGE — PackDropForm mobile stacking fix ── */
