@@ -2498,3 +2498,239 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
     height: 32px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE DEEP CLEAN — Oct 30 2026
+   Page-by-page systematic fixes
+════════════════════════════════════════════════════════════ */
+
+/* ── HOMEPAGE — howto-pack-right stacking ── */
+@media (max-width: 900px) {
+  .howto-pack-right {
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 6vw 6vw;
+  }
+  .howto-pack-right img {
+    max-height: 280px !important;
+    width: auto !important;
+  }
+}
+
+/* ── HOMEPAGE — In the Wild tweet section ── */
+@media (max-width: 768px) {
+  .tweet-section { padding: 10vw 0; }
+  .tweet-section .section-eyebrow { margin-left: 20px; }
+  .tweet-section .section-heading { margin-left: 20px; font-size: clamp(2rem, 9vw, 3rem); }
+  .tweet-fade-left, .tweet-fade-right { display: none; }
+}
+
+/* ── HOMEPAGE — video section ── */
+@media (max-width: 768px) {
+  .shopps-vid-col, .shopps-vid-mobile {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+/* ── HOMEPAGE — stat cards ── */
+@media (max-width: 640px) {
+  .stat-cards-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+@media (max-width: 380px) {
+  .stat-cards-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── SET PAGE — filter row horizontal scroll ── */
+@media (max-width: 768px) {
+  .set-filter-row {
+    padding: 0 4vw 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .set-card-img-wrap img {
+    border-radius: 4px;
+  }
+}
+
+/* ── SET PAGE — checklist table mobile ── */
+@media (max-width: 768px) {
+  .checklist-section { padding: 6vw 0 8vw; }
+  .checklist-header { padding: 0 4vw 4vw; }
+  .checklist-controls { padding: 0 4vw; }
+  .checklist-table-wrap { padding: 0; }
+  .checklist-table { font-size: 11px; }
+  .checklist-table th { padding: 6px 8px; font-size: 9px; }
+  .checklist-num { padding: 8px; width: 36px; }
+  .checklist-name { padding: 8px; }
+  .checklist-co { display: none; }
+  .checklist-check-cell { padding: 6px 8px; }
+  .checklist-check { width: 20px; height: 20px; font-size: 11px; }
+  .checklist-filters { gap: 6px; }
+  .checklist-filter-btn { font-size: 9px !important; padding: 4px 8px !important; }
+  .checklist-bar { width: 120px; }
+}
+
+/* ── GIVEAWAYS PAGE — header and prize hero ── */
+@media (max-width: 768px) {
+  .prizeboard-header {
+    padding: 80px 5vw 16px !important;
+  }
+  .prizeboard-h1 {
+    font-size: clamp(2.8rem, 11vw, 4rem) !important;
+    margin-bottom: 12px !important;
+  }
+  .prizeboard-desc {
+    font-size: 15px !important;
+    margin-bottom: 20px !important;
+  }
+  .prize-hero {
+    flex-direction: column !important;
+    padding-right: 4vw !important;
+  }
+  .prize-hero-text { width: 100% !important; }
+  .prize-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  .prize-hero-btn { width: 100% !important; text-align: center; box-sizing: border-box; }
+}
+
+/* ── GIVEAWAYS PAGE — giveaway carousel ── */
+@media (max-width: 768px) {
+  .giveaway-tile { width: 200px !important; }
+  .giveaway-back-name { font-size: 13px !important; }
+  .giveaway-back-prize { font-size: 11px !important; }
+}
+@media (max-width: 480px) {
+  .giveaway-tile { width: 170px !important; }
+}
+
+/* ── GET-A-PACK PAGE — hero stacks on mobile ── */
+@media (max-width: 768px) {
+  .gap-hero {
+    grid-template-columns: 1fr !important;
+    padding: 80px 5vw 5vw !important;
+    gap: 40px !important;
+  }
+  .gap-hero-packs {
+    width: 70% !important;
+    margin: 0 auto !important;
+  }
+  .gap-h1 {
+    font-size: clamp(2.8rem, 11vw, 4.5rem) !important;
+    line-height: 0.9 !important;
+  }
+}
+@media (max-width: 480px) {
+  .gap-hero { padding: 72px 4vw 4vw !important; }
+  .gap-h1 { font-size: clamp(2.4rem, 12vw, 3.5rem) !important; }
+  .gap-hero-packs { width: 85% !important; }
+}
+
+/* ── GET-A-PACK PAGE — WHERE PACKS DROP channels ── */
+@media (max-width: 768px) {
+  .hiw-where-section {
+    padding-top: max(4vw, 48px) !important;
+    padding-bottom: 4vw !important;
+  }
+  .hiw-channels-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 480px) {
+  .hiw-channels-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .prize-card { padding: 20px 16px !important; }
+}
+
+/* ── GET-A-PACK PAGE — signup form ── */
+@media (max-width: 640px) {
+  .gap-signup-confirm { font-size: 14px; text-align: center; margin-top: 1rem; }
+}
+
+/* ── GET-A-PACK PAGE — live schedule section ── */
+@media (max-width: 768px) {
+  .live-events-box { padding: 20px !important; }
+  .live-event { flex-wrap: wrap; gap: 12px; }
+  .live-date { flex-shrink: 0; }
+  .live-title { font-size: 14px !important; }
+  .live-meta { font-size: 12px !important; }
+  .btn-remind { width: 100%; margin-top: 4px; }
+  .live-email-bar { flex-direction: column; gap: 10px; }
+  .live-email-input { width: 100% !important; }
+  .live-email-btn { width: 100%; }
+}
+
+/* ── HOW IT WORKS PAGE — hero ── */
+@media (max-width: 768px) {
+  .hiw-hero {
+    flex-direction: column !important;
+    padding: 80px 5vw 5vw !important;
+    gap: 32px !important;
+  }
+  .hiw-hero-pack {
+    width: 65% !important;
+    margin: 0 auto !important;
+  }
+  .hiw-h1 {
+    font-size: clamp(2.8rem, 11vw, 4.5rem) !important;
+    line-height: 0.9 !important;
+  }
+}
+@media (max-width: 480px) {
+  .hiw-hero { padding: 72px 4vw 4vw !important; }
+  .hiw-h1 { font-size: clamp(2.4rem, 12vw, 3.5rem) !important; }
+  .hiw-hero-pack { width: 80% !important; }
+}
+
+/* ── HOW IT WORKS PAGE — step cards ── */
+@media (max-width: 768px) {
+  .hiw-steps-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 480px) {
+  .hiw-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .howto-step { padding: 20px 16px !important; }
+  .howto-title { font-size: clamp(1rem, 5vw, 1.3rem) !important; }
+}
+
+/* ── HOW IT WORKS PAGE — channels grid ── */
+@media (max-width: 640px) {
+  .hiw-channels-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── GLOBAL — section headings on mobile ── */
+@media (max-width: 480px) {
+  .section-heading { font-size: clamp(1.8rem, 9vw, 2.8rem) !important; }
+  .section-inner { padding: 0 5vw !important; }
+}
+
+/* ── GLOBAL — CTA section on mobile ── */
+@media (max-width: 480px) {
+  .cta-heading { font-size: clamp(2rem, 10vw, 3.5rem) !important; line-height: 0.92 !important; }
+  .cta-body { font-size: 15px !important; padding: 0 4vw; }
+  .btn-cta-outline { font-size: 12px !important; padding: 14px 24px !important; }
+}
+
+/* ── GLOBAL — footer on mobile ── */
+@media (max-width: 480px) {
+  .site-footer { padding: 32px 20px; gap: 16px; grid-template-columns: 1fr !important; }
+  .footer-copy { font-size: 9px !important; text-align: center; grid-column: 1; }
+  .footer-logo { margin: 0 auto; }
+  .footer-ctc-logo { margin: 0 auto; }
+}
+
+/* ── GLOBAL — sponsor ticker on mobile ── */
+@media (max-width: 480px) {
+  .ticker-wrap { height: 40px; }
+}
