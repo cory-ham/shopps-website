@@ -7,16 +7,25 @@ import { useState } from 'react'
 
 
 
-function HubSpotEmbed() {
-  const containerId = 'hs-form-gap'
-  React.useEffect(() => {
-    const load = () => { (window as any).hbspt?.forms.create({ portalId: '5507026', formId: 'a3670688-2592-4f58-bdfb-0a78a2b0eb42', region: 'na1', target: '#' + containerId }) }
-    if ((window as any).hbspt) { load(); return }
-    const s = document.createElement('script'); s.src = '//js.hsforms.net/forms/embed/v2.js'; s.async = true; s.onload = load; document.head.appendChild(s)
-  }, [])
-  return <div id={containerId} style={{ marginTop: '1.5rem' }} />
+function PackSignupForm() {
+  const [email, setEmail] = React.useState('')
+  const [status, setStatus] = React.useState('idle')
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); setStatus('loading')
+    try {
+      const res = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) })
+      setStatus(res.ok ? 'done' : 'error')
+    } catch { setStatus('error') }
+  }
+  if (status === 'done') return <p className="gap-signup-confirm">✓ You&apos;re in. We&apos;ll let you know when packs drop.</p>
+  return (
+    <form onSubmit={handleSubmit} style={{ marginTop: '2rem', display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" required className="pack-drop-input" />
+      <button type="submit" className="btn-teal" disabled={status === 'loading'} style={{ flexShrink: 0 }}>{status === 'loading' ? 'SIGNING UP…' : 'WIN YOUR NEXT PACK'}</button>
+      {status === 'error' && <p style={{ width: '100%', color: '#e55', fontSize: '13px', marginTop: '6px' }}>Something went wrong. Try again.</p>}
+    </form>
+  )
 }
-function PackSignupForm() { return <HubSpotEmbed /> }
 
 export default function GetAPackPage() {
   return (
