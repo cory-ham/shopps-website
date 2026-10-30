@@ -434,7 +434,7 @@ export default function GiveawaysPage() {
           <img src="/shopps-s-icon-v2.png" alt="S" className="cta-s-icon" />
           <h2 className="cta-heading">ONLY 1,000 PACKS EXIST.<br /><span style={{color:'var(--olive)'}}>{PACKS_REMAINING}</span> PACKS REMAIN.</h2>
 
-          <a href="/get-a-pack" className="btn-cta-outline" style={{ display: 'inline-block' }}>GET A PACK</a>
+          <a href="/get-a-pack" className="btn-cta-outline" style={{ display: 'inline-block', marginTop: '2.5rem' }}>GET A PACK</a>
         </div>
       </section>
 
