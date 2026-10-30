@@ -473,7 +473,7 @@ export default function Home() {
           <div className="hero-cta-stack">
             <div className="hero-buttons">
               <a href="/how-it-works" className="btn-teal">Get a Pack</a>
-              <Link href="/set" className="btn-outline">See the Collection</Link>
+              <Link href="/the-collection" className="btn-outline">See the Collection</Link>
             </div>
             <p className="shopps-live-compact">
               <span className="pack-label-dot" aria-hidden="true" />
@@ -611,7 +611,7 @@ export default function Home() {
           </div>
 
           <div className="top100-footer-row" style={{justifyContent:'flex-start'}}>
-            <a href="/set" className="btn-teal">VIEW THE COLLECTION</a>
+            <a href="/the-collection" className="btn-teal">VIEW THE COLLECTION</a>
           </div>
         </div>
       </section>
