@@ -104,7 +104,7 @@ export default function GetAPackPage() {
               </div>
             ))}
           </div>
-          <LiveRemindersForm />
+          <PackSignupForm />
         </div>
       </section>
 
