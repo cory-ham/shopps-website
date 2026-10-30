@@ -1902,10 +1902,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── How It Works Page ──────────────────────────────────────────────── */
 .hiw-hero {
-  padding: 80px 4vw 2vw;
+  padding: 100px 4vw 2vw;
   display: flex;
   align-items: center;
-  gap: clamp(8px, 1.5vw, 24px);
+  gap: clamp(16px, 2.5vw, 40px);
 }
 .hiw-hero-text {
   flex: 1;
@@ -1913,8 +1913,8 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .hiw-hero-pack {
   flex-shrink: 0;
-  width: clamp(180px, 18vw, 280px);
-  filter: drop-shadow(0 0 32px rgba(3,159,157,0.4)) drop-shadow(0 24px 48px rgba(0,0,0,0.7)) brightness(1.06);
+  width: clamp(260px, 32vw, 480px);
+  filter: drop-shadow(0 32px 60px rgba(3,159,157,0.15)), drop-shadow(0 16px 40px rgba(0,0,0,0.5));
 }
 .hiw-hero-pack img {
   width: 100%;
