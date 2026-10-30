@@ -1916,11 +1916,10 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 
 /* ── How It Works Page ──────────────────────────────────────────────── */
 .hiw-hero {
-  padding: clamp(64px, 5.5vw, 80px) 4vw clamp(24px, 2.5vw, 40px);
+  padding: clamp(64px, 5.5vw, 80px) 4vw 2vw;
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 40px);
-  overflow: visible;
+  gap: clamp(32px, 5vw, 80px);
 }
 .hiw-hero-text {
   flex: 1;
@@ -1928,43 +1927,13 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 }
 .hiw-hero-pack {
   flex-shrink: 0;
-  width: clamp(240px, 28vw, 400px);
-  align-self: center;
-  overflow: visible;
+  width: clamp(260px, 32vw, 480px);
+  filter: drop-shadow(0 32px 60px rgba(3,159,157,0.15)), drop-shadow(0 16px 40px rgba(0,0,0,0.5));
 }
 .hiw-hero-pack img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* Layered pack stack — flex overlap approach, no clipping */
-.hiw-pack-stack {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
-}
-.hiw-pack { flex-shrink: 0; height: auto; }
-.hiw-pack--back {
-  width: 36%;
-  transform: rotate(-8deg) translateX(24px);
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6)) brightness(0.65);
-  z-index: 1;
-  margin-right: -18%;
-}
-.hiw-pack--mid {
-  width: 46%;
-  transform: rotate(-3deg) translateX(12px);
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.6)) brightness(0.82);
-  z-index: 2;
-  margin-right: -20%;
-}
-.hiw-pack--front {
-  width: 58%;
-  transform: rotate(1deg);
-  filter: drop-shadow(0 0 22px rgba(3,159,157,0.3)) drop-shadow(0 16px 36px rgba(0,0,0,0.7));
-  z-index: 3;
 }
 .hiw-eyebrow {
   font-family: var(--font-antonio);
