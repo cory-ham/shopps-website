@@ -140,6 +140,7 @@ function cardSrc(p: number, variant: Variant): string {
 }
 
 const FILTERS = ['ALL', 'AUTOGRAPHS · 1/1', 'CHROME · /5', 'CHROME · /6', 'CHROME · 1/1', 'BASE · /10', 'BASE · /5'] as const
+const FILTER_LABELS: Partial<Record<string, string>> = { 'ALL': 'BASE', 'BASE · /10': 'BLUE · /10', 'BASE · /5': 'GOLD · /5' }
 
 const VARIANTS_META = [
   { key: 'base-green',  label: 'Base (Green)',       color: '#2d7a3a' },
@@ -383,7 +384,7 @@ export default function SetPage() {
                 className={`set-filter-pill${activeFilter === f ? ' active' : ''}`}
                 onClick={() => setActiveFilter(f)}
               >
-                {f}
+                {FILTER_LABELS[f] ?? f}
               </button>
             ))}
           </div>
