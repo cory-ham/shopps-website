@@ -59,7 +59,7 @@ export default function GetAPackPage() {
             {[
               { abbr: 'LB', title: 'LIVE BREAKS',    body: 'The action happens live. Tune in to exclusive pack openings, chase rare pulls, and enter for your chance to win.' },
               { abbr: 'PD', title: 'PLAYER DROPS',   body: 'Your favorite leaders have packs to give away, too. Follow the featured players on X and LinkedIn for surprise drops and exclusive giveaways.' },
-              { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners are getting in on the action. Look out for exclusive giveaways from <strong>FulFil</strong> and <strong>Omnisend</strong>, by following them and a chance to score a pack.</> },
+              { abbr: 'PP', title: 'PARTNER PROMOS', el: <>Our partners Fulfil and Omnisend are getting in on the action. Follow them for exclusive drops and chances to win a pack.</> },
               { abbr: 'CM', title: 'COMMUNITY',      body: "The chase doesn't stop when the stream ends. Join the player challenges, share your pulls, and even consider offering a trade of your own!" },
             ].map(ch => (
               <div key={ch.abbr} className="prize-card">
