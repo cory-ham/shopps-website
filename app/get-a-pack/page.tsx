@@ -104,7 +104,6 @@ export default function GetAPackPage() {
               </div>
             ))}
           </div>
-          <PackSignupForm />
         </div>
       </section>
 
