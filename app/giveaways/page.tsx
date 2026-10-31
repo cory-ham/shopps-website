@@ -87,7 +87,7 @@ const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your Golden Ticket.' },
-  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to hello@commonthreadco.com so we can verify the golden ticket card.' },
+  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to <a href="mailto:hello@commonthreadco.com" style="color:var(--teal);text-decoration:none">hello@commonthreadco.com</a> so we can verify the golden ticket card.' },
   { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the golden ticket prize." }
 ]
 
