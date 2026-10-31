@@ -87,7 +87,7 @@ const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your Golden Ticket.' },
-  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to <a href="mailto:hello@commonthreadco.com" style="color:var(--teal);text-decoration:none">hello@commonthreadco.com</a> so we can verify the golden ticket card.' },
+  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to <a href="mailto:hello@commonthreadco.com" style="color:#039F9D;text-decoration:none">hello@commonthreadco.com</a> so we can verify the golden ticket card.' },
   { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the golden ticket prize." }
 ]
 
@@ -388,7 +388,7 @@ export default function GiveawaysPage() {
               <div key={step.num} className="howto-step">
                 <div className="howto-num">{step.num}</div>
                 <h4 className="howto-title">{step.title}</h4>
-                <p className="howto-body">{step.body}</p>
+                <p className="howto-body" dangerouslySetInnerHTML={{__html: step.body}} />
               </div>
             ))}
           </div>
