@@ -86,9 +86,9 @@ const TOTAL_GIVEAWAYS = 51
 const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
-  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your 1/1 autograph card or Golden Ticket.' },
-  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to [claim email] so we can verify the card.' },
-  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the prize attached to your card." }
+  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your Golden Ticket.' },
+  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to hello@commonthreadco.com so we can verify the golden ticket card.' },
+  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the golden ticket prize." }
 ]
 
 const featured = PRIZES[0]
