@@ -200,7 +200,7 @@ function SetChecklist() {
       <div className="section-inner">
         <div className="checklist-header" onClick={() => setOpen(o => !o)}>
           <div>
-            <p className="section-eyebrow" style={{ marginBottom: '6px' }}>COLLECTOR TOOL</p>
+            <p className="section-eyebrow" style={{ marginBottom: '6px' }}>YOUR PERSONAL COLLECTOR&apos;S VAULT</p>
             <h2 className="section-heading" style={{ margin: 0 }}>COMPLETE CHECKLIST</h2>
           </div>
           <div className="checklist-progress">
