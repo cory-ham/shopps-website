@@ -61,7 +61,7 @@ const STEPS = [
     lines: [
       { text: 'The best pulls may happen live.', bold: false },
       { el: <>Tune in to exclusive pack breaks on <a href="https://x.com/CommnThreadCo" target="_blank" rel="noopener noreferrer">X</a>, <a href="https://www.youtube.com/channel/UCjtbFqsqVORPBJMein0zLWQ" target="_blank" rel="noopener noreferrer">YouTube</a>, and <a href="https://www.linkedin.com/company/common-thread-collective" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Watch the cards fly, chase rare pulls, and enter for your chance to win.</>, bold: false },
-      { el: <><a href="/get-a-pack" style={{color:'#039F9D',textDecoration:'none'}}>See the live schedule →</a></>, bold: false },
+      { el: <><a href="/get-a-pack" className="btn-teal" style={{display:'inline-block',marginTop:'0.5rem',fontSize:'11px',padding:'8px 16px',letterSpacing:'0.12em'}}>SEE THE LIVE SCHEDULE →</a></>, bold: false },
     ],
   },
   {
