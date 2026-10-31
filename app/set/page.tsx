@@ -371,6 +371,10 @@ export default function SetPage() {
         <p className="set-intro">
           Click a card to flip it and learn about the leader&apos;s role in shaping ecommerce.
         </p>
+        <p className="set-intro" style={{marginTop:'0.75rem',fontStyle:'italic',fontSize:'clamp(12px,0.8vw,14px)',color:'rgba(245,248,248,0.65)'}}>
+          1/1 autograph cards shown are digital mockups. Win a physical, authenticated card and claim the prize that goes with it.{' '}
+          <a href="/giveaways" className="btn-teal" style={{display:'inline-block',fontSize:'11px',padding:'6px 14px',letterSpacing:'0.12em',color:'#000',fontStyle:'normal',marginLeft:'4px',verticalAlign:'middle'}}>SEE WHAT YOU COULD WIN →</a>
+        </p>
 
       </div>
 
