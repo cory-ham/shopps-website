@@ -381,9 +381,7 @@ export default function GiveawaysPage() {
       {/* ── GOLDEN TICKETS ── */}
       <div className="section-inner" style={{ paddingTop: '2vw', paddingBottom: '3vw' }}>
         <h2 className="section-heading" style={{ marginBottom: '8px' }}>GOLDEN TICKETS</h2>
-        <p className="prizeboard-desc" style={{ marginBottom: '28px' }}>
-          Pull one from a pack and claim a prize from our sponsors, Fulfil and Omnisend.
-        </p>
+        <p className="prizeboard-desc" style={{ marginBottom: '28px' }} dangerouslySetInnerHTML={{__html: 'Pull one from a pack and claim a prize from our sponsors, <a href="https://www.fulfil.io/" target="_blank" rel="noopener noreferrer" style="color:#039F9D;text-decoration:none">Fulfil</a> and <a href="https://www.omnisend.com/" target="_blank" rel="noopener noreferrer" style="color:#039F9D;text-decoration:none">Omnisend</a>.'}} />
         <div className="golden-tickets-grid">
           <div className="golden-ticket-card">
             <img src="/golden-ticket-fulfil.png" alt="Fulfil Golden Ticket" draggable={false} />
