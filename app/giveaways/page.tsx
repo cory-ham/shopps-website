@@ -71,10 +71,10 @@ const GIVEAWAYS: Giveaway[] = [
 const PRIZES: Prize[] = [
   {
     id: 'courtside-1',
-    tag: 'THE BIG ONE · STILL OUT THERE',
+    tag: 'WHAT YOU COULD WIN',
     title: 'COURTSIDE SEATS',
     subtitle: 'OKC THUNDER',
-    description: "Pull Mike Beckham's one-of-one autograph card and win two courtside seats at a marquee Oklahoma City Thunder game. The single biggest prize and it's still in a pack somewhere.",
+    description: "Win Mike Beckham's 1/1 autograph card and get two courtside seats at an Oklahoma City Thunder game. The single biggest prize and it's still in a pack somewhere.",
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
