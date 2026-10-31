@@ -68,7 +68,12 @@ export default function GetAPackPage() {
               </div>
             ))}
           </div>
-
+          <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <p style={{ margin: '0 0 6px', fontFamily: 'var(--font-body)', fontSize: 'clamp(16px,1.1vw,18px)', lineHeight: 1.55, color: 'rgba(245,248,248,0.72)', textAlign: 'left' }}>
+              <strong style={{color:'var(--teal)'}}>Enter your email for a chance to win a pack.</strong><br />We&apos;ll pick winners at random each weekday through November 13.
+            </p>
+            <PackSignupForm />
+          </div>
         </div>
       </section>
 
