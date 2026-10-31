@@ -139,7 +139,7 @@ function cardSrc(p: number, variant: Variant): string {
   return `/cards/card-${String(num).padStart(3, '0')}.jpg`
 }
 
-const FILTERS = ['BASE', 'AUTOGRAPHS · 1/1', 'CHROME · /5', 'CHROME · /6', 'CHROME · 1/1', 'BLUE · /10', 'GOLD · /5'] as const
+const FILTERS = ['ALL', 'AUTOGRAPHS · 1/1', 'CHROME · /5', 'CHROME · /6', 'CHROME · 1/1', 'BASE · /10', 'BASE · /5'] as const
 
 const VARIANTS_META = [
   { key: 'base-green',  label: 'Base (Green)',       color: '#2d7a3a' },
@@ -270,7 +270,7 @@ function SetChecklist() {
 }
 
 export default function SetPage() {
-  const [activeFilter, setActiveFilter] = useState<string>('BASE')
+  const [activeFilter, setActiveFilter] = useState<string>('ALL')
   const [search, setSearch] = useState('')
   const [variants, setVariants] = useState<Record<number, Variant>>(() => {
     // Seed by date so mix is stable on load but rotates daily
@@ -337,7 +337,7 @@ export default function SetPage() {
         // all 99 people have an autograph card — show everyone
       } else if (activeFilter === 'CHROME · /5' || activeFilter === 'CHROME · /6' || activeFilter === 'CHROME · 1/1' || activeFilter === 'BASE · /10' || activeFilter === 'BASE · /5') {
         if (person.p > 96) return false
-      } else if (activeFilter !== 'BASE') {
+      } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
       }
       if (search.trim()) {
