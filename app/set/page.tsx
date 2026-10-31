@@ -477,7 +477,7 @@ export default function SetPage() {
       <footer className="site-footer">
         <img src="/shopps-logo-v2.png" alt="SHOPPS" className="footer-logo" />
         <p className="footer-copy">2026 COMMON THREAD COLLECTIVE. ALL RIGHTS RESERVED. THIS PRODUCT IS NOT ENDORSED OR AFFILIATED WITH ANY ORGANIZATION OR TEAM. PRINTED IN THE U.S.A.</p>
-        <img src="/ctc-icon.png" alt="Common Thread Collective" className="footer-ctc-logo" />
+        <a href="https://commonthreadco.com/" target="_blank" rel="noopener noreferrer"><img src="/ctc-icon.png" alt="Common Thread Collective" className="footer-ctc-logo" /></a>
       </footer>
     </>
   )
