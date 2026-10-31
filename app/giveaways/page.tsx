@@ -296,7 +296,7 @@ export default function GiveawaysPage() {
         <div className="section-inner" style={{ paddingBottom: '16px' }}>
           <h2 className="section-heading" style={{ marginBottom: '6px' }}>51 EXCLUSIVE PRIZES TO WIN</h2>
           <p className="prizeboard-desc" style={{ marginBottom: 0 }}>
-            Here&apos;s what some of the <span style={{color:'var(--teal)'}}>&#35;SHOPPS</span> players are sharing with the community. These prizes are exclusive to 1/1 autograph cards.<br />Win yours through live card breaks, player drops, or CTC&apos;s posts.
+            Here&apos;s what some of the <span style={{color:'var(--teal)'}}>&#35;SHOPPS</span> players are sharing with the community.<br />These prizes are exclusive to 1/1 autograph cards.<br />Win yours through live card breaks, player drops, or CTC&apos;s posts.
           </p>
         </div>
         <div
