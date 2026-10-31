@@ -86,9 +86,9 @@ const TOTAL_GIVEAWAYS = 51
 const CLAIMED_GIVEAWAYS = 0
 
 const STEPS = [
-  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of your Golden Ticket.' },
-  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Send the photo to <a href="mailto:hello@commonthreadco.com" style="color:#039F9D;text-decoration:none">hello@commonthreadco.com</a> so we can verify the golden ticket card.' },
-  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate the golden ticket prize." }
+  { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of<br />your Golden Ticket.' },
+  { num: '02', title: 'EMAIL YOUR PHOTO',      body: 'Email your photo for verification:<br /><a href="mailto:hello@commonthreadco.com" style="color:#039F9D;text-decoration:none">hello@commonthreadco.com</a>' },
+  { num: '03', title: 'CLAIM YOUR PRIZE',      body: "Once verified, we'll coordinate<br />your Golden Ticket prize." }
 ]
 
 const featured = PRIZES[0]
@@ -381,7 +381,7 @@ export default function GiveawaysPage() {
       {/* ── How claiming works ── */}
       <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 2vw', scrollMarginTop: '60px' }}>
         <div className="section-inner">
-          <p className="section-eyebrow">PULLED A WINNING CARD?</p>
+          <p className="section-eyebrow">PULLED A GOLDEN TICKET?</p>
           <h2 className="section-heading">How Claiming Works</h2>
           <div className="howto-steps howto-steps--3col">
             {STEPS.map(step => (
