@@ -294,9 +294,9 @@ export default function GiveawaysPage() {
       `}</style>
       <div style={{ padding: '0 0 60px' }}>
         <div className="section-inner" style={{ paddingBottom: '16px' }}>
-          <h2 className="section-heading" style={{ marginBottom: '6px' }}>EVERY PRIZE IN THE SET</h2>
+          <h2 className="section-heading" style={{ marginBottom: '6px' }}>51 EXCLUSIVE PRIZES TO WIN</h2>
           <p className="prizeboard-desc" style={{ marginBottom: 0 }}>
-            Here&apos;s what the leaders behind <span style={{color:'var(--teal)'}}>&#35;SHOPPS</span> are sharing with the community.
+            Here&apos;s what some of the <span style={{color:'var(--teal)'}}>&#35;SHOPPS</span> players are sharing with the community.
           </p>
         </div>
         <div
