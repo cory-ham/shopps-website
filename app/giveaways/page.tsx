@@ -74,7 +74,7 @@ const PRIZES: Prize[] = [
     tag: 'WHAT YOU COULD WIN',
     title: 'COURTSIDE SEATS',
     subtitle: 'OKC THUNDER',
-    description: "Win Mike Beckham's 1/1 autograph card and get two courtside seats at an Oklahoma City Thunder game. The single biggest prize and it's still in a pack somewhere.",
+    description: "Win Mike Beckham's 1/1 autograph card and get two courtside seats at an Oklahoma City Thunder game.",
     attached: '1/1 CHASE · RANK #1',
     status: 'available',
     featured: true,
