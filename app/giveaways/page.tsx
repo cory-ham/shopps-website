@@ -378,6 +378,22 @@ export default function GiveawaysPage() {
         </div>
       </div>
 
+      {/* ── GOLDEN TICKETS ── */}
+      <div className="section-inner" style={{ paddingTop: '2vw', paddingBottom: '3vw' }}>
+        <h2 className="section-heading" style={{ marginBottom: '8px' }}>GOLDEN TICKETS</h2>
+        <p className="prizeboard-desc" style={{ marginBottom: '28px' }}>
+          Pull one from a pack and claim a prize from our sponsors, Fulfil and Omnisend.
+        </p>
+        <div className="golden-tickets-grid">
+          <div className="golden-ticket-card">
+            <img src="/golden-ticket-fulfil.png" alt="Fulfil Golden Ticket" draggable={false} />
+          </div>
+          <div className="golden-ticket-card">
+            <img src="/golden-ticket-omnisend.png" alt="Omnisend Golden Ticket" draggable={false} />
+          </div>
+        </div>
+      </div>
+
       {/* ── How claiming works ── */}
       <section className="howto-section" id="how" style={{ background: 'var(--bg)', padding: '5vw 0 2vw', scrollMarginTop: '60px' }}>
         <div className="section-inner">
@@ -395,22 +411,6 @@ export default function GiveawaysPage() {
 
         </div>
       </section>
-
-      {/* ── GOLDEN TICKETS ── */}
-      <div className="section-inner" style={{ paddingTop: '2vw', paddingBottom: '3vw' }}>
-        <h2 className="section-heading" style={{ marginBottom: '8px' }}>GOLDEN TICKETS</h2>
-        <p className="prizeboard-desc" style={{ marginBottom: '28px' }}>
-          Pull one from a pack and claim a prize from our sponsors, Fulfil and Omnisend.
-        </p>
-        <div className="golden-tickets-grid">
-          <div className="golden-ticket-card">
-            <img src="/golden-ticket-fulfil.png" alt="Fulfil Golden Ticket" draggable={false} />
-          </div>
-          <div className="golden-ticket-card">
-            <img src="/golden-ticket-omnisend.png" alt="Omnisend Golden Ticket" draggable={false} />
-          </div>
-        </div>
-      </div>
 
       {/* ── SPONSOR BAR ── */}
       <p className="sponsor-label" style={{fontSize:'18px',fontWeight:'700',letterSpacing:'0.12em'}}>THANK YOU TO OUR SPONSORS</p>
