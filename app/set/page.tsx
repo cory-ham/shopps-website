@@ -230,7 +230,6 @@ function SetChecklist() {
               <table className="checklist-table">
                 <thead>
                   <tr>
-                    <th>#</th>
                     <th>NAME</th>
                     <th>COMPANY</th>
                     {VARIANTS_META.map(v => <th key={v.key} style={{ color: v.color }}>{v.label}</th>)}
@@ -239,7 +238,6 @@ function SetChecklist() {
                 <tbody>
                   {visible.map(person => (
                     <tr key={person.p} className="checklist-row">
-                      <td className="checklist-num">{String(person.p + 1).padStart(3, '0')}</td>
                       <td className="checklist-name">{person.name}</td>
                       <td className="checklist-co">{person.company}</td>
                       {VARIANTS_META.map(v => {
