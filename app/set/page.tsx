@@ -188,8 +188,8 @@ function SetChecklist() {
     { key: 'pack5',   label: 'CHROME · /5' },
     { key: 'pack6',   label: 'CHROME · /6' },
     { key: 'pack1',   label: 'CHROME · 1/1' },
-    { key: 'blue10',  label: 'BASE · /10' },
-    { key: 'gold5',   label: 'BASE · /5' },
+    { key: 'blue10',  label: 'BLUE · /10' },
+    { key: 'gold5',   label: 'GOLD · /5' },
   ]
   const visible = PEOPLE.filter(p =>
     (!onlyMissing || VARIANTS_META.some(v => !checked[`${p.p}-${v.key}`]))
