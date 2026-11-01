@@ -3087,3 +3087,76 @@ body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rot
 .hs-form .hs-richtext,
 .hs-form .actions .hs_cos_wrapper { display: none !important; }
 .hs-form .actions { padding: 0 !important; }
+
+/* ── CTA BUTTON MOBILE FIXES — Nov 1 2026 ── */
+
+/* btn-outline-sm — vw-based sizing breaks on mobile */
+@media (max-width: 768px) {
+  .btn-outline-sm {
+    font-size: 11px !important;
+    padding: 10px 18px !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+/* btn-teal-lg — vw-based sizing breaks on mobile */
+@media (max-width: 768px) {
+  .btn-teal-lg {
+    font-size: 13px !important;
+    padding: 14px 24px !important;
+  }
+}
+
+/* btn-remind — vw-based sizing, fix for mobile */
+@media (max-width: 768px) {
+  .btn-remind {
+    font-size: 11px !important;
+    padding: 10px 16px !important;
+    letter-spacing: 0.12em !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 8px !important;
+    border-radius: 4px !important;
+  }
+}
+
+/* live-email-btn — fix border radius when stacked full width */
+@media (max-width: 768px) {
+  .live-email-btn {
+    border-radius: 6px !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    padding: 14px 20px !important;
+  }
+  .live-email-bar {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .live-email-input {
+    width: 100% !important;
+    border-radius: 6px !important;
+  }
+}
+
+/* btn-cta-outline — ensure proper sizing on small screens */
+@media (max-width: 480px) {
+  .btn-cta-outline {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 24px !important;
+    font-size: 13px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* hero buttons — stack properly on mobile */
+@media (max-width: 480px) {
+  .btn-teal, .btn-outline {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+}
