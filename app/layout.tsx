@@ -19,7 +19,28 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: 'SHOPPS — Trading Cards for Ecommerce',
-  description: 'Physical trading cards featuring 100 leaders shaping ecommerce. Only 1,000 packs, never for sale, with $50,000 in prizes.',
+  description: 'Physical trading cards of 100 ecommerce leaders, with rare editions and $50K in prizes. Only 1,000 packs, never for sale. See how to win one.',
+  openGraph: {
+    title: 'SHOPPS — Trading Cards for Ecommerce',
+    description: 'Physical trading cards of 100 ecommerce leaders, with rare editions and $50K in prizes. Only 1,000 packs, never for sale. See how to win one.',
+    url: 'https://www.shoppscards.com',
+    siteName: 'SHOPPS',
+    images: [
+      {
+        url: 'https://www.shoppscards.com/shopps-packs-fan.png',
+        width: 1200,
+        height: 630,
+        alt: 'SHOPPS Trading Cards',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SHOPPS — Trading Cards for Ecommerce',
+    description: 'Physical trading cards of 100 ecommerce leaders, with rare editions and $50K in prizes. Only 1,000 packs, never for sale. See how to win one.',
+    images: ['https://www.shoppscards.com/shopps-packs-fan.png'],
+  },
 }
 
 export default function RootLayout({
