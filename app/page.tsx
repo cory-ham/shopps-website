@@ -147,10 +147,10 @@ const TWEETS = [
     url: 'https://x.com/TaylorHoliday/status/2117284804404355169',
   },
   {
-    name: 'The Szef',
+    name: 'Bart Szaniewski',
     handle: '@TheSzef',
     avatar: '/tweets/avatar-szef.jpg',
-    text: '',
+    text: "It's an honor. SHOPPS First Edition is live. Go get your pack.",
     images: [],
     likes: '',
     retweets: '',
