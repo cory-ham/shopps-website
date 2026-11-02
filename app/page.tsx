@@ -150,7 +150,7 @@ const TWEETS = [
     name: 'Bart Szaniewski',
     handle: '@TheSzef',
     avatar: '/tweets/avatar-szef.jpg',
-    text: "It's an honor. SHOPPS First Edition is live. Go get your pack.",
+    text: "It's an honor. SHOPPS First Edition live now!",
     images: [],
     likes: '',
     retweets: '',
