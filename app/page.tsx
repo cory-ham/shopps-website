@@ -726,7 +726,7 @@ export default function Home() {
                   <p className="live-title">{event.title}</p>
                   <p className="live-meta"><span className="live-dot" />{event.meta}</p>
                 </div>
-                <button className="btn-remind">Remind Me</button>
+                
               </div>
             ))}
           </div>
