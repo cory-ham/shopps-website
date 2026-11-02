@@ -52,11 +52,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${antonio.variable} ${ibmPlexSans.variable}`}>
         {children}
-      <Script
-        id="reb2b"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: '!function(key){if(window.reb2b)return;window.reb2b={loaded:true};var s=document.createElement(\\x27script\\x27);s.async=true;s.src=\\x27https://ddwl4m2hdecbv.cloudfront.net/b/\\x27+key+\\x27/\\x27+key+\\x27.js.gz\\x27;document.getElementsByTagName(\\x27script\\x27)[0].parentNode.insertBefore(s,document.getElementsByTagName(\\x27script\\x27)[0]);}(\\x274N210HQL746Z\\x27)' }}
-      />
+      <Script id="reb2b" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: '!function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/reb2b.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("4N210HQL746Z");}();' }} />
       </body>
     </html>
   )
