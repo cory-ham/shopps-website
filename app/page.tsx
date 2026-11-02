@@ -151,7 +151,7 @@ const TWEETS = [
     handle: '@TheSzef',
     avatar: '/tweets/avatar-szef.jpg',
     text: "It's an honor. SHOPPS First Edition live now!",
-    images: [],
+    images: ['/tweets/tweet-img-05.jpg'],
     likes: '',
     retweets: '',
     date: 'Nov 2',
