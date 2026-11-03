@@ -416,16 +416,21 @@ export default function SetPage() {
           // Back card offsets: green=2, teal=4, gold=6; autograph back=8p+8
           const backOffsets: [number,number,number] = [2, 4, 6]
           const packColor = isPackGreen ? 'green' : isPackTeal ? 'teal' : 'gold'
+          // Derive the card file number from cardImg (which has explicit overrides for gap persons)
+          // cardImg format: '/cards/foil-sig-chrome-054.jpg' → extract '054'
+          const cardImgNum = (person as any).cardImg
+            ? (person as any).cardImg.match(/-(\d{3})\.jpg$/)?.[1] ?? String(person.p + 1).padStart(3, '0')
+            : String(person.p + 1).padStart(3, '0')
           const frontSrc = isChrome
-            ? `/cards/foil-sig-chrome-${String(person.p + 1).padStart(3, '0')}.jpg`
+            ? `/cards/foil-sig-chrome-${cardImgNum}.jpg`
             : isAutograph
             ? `/cards/onyx-signed-p${String(person.p).padStart(2, '0')}.jpg`
             : isPack
-            ? `/cards/pack-chrome-${String(person.p + 1).padStart(3, '0')}-${packColor}.jpg`
+            ? `/cards/pack-chrome-${cardImgNum}-${packColor}.jpg`
             : isBlue
-            ? `/cards/blue-${String(person.p + 1).padStart(3, '0')}-${(person as any).blueVariant ?? 'green'}.jpg`
+            ? `/cards/blue-${cardImgNum}-${(person as any).blueVariant ?? 'green'}.jpg`
             : isGold
-            ? `/cards/gold-${String(person.p + 1).padStart(3, '0')}-${(person as any).blueVariant ?? 'green'}.jpg`
+            ? `/cards/gold-${cardImgNum}-${(person as any).blueVariant ?? 'green'}.jpg`
             : cardSrc(person.p, v)
           const packBackOffset = isPackGreen ? 2 : isPackTeal ? 4 : 6
           const backNum = isAutograph || isChrome ? 8*person.p+8 : isPack ? 8*person.p+packBackOffset : 8*person.p+backOffsets[v]
