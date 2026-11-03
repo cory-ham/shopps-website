@@ -151,7 +151,7 @@ const TWEETS = [
     handle: '@GrantZanini',
     avatar: '/tweets/avatar-grant.jpg',
     text: 'My first lesson in business didn\'t come from a course or a class.\n\nIt started with baseball cards.\n\n30+ years later, the ten-year-old in me is proud (and really excited) to see those two worlds come together.\n\nToday, we get to introduce SHOPPS!\n\nBuilt to lead. Made to collect',
-    images: [],
+    images: ['/tweets/tweet-img-grant.jpg'],
     likes: '',
     retweets: '',
     date: 'Nov 2',
