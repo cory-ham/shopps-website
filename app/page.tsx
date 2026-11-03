@@ -236,7 +236,7 @@ function seededShuffle<T>(arr: T[], r: () => number): T[] {
 
 // Person indices by sex
 const FEMALE_P = [21,25,26,28,30,31,32,33,34,35,36,38,39,40,41,42,44,46,47,49,53,59,60,66,70,74,80,89,96]
-const MALE_P   = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24,27,29,37,43,45,48,50,51,52,54,55,56,57,58,61,62,63,64,65,67,68,69,71,72,73,75,76,77,78,79,81,82,83,84,85,86,87,88,90,91,92,93,94,95,97,98]
+const MALE_P   = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24,27,29,37,43,45,48,50,51,52,54,55,56,57,58,61,62,63,64,65,67,68,69,71,72,73,75,76,77,78,79,81,82,83,84,85,86,87,88,90,91,92,93,94,95,97,98,99,100]
 
 // Person display names (P index → name)
 const PERSON_NAME: Record<number, string> = {
@@ -273,6 +273,7 @@ const PERSON_NAME: Record<number, string> = {
  90:'Bryan Cano',            91:'Kevin Lavelle',         92:'Victor Tam',
  93:'Eric Panofsky',         94:'Mehtab Bhogal',         95:'Freddy Ward',
  96:'Sienna McCormick',      97:'Taylor Holiday',        98:'Mystery Card',
+ 99:'Moiz Ali',               100:'Rytis Lauris',
 }
 
 const VARIANTS = ['green', 'teal', 'gold'] as const
