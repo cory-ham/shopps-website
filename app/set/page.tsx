@@ -433,7 +433,8 @@ export default function SetPage() {
             ? `/cards/gold-${cardImgNum}-${(person as any).blueVariant ?? 'green'}.jpg`
             : cardSrc(person.p, v)
           const packBackOffset = isPackGreen ? 2 : isPackTeal ? 4 : 6
-          const backNum = isAutograph || isChrome ? 8*person.p+8 : isPack ? 8*person.p+packBackOffset : 8*person.p+backOffsets[v]
+          const cardImgN = parseInt(cardImgNum) // 1-based sequential index
+          const backNum = isAutograph || isChrome ? 8*(cardImgN-1)+8 : isPack ? 8*(cardImgN-1)+packBackOffset : 8*person.p+backOffsets[v]
           const backSrc = `/cards/card-${String(backNum).padStart(3,'0')}.jpg`
           return (
             <div
