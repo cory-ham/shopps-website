@@ -147,6 +147,17 @@ const TWEETS = [
     url: 'https://x.com/TaylorHoliday/status/2117284804404355169',
   },
   {
+    name: 'Grant Zanini',
+    handle: '@GrantZanini',
+    avatar: '/tweets/avatar-taylor.jpg',
+    text: 'My first lesson in business didn\'t come from a course or a class.\n\nIt started with baseball cards.\n\n30+ years later, the ten-year-old in me is proud (and really excited) to see those two worlds come together.\n\nToday, we get to introduce SHOPPS!\n\nBuilt to lead. Made to collect',
+    images: [],
+    likes: '',
+    retweets: '',
+    date: 'Nov 2',
+    url: 'https://x.com/GrantZanini/status/2117298062104428769',
+  },
+  {
     name: 'Bart Szaniewski',
     handle: '@TheSzef',
     avatar: '/tweets/avatar-szef.jpg',
