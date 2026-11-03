@@ -231,7 +231,7 @@ const TWEETS = [
     handle: '@ezrafirestone',
     avatar: '/tweets/avatar-ezra.jpg',
     text: '#SHOPPS cards are live! Only 1,000 packs available. I have a few free ones to give away. Comment or DM and I\'ll enter you into the giveaway. So many fun prizes available!\n\nI pulled a @JasonPanzer @moizali and @LaurisRyti6893 in my first pack 🤯🔥😍\n\nShoppsCards.com',
-    images: [],
+    images: ['/tweets/tweet-img-ezra.jpg'],
     likes: '',
     retweets: '',
     date: 'Nov 3',
