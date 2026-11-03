@@ -335,7 +335,7 @@ export default function SetPage() {
       } else if (activeFilter === 'AUTOGRAPH') {
         // all 99 people have an autograph card — show everyone
       } else if (activeFilter === 'CHROME · /5' || activeFilter === 'CHROME · /6' || activeFilter === 'CHROME · 1/1' || activeFilter === 'BASE · /10' || activeFilter === 'BASE · /5') {
-        if (person.p > 96) return false
+        if (person.p > 100) return false
       } else if (activeFilter !== 'ALL') {
         if (person.cat !== activeFilter.toLowerCase()) return false
       }
