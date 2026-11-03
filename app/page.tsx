@@ -467,6 +467,19 @@ const EVENTS = [
   },
 ]
 
+const IN_THE_WILD = [
+  {
+    id: "2117677937566871789",
+    handle: "@ezrafirestone",
+    name: "Ezra Firestone",
+    avatar: null as string | null,
+    initials: "EF",
+    text: "#SHOPPS cards are live! Only 1,000 packs available. I have a few free ones to give away. Comment or DM and I\'ll enter you into the giveaway. So many fun prizes available!\n\nI pulled a @JasonPanzer @moizali and @LaurisRyti6893 in my first pack 🤯🔥😍\n\nShoppsCards.com",
+    url: "https://x.com/ezrafirestone/status/2117677937566871789",
+    date: "Nov 3, 2026",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -708,6 +721,38 @@ export default function Home() {
         </div>
       </div>
 
+
+      {/* ──────────────────── IN THE WILD ──────────────────── */}
+      <section className="in-the-wild-section">
+        <div className="section-inner">
+          <p className="section-eyebrow">#SHOPPS</p>
+          <h2 className="section-heading">In the Wild</h2>
+          <p className="section-body" style={{maxWidth:'480px'}}>
+            Real pulls. Real reactions. The ecommerce community goes all in.
+          </p>
+          <div className="wild-feed">
+            {IN_THE_WILD.map((post) => (
+              <a key={post.id} href={post.url} target="_blank" rel="noopener noreferrer" className="wild-card">
+                <div className="wild-card-header">
+                  <div className="wild-avatar">
+                    {post.avatar
+                      ? <img src={post.avatar} alt={post.name} />
+                      : <span className="wild-avatar-initials">{post.initials}</span>
+                    }
+                  </div>
+                  <div className="wild-meta">
+                    <span className="wild-name">{post.name}</span>
+                    <span className="wild-handle">{post.handle}</span>
+                  </div>
+                  <svg className="wild-x-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </div>
+                <p className="wild-text">{post.text}</p>
+                <span className="wild-date">{post.date}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ──────────────────── HOW TO GET A PACK ──────────────────── */}
       {/* PSD: heading (676,4918,1050,4968), steps at y=5085-5450 */}
