@@ -241,7 +241,13 @@ const TWEETS = [
     name: 'Josh Durham',
     handle: '@JoshJDurham',
     avatar: '/tweets/avatar-josh.jpg',
-    text: 'Just got my pack of #SHOPPS in the mail!\\n\\n1. my daughter said the crayon edition @MehtabKarta is her favorite card.\\n\\n2. The @iamshackelford might be 3x more valuable if the hemp ban is cancelled.\\n\\nI have a couple packs to give away (only 1k packs exist) — comment below!',
+    text: `Just got my pack of #SHOPPS in the mail!
+
+1. my daughter said the crayon edition @MehtabKarta is her favorite card.
+
+2. The @iamshackelford might be 3x more valuable if the hemp ban is cancelled.
+
+I have a couple packs to give away (only 1k packs exist) — comment below!`,
     images: ['/tweets/tweet-img-josh.jpg'],
     likes: '',
     retweets: '',
