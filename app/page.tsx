@@ -237,6 +237,28 @@ const TWEETS = [
     date: 'Nov 3',
     url: 'https://x.com/ezrafirestone/status/2117677937566871789',
   },
+  {
+    name: 'Josh Durham',
+    handle: '@JoshJDurham',
+    avatar: '/tweets/avatar-josh.jpg',
+    text: 'Just got my pack of #SHOPPS in the mail!\\n\\n1. my daughter said the crayon edition @MehtabKarta is her favorite card.\\n\\n2. The @iamshackelford might be 3x more valuable if the hemp ban is cancelled.\\n\\nI have a couple packs to give away (only 1k packs exist) — comment below!',
+    images: ['/tweets/tweet-img-josh.jpg'],
+    likes: '',
+    retweets: '',
+    date: 'Nov 4',
+    url: 'https://x.com/JoshJDurham',
+  },
+  {
+    name: 'Bryan Bumgardner',
+    handle: '@BryanBumgardner',
+    avatar: '/tweets/avatar-bryan.jpg',
+    text: 'Pulled a shiny @chrislukehall @ecommcowboy AMA #SHOPPS',
+    images: ['/tweets/tweet-img-bryan.jpg'],
+    likes: '8',
+    retweets: '2',
+    date: 'Nov 4',
+    url: 'https://x.com/BryanBumgardner',
+  },
 ]
 
 // ── Daily-rotating card carousel ─────────────────────────────────────────────
