@@ -88,7 +88,7 @@ export default function GetAPackPage() {
           <div className="live-events-box">
             {[
               { month: 'NOV', day: '5',  title: 'Live Break #1', meta: '10:00 AM PT • Streaming on X, YouTube, and LinkedIn' },
-              { month: 'NOV', day: '10', title: 'Live Break #2', meta: '3:00 PM PT • Streaming on X, YouTube, and LinkedIn' },
+              { month: 'NOV', day: '12', title: 'Live Break #2', meta: '2:00 PM PT • Streaming on X, YouTube, and LinkedIn' },
               { month: 'NOV', day: '12', title: 'Live Break #3', meta: '2:00 PM PT • Streaming on X, YouTube, and LinkedIn' },
             ].map((event, i, arr) => (
               <div key={i} className={'live-event' + (i < arr.length - 1 ? ' live-event-divider' : '')}>
