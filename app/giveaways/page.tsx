@@ -83,7 +83,7 @@ const PRIZES: Prize[] = [
 ]
 
 const TOTAL_GIVEAWAYS = 51
-const CLAIMED_GIVEAWAYS = 2
+const CLAIMED_GIVEAWAYS = 3
 
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of<br />your Golden Ticket.' },
