@@ -19,6 +19,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Bart Szaniewski',       company: 'Dad Gang Co.',          prize: 'A one-hour brand-growth consultation',                                          cardImg: '/cards/foil-sig-chrome-001.jpg', backImg: '/giveaway-backs/giveaway-back-v2-008.jpg' },
   { name: 'Bear Handlon',          company: 'Born Primitive',        prize: 'A $1,000 Born Primitive gift card and a 30-minute Zoom call',                   cardImg: '/cards/foil-sig-chrome-002.jpg', backImg: '/giveaway-backs/giveaway-back-v2-016.jpg' },
   { name: 'Ben Cogan',             company: 'Beanstalk',             prize: 'A ticket to Beanstalk',                                                         cardImg: '/cards/foil-sig-chrome-003.jpg', backImg: '/giveaway-backs/giveaway-back-v2-024.jpg' },
+  { name: 'Chase Dimond',        company: 'Ecom Email Marketer',   prize: '2 email marketing courses',                                                     cardImg: '/cards/foil-sig-chrome-004.jpg', claimed: true },
   { name: 'Sean Frank',            company: 'Ridge',                 prize: 'A $1,000 Ridge gift card',                                                      cardImg: '/cards/foil-sig-chrome-005.jpg', backImg: '/giveaway-backs/giveaway-back-v2-040.jpg' },
   { name: 'Chad Janis',            company: 'Grüns',                 prize: 'Dinner at any Austin restaurant, or a two-hour roundtable for up to 8',         cardImg: '/cards/foil-sig-chrome-006.jpg', backImg: '/giveaway-backs/giveaway-back-v2-048.jpg' },
   { name: 'Matthew Bertulli',      company: 'Pela',                  prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-007.jpg', backImg: '/giveaway-backs/giveaway-back-v2-056.jpg' },
@@ -27,11 +28,11 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Nick Shackelford',      company: 'Brez',                  prize: 'A 30-min consultation + 3 cases Cadence + 12 cases Drink Magna',                cardImg: '/cards/foil-sig-chrome-010.jpg', backImg: '/giveaway-backs/giveaway-back-v2-080.jpg' },
   { name: 'Ezra Firestone',        company: 'BOOM! Beauty',          prize: '30-min call + Navage Bundle + $1,000 in gift cards + Zipify AOV session',       cardImg: '/cards/foil-sig-chrome-011.jpg', backImg: '/giveaway-backs/giveaway-back-v2-088.jpg' },
   { name: 'John Roman',            company: 'BattlBox',              prize: 'Two one-hour consulting calls',                                                  cardImg: '/cards/foil-sig-chrome-012.jpg', backImg: '/giveaway-backs/giveaway-back-v2-096.jpg', claimed: true },
-  { name: 'Jimmy Kim',             company: 'Commerce Roundtable',   prize: 'Two tickets to Commerce Roundtable',                                            cardImg: '/cards/foil-sig-chrome-013.jpg', backImg: '/giveaway-backs/giveaway-back-v2-104.jpg' },
+  { name: 'Jimmy Kim',             company: 'Commerce Roundtable',   prize: 'Two tickets to Commerce Roundtable',                                            cardImg: '/cards/foil-sig-chrome-013.jpg', backImg: '/giveaway-backs/giveaway-back-v2-104.jpg', claimed: true },
   { name: 'Zach Stuck',            company: 'Mars Men',              prize: 'A year of Mars Men + a 30-minute consultation',                                  cardImg: '/cards/foil-sig-chrome-014.jpg', backImg: '/giveaway-backs/giveaway-back-v2-112.jpg' },
   { name: 'Andrew Youderian',      company: 'eComFuel',              prize: 'One-year eComFuel membership (or $2,500 ECF Live ticket)',                       cardImg: '/cards/foil-sig-chrome-015.jpg', backImg: '/giveaway-backs/giveaway-back-v2-120.jpg' },
   { name: 'Ronak Shah',            company: 'Obvi',                  prize: 'Three 30-min calls + a year of Obvi + $100 to your chosen charity',              cardImg: '/cards/foil-sig-chrome-016.jpg', backImg: '/giveaway-backs/giveaway-back-v2-128.jpg' },
-  { name: 'Josh Haskins',          company: 'Hollow Socks',          prize: 'A year of Hollow Socks + a 30-minute consultation',                              cardImg: '/cards/foil-sig-chrome-017.jpg', backImg: '/giveaway-backs/giveaway-back-v2-136.jpg' },
+  { name: 'Josh Haskins',          company: 'Hollow Socks',          prize: 'A year of Hollow Socks + a 30-minute consultation',                              cardImg: '/cards/foil-sig-chrome-017.jpg', backImg: '/giveaway-backs/giveaway-back-v2-136.jpg', claimed: true },
   { name: 'Isaac Medeiros',        company: 'Content Forge',         prize: 'Three Mini Katana-style videos',                                                 cardImg: '/cards/foil-sig-chrome-018.jpg', backImg: '/giveaway-backs/giveaway-back-v2-144.jpg' },
   { name: 'Michael McVerry',       company: 'Urban Armor Gear',      prize: '$250 in UAG/NomadGoods products + a 30-min ecommerce consultation',              cardImg: '/cards/foil-sig-chrome-019.jpg', backImg: '/giveaway-backs/giveaway-back-v2-152.jpg' },
   { name: 'Paul Jauregui',         company: 'BK Beauty',             prize: 'A $500 BK Beauty gift card',                                                    cardImg: '/cards/foil-sig-chrome-020.jpg', backImg: '/giveaway-backs/giveaway-back-v2-160.jpg' },
@@ -39,7 +40,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Jessica Berman',        company: 'BodyBio',               prize: 'A year of BodyBio Cell Essentials + 30-min call + personalized supplement protocol', cardImg: '/cards/foil-sig-chrome-022.jpg', backImg: '/giveaway-backs/giveaway-back-v2-176.jpg' },
   { name: 'Jason Panzer',          company: 'HexClad',               prize: 'A 12-piece HexClad pots and pans set',                                          cardImg: '/cards/foil-sig-chrome-023.jpg', backImg: '/giveaway-backs/giveaway-back-v2-184.jpg' },
   { name: 'Brad Blankinship',      company: 'Sun Day Red',           prize: 'A Sun Day Red care package — polo, hat, and shoes',                              cardImg: '/cards/foil-sig-chrome-024.jpg', backImg: '/giveaway-backs/giveaway-back-v2-192.jpg' },
-  { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/giveaway-backs/giveaway-back-v2-200.jpg' },
+  { name: 'Scott Kramer',          company: 'Naked & Thriving',      prize: 'A Discovery Kit + 30-min AMA, growth audit, or TikTok Shop consult',             cardImg: '/cards/foil-sig-chrome-025.jpg', backImg: '/giveaway-backs/giveaway-back-v2-200.jpg', claimed: true },
   { name: 'Drew Arciuolo',         company: 'VKTRY Gear',            prize: 'VKTRY Gold Insoles + Recovery Slides + a 60-minute consultation',                cardImg: '/cards/foil-sig-chrome-028.jpg', backImg: '/giveaway-backs/giveaway-back-v2-224.jpg' },
   { name: 'Sean Riley',            company: 'Dude Wipes',            prize: 'A year of DUDE Wipes + a 30-minute consultation',                               cardImg: '/cards/foil-sig-chrome-030.jpg', backImg: '/giveaway-backs/giveaway-back-v2-240.jpg' },
   { name: 'Jordan Menard',         company: 'renoux',                prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-049.jpg', backImg: '/giveaway-backs/giveaway-back-v2-392.jpg' },
@@ -52,7 +53,7 @@ const GIVEAWAYS: Giveaway[] = [
   { name: "Bill D'Alessandro",     company: 'Elements Brands',       prize: 'A limited-edition Natural Dog Company tumbler + a 30-min consultation',          cardImg: '/cards/foil-sig-chrome-056.jpg', backImg: '/giveaway-backs/giveaway-back-v2-448.jpg' },
   { name: 'Brian Waddick',         company: "SMACKIN'",              prize: "A year of SMACKIN' + a 30-minute consultation",                                  cardImg: '/cards/foil-sig-chrome-057.jpg', backImg: '/giveaway-backs/giveaway-back-v2-456.jpg' },
   { name: 'Alejandro Chahin',      company: 'Mott & Bow',            prize: 'A $1,000 Mott & Bow gift card + a one-hour consultation',                       cardImg: '/cards/foil-sig-chrome-059.jpg', backImg: '/giveaway-backs/giveaway-back-v2-472.jpg' },
-  { name: 'Camron Collard',        company: 'MicroPerfumes',         prize: 'A $250 MicroPerfumes gift card + a hosted round of golf',                        cardImg: '/cards/foil-sig-chrome-072.jpg', backImg: '/giveaway-backs/giveaway-back-v2-576.jpg' },
+  { name: 'Camron Collard',        company: 'MicroPerfumes',         prize: 'A $250 MicroPerfumes gift card + a hosted round of golf',                        cardImg: '/cards/foil-sig-chrome-072.jpg', backImg: '/giveaway-backs/giveaway-back-v2-576.jpg', claimed: true },
   { name: 'Cherene Aubert',        company: 'Growth Capital',        prize: 'Two months of Oasis free + a 30-minute growth session',                          cardImg: '/cards/foil-sig-chrome-075.jpg', backImg: '/giveaway-backs/giveaway-back-v2-600.jpg', claimed: true },
   { name: 'Mark Mastrandrea',      company: 'IKONICK',               prize: 'Two pieces of art from IKONICK',                                                 cardImg: '/cards/foil-sig-chrome-076.jpg', backImg: '/giveaway-backs/giveaway-back-v2-608.jpg' },
   { name: 'Edward Wimmer IV',      company: 'ROAD iD',               prize: '$200 gift card each for ROAD iD, DOG iD, and Rack Rabbit + 30-min consult',     cardImg: '/cards/foil-sig-chrome-077.jpg', backImg: '/giveaway-backs/giveaway-back-v2-616.jpg' },
@@ -83,7 +84,7 @@ const PRIZES: Prize[] = [
 ]
 
 const TOTAL_GIVEAWAYS = 51
-const CLAIMED_GIVEAWAYS = 3
+const CLAIMED_GIVEAWAYS = 8
 
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of<br />your Golden Ticket.' },
