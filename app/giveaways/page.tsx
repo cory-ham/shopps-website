@@ -19,7 +19,6 @@ const GIVEAWAYS: Giveaway[] = [
   { name: 'Bart Szaniewski',       company: 'Dad Gang Co.',          prize: 'A one-hour brand-growth consultation',                                          cardImg: '/cards/foil-sig-chrome-001.jpg', backImg: '/giveaway-backs/giveaway-back-v2-008.jpg' },
   { name: 'Bear Handlon',          company: 'Born Primitive',        prize: 'A $1,000 Born Primitive gift card and a 30-minute Zoom call',                   cardImg: '/cards/foil-sig-chrome-002.jpg', backImg: '/giveaway-backs/giveaway-back-v2-016.jpg' },
   { name: 'Ben Cogan',             company: 'Beanstalk',             prize: 'A ticket to Beanstalk',                                                         cardImg: '/cards/foil-sig-chrome-003.jpg', backImg: '/giveaway-backs/giveaway-back-v2-024.jpg' },
-  { name: 'Chase Dimond',        company: 'Ecom Email Marketer',   prize: '2 email marketing courses',                                                     cardImg: '/cards/foil-sig-chrome-004.jpg', claimed: true },
   { name: 'Sean Frank',            company: 'Ridge',                 prize: 'A $1,000 Ridge gift card',                                                      cardImg: '/cards/foil-sig-chrome-005.jpg', backImg: '/giveaway-backs/giveaway-back-v2-040.jpg' },
   { name: 'Chad Janis',            company: 'Grüns',                 prize: 'Dinner at any Austin restaurant, or a two-hour roundtable for up to 8',         cardImg: '/cards/foil-sig-chrome-006.jpg', backImg: '/giveaway-backs/giveaway-back-v2-048.jpg' },
   { name: 'Matthew Bertulli',      company: 'Pela',                  prize: 'A one-hour consultation',                                                       cardImg: '/cards/foil-sig-chrome-007.jpg', backImg: '/giveaway-backs/giveaway-back-v2-056.jpg' },
@@ -84,7 +83,7 @@ const PRIZES: Prize[] = [
 ]
 
 const TOTAL_GIVEAWAYS = 51
-const CLAIMED_GIVEAWAYS = 8
+const CLAIMED_GIVEAWAYS = 7
 
 const STEPS = [
   { num: '01', title: 'PHOTOGRAPH YOUR CARD', body: 'Take a clear photo of<br />your Golden Ticket.' },
